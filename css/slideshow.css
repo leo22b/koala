@@ -1,111 +1,89 @@
-
-*{
+* {
 	margin: 0;
 	padding: 0;
-	border: 0;
 }
-
-ul,ol,li {
+li {
 	list-style: none;
 }
-
-input,button {
-	margin: 0;
-	font-size: 12px;
-	vertical-align: middle;
-}
-
-body {
-	font-size: 12px;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #333;
-}
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-a {
-	color: #333;
-	text-decoration: none;
-}
-
-/*轮播大图*/
-
-#banner {
-	width: 100%;
-}
-.area {
-	width: 100%;
-	overflow: hidden;
-	position: relative;
-	cursor: pointer;
-}
-.backBtn {
-	background:rgba(0,0,0,0.5);
-	background-image: url(../img/back.png);
-	background-size: 32px 55px;
-	width: 32px;
-	height: 55px;
-	display: block;
-	position: absolute;
-	top: 150px;
-	left: 252px;
-}
-.nextBtn {
-	background:rgba(0,0,0,0.5);
-	background-image: url(../img/next.png);
-	background-size: 32px 55px;
-	width: 32px;
-	height: 55px;
-	display: block;
-	position: absolute;
-	top: 150px;
-	right: 110px;
-}
-.qq {
-	display: none;
-	z-index: 200
-}
-/*轮播图*/
-.js {
-	position: relative;
+#banner{
 	width: 100%;
 	height: 359px;
-	margin: 0 auto;
 }
-.js .imgbox{
+#batch{
+	width: 100%;
+	height: 359px;
+}
+.batch_cont {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.batch_cont>.bannerbox {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#back{
+	position: absolute;
+	left: 255px;
+	top: 145px;
+	z-index: 100;
+	width: 35px;
+	height: 70px;
+	background: rgba(0,0,0,0.3);
+	background-image: url(../img/back.png);
+	background-size: 100%;
+}
+#next{
+	position: absolute;
+	right: 200px;
+	top: 145px;
+	z-index: 100;
+	width: 35px;
+	height: 70px;
+	background: rgba(0,0,0,0.3);
+	background-image: url(../img/next.png);
+	background-size: 100%;
+}
+.batch_cont>.bannerbox>.imgbox {
+	float: left;
+	width: 100%;
+	height: 100%;
+	background-color: #E3E3E3;
+	text-align: center;
+	line-height: 300px;
+	font-family: "Arial Black";
+	color: #979797;
+	font-size: 40px;
+}
+.batch_cont>.bannerbox>.imgbox>img{
 	width: 100%;
 	height: 100%;
 }
-.js .imgbox img{
-	transition: all 3s; 
-	width: 100%;
-	height: 359px;
-	background: url(../img/loading.gif) 50% no-repeat;
-}
 
-.icon {
+.batch_cont>.imgindex {
 	position: absolute;
-	left: 664px;
-	bottom: 20px;
+	bottom: 10px;
+	margin: 0 auto;
+	z-index: 5;
 }
 
-.icon a {
-	width: 20px;
-	height: 20px;
-	line-height: 20px;
+.batch_cont>.imgindex>.index {
+	background:rgba(0,0,0,0.3);
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
 	border-radius: 50%;
-	font-size: 14px;
-	margin-right: 6px;
-	display: inline-block;
+	float: left;
+	margin: 0px 5px;
 	text-align: center;
-	color: #fff;
-	background: rgba(0,0,0,0.5);
+	color: white;
 }
 
-.icon .select {
-	background: red;
+.batch_cont>.imgindex>.active {
+	background: #e31436;
 }
-

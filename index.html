@@ -1259,26 +1259,26 @@
 			</div>
 
 			<div id="banner">
-				<div class="area">
-					<a id="back" class="backBtn qq" href="javascript:void(0)"></a>
-					<a id="next" class="nextBtn qq" href="javascript:void(0)"></a>
-					<div id="js" class="js">
-						<div class="imgbox">
-							<img src="img/showimg1.jpg" data-echo="img/showimg1.jpg">
-							<img src="img/showimg2.jpg" data-echo="img/showimg2.jpg">
-							<img src="img/showimg3.jpg" data-echo="img/showimg3.jpg">
-							<img src="img/showimg4.jpg" data-echo="img/showimg4.jpg">
-							<img src="img/showimg5.jpg" data-echo="img/showimg5.jpg">
+				<div id="batch">
+					<div class="batch_cont">
+						<div class="bannerbox">
+							<div id="back"></div>
+							<div id="next"></div>
+							<div class="imgbox"><img src="img/showimg1.jpg" /></div>
+							<div class="imgbox"><img src="img/showimg2.jpg" /></div>
+							<div class="imgbox"><img src="img/showimg3.jpg" /></div>
+							<div class="imgbox"><img src="img/showimg4.jpg" /></div>
+							<div class="imgbox"><img src="img/showimg5.jpg" /></div>
 						</div>
-						<div id="icon" class="icon">
-							<a class="present select" href="javascript:void(0)">1</a>
-							<a class="present" href="javascript:void(0)">2</a>
-							<a class="present" href="javascript:void(0)">3</a>
-							<a class="present" href="javascript:void(0)">4</a>
-							<a class="present" href="javascript:void(0)">5</a>
-						</div>
+						<!--下标-->
+						<div class="imgindex"> </div>
 					</div>
 				</div>
+				<script type="text/javascript">
+					$(function() {
+						$("#batch").extend({});
+					})
+				</script>
 				<script src="js/slideshow.js"></script>
 				<!--延迟加载-->
 				<script src="js/onload.js"></script>
