@@ -135,7 +135,9 @@
 	border-top: 2px solid black;
 	border-left: 1px solid #f2f2f2;
 }
-
+#main a{
+	color: black;
+}
 #main .today .to-right {
 	float: right;
 	width: 180px;
