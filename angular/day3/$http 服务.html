@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="myCtrl">
+<head>
+    <meta charset="UTF-8">
+    <title>$http 服务</title>
+    <script src="lib/angular-1.3.0.js"></script>
+</head>
+<h1>{{myWelcome}}</h1>
+<h1>{{myWelcom1}}</h1>
+
+<ul ng-repeat="x in myWelcome">
+    <li>{{x}}</li>
+</ul>
+<body>
+<script>
+    var demo=angular.module('myApp',[]);
+    demo.controller('myCtrl',function ($scope,$http) {
+        $http.get('package.json').then(function (response) {
+            $scope.myWelcome=response;
+            $scope.myWelcome1=window.location;
+        })
+    })
+</script>
+</body>
+</html>

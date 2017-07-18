@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<script type="text/javascript">
+			var nums = [19, 5, 8, 9, 18, 2];
+
+			Array.prototype.findMax = function(array) {
+				var j=0;
+				array[j]
+				for(var i=1;i<array.length;i++){
+					if(array[i] < array[j]){
+						j=i
+					}
+				}
+				
+				return array[j];
+			}
+			
+			var maxValue =  nums.findMax(nums);
+			console.log(nums.toString());
+			console.log(maxValue);
+			
+			
+		</script>
+
+	</body>
+
+</html>

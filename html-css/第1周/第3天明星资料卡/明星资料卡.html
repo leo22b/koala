@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>明星资料卡</title>
+<style>
+	*{margin:0;padding:0;}
+	body{background-color:gray;}
+	.box{
+		width:1043px;
+		height:500px;
+		position:relative;
+		<!--background-color:red;-->
+		}
+	.box img{
+		width:313px;
+		height:200px;
+		transition:all 2s;
+		}
+	.box div{
+		float:left;
+		margin:15px;
+		}
+		
+		/********第一张图片********/
+		
+	.box01{
+		width:313px;
+		height:200px;
+		position:relative;
+		overflow:hidden;
+		}
+	
+	.lufei{
+		position:absolute;
+		left:40px;
+		top:50px;
+		transition:all 2s;
+		transform:translateX(-100px)
+		}
+	.box01:hover .lufei{
+		transform:translateX(0px)
+		}
+	.p1{
+		position:absolute;
+		left:40px;
+		top:80px;
+		transition:all 2s;
+		transform:translateX(270px)
+		}
+	.box01:hover .p1{
+		transform:translateX(0px)
+		}
+	.p2{
+		position:absolute;
+		left:40px;
+		right:25px;
+		top:130px;
+		transition:all 2s;
+		transform:translateX(-310px)
+		}
+	.box01:hover .p2{
+		transform:translateX(0px)
+		}
+	.box01:hover img{
+		opacity:0.5;
+		}
+		
+		/********第二张图片********/
+		
+	.box02{
+		width:313px;
+		height:200px;
+		overflow:hidden;
+		position:relative;
+		}
+	.lanbo{
+		position:absolute;
+		left:40px;
+		top:50px;
+		transition:all 1.5s;
+		transition-delay:0.1s;
+		transform:translateX(-100px);
+		}
+	.box02:hover .lanbo{
+		transform:translateX(0px);
+		}
+	.p3{
+		position:absolute;
+		left:40px;
+		top:90px;
+		transition:all 1.5s;
+		transition-delay:0.5s;
+		transform:translateX(-200px)
+		}
+	.box02:hover .p3{
+		transform:translateX(0px)
+		}
+	.p4{
+		position:absolute;
+		left:40px;
+		right:30px;
+		top:120px;
+		transition:all 1.5s;
+		transition-delay:1s;
+		transform:translateX(-310px)
+		}
+	.box02:hover .p4{
+		transform:translateX(0px)
+		}
+	.box02:hover img{
+		opacity:0.5;
+		}
+		
+		/********第三张图片********/
+		
+	.box03{
+		overflow:hidden;
+		position:relative;
+		}
+	.top-line{
+			width:293px;
+			height:2px;
+			position:absolute;
+			left:10px;
+			top:30px;
+			background-color:white;
+			transition:all 0.5s;
+			width:0px;
+			}
+	.box03:hover .top-line{
+		position:absolute;
+		top:30px;
+		left:10px;
+		width:293px;
+		}
+	.right-line{
+			width:2px;
+			height:160px;
+			position:absolute;
+			right:20px;
+			top:20px;
+			background-color:white;
+			transition:all 0.5s;
+			height:0px;
+			}
+	.box03:hover .right-line{
+		position:absolute;
+		top:20px;
+		right:20px;
+		height:160px;
+		}
+	.bottom-line{
+			width:293px;
+			height:2px;
+			position:absolute;
+			right:10px;
+			bottom:30px;
+			background-color:white;
+			transition:all 0.5s;
+			width:0px;
+			}
+	.box03:hover .bottom-line{
+		position:absolute;
+		bottom:30px;
+		right:10px;
+		width:293px;
+		}
+	.left-line{
+			width:2px;
+			height:160px;
+			position:absolute;
+			left:20px;
+			bottom:20px;
+			background-color:white;
+			transition:all 0.5s;
+			height:0px;
+			}
+	.box03:hover .left-line{
+		position:absolute;
+		bottom:20px;
+		right:20px;
+		height:160px;
+		}
+	.box03:hover img{
+		opacity:0.5;
+		}
+		
+		/********第四张图片********/
+		
+	.box04{
+		width:313px;
+		height:200px;
+		position:relative;
+		overflow:hidden;
+		}
+	.anni{
+		opacity:0;
+		position:absolute;
+		top:30px;
+		left:30px;
+		transition:all 1s;
+		transform:translateY(60px);
+		}
+	.box04:hover .anni{
+		transform:translateY(0px);
+		opacity:1;
+		}
+	.box04:hover img{
+		opacity:0.5;
+		}
+	.p5{
+		opacity:0;
+		position:absolute;
+		bottom:30px;
+		right:4px;
+		left:30px;
+		transition:all 1s;
+		transform:translateY(20px);
+		}
+	.box04:hover .p5{
+		transform:translateY(0px);
+		opacity:1;
+		}
+	.box04:hover .ph4{
+		animation:image 4s infinite;
+		}
+	.box05{
+		width:800px;
+		height:200px;
+		position:absolute;
+		left:-400px;
+		bottom:-215px;
+		transition:all 3s;
+		background-color:blue;
+		opacity:0.3;
+		}
+	.box04:hover .box05{
+		transform:rotate(-15deg);
+		}
+	@keyframes image{
+		0%{}
+		10%{transform:scale(1.2)}
+		}
+		
+		/********第五张图片********/
+	
+	.box06{
+		width:313px;
+		height:200px;
+		position:relative;
+		overflow:hidden;
+		}
+	.box06 .box07{
+		width:450px;
+		height:70px;
+		border:2px solid white;
+		text-align:center;
+		position:absolute;
+		right:-20px;
+		bottom:34px;
+		opacity:0;
+		transition:all 3s;
+		}
+	.box06 div p{
+		transition:all 3s;
+		color:#FFF;
+		}
+	.box06:hover .box07{
+		opacity:1;
+		transform:rotate(-38deg) translateX(100px) translateY(100px);
+		}
+	.box06:hover .p6{
+		transform:rotate(360deg);
+		}
+	.box06:hover .p7{
+		transform:rotate(-360deg);
+		}
+</style>
+</head>
+
+<body>
+	<div class="box">
+    	<div class="box01">
+        	<img class="ph1" src="../images/lufei.jpg"/>
+            <h3 class="lufei">路飞</h3>
+            <p class="p1">蒙奇·D·路飞，是日本动漫《航海王》的男主角。</p>
+			<p class="p2">性格积极乐观，爱憎分明且十分重视伙伴。</p>
+        </div>
+        <div class="box02">
+        	<img class="ph2" src="../images/Rumble_Splash_3.jpg"/>
+            <h3 class="lanbo">兰博</h3>
+            <p class="p3">机械公敌</p>
+			<p class="p4">机械公敌兰博是腾讯代理的类dota竞技游戏《英雄联盟》中的角色。</p>
+        </div>
+        <div class="box03">
+        	<img class="ph3" src="../images/Sivir_Splash_4.jpg"/>
+            <i class="top-line"></i>
+            <i class="right-line"></i>
+            <i class="bottom-line"></i>
+            <i class="left-line"></i>
+        </div>
+        <div class="box04">
+        	<img class="ph4" src="../images/Annie_Splash_5.jpg"/>
+            <h3 class="anni">安妮</h3>
+            <p class="p5">黑暗之女（安妮）是竞技游戏《英雄联盟》中的一位英雄。</p>
+            <div class="box05"></div>
+        </div>
+        <div class="box06">
+        	<img class="ph5" src="../images/Diana_Splash_0.jpg"/>
+            <div class="box07">
+            	<p style="font-weight:bold" class="p6">皎月女神</p>
+                <p class="p7" style="font-size:5px">戴安娜是以法伤为主的近战型刺客英雄。</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

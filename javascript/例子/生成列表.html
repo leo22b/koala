@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+    		table{
+    			width: 400px;
+    			height: 300px;
+    			border: 1px solid gray;
+    			border-spacing: 0;
+    			border-collapse: collapse;
+    		}
+    		table td{
+    			border: 1px solid gray;
+    		}
+    	</style>
+	</head>
+	<body>
+		<input type="button" value="行"/>
+		<input type="text" id="text1"/><br />
+		<input type="button" value="列"/>
+		<input type="text" id="text2"/><br />
+		<input type="button" id="btn" value="生成列表"/>
+		<script type="text/javascript">
+			var otext1=document.getElementById('text1');
+			var otext2=document.getElementById('text2');
+			var obtn=document.getElementById('btn');
+			
+			obtn.onclick=function(){
+				var rows=Number(otext1.value);
+				var cols=Number(otext2.value);
+				var table='<table>';
+				for(var i=0;i<rows;i++){
+					table=table+'<tr>';
+					for(var j=0;j<cols;j++){
+						table=table+'<td></td>';
+					}
+					table=table+'</tr>';
+				}
+				table=table+'</table>';
+				document.body.innerHTML += table;
+			}
+			
+		</script>
+	</body>
+</html>

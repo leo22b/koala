@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	
+	<body>
+		
+		<script>
+			var arr = [9,6,3,54,21,33,76,2,38,56];
+			
+			// 冒泡排序
+//			var temp = 0;
+//			for(var i=0; i<arr.length-1; i++){	// 多少趟
+//				
+//				// i已经排序好的
+//				// 0: 表示排序好的有0   两两比较arr.length-1
+//				// 1: 表示排序好的有1   两两比较arr.length-1-1
+//				// 2: 表示排序好的有2   两两比较arr.length-1-2
+//				// i: 表示排序好的有i 两两比较arr.length-1-i
+//				
+//				// 两两比较
+//				for(var j=0; j<(arr.length-1)-i; j++){
+//					// arr[0] > arr[1]
+//					if(arr[j] > arr[j+1]){
+//						temp = arr[j];
+//						arr[j] = arr[j+1];
+//						arr[j+1] = temp;
+//					}
+//				}
+//			}
+			
+			
+			
+			
+			// 直接插入排序
+			var temp = 0;
+			// 第一个数已经排序好的，所以从1开始
+			for(var i=1; i<arr.length; i++){
+				
+				// 待排序的元素
+				temp = arr[i];
+			
+				// 拿待排序的元素 和 已经排序好的内容进行比较(从右往左)
+				// i-1这个元素开始才是已经排序好的
+				// i = 1  ==> j = 0
+				// j-- ==> j = -1   不符合条件跳出
+				for(var j=i-1; j>=0; j--){
+					if( temp > arr[j]  ){	
+						break;
+					} else {
+						arr[j+1] = arr[j];
+					}
+				}
+				
+				// 将待排序的放到对应位置
+				// j = -1
+				arr[j+1] = temp;
+			}
+			
+			
+			document.write(arr);
+		</script>
+	</body>
+</html>

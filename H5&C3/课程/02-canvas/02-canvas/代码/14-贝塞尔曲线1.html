@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background: black;
+			}
+			
+			#box {
+				background: white;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				// 获取canvas元素
+				var oBox = document.getElementById("box");
+				// 绘制环境(上下文)
+				var oGC = oBox.getContext('2d');
+				
+				// 起始点
+				oGC.beginPath();
+				oGC.arc(50, 50, 4, 0, 2*Math.PI, false);
+				oGC.fill();
+				oGC.closePath();
+				
+				// 控制点位置
+				oGC.beginPath();
+				oGC.arc(30, 220, 4, 0, 2*Math.PI, false);
+				oGC.fill();
+				oGC.closePath();
+				
+				// 结束点位置
+				oGC.beginPath();
+				oGC.arc(250, 250, 4, 0, 2*Math.PI, false);
+				oGC.fill();
+				oGC.closePath();
+				
+				
+				oGC.beginPath();
+				oGC.moveTo(50, 50);
+				// 第一组控制点、第二组结束坐标
+				oGC.quadraticCurveTo(30, 220 ,250, 250);
+				oGC.stroke();
+				oGC.closePath()
+			}
+		</script>
+
+	</head>
+
+	<body>
+
+		<canvas id="box" width="300" height="300">
+			<i>浏览器不支持canvas</i>
+		</canvas>
+
+	</body>
+
+</html>

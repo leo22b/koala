@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*.view img{
+				width: 300px;
+				height: 300px;
+			}*/
+			
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				width: 1200px;
+				height: 300px;
+				margin: 30px auto;
+			}
+			li{
+				list-style: none;
+				float: left;
+				/* 包含块*/
+				position: relative;
+			}
+			li img{
+				width: 296px;
+				height: 296px;
+				border: 2px solid gray;
+			}
+			li i{
+				/* 绝对定位*/
+				position: absolute;
+				left: 20px;
+				bottom: 20px;
+				/* 图片*/
+				display: block;
+				width: 20px;
+				height: 20px;
+				background: url(11-images/li1.png);
+				
+				/* 层级*/
+				z-index: 100;
+			}
+			li:hover i{
+				background: url(11-images/li2.png);
+			}
+			
+			
+			li div{
+				width: 300px;
+				height: 300px;
+				background: rgba(0,0,0,0.3);
+				color: white;
+				
+				position: absolute;
+				left: 0;
+				top: 0;
+				
+				/* 默认不显示*/
+				display: none;
+			}
+			li:hover div{
+				display: block;
+			}
+			
+			/*li i img{
+				width: 20px;
+				height: 20px;
+				border: 0;
+			}*/
+		</style>
+	</head>
+	
+	<body>
+		<!--<div class="view">
+			<img src="11-images/img01.jpg" />
+			<img src="11-images/img02.jpg" />
+			<img src="11-images/img03.jpg" />
+			<img src="11-images/img04.jpg" />
+			
+			<i>图1</i>
+			<i>图2</i>
+			<i>图3</i>
+			<i>图4</i>
+		</div>-->
+		
+		
+		<ul>
+			<li>
+				<img src="11-images/img01.jpg" />
+				<i></i>
+				<div>太阳高高照，我去上学校...</div>
+			</li>
+			
+			<li>
+				<img src="11-images/img02.jpg" />
+				<i></i>
+				<div>太阳高高照，我去上学校...</div>
+			</li>
+			
+			<li>
+				<img src="11-images/img03.jpg" />
+				<i></i>
+				<div>太阳高高照，我去上学校...</div>
+			</li>
+			
+			<li>
+				<img src="11-images/img04.jpg" />
+				<i></i>
+				<div>太阳高高照，我去上学校...</div>
+			</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> JD | 首页 </title>
+		<!-- 视口设置-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0 " />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="https://cdn.staticfile.org/Swiper/3.4.2/css/swiper.min.css" />
+		
+		<!--<script src="https://cdn.staticfile.org/zepto/1.0rc1/zepto.min.js"></script>-->
+		
+		<script src="https://cdn.staticfile.org/Swiper/3.4.2/js/swiper.min.js"></script>
+		<script src="js/index.js"></script>
+	</head>
+	
+	<body>
+		<!--
+			通过设置div的大小，来控制整体的大小；
+			最大值: 不能太大(图片等会失真)，设置固定值，通过margin居中
+			最小值: 不能太小，导致整体布局乱了
+		-->
+		<div id="jd_layout">
+			
+			<!-- 搜索栏 -->
+			<header class="jd_header">
+				<!-- 
+					背景图: 400*400  [112*40]
+					背景图: 200*200  [66*20]
+				-->
+				<a href="#" class="icon_logo jd_logo"></a>
+				
+				<form>
+					<!-- 图标-->
+					<i class="icon_search"></i>
+					<!-- 搜索-->
+					<input type="text" placeholder="iphone8买一送一" />
+				</form>
+				
+				<a href="#" class="jd_login">登陆</a>
+			</header>
+			
+			
+			<!-- 轮播图-->
+			<div class="jd_banner swiper-container">
+				<!-- 图片-->
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><a href="#"><img src="img/l1.jpg" alt="" /></a></div>
+					<div class="swiper-slide"><a href="#"><img src="img/l2.jpg" alt="" /></a></div>
+					<div class="swiper-slide"><a href="#"><img src="img/l3.jpg" alt="" /></a></div>
+					<div class="swiper-slide"><a href="#"><img src="img/l4.jpg" alt="" /></a></div>
+					<div class="swiper-slide"><a href="#"><img src="img/l5.jpg" alt="" /></a></div>
+					<div class="swiper-slide"><a href="#"><img src="img/l6.jpg" alt="" /></a></div>
+					<div class="swiper-slide"><a href="#"><img src="img/l7.jpg" alt="" /></a></div>
+					<div class="swiper-slide"><a href="#"><img src="img/l8.jpg" alt="" /></a></div>
+				</div>
+				
+				<!-- 下标-->
+				<div class="swiper-pagination"></div>
+			</div>
+		
+			<!-- 导航-->
+			<nav class="jd_nav">
+				<ul class="clearfix">
+					<li><a href="#">
+							<img src="img/nav1.png" alt="" />
+							<p>分类查询</p>
+						</a></li>
+					<li><a href="#">
+							<img src="img/nav2.png" alt="" />
+							<p>分类查询</p>
+						</a></li>
+					<li><a href="#">
+							<img src="img/nav3.png" alt="" />
+							<p>分类查询</p>
+						</a></li>
+					<li><a href="#">
+							<img src="img/nav4.png" alt="" />
+							<p>分类查询</p>
+						</a></li>
+					<li><a href="#">
+							<img src="img/nav5.png" alt="" />
+							<p>分类查询</p>
+						</a></li>
+					<li><a href="#">
+							<img src="img/nav6.png" alt="" />
+							<p>分类查询</p>
+						</a></li>
+					<li><a href="#">
+							<img src="img/nav7.png" alt="" />
+							<p>分类查询</p>
+						</a></li>
+					<li><a href="#">
+							<img src="img/nav0.png" alt="" />
+							<p>分类查询</p>
+						</a></li>
+				</ul>
+			</nav>
+		
+			
+			<!-- 主体商品展示-->
+			<div class="jd_shops">
+				
+				<!-- 掌上秒杀-->
+				<div class="jd_product jd_ms">
+					<div class="jd_product_title clearfix">
+						<div class="title_time f_left">
+							<i></i>
+							<h3>掌上秒杀</h3>
+							<span>0</span>
+							<span>3</span>
+							<strong>:</strong>
+							<span>3</span>
+							<span>3</span>
+							<strong>:</strong>
+							<span>0</span>
+							<span>3</span>
+						</div>
+						
+						<div class="title_more f_right">
+							<a href="#">更多 &gt; </a>
+						</div>
+					</div>
+					
+					<div class="jd_product_content">
+						<ul class="clearfix">
+							<li>
+								<a href="#">
+									<img src="img/detail01.jpg" />
+								</a>
+								<p>￥9.90</p>
+								<p>￥26.0</p>
+							</li>
+							
+							<li>
+								<a href="#">
+									<img src="img/detail02.jpg" />
+								</a>
+								<p>￥9.90</p>
+								<p>￥26.0</p>
+							</li>
+							
+							<li>
+								<a href="#">
+									<img src="img/detail01.jpg" />
+								</a>
+								<p>￥9.90</p>
+								<p>￥26.0</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+				<!-- 超值购 -->
+				<div class="jd_product clearfix">
+					<h3>
+						<i></i>
+						超值购
+					</h3>
+					
+					<a href="#" class="w_50 f_left">
+						<img src="img/cp1.jpg" />
+					</a>
+					<a href="#" class="w_50 f_right b_bottom">
+						<img src="img/cp2.jpg" />
+					</a>
+					<a href="#" class="w_50 f_right">
+						<img src="img/cp3.jpg" />
+					</a>
+				</div>
+				
+				<!-- 热门活动-->
+				<div class="jd_product">
+					<h3>
+						<i></i>
+						热门活动
+					</h3>
+					
+					<a href="#" class="w_50 f_left b_right">
+						<img src="img/cp1.jpg" />
+					</a>
+					<a href="#" class="w_50 f_right">
+						<img src="img/cp1.jpg" />
+					</a>
+				</div>
+				
+				
+				<!-- 有利可图 -->
+				<div class="jd_product">
+					<h3>
+						<i></i>
+						有利可图
+					</h3>
+					
+					<a href="#" class="w_50 f_left">
+						<img src="img/cp4.jpg" />
+					</a>
+					<a href="#" class="w_50 f_right b_bottom">
+						<img src="img/cp5.jpg" />
+					</a>
+					<a href="#" class="w_50 f_right">
+						<img src="img/cp6.jpg" />
+					</a>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

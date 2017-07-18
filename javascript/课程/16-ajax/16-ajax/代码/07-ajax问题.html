@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="ajax.js"></script>
+		<script type="text/javascript">
+			document.onclick = function(){
+				// 每次获取到的数据都不是最新的，问题来源，是由于浏览器的cache，因为每次获取网络数据的url都是一致的，浏览器会认为需要获取的数据是一样的，也即是说没必要重新再从服务器中获取，而直接从cache中获取；
+				// 如果想要每次都是获取到服务器中最新的信息，让url每次都不一样即可
+				// 通过拼接一个随机数，或拼接一个时间戳
+//				ajax('get', 'http://127.0.0.1/dataSource/JSON1.json?'+Math.random(), '', function(response){
+//					console.log(response);
+//				});
+				var nowTime = new Date();
+				ajax('get', 'http://127.0.0.1/dataSource/JSON1.json?'+nowTime.getTime(), '', function(response){
+					console.log(response);
+				});
+			}
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

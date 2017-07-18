@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+		<script>
+			
+			// 方式一
+			// document.write( '<h1>Hello</h1>' );
+			// document.write('<ul> <li>北京</li><li>上海</li> </ul>');
+			
+			var bj = '我爱北京天安门';
+			var sh = '上海';
+			var gz = '广州';
+			var sz = '深圳';
+			
+//			console.log('北京天安门');
+//			document.write('北京天安门');
+//			alert('北京天安门');
+			
+			// 定义变量citys
+			var citys = '<ul style="border:1px solid gray;">';
+			// 在原有基础上，拼接上新的内容
+			citys = citys + '<li>' + bj + '</li>'; 
+			citys = citys + '<li>' + sh + '</li>';
+			citys = citys + '<li>' + gz + '</li>';
+			citys = citys + '<li>' + sz + '</li>';
+			citys = citys + '</ul>';
+
+			
+			// 对比
+			var i = 1;
+			// i = i + 1;
+			i += 1;	 // 简写 i = i + 1;
+			alert(i);
+			
+			document.write(citys);
+			
+		</script>
+		
+	</head>
+	
+	<body>
+		<!--<ul>
+			<li>北京</li>
+			<li>北京</li>
+		</ul>-->
+	</body>
+</html>

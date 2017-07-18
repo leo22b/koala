@@ -1,0 +1,117 @@
+/* 公共样式*/
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { 
+	margin:0; padding:0; 
+} 
+body{
+	font-size: 13px;
+	color: black;
+	font-family: "微软雅黑","宋体";
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #88888a;
+}
+img{
+	border: 0;
+	display: block;
+}
+i,em{
+	font-style: normal;
+}
+b,strong{
+	font-weight: normal;
+}
+
+/* 高度坍塌*/
+.clearfix:after{
+	content: '.';
+	display: block;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden;
+	height: 0;
+}
+
+
+/*************** 头部************/
+#header{
+	width: 100%;
+}
+#header .header-cont{
+	width: 1141px;
+	height: 103px;
+	margin: 0 auto;
+}
+#header .header-cont .logo{
+	width: 400px;
+	height: 103px;
+	/*background: paleturquoise;*/
+	float: left;
+	padding-top: 22px;
+	height: 81px;
+}
+#header .header-cont .logo a{
+	float: left;
+}
+#header .header-cont .logo .key{
+	width: 114px;
+	height: 60px;
+	background: url(../img/line1.png) no-repeat left center;
+	float: right;
+}
+#header .header-cont .logo .key p{
+	font-style: italic;
+	text-align: right;
+	padding-top: 10px;
+	line-height: 1;
+	color: #88888a;
+}
+
+#header .header-cont .nav{
+	width: 620px;
+	height: 72px;
+	/*background: purple;*/
+	float: right;
+	padding-top: 31px;
+}
+#header .header-cont .nav ul{
+	float: right;
+}
+#header .header-cont .nav li{
+	float: left;
+}
+/* 默认时*/
+#header .header-cont .nav a{
+	display: block;
+	width: 88px;
+	height: 72px;
+	line-height: 72px;
+	color: black;
+	text-align: center;
+}
+/* 选中时*/
+#header .header-cont .nav .active a{
+	background: url(../img/navBg.png) no-repeat;
+	color: white;
+}
+
+
+/*************** 尾部************/
+#footer{
+	width: 100%;
+	/*height: 138px;*/
+	height: 110px;
+	text-align: center;
+	background: black;
+	color: #88888a;
+	padding-top: 28px;
+}
+#footer p{
+	line-height: 28px;
+}
+#footer a{
+	margin: 0 5px;
+}

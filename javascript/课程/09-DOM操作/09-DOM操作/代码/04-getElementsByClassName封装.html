@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="zyz.js"></script>
+		<script>
+			$(function() {
+				// 并没有兼容性问题
+				// document.getElementById()
+				// document.getElementsByTagName()
+
+				// IE 9+
+				// document.getElementsByClassName();
+				
+				// 系统的
+//				var aList = document.getElementsByClassName('section');
+//				for(var i=0; i<aList.length; i++){
+//					aList[i].style.color = 'red';
+//				}
+
+
+				// 自己封装的
+				var aList = getElementByClassName(document, 'section', 'li');
+				for(var i=0; i<aList.length; i++){
+					aList[i].style.color = 'red';
+				}
+				
+				
+				
+				// 封装(将所有元素获取到，判断className是否符合)
+				/*
+				 * object: 要获取该元素中的子元素
+				 * className: 元素名的class名
+				 * tagName： 标签名
+				 */
+				function getElementByClassName(object, className, tagName){
+					// getElementsByTagName是没有兼容性问题
+					var aEle = object.getElementsByTagName(tagName);
+					var arr = [];//定义空数组
+					
+					// 遍历元素
+					for(var i=0; i<aEle.length; i++){
+						// class="section section1"
+//						if(aEle[i].className == className){
+//							// 符合的元素保存
+//							arr.push(aEle[i]);
+//						}
+
+						
+						// class="section section3 center"
+						// className属性对应的属性值: "section section3 center"
+						// className中名字之间肯定是空格隔开的
+						// 将字符串，以空格拆分 -- 数组
+						var names = aEle[i].className.split(' ');
+						
+						// 遍历元素中的className
+						for(var j=0; j<names.length; j++){
+							if(names[j] == className){
+								arr.push(aEle[i]);
+								
+								break;
+							}
+						}
+					}
+					
+					return arr;
+				}
+			});
+		</script>
+	</head>
+
+	<body>
+
+		<ul>
+			<li class="section section1 section section">1、你好</li>
+			<li class="section section2">2、你好</li>
+			<li class="section section3 center">3、你好</li>
+			<li class="clearfix section">4、你好</li>
+			<li class="section4">5、你好</li>
+			<li class="section6">6、你好</li>
+		</ul>
+
+	</body>
+
+</html>

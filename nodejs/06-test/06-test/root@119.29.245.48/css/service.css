@@ -1,0 +1,16 @@
+#main .main-content{
+	padding: 50px 0;
+	
+	/* 最小高度为100*/
+	/*height: 100px;
+	_height: 100px*/
+	
+	
+	min-height: 100px;
+	height: auto!important;
+	height: 100px;
+}
+
+#main .main-content p{
+	margin-bottom: 30px;
+}

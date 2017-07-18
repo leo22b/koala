@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<!-- 1~10按钮 -->
+		<!--<input type="button" value="按钮1" />-->
+		
+		<script>
+			
+			// 序号
+			var i = 1;
+			
+			// while循环
+			/*
+			 * while(条件){
+			 * 		// 满足条件的才会执行
+			 * }
+			 * 
+			 * 
+			 *  1 <= 10	log(1)  i=2
+			 *  2 <= 10  log(2)	i=3
+			 *  3 <= 10  log(3)  i=4
+			 * 	.....
+			 * 	9 <= 10  log(9)	i=10
+			 *  10 <= 10	   log(10)  i=11
+			 *  11 <= 10  结束循环
+			 */
+			while(i <= 10){
+				document.write('<input type="button" value="按钮' + i + '" />');
+				
+				console.log(i);
+				i++;
+			}	// 什么时候结束？ 不符合条件
+			
+			console.log('我什么时候输出?');
+			
+		</script>
+	</body>
+</html>

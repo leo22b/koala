@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		
+		<script>
+			// 无参数
+//			function sayHello(){
+//				
+//			}
+			// 函数调用
+//			sayHello();
+
+			
+			// 参数name(就是一个变量)
+			// var name;
+			function sayHello(name){
+				document.writeln('hello,' +  name);
+			}
+			
+			// 函数调用
+			sayHello('李明');
+			document.writeln('<br />');
+			
+			
+			// 输出n~m
+			// 多个参数，参数之间用逗号隔开
+//			function printLine(1, 10){
+//				for(var i=1; i<=10; i++){
+//					
+//				}
+//			}
+			function printLine(n, m){
+				for(var i=n; i<=m; i++){
+					document.writeln(i);
+				}
+				document.writeln('<br />');
+			}
+			
+			// 函数调用(调用多个参数，与之对应即可)
+			printLine(10, 20);
+			printLine(5, 30);
+			printLine(2,8);
+			printLine(12, 23, 10, 20, 30,122);
+		</script>
+		
+	</body>
+</html>

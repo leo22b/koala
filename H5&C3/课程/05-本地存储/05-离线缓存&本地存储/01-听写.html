@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+</head>
+
+<body>
+<h2>1、javascript的同源策略 </h2>
+一段脚本只能读取来自于同一来源的窗口和文档的属性，这里的同一来源指的是主机名、协议和端口号的组合 <br/>
+http,ftp:协议<br/>
+主机名；localhost<br/>
+端口名：80:http协议的默认端口<br/>
+https:默认端口是8083<br/>
+同源策略带来的麻烦：ajax在不同域名下的请求无法实现，如果说想要请求其他来源的js文件，或者json数据，那么可以通过jsonp来解决<br/>
+
+
+<h2>2、希望获取到页面中所有的checkbox怎么做？(不适用第三方框架)</h2>
+    var domList = document.getElementsByTagName(‘input’)<br/>
+    var checkBoxList = [];//返回的所有的checkbox<br/>
+    var len = domList.length;　　//缓存到局部变量<br/>
+    while (len--) {　　//使用while的效率会比for循环更高<br/>
+　　  if (domList[len].type == ‘checkbox’) {<br/>
+    　　  checkBoxList.push(domList[len]);<br/>
+　　  }<br/>
+    }<br/>
+
+<h2>3、用js实现随机选取10–100之间的10个数字，存入一个数组，并排序。</h2>
+    var iArray = []; <br/>
+    funtion getRandom(istart, iend){    <br/>
+        var iChoice = istart - iend +1; <br/>
+        return Math.floor(Math.random() * iChoice + istart;<br/>
+    }   <br/>
+    Math.random()就是获取0-1之间的随机数（永远获取不到1）<br/>
+    for(var i=0; i<10; i++){<br/>
+    var result= getRandom(10,100);<br/>
+        iArray.push(result);<br/>
+    }<br/>
+    iArray.sort(function(a, b){
+    		return a - b;
+    });<br/>
+
+
+
+</body>
+</html>

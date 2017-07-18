@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <!-- 
+        案例8: 对应打印出下列图案2
+        (需要输出5行)
+                    *  第1行，1个*，还有4个*补齐     
+                  * *　 第2行，2个*，还有3个*补齐     
+                * * *   第3行，3个*，还有2个*补齐                   
+              * * * *    第4行，4个*，还有1个*补齐                          
+            * * * * *     第5行，5个*，还有0个*补齐  
+
+
+
+            第n行，输出n个*，还有5-n个*               
+     -->
+    <script type="text/javascript">
+        for(var i=1; i<=20; i++){ // 控制行
+            // 输出10-i空格
+            // document.write('&nbsp;');
+            for(var k=0; k<20-i; k++){
+                document.write('^');
+            }
+
+
+            // 一行输出一个*
+            // document.write('*');
+
+            // 第i行，输出i个*
+            for(var j=0; j<i; j++){
+                document.write('*');
+            }
+
+
+            document.write('<br/>');
+        }
+    </script>
+</body>
+</html>

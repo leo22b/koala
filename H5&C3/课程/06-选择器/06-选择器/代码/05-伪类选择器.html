@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 300px;
+				height: 150px;
+				color: white;
+				display: none;
+			}
+			#view1{
+				background: red;
+			}
+			#view2{
+				background: blue;
+			}
+			#view3{
+				background: purple;
+			}
+			
+			/* #view3*/
+			div:target{
+				display: block;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<a href="#view1">view1</a>
+		<a href="#view2">view2</a>
+		<a href="#view3">view3</a>
+		
+		<div id="view1">view1</div>
+		<div id="view2">view2</div>
+		<div id="view3">view3</div>
+	</body>
+</html>

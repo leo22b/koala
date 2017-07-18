@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script>
+			
+			$(function(){
+				
+				// jQuery对象
+				// var $box = $('#box');
+				// dom对象
+				// var oBox = $box.get(0); 
+				
+				var oBox = document.getElementById("box");
+				var $box = $(oBox);
+				$box.css('background', 'blue');
+				
+				//alert($box);
+				
+				
+			});
+		</script>
+	</head>
+	
+	
+	<body>
+		<div id="box"></div>
+	</body>
+</html>

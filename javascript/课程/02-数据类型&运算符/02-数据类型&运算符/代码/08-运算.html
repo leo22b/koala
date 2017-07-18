@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<input type="text" id="text1" />
+		<select id="select">
+			<option>+</option>
+			<option>-</option>
+			<option>*</option>
+			<option>/</option>
+			<option>%</option>
+		</select>
+		<input type="text" id="text2" />
+		<input type="button"  value="=" id="bt" />
+		<span id="value">2</span>
+		
+		<script>
+			// 获取到对应元素
+			var oText1 = document.getElementById('text1');
+			var oText2 = document.getElementById('text2');
+			var oSelect = document.getElementById('select');
+			var oBt = document.getElementById('bt');
+			var oValue = document.getElementById('value');
+			
+			
+			oBt.onclick = function(){
+				var a = Number(oText1.value);
+				var b = Number(oText2.value);
+				var c = 0;	// 计算结果
+				
+				// 判断是什么运算
+//				if(oSelect.value == '+'){	// 加法
+//					
+//				}
+//				
+//				if(oSelect.value == '-'){	// 减法
+//					
+//				}
+//				
+//				if(oSelect.value == '*'){	// 乘法
+//					
+//				}
+//				
+//				if(oSelect.value == '/'){	// 除法
+//					
+//				}
+//				
+//				if(oSelect.value == '%'){	// 取余
+//					
+//				}
+				
+//				console.log(1);
+
+
+				if(oSelect.value == '+'){	// 加法
+					c = a + b;
+				}
+				else if(oSelect.value == '-'){	// 减法
+					c = a - b;
+				}
+				else if(oSelect.value == '*'){	// 乘法
+					c = a * b;
+				}
+				else if(oSelect.value == '/'){	// 除法
+					c = a / b;
+				}
+				else {	// 取余
+					c = a % b;
+				}
+				console.log(1);
+				
+				
+				// 显示到界面中
+				oValue.innerHTML = c;
+			}
+		</script>
+	</body>
+</html>

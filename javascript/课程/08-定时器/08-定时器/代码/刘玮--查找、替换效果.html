@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			.ser1{
+				width:200px;
+				height:30px;
+				margin-bottom: 5px;
+				font-size: 15px;
+			}
+			.ser2{
+				width:40px;
+				height:34px;
+			}
+			i{
+				background: blue;
+				font-style: normal;
+				color:white;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id='box1'>
+			<input class="ser1" type="text" placeholder="请输入需要查找的内容"/>
+			<input class="ser2" type="button" value="查找" />
+		</div>
+		<div id='box2'>
+			<input class="ser1" type="text" placeholder="请输入需要替换的内容"/>
+			<input class="ser2" type="button" value="替换" />
+		</div>
+		<p class="text">每天一句：在你想要放弃的那一刻，想想为什么当初走到了这里 —— 科比每天一句：在你想要放弃的那一刻，想想为什么当初走到了这里 —— 科比每天一句：在你想要放弃的那一刻，想想为什么当初走到了这里 —— 科比每天一句：在你想要放弃的那一刻，想想为什么当初走到了这里 —— 科比每天一句：在你想要放弃的那一刻，想想为什么当初走到了这里 —— 科比每天一句：在你想要放弃的那一刻，想想为什么当初走到了这里 —— 科比每天一句：在你想要放弃的那一刻，想想为什么当初走到了这里 —— 科比每天一句：在你想要放弃的那一刻，想想为什么当初走到了这里 —— 科比</p>
+		
+		
+	    <script>
+	    	//获取元素
+	    	var oText1=document.getElementsByTagName('input')[0];
+	    	var oText2=document.getElementsByTagName('input')[2];
+	    	var oBt1=document.getElementsByTagName('input')[1];
+	    	var oBt2=document.getElementsByTagName('input')[3];
+	    	var otext=document.getElementsByTagName('p')[0];
+	    	
+	    	var temp=0;
+	    	//获取p标签的内容
+	    	var str = otext.innerHTML;
+	    	
+	    	
+	    	//获取替换内容
+	    	var value2=oText2.value;
+	    	
+	    	//点击查找事件
+	    	oBt1.onclick=function(){
+	    		//获取查找内容
+	    		var value1=oText1.value;
+	    		var addvalue=0;
+	    		var later=0;
+	    		var startvalue=0;
+	    		otext.innerHTML=str;
+	    		while(otext.innerHTML.indexOf(value1,startvalue) != -1){//判断查找内容是否有效；
+	    			
+	    		temp=otext.innerHTML.split('');
+	    		addvalue=otext.innerHTML.indexOf(value1,startvalue);    //得到相同内容下标
+	    		temp.splice(addvalue,0,'<i>');               //在相同内容下标字符串前添加<i>
+	    		later = addvalue + value1.length+1;           //因为加了<i>，所以要加1
+	    		temp.splice(later,0,'</i>');                  //在相同内容下标字符串后添加</i>
+	    		
+	    		startvalue=later+2;                       //更新起始查找位置
+	    		otext.innerHTML=temp.join('');               //合成字符串
+	    	    }
+	    		
+	    	}
+	    	//点击替换事件
+	    	oBt2.onclick=function(){
+	    		//获取查找内容
+	    		var value1=oText1.value;
+	    		var value2=oText2.value;
+	    		var addvalue=0;
+	    		var later=0;
+	    		var startvalue=0;
+	    		otext.innerHTML=str;
+	    		while(otext.innerHTML.indexOf(value1,startvalue) != -1){//判断查找内容是否有效；
+	    			
+	    		temp=otext.innerHTML.split('');
+	    		addvalue=otext.innerHTML.indexOf(value1,startvalue);    //得到相同内容下标
+	    		temp.splice(addvalue,value1.length,value2);               //在相同内容下标字符串删除并添加value2
+	    		later = addvalue - value1.length+value2.split('').length;           //加了value2，减去value1
+	    		startvalue=later;                       //更新起始查找位置
+	    		otext.innerHTML=temp.join('');               //合成字符串
+	    	    }
+	    	}
+	    	
+	    	
+	    </script>
+	</body>
+</html>

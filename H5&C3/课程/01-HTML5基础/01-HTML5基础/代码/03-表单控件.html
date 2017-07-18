@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			window.onload = function(){
+				var oRange = document.getElementById("range");
+				var oContent = document.getElementById("content")
+				
+				// 值的改变
+				oRange.onchange = function(){
+					oContent.innerHTML = this.value;
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<form>
+			<label>
+				email: <input type="email" />
+			</label>
+			<br />
+			
+			<label>
+				tel: <input type="tel" />
+			</label>
+			<br />
+			
+			<label>
+				url: <input type="url" />
+			</label>
+			<br />
+			
+			<label>
+				search: <input type="search" />
+			</label>
+			<br />
+			
+			<label>
+				<!-- step: 步进值-->
+				range: <input type="range" max="100" min="0" step="5" id="range" />
+			</label>
+			<br />
+			
+			<label>
+				number: <input type="number" />
+			</label>
+			<br />
+			
+			<label>
+				color: <input type="color" />
+			</label>
+			<br />
+			
+			<label>
+				date: <input type="date" />
+			</label>
+			<br />
+			
+			<label>
+				time: <input type="time" />
+			</label>
+			<br />
+			
+			<br />
+			<input type="submit" />
+		</form>
+		
+		<p id="content"></p>
+	</body>
+</html>

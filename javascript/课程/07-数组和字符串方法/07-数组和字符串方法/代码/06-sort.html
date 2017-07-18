@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	
+	<body>
+	
+		<script type="text/javascript">
+			var arr = [32,4,3,65,54,2,778,64,6];
+			
+			// 默认是以字符串形式排序
+			// 字符串如何排序比较？ 首字母
+			// arr.sort();
+			
+			// 是可以传递参数的，比较的函数
+			arr.sort(function(a, b){
+				// return a - b;	// 从小到大
+				return b - a;	// 从大到小
+			});
+			
+			// document.write(arr);
+			
+			
+			var tempArr = ['300px', '50px', '30px', '70px', '400px', '62px'];
+			tempArr.sort(function(x, y){
+				return parseInt(x) - parseInt(y); 
+			});
+			
+			document.write(tempArr);
+		</script>
+	</body>
+</html>

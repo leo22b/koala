@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.view{
+				/* w:100 */
+				/* h:100 */
+				width: 100px;
+				height: 100px;
+			}
+			.view1{
+				background: red;
+			}
+		</style>
+	</head>
+	
+	<body>
+	
+		<li>
+			<a href="#"></a>
+		</li>
+
+		<!-- 
+			'>'语法:  div>ul>li>a
+		 -->
+		<div>
+			<ul>
+				<li><a href=""></a></li>
+			</ul>
+		</div>
+		
+		<!-- 
+			'+'语法: div>ul>li>a+span 
+		-->
+		<div>
+			<ul>
+				<li>
+					<a href=""></a>
+					<span></span>
+				</li>
+			</ul>
+		</div>
+		
+		<!-- 
+			'*'语法: div>ul>li*6>a+span
+		-->
+		<div>
+			<ul>
+				<li><a href=""></a><span></span></li>
+				<li><a href=""></a><span></span></li>
+				<li><a href=""></a><span></span></li>
+				<li><a href=""></a><span></span></li>
+				<li><a href=""></a><span></span></li>
+				<li><a href=""></a><span></span></li>
+			</ul>
+		</div>
+		
+		
+		<!-- 5*6： 每行有6个单元格，有5行 -->
+		<!-- table>tr*5>td*6 -->
+		
+		
+		<!-- 需要合并某行某列: 每个td都有序号-->
+		<!--
+			'{}'语法: table>tr*3>td{1}*3
+		-->
+		
+		
+		<!--
+			'$'语法: table>tr*3>td{$}*3
+		-->
+		
+		
+		
+		<!--
+			'[]'语法: ul>li*6>a[href="www.baidu.com"]{$}
+		-->
+		<!-- href='#'  属性名=属性值 -->
+		<!--<a href="#"></a>-->
+		
+		
+		
+		<!-- box下面有6个div，宽高一致，但颜色是不一样的-->
+		<!--<div id="box">
+			<div class="view1"></div>
+			<div class="view2"></div>
+			<div class="view3"></div>
+			<div class="view4"></div>
+			<div class="view5"></div>
+			<div class="view6"></div>
+		</div>-->
+		
+		<!-- div[id="box"]>div*6 -->
+		<!-- div#box>div*6 -->
+		<!-- div#box>div.view*6 -->
+		<!-- div#box>div.view$*6 -->
+		<!-- div#box>div.view.view$*6 -->
+		<div id="box">
+			<div class="view view1"></div>
+			<div class="view view2"></div>
+			<div class="view view3"></div>
+			<div class="view view4"></div>
+			<div class="view view5"></div>
+			<div class="view view6"></div>
+		</div>
+	</body>
+</html>

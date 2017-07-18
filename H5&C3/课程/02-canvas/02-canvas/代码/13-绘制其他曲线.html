@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background: black;
+			}
+			
+			#box {
+				background: white;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				// 获取canvas元素
+				var oBox = document.getElementById("box");
+				// 绘制环境(上下文)
+				var oGC = oBox.getContext('2d');
+				
+				
+				oGC.beginPath();
+				oGC.moveTo(50, 50);
+				oGC.lineTo(50, 250);
+				oGC.strokeStyle = 'red';
+				oGC.stroke();
+				oGC.closePath();
+				
+				oGC.beginPath();
+				oGC.moveTo(50, 250);
+				oGC.lineTo(250, 250);
+				oGC.strokeStyle = 'red';
+				oGC.stroke();
+				oGC.closePath();
+				
+				
+				oGC.beginPath();
+				oGC.moveTo(50, 50);	// 起始点
+				// 第一组坐标、第二组坐标、半径
+				oGC.arcTo(50, 250, 250, 250, 200);
+				oGC.strokeStyle = 'black';
+				oGC.stroke();
+				oGC.closePath();
+			}
+		</script>
+
+	</head>
+
+	<body>
+
+		<canvas id="box" width="300" height="300">
+			<i>浏览器不支持canvas</i>
+		</canvas>
+
+	</body>
+
+</html>

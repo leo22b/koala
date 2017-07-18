@@ -1,0 +1,64 @@
+#main{
+	width: 100%;
+}
+#main .bigbox{
+	width: 977px;
+	margin: 72px auto 0;
+}
+#main .bigbox .box-l{
+	width: 236px;
+	height: 450px;
+	float: left;
+}
+#main .bigbox .box-l h3{
+	font-size: 20px;
+	line-height: 30px;
+	color: green;
+}
+#main .bigbox .box-l h4{
+	font-size: 25px;
+	height: 55px;
+	color: green;
+}
+#main .bigbox .box-l .p1{
+	width: 175px;
+	border-bottom:1px solid gray;
+	line-height: 28px;
+	color: black;
+}
+#main .bigbox .box-l p{
+	color: green;
+	line-height: 22px;
+}
+#main .bigbox .box-l .p3{
+	border-bottom: 1px dashed gray;
+	width: 192px;
+}
+#main .bigbox .box-l .first{
+	margin-top: 30px;
+}#main .bigbox .box-l .last{
+	border: none;
+}
+
+#main .bigbox .box-r{
+	width: 740px;
+	height: 450px;
+	float: right;
+}
+#main .bigbox .box-r h3{
+	width: 698px;
+	height: 35px;
+	line-height: 35px;
+	background: #ccc;
+	padding-left: 42px;
+}
+#main .bigbox .box-r li{
+	border-bottom: 1px dashed gray;
+	line-height: 30px;
+}
+#main .bigbox .box-r span{
+	float: right;
+}
+#main .bigbox .box-r b{
+	color: #c36f7c;
+}

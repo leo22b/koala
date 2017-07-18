@@ -1,0 +1,23 @@
+<div style="width:300px;height:300px;border:1px solid green">
+     <h1>商品展示</h1>
+     
+   
+	   
+	<!--   <a ui-sref="items.others({username:'rose'})">show test</a> -->
+	
+	
+		
+     <table border="1">
+       <tr><td>商品名</td><td>操作</td></tr>
+       <tr ng-repeat="x in goodsname">
+            
+             <td>{{x.name}}</td>
+            
+             <td><a ui-sref="items.{{x.name}}({username:'{{x.name}}'})">详情</a></td>
+
+         </tr>
+     </table>
+
+	        <div ui-view ></div>
+	      
+</div>

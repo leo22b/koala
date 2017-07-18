@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<h3>张三 www.a.com</h3>
+		<input type="button" id="bt1" value="子页面背景" />
+		<input type="button" id="bt2" value="打开新页面" />
+		
+		
+		<script type="text/javascript">
+			var oBt1 = document.querySelector("#bt1");
+			var oBt2 = document.querySelector("#bt2");
+			var openW = null;
+			
+			oBt1.onclick = function(){
+				openW.postMessage({'changeBg':'red'}, 'http://www.b.com');
+			}
+			
+			oBt2.onclick = function(){
+				openW = window.open('http://www.b.com/HTML5/b/02-lisi.html', '_blank');
+			}
+			
+			
+			window.addEventListener('message', function(ev){
+				ev = ev || window.event;
+				document.body.style.background = ev.data['changeBg'];
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		
+		<script>
+			// name即是函数参数 【不需要写成var name】
+			function sayHello(name){
+				alert(name + ',吃饭没啊？');
+			}
+			
+			// 函数调用 --- 带参数
+			// sayHello('张三');
+			
+			
+			
+			// 多个参数时，参数之间用逗号隔开
+			// 参数一name: 名字
+			// 参数二str: 要说的话
+			function speak(name, str){
+				alert( name + ':“' + str + '”。' );
+			}
+			
+			// 函数调用 -- 多个参数
+			speak('张三', '吃饭没啊？');
+			speak('李四', '还没呢，准备去哪里吃，吃什么?');
+			
+			
+			// 定义变量
+			// var a = 10;
+			// 使用变量
+			// a += 3;
+		</script>
+	</body>
+</html>

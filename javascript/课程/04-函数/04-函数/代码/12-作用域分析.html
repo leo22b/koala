@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<script>
+			/*
+			 a、预解析(代码还没执行)  检查一下有什么变量、有什么函数
+			 	var a;
+			 	fn1 = function(){ alert(a); a = 2; }
+			 
+			 b、逐行解析(真正运行)
+			 	a = 1;
+			 	
+			 	fn1() 函数调用  【函数也是一个作用域，即也会有预解析、逐行解析的过程】
+			 		- 预解析
+			 			无任何操作
+			 		- 逐行解析
+			 			alert(a);	// 输出1
+			 			a = 2;
+			 	
+			 	alert(a);	// 输出2	
+			 */
+			var a = 1;
+			function fn1() {
+				alert(a);	// 1 
+				a = 2;
+			}
+			
+			fn1();
+			alert(a);		// 1
+		</script>
+	</body>
+
+</html>

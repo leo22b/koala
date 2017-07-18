@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			/* 1、类型选择符*/
+			body{
+				/* 统一字体大小*/
+				font-size: 13px;
+			}
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+			
+			/* 2、类别选择符(class选择器)*/
+			.div1{
+				background: purple;
+			}
+			
+			/* 3、id选择器(唯一)*/
+			#box{
+				width: 200px;
+				height: 200px;
+				background: paleturquoise;
+			}
+			
+			/* 4、包含选择符(后代选择器)*/
+			.title{
+				color: red;
+			}
+			.div2{
+				width: 200px;
+				background: blue;
+			}
+			.div2 .title{
+				color: white;
+				text-align: center;
+			}
+			
+			
+			
+			/* 5、群组选择符（集合选择器）*/
+			/*.p1{
+				width: 100px;
+				height: 30px;
+				background: red;
+			}
+			.p2{
+				width: 100px;
+				height: 30px;
+				background: pink;
+			}
+			.p3{
+				width: 100px;
+				height: 30px;
+				background: blueviolet;
+			}*/
+			.p1,.p2,.p3{
+				width: 100px;
+				height: 30px;
+			}
+			.p1{background: red;}
+			.p2{background: pink;}
+			.p3{background: midnightblue;}
+			
+			
+			/* 6、伪类选择符(顺序)
+			 * 
+			 */
+			a:link{
+				color: black;
+			}
+			a:visited{
+				color: blue;
+			}
+			a:hover{
+				color: red;
+			}
+			a:active{
+				color: blueviolet;
+			}
+			
+			
+			/* 7、通配符*/
+			*{
+				
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div></div>
+		
+		<br />
+		<!-- 背景颜色为紫色-->
+		<div class="div1"></div>
+		
+		<br />
+		<div class="div1"></div>
+		
+		<br />
+		<div id="box"></div>
+		
+		
+		<p class="title"> 程序猿教育 </p>
+		
+		
+		<div class="div2">
+			<p class="title">春晓</p>
+		</div>
+		
+		<br />
+		<p class="p1"></p>
+		<p class="p2"></p>
+		<p class="p3"></p>
+		
+		
+		<a href="#">首页</a>
+	</body>
+</html>

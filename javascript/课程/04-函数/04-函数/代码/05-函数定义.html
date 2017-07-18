@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	
+	<body>
+	
+		<input type="button" id="bt" value="按钮" />
+		<br />
+	
+		<script>
+			var oBt = document.getElementById('bt');
+		
+			// 定义变量
+			var a;
+			
+			
+			// 定义一个函数，函数名为hello 
+			// 函数是代码复用的单位  --- 函数内装的即是代码
+			function hello(){
+				document.write('hello world!');
+				document.write('<br/>');
+			}
+			
+			
+			// 函数名() : 函数调用
+			hello();
+			hello();
+			hello();
+			hello();
+			hello();
+			
+			
+			
+			// 匿名函数
+			// 变量speak，变量中装是一个函数
+			var speak =  function(){
+				document.write('哈哈....');
+				document.write('<br/>');
+			};
+			
+			// 调用匿名函数
+			speak();
+			
+			
+			
+			// 按钮点击事件
+//			oBt.onclick = function(){
+//				alert(1);
+//			}
+
+			// 将整个函数赋值
+			oBt.onclick = speak;
+			
+			// speak()函数调用，并不是将函数赋值给oBt.onclick
+//			oBt.onclick = speak();
+		</script>
+	</body>
+</html>

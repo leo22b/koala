@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 300px;
+				border: 1px solid black;
+			}
+			#box a{
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="box">
+			<p>
+				每天一句：在你想要放弃的那一刻，想想为什么当初走到了这里 —— 科比;
+				每天一句：在你想要放弃的那一刻，想想为什么当初走到了这里 —— 科比;
+				每天一句：在你想要放弃的那一刻，想想为什么当初走到了这里 —— 科比;
+			</p>
+			<a href="#">收起</a>
+		</div>
+		
+		<script>
+			var oBox = document.getElementById("box");
+			var oContent = oBox.getElementsByTagName('p')[0];
+			var oBt = oBox.getElementsByTagName('a')[0];
+			// 默认展开
+			var isShow = true;
+			// 存储需要显示的内容
+			var temp = oContent.innerHTML;
+			
+			oBt.onclick = function(){
+				isShow = !isShow;
+				
+				if(isShow){	// 全文
+					oContent.innerHTML = temp;
+					oBt.innerHTML = '收起';
+				} else {	// 收起
+					oContent.innerHTML = temp.substring(0,39) + '....';
+					oBt.innerHTML = '全文';
+				}
+			}
+		</script>
+	</body>
+</html>

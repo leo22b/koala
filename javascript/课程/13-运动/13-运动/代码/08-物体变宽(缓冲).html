@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				width: 100px;
+				height: 50px;
+				background: red;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var oBox = document.getElementById('box');
+				oBox.onmouseover = function() {
+					startMove(this, 300);
+				}
+				oBox.onmouseout = function() {
+					startMove(this, 100);
+				}
+
+				var timer = null;
+				function startMove(obj, target) {
+					// 先停止时钟
+					clearInterval(timer);
+
+					timer = setInterval(function() {
+						// 速度 = (目标值-当前值)/缩放系数
+						var speed = (target - obj.offsetWidth) / 7;
+						speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+						console.log(speed);
+
+						if(obj.offsetWidth == target) { // 停止
+							clearInterval(timer);
+						} else { // 运动
+							obj.style.width = obj.offsetWidth + speed + 'px';
+						}
+
+					}, 80);
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="box"></div>
+	</body>
+
+</html>

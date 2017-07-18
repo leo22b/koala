@@ -1,0 +1,53 @@
+#main .about{
+	width: 1140px;
+	margin: 0 auto;
+	height: 293px;
+	overflow: hidden;
+	background: url(../img/tu2.jpg) no-repeat left bottom;
+}
+#main .about .about-content{
+	margin-top: 65px;
+	width: 740px;
+	height: 220px;
+	float: right;
+	border-bottom: 1px solid gray;
+}
+#main .about .about-content p{
+	line-height: 30px;
+}
+#main .about .about-content h3{
+	height: 40px;
+	font-size: 15px;
+}
+#main .qiye{
+	width: 1140px;
+	margin: 0 auto;
+	text-align: center;
+	overflow: hidden;
+}
+#main .qiye h3{
+	line-height: 80px;
+}
+#main .qiye dl{
+	float: left;
+}
+#main .qiye .dl-center{
+	margin: 0 60px;
+}
+#main .qiye dl dd{
+	height: 100px;
+	line-height: 75px;
+}
+#main .office{
+	width: 1140px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+#main .office .office-content{
+	width: 1200px;
+	margin-bottom: 66px;
+}
+#main .office .office-content img{
+	float: left;
+	margin: 0 60px 50px 0;
+}

@@ -1,0 +1,40 @@
+/*倒计时*/
+
+.zero {
+	margin: 30px auto;
+	background: #f2f2f2;
+	width: 313px;
+	height: 30px;
+	line-height: 30px;
+}
+
+.zero em {
+	font-size: 18px;
+	font-weight: bold;
+	font-style: normal;
+}
+
+.zero i {
+	color: #999;
+	font-style: normal;
+}
+
+.zero span {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	line-height: 18px;
+	background: #333;
+	border-radius: 50%;
+	color: white;
+	text-align: center;
+}
+
+.zero a {
+	float: right;
+	line-height: 40px;
+}
+
+.zero a:hover {
+	text-decoration: underline;
+}

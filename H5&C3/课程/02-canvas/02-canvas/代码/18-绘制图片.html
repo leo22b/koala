@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background: black;
+			}
+			
+			#box {
+				background: white;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				// 获取canvas元素
+				var oBox = document.getElementById("box");
+				// 绘制环境(上下文)
+				var oGC = oBox.getContext('2d');
+				
+				var oBt = document.querySelector("#bt");
+				var num = 0;
+				
+				
+				var oImg = new Image();
+				oImg.src = './Snip20170601_51.png';
+				// 图片加载完成
+				oImg.onload = function(){
+					// 绘制到画布中
+					// (oImg, x, y, w , h)
+					oGC.drawImage(oImg, 100, 100, 70, 60);
+				}
+				
+				oBt.onclick = function(){
+					// 擦除
+					oGC.clearRect(0, 0, oBox.width, oBox.height);
+					
+					// 保存绘制状态
+					oGC.save();
+					
+					// 偏移
+					oGC.translate(135, 130);
+					
+					// 旋转
+					num++;
+					oGC.rotate(num*90*Math.PI/180);
+					console.log(num);
+					
+					// 中心点旋转
+					// 宽度/2
+					// 高度/2
+					oGC.translate(-35, -30);
+					
+					
+					// 需要设置在(100， 100)
+					// (135-35, 130-30)
+					oGC.drawImage(oImg, 0, 0, 70, 60);
+					
+					// 恢复上一次保存的绘制状态
+					oGC.restore();
+				}
+				
+				
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<img src="bt.png" id="bt" /> <br />
+		<canvas id="box" width="300" height="300">
+			<i>浏览器不支持canvas</i>
+		</canvas>
+
+	</body>
+
+</html>

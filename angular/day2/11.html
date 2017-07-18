@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<script src="lib/angular-1.3.0.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+
+显示 HTML: <input type="checkbox" ng-model="myVar">
+
+<div ng-show="myVar">
+		<h1>Welcome</h1>
+		<p>Welcome to my home.</p>
+</div>
+<hr>
+显示 HTML: <input type="checkbox" ng-model="myhide">
+<div ng-hide="myhide">
+		<h1>Welcome</h1>
+		<p>Welcome to my home.</p>
+</div>
+<hr>
+显示 HTML: <input type="checkbox" ng-model="myif">
+<div ng-if="myif">
+		<h1>Welcome</h1>
+		<p>Welcome to my home.</p>
+</div>
+
+<script>
+    var myApp=angular.module("myApp",[])
+    myApp.controller("myController",function($scope){
+
+           $scope.myVar="true"
+    })
+
+
+</script>
+</body>
+</html><!-- 
+    ng-show 指令在表达式为 true 时显示指定的 HTML 元素，否则隐藏指定的 HTML 元素。 
+    ng-hide 指令在表达式为 true 时隐藏 HTML 元素。 是 AngularJS 的预定义类，设置元素的 display 为 none。
+
+     ng-if 指令用于在表达式为 false 时移除 HTML 元素。
+
+	如果 if 语句执行的结果为 true，会添加移除元素，并显示。
+
+	ng-if 指令不同于 ng-hide， ng-hide 隐藏元素，而 ng-if 是从 DOM 中移除元素。
+
+
+
+
+
+-->

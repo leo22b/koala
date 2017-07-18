@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 300px;
+			}
+			p:first-line{
+				color: red;
+			}
+			p:first-letter{
+				font-size: 30px;
+			}
+			
+			p::selection{
+				color: blue;
+				background: yellow;
+			}
+			
+			i~i{
+				color: red;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<i>城市大大</i>
+		<p>你是谁啊 ？E~F表示E元素毗邻的F元素(即E元素之后的)E~F表示E元素毗邻的F元素(即E元素之后的)E~F表示E元素毗邻的F元素(即E元素之后的)E~F表示E元素毗邻的F元素(即E元素之后的)E~F表示E元素毗邻的F元素(即E元素之后的）
+		
+		</p>
+		<h3>测试代码</h3>
+		<span>撒大声地</span>
+		<i>城市大大</i>
+		
+		<!--first-letter此伪对象仅作用于块对象。h3 i不是块元素
+		内联对象要使用该伪对象，必须先设定对象的height或width属性，
+		或者设定position属性为absolute，
+		或者设定display属性为block。-->
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<script>
+			// 5 ~ 15  不需要输出13
+			for(var i=0; i<11; i++){	// 循环11次
+				if(i+5 == 13){
+					// 下面的document不需要执行，即跳过该次循环
+					continue;
+				} 
+				
+				document.write(i+5);
+				document.write('<br/>');
+
+
+//				if(i+5 == 13){
+//					document.write('-');
+//					document.write('<br/>');
+//				} else {
+//					document.write(i+5);
+//					document.write('<br/>');
+//				}
+			}
+			
+			document.write('<br/>');
+			document.write('<br/>');
+			
+			for(var i=0; i<11; i++){	// 循环11次
+				if(i+5 == 13){
+					// 结束该循环体!!!
+					break;
+				} 
+				
+				document.write(i+5);
+				document.write('<br/>');
+			}
+			
+			
+		</script>
+	</body>
+</html>

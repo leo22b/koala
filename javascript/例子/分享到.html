@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			#box{
+				width: 80px;
+				margin: 30px auto;
+				overflow: hidden;
+			}
+			a{
+				color: white;
+				text-decoration: none;
+				background: black;
+				display: block;
+				width:30px;
+				font-size: 24px;
+				float: left;
+				margin-top:15px;
+			}
+			ul{
+				list-style: none;
+				float: left;
+				background: red;
+				width: 50px;
+				height: 120px;
+				line-height: 30px;
+				font-size: 20px;
+				display: none;
+			}
+			ul .active{
+				background: gray;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul></ul>
+			<a href="#">分享到</a>
+		</div>
+		<script type="text/javascript">
+			var obox=document.getElementById('box');
+			var oa=obox.getElementsByTagName('a')[0];
+			var oul=obox.getElementsByTagName('ul')[0];
+			var oli=oul.getElementsByTagName('li');
+			var acontent=['微博','微信','QQ','好友'];
+			for (var i=0;i<4;i++) {
+				var ali=document.createElement('li');
+				ali.innerHTML=acontent[i];
+				oul.appendChild(ali);
+			}
+			oa.onmouseover=function(){
+				oul.style.display='block';
+			}
+			oa.onmouseout=function(){
+				oul.style.display='none';
+			}
+			oul.onmouseout=function(){
+				oul.style.display='none';
+			}
+			//方法1  遍历
+//			for (var i=0;i<oli.length;i++) {
+//				oli[i].onmouseover=function(){
+//					oul.style.display='block';
+//					for (var j=0;j<oli.length;j++) {
+//						oli[j].className='';
+//					}
+//					this.className='active';
+//				}
+//			}
+			//方法2  事件源  事件冒泡
+			var current=null;//默认样式为空
+			oul.onmouseover=function(ev){
+				oul.style.display='block';
+				ev=event||ev;
+				var self=ev.target||ev.srcElement;
+				if(self.tagName.toLowerCase()=='li'){
+					if(current!=null){
+						current.className='';
+					}
+					current=self;
+					current.className='active';			
+				}
+			}
+		</script>
+	</body>
+</html>

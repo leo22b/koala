@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 70px;
+				margin: 40px auto;
+			}
+			#bt{
+				width: 70px;
+				height: 30px;
+				line-height: 30px;
+				border: 1px solid gray;
+				text-align: center;
+				margin: 5px;
+			}
+			ul{
+				border: 1px solid gray;
+				margin: 5px;
+				width: 70px;
+				display: none;
+			}
+			ul li{
+				list-style: none;
+				text-align: center;
+				line-height: 30px;
+			}
+		</style>
+		
+		<script>
+			window.onload = function(){
+				var oBox = document.getElementById("box");
+				var oBt = document.getElementById("bt");
+				var oList = document.getElementById("list");
+				var isShow = false;
+				
+				oBt.onclick = function(ev){
+					isShow = !isShow;
+					oList.style.display = isShow ? 'block' : 'none';
+					
+					// 阻止事件冒泡
+					ev = event || ev;
+					ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
+				}
+				
+				document.onclick = function(){
+					isShow = false;
+					oList.style.display = 'none';
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="box">
+			<div id="bt">功能</div>
+			<ul id="list">
+				<li>扫一扫</li>
+				<li>瞄一瞄</li>
+				<li>看一看</li>
+			</ul>
+		</div>
+	</body>
+
+</html>

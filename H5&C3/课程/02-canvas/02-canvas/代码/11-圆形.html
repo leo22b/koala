@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background: black;
+			}
+			
+			#box {
+				background: white;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				// 获取canvas元素
+				var oBox = document.getElementById("box");
+				// 绘制环境(上下文)
+				var oGC = oBox.getContext('2d');
+					
+				// arc(x, y, 半径, 起始弧度, 结束弧度, 旋转方向);
+				// 弧度 = 角度 * Math.PI / 180;
+				// 旋转方向: false(默认，顺时针)/true(逆时针)
+				// 旋转起始点位置: 3点钟方向
+//				oGC.arc(150, 150, 100, 0, 360 * Math.PI / 180, false);
+//				oGC.stroke();
+
+
+//				oGC.arc(150, 150, 100, 0, 90 * Math.PI / 180, true);
+//				oGC.stroke();
+
+				
+				oGC.moveTo(150, 150);
+				oGC.arc(150, 150, 100, 0, 90 * Math.PI / 180, true);
+				// oGC.lineTo(150, 150);		// 方式一
+				oGC.closePath();    // 方式二(先闭合，再绘制)
+				oGC.stroke();
+			}
+		</script>
+
+	</head>
+
+	<body>
+
+		<canvas id="box" width="300" height="300">
+			<i>浏览器不支持canvas</i>
+		</canvas>
+
+	</body>
+
+</html>

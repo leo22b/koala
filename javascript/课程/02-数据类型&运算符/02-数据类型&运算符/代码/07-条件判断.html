@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		
+		<input type="text" id="text" />
+		<input type="button"  value="判断" id="bt" />
+		
+		<script>
+			// 大于18岁就是成年人，小于18岁的就是未成年
+			
+			var oText = document.getElementById('text');
+			var oBt = document.getElementById('bt');
+			
+			oBt.onclick = function(){
+				
+				// 转为Number
+				var age = Number(oText.value);
+				
+				/*
+				// 如果大于18就是成年
+				if( age > 18 ){
+					// 满足条件的才会执行
+					alert('成年');
+				}
+				
+				// 如果小于18就是未成年
+				if( age < 18 ){
+					alert('未成年');
+				}
+				*/
+				
+				
+				
+				/*
+				// 如果大于18就是成年，否则就是未成年
+				if( age > 18 ){
+					alert('成年');
+				} else {	// 否则
+					alert('未成年');
+				}
+				*/
+				
+				
+				
+				// 是否是18岁
+				// age = 18 赋值
+				// age == 18 判断
+				if(age == 18){
+					alert('我18岁了');
+				} 
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,147 @@
+{\rtf1\ansi\ansicpg936\deff0{\fonttbl{\f0\fnil\fcharset0 SimSun;}{\f1\fnil\fcharset0 Consolas;}{\f2\fnil\fcharset134 PingFangSC-Regular;}{\f3\fnil\fcharset134 \'cb\'ce\'cc\'e5;}}
+{\colortbl ;\red255\green0\blue0;\red0\green0\blue255;\red8\green8\blue8;\red60\green122\blue3;\red149\green163\blue171;\red54\green75\blue192;\red87\green121\blue9;\red62\green75\blue83;\red219\green120\blue0;\red36\green140\blue133;\red165\green120\blue0;\red155\green28\blue235;}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\cf1\lang1033\f0\fs20\u27599?\u22825?\u19968?\u21477?\u-230?\u19968?\u20010?\u20154?\u29616?\u22312?\u26576?\u19968?\u20010?\u-26490?\u22495?\u-28738?\u21040?\u26497?\u-32268?\u-244?\u24448?\u24448?\u-26880?\u-30335?\u19968?\u19975?\u23567?\u26102?\u30340?\u31215?\u32047?\u12290?\u29616?\u22312?\u30340?\u20320?\u23601?\u26159?\u-26880?\u-30335?\u21162?\u21147?\u20808?\u-29783?\u-32278?\u24049?\u25104?\u20026?\u19968?\u20010?\u-26490?\u22495?\u30340?\u-25896?\u25163?\u-244?\u28982?\u21518?\u21435?\u-31817?\u21462?\u26356?\u22909?\u30340?\u26426?\u20250?\u12290?[10\u26102?/\u22825? * 30 = 300\u26102?/\u26376? * 12 = 3600\u26102?/\u24180? * 3 = 10800\u23567?\u26102?]\cf0\par
+\par
+\par
+\cf1 DOM\u20803?\u32032?\u23610?\u23544?\u21644?\u20301?\u32622?\cf0\par
+\cf2\u19968?\u12289?\u-31817?\u21462?\u20803?\u32032?CSS\u22823?\u23567?\cf0\par
+\tab > \u-28646?\u-28729?style\u20869?\u-32684?\u-31817?\u21462?\u20803?\u32032?\u30340?\u22823?\u23567?\par
+\tab\tab\cf3\f1 oBox.\cf4 style\cf3 .width\tab\tab\cf5 // \lang2052\f2\'bf\'d5\cf3\lang1033\f1\par
+\tab\tab oBox.\cf4 style\cf3 .height\tab\tab\cf5 // \lang2052\f2\'bf\'d5\par
+\cf0\lang1033\f0\tab\tab\u27880?: style\u21482?\u-32515?\u-31817?\u21462?\u21040?\u20869?\u-32684?style\u23646?\u24615?\u30340?CSS\u20013?\u30340?\u23485?\u24230?\u21644?\u-25896?\u24230?\u-244?\u22914?\u26524?\u26377?\u21363?\u-31817?\u21462?\u21040?\u-229?\u22914?\u26524?\u27809?\u26377?\u21017?\u-28716?\u22238?\u31354?;\par
+\cf5\lang2052\f2\tab\tab\cf0\lang1033\f0\par
+\tab > \u-28646?\u-28729?\u-29791?\u31639?\u-31817?\u21462?\u20803?\u32032?\u30340?\u22823?\u23567?\tab\par
+\tab\tab\cf6\f1 var \cf3 width \cf7 = \cf4 window\cf3 .getComputedStyle \cf7 ? \cf3 getComputedStyle(oBox).width \cf8 : \cf3 oBox.currentStyle.width;\tab\tab\cf5 // width: 100px;  => 100px\cf3\par
+\tab\tab\cf6 var \cf3 height \cf7 = \cf4 window\cf3 .getComputedStyle \cf7 ? \cf3 getComputedStyle(oBox).height \cf8 : \cf3 oBox.currentStyle.height;\tab\tab\cf5 // height: 100px;  => 100px\cf0\f0\par
+\tab\tab\u27880?: \u-28646?\u-28729?\u-29791?\u31639?\u-31817?\u21462?\u20803?\u32032?\u30340?\u22823?\u23567?\u-244?\u19981?\u31649?\u26159?\u20869?\u-32684?\u12289?\u20869?\u-28440?\u12289?\u22806?\u-28440?\u26679?\u24335?\u-244?\u23427?\u-28419?\u32463?\u-28729?\u-29791?\u31639?\u21518?\u24471?\u21040?\u32467?\u26524?\u12290?\u22914?\u26524?\u26412?\u-29013?\u-29762?\u32622?\u26377?\u22823?\u23567?\u-244?\u21363?\u-28716?\u22238?\u20803?\u32032?\u30340?\u22823?\u23567?\u-229?\u22914?\u26524?\u27809?\u26377?\u-29762?\u32622?\u-244?\u-26786?IE\u20250?\u-28716?\u22238?\u-24872?\u-29788?\u22823?\u23567?\u-244?IE\u-28716?\u22238?auto;\par
+\par
+\par
+\par
+\cf2\u20108?\u12289?\u-31817?\u21462?\u20803?\u32032?\u23454?\u-27067?\u22823?\u23567?\cf0\par
+\tab > clientWidth\u21644?clientHeight \u12304?\u21487?\u-30266?\u21306?\u22495?\u22823?\u23567?: width+padding\u12305?\par
+\tab\tab\u-31817?\u21462?\u20803?\u32032?\u21487?\u-30266?\u21306?\u22495?\u30340?\u24102?\u19979?\u-244?\u21487?\u20197?\u24471?\u21040?\u20803?\u32032?\u20869?\u23481?\u20197?\u21450?\u20869?\u-28743?\u-29219?\u30340?\u31354?\u-27148?\u22823?\u23567?,\u21363?width+padding(height+padding);\par
+\tab\tab\cf3\f1 oBox.clientWidth;\tab\tab\cf5 // width: 100px;  + padding: 10px;  => 120\cf3\par
+\tab\tab oBox.clientHeight;\tab\cf5 // height: 100px;  + padding: 10px; => 120\cf0\f0\par
+\tab\tab\u27880?: \u-28716?\u22238?\u20803?\u32032?\u22823?\u23567?\u26159?\u27809?\u26377?\u21333?\u20301?\u30340?\u-244?\u-24872?\u-29788?\u21333?\u20301?\u23601?\u26159?px\par
+\par
+\tab > offsetWidth\u21644?offsetHeight \u12304?\u23454?\u-27067?\u22823?\u23567?\u21363?\u21344?\u20301?\u22823?\u23567?: width + padding + border\u12305?\par
+\tab\tab\cf3\f1 oBox.offsetWidth\tab\tab\cf5 // width: 100px;  + padding: 10px; + border: 5px;   =>  130\cf3\par
+\tab\tab oBox.offsetHeight\tab\tab\cf5 // height: 100px;  + padding: 10px; + border: 5px;  =>  130\cf0\f0\par
+\par
+\tab > scrollWidth\u21644?scrollHeight \u12304?\u28378?\u21160?\u20869?\u23481?\u22823?\u23567?\u12305?\par
+\tab\tab\cf3\f1 oBox.scrollWidth\tab\tab\cf5 // 120\cf0\f0\par
+\tab\tab\cf3\f1 oBox.scrollHeight\tab\tab\cf5 // \lang2052\f2\'b9\'f6\'b6\'af\'c4\'da\'c8\'dd\'b5\'c4\'b4\'f3\'d0\'a1\cf3\lang1033\f1\par
+\tab\tab\cf0\f0\par
+\par
+\cf2\u19977?\u12289?\u-31817?\u21462?\u20803?\u32032?\u21608?\u-28743?\u22823?\u23567?\cf0\par
+\tab > clientLeft\u21644?clientTop  \u12304?\u20803?\u32032?\u-28743?\u26694?\u22823?\u23567?\u12305?\par
+\tab\tab\cf3\f1 oBox.clientLeft\tab\tab\cf5 // border-left: 5px;  => 5\cf3\par
+\tab\tab oBox.clientTop\tab\tab\cf5 // border-top: 5px;   => 5\par
+\cf0\f0\tab\tab\u27880?: \u30446?\u21069?\u21482?\u25552?\u20379?left\u21644?top\u-244?\u22914?\u26524?\u22235?\u26465?\u-28743?\u26694?\u22823?\u23567?\u19981?\u19968?\u-244?\u21487?\u20197?\u-28646?\u-28729?\u-29791?\u31639?\u24471?\u21040?\u-229?\par
+\tab\par
+\tab > offsetLeft\u21644?offsetTop   \u12304?\u30456?\u23545?\u20110?\u29238?\u20803?\u32032?\u30340?\u20301?\u32622?\u12305?\par
+\tab\tab\cf3\f1 oBox.offsetLeft\tab\tab\cf5 // left:30  + margin-left:10  => 40\cf3\par
+\tab\tab oBox.offsetTop\tab\tab\cf5 // top:30 + margin-top:10 => 40\par
+\cf0\f0\tab\tab\u27880?: \u-31817?\u21462?\u20803?\u32032?\u24403?\u21069?\u30456?\u23545?\u20110?\u29238?\u20803?\u32032?\u30340?\u20301?\u32622?\u-244?\u26368?\u22909?\u-29762?\u32622?\u26377?\u23450?\u20301?position: absolute;\u21542?\u21017?\u19981?\u21516?\u30340?\u27983?\u-30264?\u22120?\u20250?\u26377?\u19981?\u21516?\u30340?\u-30237?\u-28214?\u-229? \u21152?\u19978?\u-28743?\u26694?\u21644?\u-28743?\u-29219?\u19981?\u20250?\u24433?\u21709?\u23427?\u30340?\u20301?\u32622?\u-244?\u20294?\u21152?\u19978?\u22806?\u-28743?\u30028?\u20250?\u32047?\u21152?;\cf5\f1\par
+\par
+\cf0\f0\par
+\par
+\par
+\cf1\u20107?\u20214?\cf0\par
+\cf2\u19968?\u12289?\u28966?\u28857?\u20107?\u20214?\cf0\par
+\tab\u28966?\u28857?\u-244?\u20351?\u27983?\u-30264?\u22120?\u-32515?\u22815?\u21306?\u20998?\u29992?\u25143?\u-28781?\u20837?\u30340?\u23545?\u-29599?\u-244?\u24403?\u20803?\u32032?\u26377?\u28966?\u28857?\u26102?\u-244?\u23601?\u21487?\u20197?\u25509?\u21463?\u29992?\u25143?\u30340?\u-28781?\u20837?\u-244?\u19981?\u26159?\u25152?\u26377?\u20803?\u32032?\u-28419?\u-32515?\u22815?\u25509?\u25910?\u28966?\u28857?\u30340?\u-244?\u-32515?\u21709?\u24212?\u29992?\u25143?\u25805?\u20316?\u30340?\u20803?\u32032?\u25165?\u26377?\u28966?\u28857?\u-229?\par
+\tab\tab\cf5\f1 // onfocus: \lang2052\f2\'b5\'b1\'d4\'aa\'cb\'d8\'bb\'f1\'c8\'a1\'bd\'b9\'b5\'e3\'ca\'b1\'b4\'a5\'b7\'a2\cf0\lang1033\f1\par
+\f0\tab\tab\cf3\f1 oText.\cf9 onfocus \cf7 = \cf6 function\cf3 ()\{\cf0\par
+\f0\tab\tab\cf3\f1\tab this.value \cf7 = \cf10 ''\cf3 ;\cf0\par
+\f0\tab\tab\cf3\f1\}\cf0\par
+\pard\cf3\tab\tab\cf0\par
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\f0\tab\tab\cf5\f1 // onblur: \lang2052\f2\'b5\'b1\'d4\'aa\'cb\'d8\'ca\'a7\'c8\'a5\'bd\'b9\'b5\'e3\'ca\'b1\'b4\'a5\'b7\'a2\cf0\lang1033\f1\par
+\f0\tab\tab\cf3\f1 oText.\cf9 onblur \cf7 = \cf6 function\cf3 ()\{\cf0\par
+\f0\tab\tab\tab\cf3\f1 this.value \cf7 = \cf10 '\lang2052\f2\'c7\'eb\'ca\'e4\'c8\'eb\'c3\'dc\'c2\'eb\lang1033\f1 '\cf3 ;\cf0\par
+\f0\tab\tab\cf3\f1\}\par
+\pard\tab\par
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\cf0\f0\tab\tab\cf3\f1 oText.focus();\tab\cf5 // \lang2052\f2\'bb\'f1\'c8\'a1\'bd\'b9\'b5\'e3\cf3\lang1033\f1\par
+\cf0\f0\tab\tab\cf3\f1 oText.blur();\tab\cf5 // \lang2052\f2\'bb\'f1\'c8\'a1\'bd\'b9\'b5\'e3\cf3\lang1033\f1\par
+\pard\par
+\par
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\cf2\f0\u20108?\u12289?\u20107?\u20214?\u23545?\u-29599?\cf0\par
+\tab > event\u23545?\u-29599?\par
+\tab Event\u23545?\u-29599?\u-244?\u24403?\u19968?\u20010?\u20107?\u20214?\u21457?\u29983?\u30340?\u26102?\u-244?\u21644?\u24403?\u21069?\u23545?\u-29599?\u21457?\u29983?\u30340?\u30456?\u20851?\u20449?\u24687?\u-244?\u-28419?\u20250?\u20020?\u26102?\u20445?\u23384?\u22312?\u-28711?\u20010?\u23545?\u-29599?\u20013?\u-229?\par
+\tab IE/\u-29641?\u27468?: event\u26159?\u19968?\u20010?\u20869?\u32622?\u20840?\u23616?\u23545?\u-29599?\u-229?\par
+\tab\u28779?\u29392?: \u20107?\u20214?\u23545?\u-29599?\u26159?\u-28646?\u-28729?\u20107?\u20214?\u20989?\u25968?\u30340?\u31532?\u19968?\u20010?\u21442?\u25968?\u20256?\u20837?\u-229?\par
+\tab\tab\cf6\f1 function \cf9 fn2\cf3 (\cf11 ev\cf3 )\{\par
+\tab\tab\tab\cf1 // \lang2052\f2\'bc\'e6\'c8\'dd\'b5\'c4\'d0\'b4\'b7\'a8\cf0\lang1033\f1\par
+\f0\tab\tab\cf6\f1\tab\cf3 ev \cf7 = \cf3 ev \cf7 || \cf4 event\cf3 ;\tab\cf0\par
+\f0\tab\tab\tab\cf5\f1 // \lang2052\f2\'b1\'e9\'c0\'fa\'ca\'c2\'bc\'fe\'b6\'d4\'cf\'f3\cf0\lang1033\f1\par
+\f0\tab\tab\tab\cf7\f1 for \cf3 (att \cf7 in \cf3 ev)\{\cf0\par
+\pard\cf3\tab\tab\tab\cf4 document\cf3 .write(att \cf7 + \cf10 '='\cf0  \cf7 + \cf3 ev[att] \cf7 +\cf10 '<br/>'\cf3 );\cf0\par
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\f0\tab\tab\tab\cf3\f1\}\cf0\par
+\f0\tab\tab\cf3\f1\}\par
+\par
+\cf0\f0\tab > \u20107?\u20214?\u28304?: \u21363?\u-30234?\u21457?\u-29723?\u20107?\u20214?\u30340?\u-32126?\u28857?\par
+\tab\tab IE: event\u23545?\u-29599?\u21482?\u26377?srcElement\u23646?\u24615?\u-244?\u-32756?\u27809?\u26377?target\u23646?\u24615?\u-229?\par
+\tab\tab\u28779?\u29392?: event\u23545?\u-29599?\u21482?\u26377?target\u23646?\u24615?\u-244?\u-32756?\u27809?\u26377?srcElement\u23646?\u24615?;\par
+\tab\tab\u-29641?\u27468?/Safari: target\u21644?srcElement\u-28419?\u21487?\u20197?\u20351?\u29992?\u-229?\par
+\tab\tab\cf3\f1 oBox.\cf9 onclick \cf7 = \cf6 function\cf3 (\cf11 ev\cf3 )\{\cf0\par
+\pard\cf3\tab\tab\tab ev \cf7 = \cf3 ev \cf7 || \cf4 event\cf3 ;\par
+\tab\tab\tab\cf1 // \lang2052\f2\'bc\'e6\'c8\'dd\'b5\'c4\'d0\'b4\'b7\'a8(\'d4\'da\'b4\'cb\'b1\'ed\'ca\'be\'b5\'c4\'be\'cd\'ca\'c7oBox\'b6\'d4\'cf\'f3)\cf3\lang1033\f1\par
+\tab\tab\tab\cf6 var \cf3 self \cf7 = \cf3 ev.target \cf7 || \cf3 ev.srcElement;\cf0\par
+\cf3\tab\tab\tab alert(ev.srcElement.id);\cf0\par
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\f0\tab\tab\cf3\f1\};\cf0\f0\par
+\cf3\f1\par
+\cf0\f0\tab > offsetX\u21644?offsetY \u12304?\u-24800?\u26631?\u30456?\u23545?\u20110?\u20107?\u20214?\u28304?\u30340?\u20301?\u32622?\u12305?\par
+\tab\tab\cf3\f1 ev.offsetX\tab\tab\cf5 // \lang2052\f2\'cb\'ae\'c6\'bd\'b7\'bd\'cf\'f2\'a3\'ac\'be\'e0\'c0\'eb\'ca\'c2\'bc\'fe\'d4\'b4\'b5\'c4\'d7\'f3\'b1\'df\'ce\'bb\'d6\'c3\cf3\lang1033\f1\par
+\tab\tab ev.offsetY\tab\tab\cf5 // \lang2052\f2\'b4\'b9\'d6\'b1\'b7\'bd\'cf\'f2\'a3\'ac\'be\'e0\'c0\'eb\'ca\'c2\'bc\'fe\'d4\'b4\'b5\'c4\'b6\'a5\'b2\'bf\'ce\'bb\'d6\'c3\cf3\lang1033\f1\par
+\cf0\f0\tab\par
+\tab > clientX\u21644?clientY \u12304?\u-24800?\u26631?\u30456?\u23545?\u20110?\u27983?\u-30264?\u22120?\u-26507?\u-26782?\u30340?\u20301?\u32622?\u12305? \par
+\tab\tab\cf3\f1 ev.clientX\tab   \cf5 // \lang2052\f2\'cb\'ae\'c6\'bd\'b7\'bd\'cf\'f2\'a3\'ac\'be\'e0\'c0\'eb\'d7\'f3\'b1\'df\'b5\'c4\'ce\'bb\'d6\'c3\cf3\lang1033\f1\par
+\tab\tab ev.clientY\tab   \cf5 // \lang2052\f2\'b4\'b9\'d6\'b1\'b7\'bd\'cf\'f2\'a3\'ac\'be\'e0\'c0\'eb\'b6\'a5\'b2\'bf\'b5\'c4\'ce\'bb\'d6\'c3\par
+\cf2\lang1033\f0\u26696?\u20363?: \u-29217?\u-26993?\u-24800?\u26631?\u31227?\u21160?\u25928?\u26524?\par
+\cf0\par
+\par
+\cf2\u19977?\u12289?\u20107?\u20214?\u31867?\u22411?\cf0\par
+\tab > onclick: \u21333?\u20987?\u20107?\u20214? \par
+\tab > ondbclick: \u21452?\u20987?\u20107?\u20214?\par
+\tab > onmousedown: \u-24800?\u26631?\u25353?\u19979?\u20107?\u20214?\par
+\tab > onmouseup: \u-24800?\u26631?\u-28214?\u25918?(\u24377?\u-29321?)\u20107?\u20214?\par
+\tab > onmousemove: \u-24800?\u26631?\u31227?\u21160?\u20107?\u20214?\par
+\tab > onmouseover: \u-24800?\u26631?\u31227?\u20837?\u20107?\u20214?\par
+\tab > onmouseout: \u-24800?\u26631?\u31227?\u20986?\u20107?\u20214?\par
+\tab > onfocus: \u-31817?\u21462?\u28966?\u28857?\u20107?\u20214?\par
+\tab > onblur: \u22833?\u21435?\u28966?\u28857?\u20107?\u20214?\par
+\tab\u27880?: onclick\u26159?\u-24800?\u26631?\u28857?\u20987?\u24377?\u-29321?\u20043?\u21518?\u-30234?\u21457?\u30340?\u20107?\u20214?\u-244?\u21363?\u19968?\u27425?\u23436?\u25972?\u30340?\u-24800?\u26631?\u28857?\u20987?\u-28729?\u31243?\u-229?\u-32756?onmousedown\u26159?\u-24800?\u26631?\u25353?\u19979?\u21518?\u-30234?\u21457?\u-244?\u26080?\u-26880?\u31561?\u24453?\u-24800?\u26631?\u-28214?\u25918?\u-229?\u21363?onclick = onmousedown + onmouseup;\par
+\par
+\par
+\cf2\u22235?\u12289?\u20107?\u20214?\u20882?\u27873?\par
+\cf0\tab > \u20107?\u20214?\u20882?\u27873?\par
+\tab\tab\u24403?\u19968?\u20010?\u20803?\u32032?\u25509?\u25910?\u21040?\u20107?\u20214?\u20197?\u21518?\u-244?\u20250?\u23558?\u25509?\u25910?\u21040?\u30340?\u20107?\u20214?\u20256?\u-28654?\u32473?\u29238?\u32423?\u20803?\u32032?\u-244?\u19968?\u30452?\u20256?\u-28654?\u32473?\u-26506?\u23618?window\u-229?\par
+\tab\par
+\tab > \u-27077?\u27490?\u20107?\u20214?\u20882?\u27873?\par
+\tab\tab\u-26786?IE: stopPropagation()\par
+\tab\tab IE: ev.cancelBubble = true;\par
+\tab\tab\cf1\f1 // \lang2052\f2\'bc\'e6\'c8\'dd\'d0\'b4\'b7\'a8\cf0\lang1033\f0\par
+\tab\tab\cf3\f1 ev.stopPropagation \cf7 ? \cf3 ev.stopPropagation() \cf8 : \cf3 ev.cancelBubble \cf7 = \cf12 true\cf3 ;\cf0\f0\par
+\par
+\cf1\u26696?\u20363?: \u-28781?\u20837?\u26694?\u30340?\u25552?\u31034?\u21015?\u-30616? (\u20107?\u20214?\u20882?\u27873?\u30340?\u20351?\u29992?)\par
+\u26696?\u20363?: \u19979?\u25289?\u-31780?\u21333?\u25928?\u26524?(\u-27077?\u27490?\u20107?\u20214?\u20882?\u27873?)\par
+\u26696?\u20363?: \u20998?\u20139?\u21040? \u25928?\u26524? (\u20107?\u20214?\u20882?\u27873?\u30340?\u20351?\u29992?)\cf3\f1\par
+\cf1\f0\u26696?\u20363?: \u-30616?\u26684?\u30340?\u32534?\u-28783?(\u20882?\u27873?\u30340?\u21033?\u29992?-\u24615?\u-32515?\u20248?\u21270?)\cf3\f1\par
+\pard\par
+\par
+\par
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\cf2\f0\u20116?\u12289?\u20107?\u20214?\u25429?\u-31817?\cf0\par
+\tab\u20107?\u20214?\par
+\tab > \u20107?\u20214?\u32465?\u23450?\u26041?\u24335?\u19968?(\u21516?\u19968?\u20107?\u20214?\u20250?\u-30549?\u-30330?\u30422?): \par
+\tab\tab\cf3\f1 oBox.onclick \cf7 = \cf3 fn;\par
+\cf0\f0\par
+\tab > \u20107?\u20214?\u32465?\u23450?\u26041?\u24335?\u20108?(\u21516?\u19968?\u20107?\u20214?\u21487?\u20197?\u22810?\u20010?\u22788?\u29702?): \par
+\tab\tab\cf3\f1 addEventListener(\lang2052\f2\'ca\'c2\'bc\'fe\'c3\'fb\'b4\'ca\'a3\'ac\'ca\'c2\'bc\'fe\'ba\'af\'ca\'fd\'a3\'ac\'ca\'c7\'b7\'f1\'b2\'b6\'bb\'f1\lang1033\f1 )\par
+\tab\tab\cf0\f0\u21442?\u25968?3: true\u-30616?\u31034?\u-28217?\u29992?\u20107?\u20214?\u25429?\u-31817?\u-244?\u-32027?false\u20107?\u20214?\u20882?\u27873?\cf3\f1\par
+\tab\tab oBox.addEventListener(\cf10 'click'\cf3 , fn, \cf12 true\cf3 );\par
+\par
+\cf0\f0\tab\u27880?: \u20107?\u20214?\u20882?\u27873?\u26159?\u20174?\u-28212?\u21040?\u22806?\u30340?\u20256?\u-28654?\u26041?\u24335?\u-244?\u21363?\u26159?\u20174?\u20107?\u20214?\u30446?\u26631?(target)\u24320?\u22987?\u-244?\u24448?\u19978?\u20882?\u27873?\u30452?\u21040?\u-26507?\u-26782?\u30340?\u26368?\u19978?\u19968?\u32423?\u26631?\u31614?; \u20107?\u20214?\u25429?\u-31817?\u26159?\u20174?\u22806?\u21040?\u-28212?\u30340?\u20256?\u-28654?\u26041?\u24335?\u-244?\u21363?\u26159?\u20174?\u26368?\u19978?\u19968?\u32423?\u26631?\u31614?\u24320?\u22987?\u24448?\u19979?\u26597?\u25214?\u-244?\u30452?\u21040?\u25429?\u-31817?\u21040?\u20107?\u20214?\u30446?\u26631?(target);\par
+\par
+\par
+\pard\sa200\sl276\slmult1\cf2\u20316?\u19994?: \u27169?\u25311?select\u25511?\u20214?\u25928?\u26524?\cf0\lang2052\f3\par
+}
+ 

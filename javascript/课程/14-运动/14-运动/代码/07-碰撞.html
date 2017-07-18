@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			#box{
+				width: 40px;
+				height: 40px;
+				border-radius: 20px;
+				background: red;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+		
+		<script>
+			window.onload = function(){
+				var oBox = document.getElementById("box");
+				
+				oBox.onclick = function(){
+					// 速度
+					var speedX = 8;
+					var speedY = 8;
+					
+					// 物体大小
+					var viewW = oBox.offsetWidth;
+					var viewH = oBox.offsetHeight;
+					
+					
+					// 开启时钟
+					setInterval(function(){
+						
+						// 窗口大小
+						var screenW = (document.body.clientWidth || document.documentElement.clientWidth) + 16;
+						var screenH = document.body.clientHeight || document.documentElement.clientHeight;
+						console.log(screenW);
+						
+						// 预先将位置计算好
+						var offsetTop = oBox.offsetTop + speedY;
+						var offsetLeft = oBox.offsetLeft + speedX;
+						
+						// 400
+						// 393 + 8 = 401
+						// 垂直方向
+						if(offsetTop >= screenH-viewH){	// 碰撞到底部
+							// 改变方向
+							speedY *= -1;
+							
+							offsetTop = screenH - viewH;
+						} else if( offsetTop <= 0 ){	// 碰撞到顶部
+							// 改变方向
+							speedY *= -1;
+							offsetTop = 0;
+						}
+						
+						// 水平
+						if(offsetLeft >= screenW-viewW){
+							speedX *= -1;
+							offsetLeft = screenW - viewW;
+						} else if(offsetLeft <= 0){
+							speedX *= -1;
+							offsetLeft = 0;
+						}
+						
+
+						console.log(offsetTop);
+						
+						// 运动
+						oBox.style.left = offsetLeft + 'px';
+						oBox.style.top = offsetTop + 'px';
+						
+					}, 50);
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="box"></div>
+	</body>
+</html>

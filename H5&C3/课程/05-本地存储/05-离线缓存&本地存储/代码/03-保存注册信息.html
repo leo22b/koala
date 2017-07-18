@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			textarea {
+				width: 300px;
+				height: 60px;
+			}
+		</style>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				// 读取localStorage
+				var user = window.localStorage.getItem('user');
+				if(user){
+					$('[type=text]').val(user);
+				}
+				
+				var ps1 = window.localStorage.getItem('ps1');
+				if(ps1) $('#ps1').val(ps1);
+				
+				var ps2 = window.localStorage.getItem('ps2');
+				if(ps2) $('#ps2').val(ps2);
+				
+				var sex = window.localStorage.getItem('sex');
+				if(sex) $("input[value=" + sex + "]").prop('checked', true);
+				
+				var text = window.localStorage.getItem('text');
+				if(text) $('textarea').val(text);
+				
+				
+				// 点击注册(假如注册成功清除，如果注册不成功不需要清除)
+				$('[type=submit]').click(function(){
+					window.localStorage.clear();
+				});
+			});
+			
+			// 窗口关闭事件 window.unload = function(){}
+			$(window).bind('unload', function(){
+				// 将填写的内容保存到localStorage
+				if($('[type=text]').val()){
+					window.localStorage.setItem('user', $('[type=text]').val());
+				}
+				
+				if($('#ps1').val()){
+					window.localStorage.setItem('ps1', $('#ps1').val());
+				}
+				
+				if($('#ps2').val()){
+					window.localStorage.setItem('ps2', $('#ps2').val());
+				}
+				
+				if($('input:checked').val())
+					window.localStorage.setItem( 'sex', $('input:checked').val() );
+					
+					
+				if($('textarea').val())
+					window.localStorage.setItem('text', $('textarea').val());
+			});
+		</script>
+	</head>
+
+	<body>
+		<form>
+
+			<p>
+				用户名: <input type="text" id="user" />
+			</p>
+
+			<p>
+				密码: <input type="password" id="ps1" />
+			</p>
+
+			<p>
+				确认密码: <input type="password" id="ps2" />
+			</p>
+
+			<p>
+				性别: <input type="radio" name="sex" value="男" />男
+				<input type="radio" name="sex" value="女" />女
+			</p>
+
+			<p>
+				个人介绍:
+				<textarea></textarea>
+			</p>
+			
+			<input type="submit" value="注册" />
+		</form>
+	</body>
+
+</html>

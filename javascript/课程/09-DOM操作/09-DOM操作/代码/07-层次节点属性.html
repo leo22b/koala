@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oBox = document.getElementById("box");
+				
+				// childNodes获取当前元素节点的所有子节点
+				var nodes = oBox.childNodes;
+			
+				for(var i=0; i<nodes.length; i++){
+					if(nodes[i].nodeType == 1){	// 元素节点
+//						 alert(nodes[i].nodeName);
+						
+						// 注意大小问题   toLowerCase()将字符串转换为小写
+						if(nodes[i].nodeName.toLowerCase() == 'span'){
+//							 alert( '获取到了span标签' );
+							
+							// nodes[i] 元素节点
+							// innerHTML和nodeValue取值问题
+							// alert( nodes[i].nodeValue );	// null
+							// alert( nodes[i].innerHTML );	
+						}else{
+//							alert('获取到了a标签');
+						}
+						
+					} else if(nodes[i].nodeType == 2){	// 属性节点
+//						 alert(nodes[i].nodeName);
+					} else if(nodes[i].nodeType == 3){	// 文本节点
+//						 alert(nodes[i].nodeName);
+					}
+				}
+				
+				
+				
+				// innerHTML和nodeValue赋值问题
+				var oTest = document.getElementById("test");
+//				 oTest.innerHTML = '<h1>DOM操作</h1>';
+				oTest.childNodes[0].nodeValue = '<h1>DOM操作</h1>';
+				
+				
+				
+				
+				// firstChild
+				var oView = document.getElementById("view");
+//				 alert( oView.firstChild.nodeName );
+				
+				// lastChild
+//				 alert(oView.lastChild.nodeName);
+				
+				// parentNode
+//				 alert(oView.parentNode.nodeName.toLowerCase());
+				
+				// previousSibling: 获取当前节点的前一个同级节点
+//				 alert(oView.lastChild.previousSibling.nodeName.toLowerCase());
+				
+				// nextSibling:获取当前节点的后一个同级节点
+//				alert(oView.firstChild.nextSibling.nodeName.toLowerCase());
+			}
+		</script>
+	</head>
+	
+	<body>
+		<!-- 非IE中，节点是3个； IE中是1个-->
+		<!--<div id="box">
+			<a href="#">hello world!</a>
+		</div>-->
+		
+		<div id="box">
+			<a href="#"> hello world! </a>
+			<span> 你好. </span>
+		</div>
+		
+		
+		<div id="test">
+			
+		</div>
+		
+		
+		<div id="view"><p> 星期一 </p><a href="#"> 百度 </a><span> 5月8日 </span></div>
+	</body>
+</html>

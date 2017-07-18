@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			i{
+				border: 1px solid gray;
+				display: inline-block;
+				width: 60px;
+				height: 20px;
+				text-align: center;
+				margin: -1px 0 0 -1px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<script>
+			for(var i=1; i<=9; i++){	// 行
+			
+			
+				// 第i行，输出i个 i标签
+				for(var j=1; j<=i; j++){
+					document.write('<i>' + j + '*' + i + '=' + i*j + '</i>');
+				}
+				
+				document.write('<br />');
+			}
+		</script>
+	</body>
+</html>

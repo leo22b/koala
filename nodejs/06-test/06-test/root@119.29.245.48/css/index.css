@@ -1,0 +1,148 @@
+/* 首页*/
+
+/* 横幅*/
+#banner{
+	height: 457px;
+	background: url(../img/banner.png);
+}
+
+/* 战略合作*/
+#partners{
+	background: #f7f7f7;
+	text-align: center;
+	padding-bottom: 60px;
+}
+
+#partners .detail{
+	/*margin-bottom: 60px;*/
+}
+#partners .detail a{
+	float: left;
+	border: 1px solid gray;
+	margin: -1px 0 0 -1px;
+}
+
+/*#partners table{
+	width: 1139px;
+	height: 200px;
+	border: 1px solid gray;
+	margin-bottom: 60px;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+#partners table td{
+	border: 1px solid gray;
+}*/
+
+/* 我们的优势*/
+#our{
+	background: #1a1b1f;
+	text-align: center;
+}
+#our .view{
+	background: #d1d1d1;
+	/*width: 340px;*/
+	width: 250px;
+	height: 260px;
+	margin-bottom: 66px;
+	padding: 0 45px;
+	position: relative;
+}
+#our .view i{
+	display: block;
+	width: 130px;
+	height: 130px;
+	background: url(../img/img01.png);
+	border-radius: 65px;
+	position: absolute;
+	left: 105px;
+	top: -65px;
+}
+#our .view h4{
+	margin-top: 95px;
+	font-size: 17px;
+	color: #e54142;
+	height: 44px;
+}
+#our .view p{
+	line-height: 30px;
+}
+
+/* 成功案例*/
+#success{
+	background: #ffffff;
+	text-align: center;
+	padding-bottom: 58px;
+}
+#success .tabs{
+	width: 800px;
+	height: 48px;
+	margin: 0 auto 15px;
+	/*background: blue;*/
+}
+#success .tabs i{
+	float: left;
+	width: 200px;
+	height: 48px;
+}
+#success .tabs a{
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	color: white;
+	background: #666666;
+}
+#success .tabs .active{
+	background: url(../img/select.png);
+}
+#success .tabs .active a{
+	background: transparent;
+}
+
+#success .box{
+	width: 1140px;
+	overflow: hidden;
+}
+#success .images{
+	/*height: 540px;*/
+	/* 此时该宽度，一行不能装下3个，为了一行可以装的下，得把宽度调大*/
+	width: 1180px;
+}
+#success .images a{
+	float: left;
+	margin: 0 30px 30px 0;
+}
+
+
+/* 新闻*/
+#news{
+	background: #f2f2f2;
+}
+#news .news-content{
+	padding: 36px 0 42px 0;
+}
+#news .news-content .section{
+	width: 344px;
+	height: 278px;
+	/*background: red;*/
+}
+
+#news .news-content .section h3{
+	font-size: 16px;
+	height: 50px;
+}
+
+#news .news-content .section .more{
+	margin-top: 10px;
+}
+#news .news-content .section li{
+	height: 30px;
+}
+#news .news-content .section li a{
+	float: left;
+}
+#news .news-content .section li span{
+	float: right;
+	color: #888888;
+}
+

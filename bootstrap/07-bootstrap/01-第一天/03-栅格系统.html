@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<!-- 编码类型-->
+		<meta charset="utf-8">
+		<!-- 如果在IE浏览器下则使用最新的标准渲染当前文档-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 视口-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- 标题-->
+		<title>栅格系统</title>
+
+		<!-- Bootstrap样式表 -->
+		<link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- 条件注释(兼容性) -->
+		<!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+		<style>
+			.col-md-1,.col-md-8, .col-md-4 {
+				border: 1px solid gray;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="container">
+			<div class="row text-center">
+				<!-- 
+					该元素有两个样式
+						col-md-1: 列，屏幕大于992px，并且该列占1/12
+						col-sm-3: 列，屏幕大于768px，占3/12
+				-->
+				<div class="col-md-1 col-sm-3"> 测试1 </div>
+				<div class="col-md-1"> 测试2 </div>
+				<div class="col-md-1"> 测试3 </div>
+				<div class="col-md-1"> 测试4 </div>
+				<div class="col-md-1"> 测试5 </div>
+				<div class="col-md-1"> 测试6 </div>
+				<div class="col-md-1"> 测试7 </div>
+				<div class="col-md-1"> 测试8 </div>
+				<div class="col-md-1"> 测试9 </div>
+				<div class="col-md-1"> 测试10 </div>
+				<div class="col-md-1"> 测试11 </div>
+				<div class="col-md-1"> 测试12 </div>
+			</div>
+			
+			<!-- 划分为12份-->
+			<div class="row">
+				<div class="col-md-8"> .col-md-8 </div>
+				<div class="col-md-4"> .col-md-4 </div>
+				<div class="col-md-4"> .col-md-4 </div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-3"> .col-md-3  </div>
+				<div class="col-md-3"> .col-md-3  </div>
+				<div class="col-md-3"> .col-md-3  </div>
+				<div class="col-md-3"> .col-md-3  </div>
+			</div>
+		</div>
+		<br />
+		<br />
+		
+		<!-- 
+			1200： 一行显示1个
+			992: 一行显示2个
+			768： 一行显示3个
+			768以下: 一行显示4个
+		-->
+		<style>
+			.col-sm-4{
+				border: 1px solid gray;
+			}
+		</style>
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12 col-md-6 col-sm-4 col-xs-3"> 星期1 </div>
+				<div class="col-lg-12 col-md-6 col-sm-4 col-xs-3"> 星期2 </div>
+				
+				<!--小屏幕不显示 -->
+				<div class="col-lg-12 col-md-6 col-sm-4 col-xs-3 hidden-sm">星期3 </div>
+				<!-- 小屏幕显示-->
+				<a class="btn btn-default visible-sm-inline-block">新内容</a>
+				
+				<div class="col-lg-12 col-md-6 col-sm-4 col-xs-3"> 星期4 </div>
+				<div class="col-lg-12 col-md-6 col-sm-4 col-xs-3"> 星期5 </div>
+				<div class="col-lg-12 col-md-6 col-sm-4 col-xs-3"> 星期6 </div>
+				<div class="col-lg-12 col-md-6 col-sm-4 col-xs-3 col-sm-offset-2"> 星期7 </div>
+			</div>
+		</div>
+		
+
+		<!-- Bootstrap依赖于jQuery的 -->
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<!-- bootstrap 脚本代码 -->
+		<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	</body>
+
+</html>

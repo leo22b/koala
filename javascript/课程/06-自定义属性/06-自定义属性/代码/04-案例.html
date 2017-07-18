@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.section{
+				position: relative;
+				margin: 10px;
+				width: 370px;
+				height: 400px;
+				display: block;
+				float: left;
+			}
+			.section img{
+				width: 370px;
+				height: 400px;
+			}
+			.section p{
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				color: white;
+				background: red;
+				width: 100%;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				
+				/* 默认不显示*/
+				display: none;
+			}
+		</style>
+	</head>
+	
+	
+	<body>
+		
+		<div id="box">
+			<a href="#" class="section"> 
+				<img src="img/04-img.png" />
+				<p> 1苹果8，9月份正式发布，敬请期待... </p>
+			</a>
+			
+			<a href="#" class="section"> 
+				<img src="img/04-img.png" />
+				<p> fdsfsdfs苹果8，9月份正式发布，敬请期待... </p>
+			</a>
+			
+			<a href="#" class="section"> 
+				<img src="img/04-img.png" />
+				<p> 3\苹果8，9月份正式发布，敬请期待... </p>
+			</a>
+			
+			<a href="#" class="section"> 
+				<img src="img/04-img.png" />
+				<p> 苹果8，9月份正式发布，敬请期待... </p>
+			</a>
+			
+			<a href="#" class="section"> 
+				<img src="img/04-img.png" />
+				<p> 苹果8，9月份正式发布，敬请期待... </p>
+			</a>
+		</div>
+		
+		<a href="#"></a>
+		
+		
+		<script>
+			var oBox = document.getElementById('box');
+			
+			var aNews = oBox.getElementsByTagName('a');
+			// 可以获取到对应的p，但是实际操作时不够方便
+			var aTtitle = oBox.getElementsByTagName('P');
+		
+			
+			for(var i=0; i<aNews.length; i++){
+				// 鼠标移入
+				aNews[i].onmouseover = function(){
+					// alert('鼠标移入');
+					
+					// aTtitle[ ? ]
+					
+					// 谁触发事件，即谁里面的p显示
+					
+					// 获取到对应的p
+					var oTitle = this.getElementsByTagName('p')[0];
+					// 对应元素显示
+					oTitle.style.display = 'block';
+				}
+				
+				// 鼠标移出
+				aNews[i].onmouseout = function(){
+					// alert('鼠标移出');
+					
+					// 获取到对应的p
+					var oTitle = this.getElementsByTagName('p')[0];
+					// 对应元素显示
+					oTitle.style.display = 'none';
+				}
+			}
+		</script>
+	</body>
+</html>

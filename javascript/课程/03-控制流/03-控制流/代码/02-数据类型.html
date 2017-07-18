@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		
+		<script>
+			
+			// NaN
+			var a = 10 / 'a';		
+			
+			// NaN不能这样判断！！！
+//			if(a == NaN){
+//				alert('非数值');
+//			} else {
+//				alert('输入正确');
+//			}
+
+			
+			// isNaN判断是否为数值，转为Number类型
+//			alert( isNaN(a) );	// true
+//			alert( isNaN(10) ); // false
+
+//			alert( isNaN('a') );	 // true
+//			alert( isNaN('20') );	// false
+//			alert( Number('a') );	// NaN
+//			alert( Number('20') );	// 20
+
+
+//			alert( isNaN(true) );	// false，即是一个非数值
+//			alert( Number(true) );	// 1
+			
+//			alert( isNaN('25aa') );	// true
+			
+			
+			
+			// Boolean中只有true和false
+			
+			
+			// Number,将其他类型转为Number类型
+//			alert( Number(false) );	// 0
+//			alert( Number(null) );	// 0
+//			alert( Number(undefined) );	//NaN
+//			alert( Number('') );		// 0
+//			alert( Number('25') );	// 25
+//			alert( Number('33er') );	// NaN
+			
+			
+			// parseInt()取整函数(从左到右，遇到非数值即停止)
+//			alert( parseInt('33er') );	// 33
+//			alert( parseInt('a33') );	// NaN
+//			alert( parseInt('123a456') );	// 123
+//			alert( parseInt(123.7) );	// 123
+//			alert( parseInt('33.3') );	// 33
+			
+			
+			
+			
+			// parseFloat  [认识小数点]
+//			alert( parseFloat('33er') );		// 33
+//			alert( parseFloat('33.3') );		// 33.3
+//			alert( parseFloat('aa33.3') );	// NaN
+//			alert( parseFloat('3.3.3.3.3') );	// 3.3
+//			alert( parseFloat('01') );	// 1
+//			alert( parseFloat('1.0') );
+			
+			
+			
+			// toString
+			var c = 100;
+//			var d = c.toString()
+			var d = c + '';	// 字符串的拼接
+//			alert( typeof d );
+
+
+			// 转为8进制
+//			alert(c.toString(8));
+			// 转为16进制
+			alert(c.toString(16) );
+		</script>
+	</body>
+</html>

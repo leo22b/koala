@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			/*
+			 a、预解析
+			 	var a;	// 全局变量
+			 	fn1 = function(){ alert(a); a = 2; }
+			 
+			 b、逐行解析
+			 	a = 1;
+			 	
+			 	fn1(); 函数也是一个作用域
+			 		- 预解析
+			 			var _a;	// 参数，局部变量
+			 		- 逐行解析
+			 			alert(_a);	// 局部优先;  undefined
+			 			_a = 2; 		// 局部优先
+			 	
+			 	alert(a);	// 全局变量; 1
+			 */
+		
+			var a = 1;
+
+			function fn1(a) {
+				alert(a);	// 
+				a = 2;
+			}
+			
+			fn1();
+			alert(a);		// 
+		</script>
+	</body>
+
+</html>

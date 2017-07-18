@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+	
+		<!--<ul>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+		</ul>-->
+			
+		
+		<script>
+		
+			var news = ['这26个省份落实政策成效明显 获国务院表扬奖励',	// 0
+						'中纪委一个月打虎6只 此系十八大以来第二次',		// 1
+						'公安部:公民身份号码重号人数由171万人减至8人',	// 2
+						'河南书记检查脱贫揪出问题 当地负责人直淌冷汗',	// 3
+						'国产大飞机C919将可首飞 开始立项远程宽体客机',	// 4
+						'中国航母下水 日网友冒酸水:日本80年前造了很多',	// 5
+						'镇政府书记斥烈士后人:都哪个年代了还讲杨靖宇',	// 6
+						'深圳女学霸被12所世界名校录取 放弃百万奖学金'	// 7
+						];
+						
+			var lists = '<ul>'; 
+			
+			// 根据数据内容，动态生成对应的列表
+			// 数组的遍历 (数组元素有n个，即循环n次)
+			for(var i=0; i<news.length; i++){
+				// i的值与数组下标与之对应，可以取出对应值
+				// document.write(i);
+				// document.write( news[i] );
+				// document.write('<br/>');
+				
+				lists += '<li><a> ' + news[i] + ' </a></li>'
+			}
+			
+			lists += '</ul>';
+			
+			document.write(lists);
+		</script>
+	</body>
+</html>

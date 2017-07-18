@@ -1,0 +1,106 @@
+
+②以再发送jsonp请求举例说明： 为了发送JSONP请求，其中url必须包含JSON_CALLBACK字样。
+
+jsonp(url,config) 其中config是可选的
+
+var promise=$http.jsonp("/api/users.json?callback=JSON_CALLBACK");
+
+
+         //  客户端写的代码
+		<script src="/api/users.json?callback=callbackfunc"></script>
+	      <script>
+			function callbackfunc(data){
+				
+
+
+			}
+      $.ajax({
+            type:"get",
+            data:{},
+            dataType:"jsonp"
+            url:
+
+      })
+	     </script>
+
+       // 服务端写的代码
+
+         <?php
+                  $callback=$_GET['callback'];
+                
+                  echo $callback.
+
+
+         ?>
+
+
+
+
+
+angularJS中jsonp的使用
+
+客户端的代码
+myUrl = "http://www.runoob.com/try/ajax/jsonp.php?callback=JSON_CALLBACK";
+
+$http.jsonp(myUrl).success(
+　　function(data){
+　　　　alert(data);
+　　}
+);
+1.angularJS中使用$http.jsonp函数
+2.指定callback和回调函数名，函数名为JSON_CALLBACK时，会调用success回调函数，JSON_CALLBACK必须全为大写。
+3.也可以指定其它回调函数，但必须是定义在window下的全局函数。
+4.url中必须加上callback
+5.当callback为JSON_CALLBACK时，只会调用success，即使window中有JSON_CALLBACK函数，也不会调用该函
+
+服务器的代码
+
+
+<?php
+header('Content-type: application/json');
+//获取回调函数名
+$jsoncallback = htmlspecialchars($_REQUEST ['callback']);
+//json数据
+$json_data = '["customername1","customername2"]';
+//输出jsonp格式的数据
+echo $jsoncallback . "(" . $json_data . ")";
+?>
+
+
+=--------------------------------------------------------------------
+客户端的代码
+
+跨域方式二【$http.get()】：
+
+function getAdustryController($scope,$http){
+	$http.get('http://localhost/ajax/getAllIndustryCategoty.pt?languageColumn=name_eu').success(function(data){
+		$scope.industries = data;
+	});
+}
+
+跨域方式三【$http.post()】：
+
+function getAdustryController($scope,$http){
+	$http.post('http://localhost/ajax/getAllIndustryCategoty.pt',{languageColumn:'name_eu'},{'Content-Type':'application/x-www-form-urlencoded'}).success(function(data){
+		$scope.industries = data;
+	});
+}
+
+ 
+
+
+
+服务器端的代码
+
+1. 在服务器端设置允许在其他域名下访问，及响应类型、响应头设置
+<php?
+		header("Access-Control-Allow-Origin", "*");
+		header("Access-Control-Allow-Methods","POST");
+		header("Access-Control-Allow-Headers","x-requested-with,content-type");
+?>
+
+
+
+
+
+

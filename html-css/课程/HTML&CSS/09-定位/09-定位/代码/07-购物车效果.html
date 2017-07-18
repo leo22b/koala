@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 170px;
+				height: 36px;
+				line-height: 36px;
+				border:  1px solid gray;
+				text-align: center;
+				font-size: 13px;
+				background: url(shop.png) no-repeat 10px center;
+			}
+			.box i{
+				width: 16px;
+				height: 16px;
+				background: red;
+				display: inline-block;
+				line-height: 16px;
+				color: white;
+				
+				/* 圆角*/
+				border-radius: 8px;
+				
+				
+				/* 定位*/
+				
+				/* 绝对定位 --- 脱离文档流*/
+				/*position: absolute;*/
+				
+				/* 相对定位 --- 人虽然走了，位置还是占着的*/
+				position: relative;
+				top: -10px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="box">
+			我的购物车 <i>3</i> 件
+		</div>
+	</body>
+</html>

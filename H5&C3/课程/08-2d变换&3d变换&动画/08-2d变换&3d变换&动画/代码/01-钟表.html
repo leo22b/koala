@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				border: 1px solid gray;
+				border-radius: 50%;
+				margin: 30px auto;
+				position: relative;
+			}
+			#box ul li{
+				width: 1px;
+				height: 6px;
+				background: black;
+				list-style: none;
+				position: absolute;
+				left: 100px;
+				top: 0;
+				
+				/* 调整旋转基点(以圆心点)*/
+				
+				transform-origin: 0 100px;
+				
+				/* 旋转*/
+				/*transform: rotate(6deg);*/
+			}
+			/*#box ul li:nth-of-type(1){
+				transform: rotate(6deg);
+			}
+			#box ul li:nth-of-type(2){
+				transform: rotate(12deg);
+			}*/
+			
+			
+			
+			#box i{
+				transform-origin: 0 bottom;
+			}
+			.hou{
+				width: 6px;
+				height: 60px;
+				background: red;
+				position: absolute;
+				left: 97px;
+				top: 40px;
+			}
+			.min{
+				width: 4px;
+				height: 75px;
+				background: blue;
+				position: absolute;
+				left: 98px;
+				top: 25px;
+			}
+			.sec{
+				width: 2px;
+				height: 90px;
+				position: absolute;
+				left: 99px;
+				top: 10px;
+				background: black;
+			}
+			
+			span{
+				width: 20px;
+				height: 20px;
+				background: black;
+				position: absolute;
+				left: 90px;
+				top: 90px;
+				border-radius: 50%;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var oBox = document.querySelector("#box");
+				var oUl = oBox.querySelector('ul');
+				// 样式表
+				var oStyle = document.querySelector("style");
+				
+				// 绘制表盘
+				for(var i=0; i<60; i++){
+					var oLi = document.createElement('li');
+					
+					if(i%5 == 0){
+						oLi.style.height = '12px';
+					} 
+					
+					// 添加样式
+					oStyle.innerHTML += '#box ul li:nth-of-type(' + (i+1) + '){transform: rotate(' + i*6 + 'deg);}';
+					
+					oUl.appendChild(oLi);
+				}
+				
+				setInterval(changeView, 1000);
+				
+				var oHou = document.querySelector(".hou");
+				var oMin = document.querySelector(".min");
+				var oSec = document.querySelector(".sec");
+				function changeView(){
+					var nowTime = new Date();
+					var iSec = nowTime.getSeconds() * 6;
+					var iMin = nowTime.getMinutes() * 6;
+					// 10:30    30/60 = 0.5
+					var iHou = nowTime.getHours() * 30 + iMin/60;
+					
+					
+					oSec.style.transform = 'rotate(' + iSec + 'deg)';
+					oMin.style.transform = 'rotate(' + iMin + 'deg)';
+					oHou.style.transform = 'rotate(' + iHou + 'deg)';
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		
+		<div id="box">
+			<!-- 表盘刻度-->
+			<ul>
+				<!--<li></li>-->
+				<!--<li></li>-->
+			</ul>
+			
+			<!-- 时分秒针-->
+			<i class="hou"></i>
+			<i class="min"></i>
+			<i class="sec"></i>
+			
+			<!-- 圆心点-->
+			<span></span>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		
+		<input type="button" id="bt" value="播放选中" />
+		
+		<script type="text/javascript">
+			var oBt = document.querySelector("#bt");
+			var index = 0;
+			var openW = null;
+			oBt.onclick = function(){
+				// 打开子页面的window对象
+				if(openW == null){
+					openW = window.open('02-test.html', '_blank');
+				} else {
+					index++;
+					var oLi = document.createElement('li');
+					oLi.innerHTML = '第' + index + '次点击.';
+					openW.document.querySelector('ul').appendChild(oLi);
+				}
+				
+			}
+		</script>
+	</body>
+</html>

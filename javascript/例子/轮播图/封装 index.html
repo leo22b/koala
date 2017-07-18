@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 612px;
+				height: 272px;
+				position: relative;
+				margin: 30px auto;
+			}
+			img{
+				width: 600px;
+				height: 260px;
+				border: 6px solid slategray;
+			}
+			p{
+				position: absolute;	
+				bottom: 7px;
+				width: 100%;
+				height: 14px;
+				text-align: center;
+			}
+			p i{
+				width: 14px;
+				height: 14px;
+				background: black;
+				display: inline-block;
+				border-radius: 7px;
+				margin: 0 3px;
+			}
+			p .active{
+				background: white;
+			}
+		</style>
+		<script type="text/javascript" src="js/zyz.js" ></script>
+		<script type="text/javascript">
+		$(window.onload=function(){
+			var arrimage=['img/img_01.png','img/img_02.png','img/img_03.png','img/img_04.png','img/img_05.png'];
+			var oimg=document.getElementById('image');
+			var opcontent=document.getElementById('page');
+			var intervaltime=2000;
+			
+			scroll($('image'),$('page'),arrimage,2000);
+			
+			function scroll(oimg,opcontent,arrname,intervaltime){
+				oimg.src=arrimage[0];
+				var temp='';
+				for (var i=0;i<arrimage.length;i++) {
+					if(i==0){
+						temp=temp+'<i class="active"></i>';
+					}
+					else{
+						temp=temp+'<i></i>';
+					}
+				}
+				opcontent.innerHTML=temp;
+			}
+			var time='';//定时器、时钟
+			var index=0;//下标
+			var oi=opcontent.getElementsByTagName('i');
+			//调用start时钟
+			start();
+			//调用下标示图事件(移入、移出)
+		 	opcont();
+			// 给下标视图添加事件
+			function opcont(){
+				for (var k=0;k<oi.length;k++) {
+					oi[k].index=k;
+					oi[k].onmouseover=function(){
+						stop();
+						index=this.index;
+						change();
+					}
+					oi[k].onmouseout=function(){
+						start();
+					}
+				}
+			}
+			//轮播图片视图
+			function change(){
+				oimg.src=arrimage[index];
+				for (var j=0;j<oi.length;j++) {
+					oi[j].className='';
+				}
+				oi[index].className='active';
+			}
+			//触发
+			function touch(){
+				index++;
+				if (index>oi.length-1) {
+					index=0;
+				} else{
+					change();
+				}
+			}
+			//开启
+			function start(){
+				if (!time) {
+					time=setInterval(touch,intervaltime);
+				}
+			}
+			//停止
+			function stop(){
+				clearInterval(time);
+				time='';
+			}
+		});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<img id="image" src="img/img_01.png"/>
+			<p id="page"></p>
+		</div>
+		
+		<!--<script type="text/javascript">
+			function $(str){
+				if (typeof str==='string') {
+					return document.getElementById(str);
+				} else if(typeof str==='function'){
+					window.onload=str;
+				}
+			}
+		</script>-->
+		
+		
+		
+	</body>
+</html>

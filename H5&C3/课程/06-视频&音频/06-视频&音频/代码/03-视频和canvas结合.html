@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				height: 5000px;
+			}
+			video{
+				width: 320px;
+				height: 568px;
+				/*width: 568px;
+				height: 320px;*/
+				/*width: 568px;
+				height: 500px;*/
+				border: 1px solid gray;
+				float: left;
+			}
+			#box{
+				width: 568px;
+				height: 320px;
+				border: 1px solid gray;
+				float: left;
+				margin: 0 30px;
+				position: fixed;
+				right: 30px;
+				bottom: 30px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var video = document.querySelector("video");
+				var oC = document.querySelector("canvas");
+				var oGC = oC.getContext('2d');
+				
+				setInterval(function(){
+					oGC.drawImage(video, 0, 0, oC.width, oC.height);
+				}, 1000/24);
+			}
+			
+			window.onscroll = function(){
+				
+			}
+		</script>
+	</head>
+	
+	<body>
+		<video src="http://127.0.0.1/%E9%9F%B3%E9%A2%91%E8%A7%86%E9%A2%91/1.mp4" controls></video>
+		
+		<div id="box" draggable='true'>
+			<canvas id="c1" width="568" height="320"></canvas>
+		</div>
+	</body>
+</html>

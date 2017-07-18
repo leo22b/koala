@@ -1,0 +1,141 @@
+/*模态弹出窗是固定在浏览器中的: */
+/*bootstrap.css文件第5379行～第5389行*/
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+
+/*给.modal增加类名fade添加了一个过渡动画效果：*/
+/*bootstrap.css文件第5390行～第5402行*/
+.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform .3s ease-out;
+       -o-transition:      -o-transform .3s ease-out;
+          transition:         transform .3s ease-out;
+  -webkit-transform: translate3d(0, -25%, 0);
+       -o-transform: translate3d(0, -25%, 0);
+          transform: translate3d(0, -25%, 0);
+}
+.modal.in .modal-dialog {
+  -webkit-transform: translate3d(0, 0, 0);
+       -o-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+/*在全屏状态下，模态弹出窗宽度是自适应的，而且modal-dialog水平居中:*/
+/*bootstrap.css文件第5407行～第5411行*/
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+
+/*浏览器视窗大于768px时，模态弹出窗的宽度为600px:*/
+/*bootstrap.css文件第5479行～第5491行*/
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 600px;
+    margin: 30px auto;
+  }
+  .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+  }
+  .modal-sm {
+    width: 300px;
+  }
+}
+
+/*对于一个模态弹出窗而言，modal-content才是样式的关键:*/
+/*bootstrap.css文件第5412行～第5423行*/
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+         background-clip: padding-box;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 6px;
+  outline: 0;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+}
+
+/*modal-content还包括了modal-header、modal-body和modal-footer三个部分：*/
+/*bootstrap.css文件第5441行～第5461行*/
+.modal-header {
+  min-height: 16.42857143px;
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.modal-header .close {
+  margin-top: -2px;
+}
+.modal-title {
+  margin: 0;
+  line-height: 1.42857143;
+}
+.modal-body {
+  position: relative;
+  padding: 15px;
+}
+.modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+}
+
+/*modal-footer都是用来放置按钮，现在底部还对包含的按钮做一定的样式处理：*/
+/*bootstrap.css文件第5462行～第5471行*/
+.modal-footer .btn + .btn {
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+.modal-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+.modal-footer .btn-block + .btn-block {
+  margin-left: 0;
+}
+
+/*蒙层样式“modal-backdrop”，他默认情况下是全屏黑色的:*/
+/*bootstrap.css文件第5424行～第5432行*/
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+}
+
+/*添加了一个过渡动画，从fade到in，把opacity值从0变成了0.5:*/
+/*bootstrap.css文件第5433行～第5440行*/
+.modal-backdrop.fade {
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+.modal-backdrop.in {
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+
+/*媒体查询：*/
+@media (min-width: 768px) {
+  .modal-sm {
+    width: 300px;
+  }
+}
+@media (min-width: 992px) {
+  .modal-lg {
+    width: 900px;
+  }
+}

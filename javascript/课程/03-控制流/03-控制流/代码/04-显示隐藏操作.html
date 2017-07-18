@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+		</style>
+	</head>
+	
+	<body>
+		<input type="button" value="显示/隐藏" id="bt" />
+		<br />
+		<img src="IMG_1710.JPG" id="img" />
+		
+		
+		<script>
+			var oBt = document.getElementById('bt');
+			var oImg = document.getElementById('img');
+			// 表示图片的显示状态
+			var isShow = true;
+			
+			// 显示/隐藏  开/关   true/false   真/假
+			oBt.onclick = function(){
+				// alert(1);
+				
+				// 切换状态
+//				if(isShow == true){
+//					isShow = false;
+//				} else {
+//					isShow = true;
+//				}
+				// 切换状态
+//				if(isShow){
+//					isShow = false;
+//				} else {
+//					isShow = true;
+//				}
+				// 切换状态
+				isShow = !isShow;
+				console.log(isShow);
+				
+			
+				// 根据状态调整页面
+//				if(isShow){	// 显示
+//					oImg.style.display = 'block';
+//				} else {	// 隐藏
+//					oImg.style.display = 'none';
+//				}
+				
+				// 显示'block'    隐藏'none'
+				oImg.style.display = isShow ? 'block' : 'none';
+			}
+		</script>
+	</body>
+</html>

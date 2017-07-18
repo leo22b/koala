@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background: black;
+			}
+			
+			#box {
+				background: white;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				// 获取canvas元素
+				var oBox = document.getElementById("box");
+				// 绘制环境(上下文)
+				var oGC = oBox.getContext('2d');
+
+				// - x1/y1: 起始点坐标
+				// - x2/y2: 结束点坐标
+				// var obj = oGC.createLinearGradient(20, 20, 80, 80);
+				//				
+				//				// 添加渐变点
+				//				obj.addColorStop(0.2, 'blue');
+				//				obj.addColorStop(0.5, 'purple');
+				//				obj.addColorStop(1, 'red');
+				//				// 添加渐变
+				//				oGC.fillStyle = obj;
+				//				
+				//				oGC.fillRect(100, 100, 100, 100);
+
+
+				// 创建线性渐变(两个，告诉我们渐变范围和渐变方向)
+				// var obj = oGC.createLinearGradient(60, 60, 170, 170);
+				// var obj = oGC.createLinearGradient(0, 0, 200, 0);
+				var obj = oGC.createLinearGradient(100, 100, 170, 170);
+				
+				// 添加渐变点(可以添加多个) [0~1]
+//				obj.addColorStop(0, 'purple');
+//				obj.addColorStop(0.2, 'gray');
+//				obj.addColorStop(0.5, 'yellow');
+//				obj.addColorStop(0.7, 'pink');
+//				obj.addColorStop(1, 'red');
+				
+				obj.addColorStop(0, 'gray');
+				obj.addColorStop(0.5, 'white');
+				obj.addColorStop(1, 'gray');
+				
+				// 设置填充
+				oGC.fillStyle = obj;
+				// 绘制矩形
+				oGC.fillRect(30, 30, 200, 200);
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<canvas id="box" width="300" height="300">
+			<i>浏览器不支持canvas</i>
+		</canvas>
+
+	</body>
+
+</html>

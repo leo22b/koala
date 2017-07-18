@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<!-- 
+			普通年能被4整除 且  不能被100整除的为闰年
+			世纪年能被400整除的是闰年
+		-->
+		
+		<input type="text" id="text" />
+		<input type="button" value="闰年?" id="bt1" />
+		<script>
+			var oText = document.getElementById('text');
+			var oBt = document.getElementById('bt1');
+			
+			oBt.onclick = function(){
+				var temp = Number(oText.value);
+				
+				if( (temp%4 == 0 && temp%100 != 0) || (temp%400 == 0) ){
+					alert('闰年');
+				} else {
+					alert('平年');
+				}
+			}
+		</script>
+	</body>
+</html>

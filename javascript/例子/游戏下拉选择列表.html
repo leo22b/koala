@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background: black;
+			}
+			#box{
+				width: 200px;
+				border: 1px solid white;
+				color: white;
+				margin: 30px auto;
+			}
+			h3{
+				line-height: 40px;
+			}
+			ul{
+				display: none;
+			}
+			li{
+				list-style: none;
+				border-top: 1px dashed white;
+				line-height: 30px;
+				padding-left: 10px;
+			}
+			.active{
+				background: gray;
+			}
+			
+			span{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<h3>地下城与勇士</h3>
+			<ul>
+				<li style="border-top: 1px solid white;"> 魔兽世界(国服) </li>
+				<li> 魔兽世界(台服) </li>
+				<li> 热血江湖 </li>
+				<li> 梦幻西游 </li>
+				<li> 大话西游 </li>
+				<li> QQ幻想 </li>
+				<li> 传奇 </li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var obox=document.getElementById('box');
+			var oul=obox.getElementsByTagName('ul')[0];
+			var oh3=obox.getElementsByTagName('h3')[0];
+			var oli=oul.getElementsByTagName('li');
+			oh3.onclick=function(ev){
+				ev = event || ev;
+				oul.style.display='block';
+				ev.stopPropagation?ev.stopPropagation():ev.cancelBubble=true;
+			}
+			document.onclick=function(){
+				oul.style.display='none';
+			}
+			var temp=null;
+			oul.onmouseover=function(ev){
+				ev = event || ev;
+				var self=ev.target||ev.srcElement;
+				if (self.tagName.toLowerCase()=='li') {
+					if(temp!=null){
+						temp.className='';
+					}
+					temp=self;
+					temp.className='active';
+				}
+				self.onclick=function(){
+					oh3.innerHTML=self.innerHTML;
+				}
+			}
+		</script>
+	</body>
+</html>

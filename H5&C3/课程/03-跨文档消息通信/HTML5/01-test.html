@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	
+	<body>
+		<input type="button" value="改变父窗口背景" id="bt" />
+		<h3>01-test文件（iframe测试文件）</h3>
+		
+		<script type="text/javascript">
+			var oBt = document.querySelector("#bt");
+			
+			oBt.onclick = function(){
+				// window.parent  --> 父窗口window
+				// window.document == document
+				
+				// window.parent
+				parent.document.body.style.background = 'purple';
+			}
+		</script>
+	</body>
+</html>

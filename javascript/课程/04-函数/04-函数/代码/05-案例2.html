@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<script>
+			// 案例2: 一个新入职，月工资为2000元的员工，每年涨工资2%，到退休时工作50年的月工资是多少
+			// 2000 * (1 + 0.02) 
+			
+			var temp = 2000;
+			
+			for(var i=1; i<50; i++){
+				temp = temp * (1 + 0.02);
+			}
+			
+			alert(temp);
+		</script>
+	</body>
+</html>

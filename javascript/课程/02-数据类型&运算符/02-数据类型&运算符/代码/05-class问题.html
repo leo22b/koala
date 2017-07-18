@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				list-style: none;
+				margin-right: 5px;
+				float: left;
+			}
+			a{
+				float: left;
+				padding: 20px;
+				background: gray;
+				color: white;
+				text-decoration: none;
+			}
+			
+			/* 选中时的样式*/
+			.active a{
+				background: red;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<ul>
+			<li id="bt1" class="active"><a href="#">财经</a></li>
+			<li id="bt2"><a href="#">娱乐</a></li>
+			<li id="bt3"><a href="#">体育</a></li>
+		</ul>
+		
+		
+		<script>
+			var oBt1 = document.getElementById('bt1');
+			var oBt2 = document.getElementById('bt2');
+			var oBt3 = document.getElementById('bt3');
+			
+			// 临时变量，用于保存点击按钮是哪个
+			var temp = oBt1;
+			
+			// 按钮对应点击，其实就是添加上一个className
+			
+			
+			/*
+			 * 选中与未选中的状态，其实就是有.active和无.active
+			 * 
+			 * 如果选中，即给对应li添加上一个className为active；
+			 * 取消选中，即将对应li中的className为删除;
+			 */
+			
+			oBt1.onclick = function(){
+				// 获取属性名为class对应的属性值
+				// alert( oBt1.className );
+				
+				// 将选中的，取消选中  (先擦掉)
+				temp.className = '';
+				// 记录选中的是谁
+				temp = oBt1;
+				// 改变对应的样式
+				temp.className = 'active';
+			}
+			
+			oBt2.onclick = function(){
+				// alert(2);
+				
+				// 将选中的，取消选中  (先擦掉)
+				temp.className = '';
+				// 记录选中的是谁
+				temp = oBt2;
+				// 改变对应的样式
+				temp.className = 'active';
+			}
+			
+			oBt3.onclick = function(){
+				// alert(3);
+				
+				// 将选中的，取消选中  (先擦掉)
+				temp.className = '';
+				// 记录选中的是谁
+				temp = oBt3;
+				// 改变对应的样式
+				temp.className = 'active';
+			}
+		</script>
+	</body>
+</html>

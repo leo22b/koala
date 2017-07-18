@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				/* 1、margin无效解决方式*/
+				/*text-align: center;*/
+			}
+			.nav{
+				width: 1000px;
+				height: 30px;
+				background: red;
+				margin: 0 auto;
+			}
+			
+			
+			
+			.div2{
+				width: 500px;
+				height: 300px;
+				background: red;
+				padding-left: 20px;
+			}
+			.div2 img{
+				/* 2、图片间隙 解决方式*/
+				display: block;
+			}
+			
+			.ul1{
+				width: 1000px;
+				height: 300px;
+				background: blue;
+			}
+			.ul1 li{
+				float: left;
+				list-style: none;
+			}
+			.ul1 li img{
+				/* 2、图片间隙 解决方式*/
+				display: block;
+			}
+			
+			
+			
+			.div3{
+				width: 300px;
+				height: 300px;
+				border: 1px solid gray;
+			}
+			.div3 .info3{
+				width: 100px;
+				height: 100px;
+				background: red;
+				float: left;
+				margin: 0 10px;
+				/* 3、双倍边界 解决方式*/
+				display: inline;
+			}
+			
+			
+			.div4{
+				width: 300px;
+				height: 10px;
+				background: red;
+				
+				/* 4、默认高度 解决方式*/
+				/*overflow: hidden;*/
+				font-size: 0;
+			}
+			
+			form input{
+				/*5、表单高度不一致 解决方式*/
+				float: left;
+			}
+			
+			
+			
+			.login{
+				/* 6、按钮元素默认大小一致解决*/
+				
+				/*width: 80px;
+				height: 30px;*/
+				
+				
+				
+			}
+		</style>
+	</head>
+	
+	<body>
+		<!-- 1、margin无效-->
+		<div class="nav"></div>
+		<br />
+		
+		<!-- 2、图片间隙-->
+		<div class="div2">
+			<img src="test.jpg" />
+		</div>
+		
+		<br />
+		<ul class="ul1">
+			<li><img src="test.jpg" alt="" /></li>
+			<li><img src="test.jpg" alt="" /></li>
+			<li><img src="test.jpg" alt="" /></li>
+		</ul>
+		
+		
+		<!-- 3、双倍边界-->
+		<br />
+		<div class="div3">
+			<div class="info3"></div>
+		</div>
+		
+		<!-- 4、默认高度-->
+		<br />
+		<div class="div4">
+			
+		</div>
+		
+		
+		
+		<!-- 5、表单高度不一致-->
+		<br />
+		<form>
+			<input type="button" value="注册" />
+			<input type="text" />
+			<input type="password" />
+			<input type="submit" value="提交" />
+		</form>
+		
+		
+		<br />
+		<br />
+		<br />
+		<!-- 6、按钮元素默认大小一致-->
+		<input type="button" value="登录" class="login" />
+		
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>控制器的模块写法</title>
+	<script src="lib/angular-1.3.0.js"></script>
+</head>
+<body>
+     <div  ng-app="myApp1" ng-controller="myController1" >
+          <input type="text" ng-model="name" placeholder="your name">
+          <input type="text" ng-model="age" placeholder="your age">
+          <h1>hello {{name}}</h1>  
+          <h2>年龄:{{age}}</h2>
+     </div>     
+     <script>
+         var myApp1=angular.module("myApp1",[]); 
+
+         myApp1.controller("myController1",function($scope){
+                  $scope.name="lisi";   
+                  $scope.age="100";
+         });
+
+        myApp1.controller("myController1",["$scope","$rootScope",function($scope,$rootScope){
+                       
+                     
+
+        }]);
+     </script>
+<!-- 
+    实例讲解
+         
+         1: ng-app="myApp" 我们给ng-app指令赋了一个值  , 即定义了一个myApp应用
+
+         2：ng-controller  指令定义了控制器，即确定了作用区域
+
+         3：使用angular.module()方法来声明模块，也就是声明应用程序（一个页面中可以声明多个ng-app模块,一个模块中也可以有多个控制器），让后调用controller()控制方法
+        
+         4: 在angular.module()方法中有两个参数，第一个是模块名称，第二参数是依赖列表（也就是当前模块想使用其它模块中的定义个服务时，必须依赖这个被依赖的模块）
+
+-->
+
+</body>
+</html>

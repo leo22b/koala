@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oBt1 = document.getElementById("bt1");
+				var oBt2 = document.getElementById("bt2");
+				
+				oBt1.onclick = function(){
+					// 存储时间(有效期)
+					var nowTime = new Date();
+					// 设置过期时间
+					nowTime.setDate(nowTime.getDate()+1);
+					document.cookie = 'test=张三;expires=' + nowTime.toString();
+					
+					// 临时数据(浏览器程序结束后)
+					document.cookie = 'id=001';
+					alert('存储数据成功');
+				}
+				
+				oBt2.onclick = function(){
+					alert(document.cookie);
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<input type="button" value="存储数据" id="bt1" />
+		<input type="button" value="获取数据" id="bt2" />
+	</body>
+</html>

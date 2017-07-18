@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			i{
+				font-style: normal;
+			}
+			ul{
+				background: #e5e5e5;
+			}
+			li{
+				list-style-type: square;
+				list-style-image: url(list.png);
+				background-color: red;
+				list-style-position: outside;
+			}
+			
+			
+			a{
+				/* 去除下划线*/
+				text-decoration: none;
+			}
+			a:hover{
+				color: red;
+				text-decoration: underline;
+				/*text-decoration: overline;*/
+			}
+			
+			.info{
+				/*border-style: dashed;
+				border-width: 1px;
+				border-color: red;*/
+				
+				/*border: 1px solid gray;*/
+				
+				/*border-left: 1px solid red;
+				border-right: 1px solid red;
+				border-bottom: 1px solid red;*/
+				
+				border: 1px solid red;
+				border-top: none;
+				
+				/* 首行缩进(和字体大小有关)*/
+				text-indent: 32px;
+				font-size: 16px;
+				
+			}
+			.info i{
+				font-weight: 900;
+				font-size: 20px;
+				color: blue;
+			}
+			.info b{
+				font-size: 30px;
+				color: red;
+				text-decoration: line-through;
+			}
+			.info span{
+				font-size: 30px;
+				font-weight: 900;
+				color:red;
+			}
+			
+			.info2{
+				/* 字母间距(相对于英文)
+				 * 字间距(相对于中文文字)
+				 */
+				letter-spacing: 5px;
+			}
+			.info3{
+				/* 单词间距(只有英语)*/
+				word-spacing: 10px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<p>鹅，鹅，鹅</p>
+		<ul>
+			<li> <i>鹅，鹅，鹅,</i> </li>
+			<li>曲向向天空。</li>
+			<li>拔毛加开水，</li>
+			<li>大蒜加酱油。</li>
+		</ul>
+		
+		
+		<br />
+		<a href="#">百度一下</a> 
+		<br />
+		
+		<p class="info">走过过来千万不要错过，苹果 <i>9</i> 代，不要 <b>9999</b> ，只要 <span>99</span>。走过路过千万不要错过。<span>99</span>你买不了吃亏，<span>99</span>你买不了上当，<span>99</span>苹果 <i>9</i> 代值得拥有。 </p>
+		
+		
+		<br />
+		<p class="info2"> Hello World! 你好你好你好..... </p>
+		<p class="info3"> Hello World! 你好你好你好.... </p>
+	</body>
+</html>

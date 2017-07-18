@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{margin:0;padding:0}
+			#menu{
+				width: 100px;
+				height: 200px;
+				border: 1px solid black;
+				position: absolute;
+				display: none;
+				background:lightgray;
+			}
+			li{
+				list-style: none;
+				padding-left:10px;
+			}
+			li:hover{
+				background: #000;
+				color:white;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oMenu = document.getElementById("menu");
+				
+				document.oncontextmenu = function(ev){
+//					alert(1); 
+					
+					ev = event || ev;
+					
+					// 鼠标位置
+					oMenu.style.display = 'block';
+					oMenu.style.left = ev.clientX + 'px';
+					oMenu.style.top = ev.clientY + 'px';
+					
+					
+					// 禁止事件默认行为
+//					ev.preventDefault ? ev.preventDefault() : ev.returnValue = false;
+					return false;
+				}
+				document.onclick = function(){
+					oMenu.style.display = 'none';	
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="menu">
+			<ul>
+				<li>刷新</li>
+				<li>剪切</li>
+				<li>复制</li>
+				<li>全选</li>
+			</ul>
+		</div>
+	</body>
+</html>

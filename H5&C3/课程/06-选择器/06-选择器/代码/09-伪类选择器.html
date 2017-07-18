@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div p{
+				color: red;
+			}
+			
+			/* div下的所有a标签*/
+			div a{
+				text-decoration: none;
+				color: purple;
+			}
+
+			div > a{
+				color: blue;
+			}
+			/*E > F	子元素选择器，匹配所有E元素的子元素F*/
+			div > p a + a{
+				color: yellow;
+			}
+			/*E + F	毗邻元素选择器，匹配所有紧随E元素之后的同级元素F*/
+		</style>
+	</head>
+	
+	
+	<body>
+		<div>
+			<a href="#">HTML5&CSS</a>
+			<p>
+				CSS3的学习 -- 选择器
+				<a href="#">测试代码1</a>
+				<a href="#">测试代码3</a>
+			</p>
+			<p>
+				CSS的学习  -- 布局
+				<a href="#">测试代码2</a>
+			</p>
+			<a href="#">HTML5&CSS</a>
+			<br />
+			<a href="#">HTML5&CSS</a>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				width: 1000px;
+				height: 43px;
+				/*background: red;*/
+				/* 图片高度只有37px，只需要水平方向平铺，而且位置是靠底部*/
+				background: url(nav/nav9.png) repeat-x left bottom;
+				margin: 30px auto;
+			}
+			li{
+				float: left;
+				list-style: none;
+			}
+			li a{
+				padding: 0 30px;
+				text-decoration: none;
+				display: block;
+				height: 37px;
+				line-height: 43px;
+				color: black;
+			}
+			
+			/* 鼠标移入*/
+			li a:hover{
+				color: white;
+				height: 43px;
+				line-height: 37px;
+				background: url(nav/nav9-2.png);
+			}
+		</style>
+	</head>
+	
+	<body>
+		<ul>
+			<li> <a href="#">Sample</a> </li>
+			<li> <a href="#">Sample</a> </li>
+			<li> <a href="#">Sample</a> </li>
+			<li> <a href="#">Sample</a> </li>
+			<li> <a href="#">Sample</a> </li>
+			<li> <a href="#">Sample</a> </li>
+			<li> <a href="#">Sample</a> </li>
+		</ul>
+	</body>
+</html>

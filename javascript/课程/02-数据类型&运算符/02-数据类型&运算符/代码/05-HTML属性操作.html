@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<p>
+			<input type="button" value="+" id="bt1" />
+			<input type="button" value="-" id="bt2" />
+			<input type="button" value="皮肤1" id="bt3" />
+			<input type="button" value="皮肤2" id="bt4" />
+		</p>
+		
+		<!--
+			属性名=属性值
+			style="font-size: 20px;"
+		-->
+		<p id="p1">
+			每天一句：没有方向感，我们不知道自己走向哪里。没有方向感，我们所有的努力就缺乏一个标准，我们每时每刻所有的努力都处在一种混沌与盲目的状态之中：没有对错、没有进退、没有成败得失。
+		</p>
+		
+		<script>
+			// 1、获取到对应的元素
+			var oBt1 = document.getElementById('bt1');
+			var oBt2 = document.getElementById('bt2');
+			var oBt3 = document.getElementById('bt3');
+			var oBt4 = document.getElementById('bt4');
+			var oP = document.getElementById('p1');
+			
+			
+			// 默认是16 (用于控制字体大小的)
+			var size = 16;
+			
+			// 加按钮
+			oBt1.onclick = function(){
+				// 字体内容变大(不会出现横杆)
+				// oP.style.fontSize = "30px";
+				
+				size = size + 1;
+				console.log(size);
+				
+				oP.style.fontSize = size + 'px';
+			}
+			
+			// 减按钮
+			oBt2.onclick = function(){
+				// 字体内容变小
+				// oP.style.fontSize = '10px';
+				
+				size = size - 1;
+				console.log(size);
+				
+				oP.style.fontSize = size + 'px';
+			}
+			
+			
+			// 皮肤1: 红色背景，白色字体
+			oBt3.onclick = function(){
+				// background-color: 'red';
+				oP.style.backgroundColor = 'red';
+				oP.style.color = 'white';
+			}
+			
+			// 皮肤2: 灰色边框，紫色背景，白色字体
+			oBt4.onclick = function(){
+				oP.style.border = '1px solid gray';
+				oP.style.backgroundColor = 'purple';
+				oP.style.color = 'white';
+			}
+		</script>
+	</body>
+</html>

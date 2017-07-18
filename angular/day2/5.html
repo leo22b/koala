@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>表单验证 </title>
+	<script src="lib/angular-1.3.0.js"></script>
+	<style>
+          ng-cloak{display: none;}
+         /* #username.ng-invalid-required{
+            background: red;
+          }*/
+	</style>
+</head>
+<body ng-controller="myController" ng-cloak>
+  
+         <form name="myForm" novalidate><!-- novalidate 屏蔽浏览器对表单的默认验证行为
+ -->
+            <div>
+                 姓名:<input type="text"  id="username" name="user" ng-model="user.name" required ng-pattern="/^[a-zA-Z_][a-zA-Z0-9_]/">
+                 <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+                     <span ng-show="myForm.user.$error.required">用户名是必须的。</span>
+                      <span ng-show="myForm.user.$error.pattern">只能由字母,数字,下划线组成</span>
+                  </span>
+            </div>
+            <div>
+                 密码:<input type="password"  name="pass" ng-model="user.pass" ng-minlength="6" ng-maxlength="20" ng-pattern="/[a-zA-Z0-9_]/"/> 
+                   <span style="color:red" ng-show="myForm.pass.$dirty && myForm.pass.$invalid">
+                     <span ng-show="myForm.pass.$error.pattern">密码只能由字母,数字,下划线组成</span>
+                     <span ng-show="password">密码只能由字母,数字,下划线组成</span>
+                     <span ng-show="myForm.pass.$error.minlength">最小长度为6位</span>
+                     <span ng-show="myForm.pass.$error.maxlength">最大长度为20位</span>
+                  </span>
+            </div>
+
+              <div>
+              
+
+               再次输入密码:<input type="password"  ng-model="user.passwordagain" name="passwordagain"  required>
+           
+                    <span style="color: red" ng-show="myForm.pass.$valid">
+                        <span ng-show="user.passwordagain!=user.pass">*两次密码输入不一致</span>
+                    </span>
+               
+            </div>
+           
+         
+            <div>
+
+                邮箱:<input type="email" name="email" ng-model="user.email" /> 
+                   <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+                     <span ng-show="myForm.email.$error.email">邮箱格式包含@</span>  
+                   <!--   <span ng-show="myForm.email.$error.pattern">邮箱格式包含.出错</span>  -->
+                                  
+                  </span>
+             </div>
+            <div>
+                 数字:<input type="number" name="age" ng-model="user.age"  /> 
+                   
+             </div>
+            <div> 
+                  url:<input type="url" name="url" ng-model="user.url" /> 
+                    <span style="color:red" ng-show="myForm.url.$dirty && myForm.url.$invalid">
+                     <span ng-show="myForm.url.$error.url">地址出错</span>                  
+                    </span>
+
+             </div>
+
+
+         <p>
+          
+                  <input type="submit" ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  myForm.pass.$dirty && myForm.pass.$invalid ||user.passwordagain!=user.pass || myForm.email.$dirty && myForm.email.$invalid ||myForm.url.$dirty && myForm.url.$invalid ">
+          </p>
+
+
+         </form>
+ 
+	
+
+ <div>{{user.name}}</div>
+ <div>{{user.pass}}</div>
+
+
+	 <script>
+
+             angular.module("myApp",[])
+             .controller("myController",function($scope){
+                  $scope.user={
+
+                         name:"",
+                         pass:"",
+                         passwordagain:""
+                  }
+                     
+                     
+                                  
+                                    
+             	})
+                       
+             
+
+	 </script>
+	 <!-- 
+
+       
+angularJS中的表单验证（包括自定义验证）
+
+表单验证是angularJS一项重要的功能，能保证我们的web应用不会被恶意或错误的输入破坏。Angular表单验证提供了很多表单验证指令，并且能将
+
+html5表单验证功能同他自己的验证指令结合起来使用，进而在客户端验证时提供表单状态的实时反馈。
+
+要使用表单验证，首先保证表单有一个name属性，一般的输入字段如最大，最小长度等，这些功能由html5表单属性提供，如果我们想屏蔽浏览器对表单
+
+的默认验证行为，可以在表单元素上添加novalidate标记。
+
+表单基本格式如下：
+
+<form name="form" novalidate>
+                  <label for="email">你的邮箱：</label>
+                  <input type="email" name="email" id="email" ng-model="user.email" placeholder="邮箱地址">
+                  <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+                     <span ng-show="myForm.user.$error.required">用户名是必须的。</span>
+                    <span ng-show="myForm.user.$error.pattern">只能由字母,数字,下划线组成</span>
+                  </span>
+</form>
+
+当然在input元素上还可以使用很多验证选项，比如：
+1.必填项，设置某个表单输入是否已经填写，只需要在输入字段元素上添加require标记即可。
+
+<input type="text" required>
+
+2.最小（大）长度，验证表单输入的文本长度是否大于某个最小值，可以使用ng-minlength指令（ng-maxlength指令）
+
+<input type="text" ng-minlength="5" ng-maxlength>
+
+3.模式匹配，使用ng-pattern来确保输入匹配指定的正则表达式
+
+<input type="text"  ng-pattern="/^[a-zA-Z]$/">
+
+4. 电子邮件，只需要把input的类型设置为email即可
+
+<input type="email" name="email" ng-model="user.email" >
+
+5.数字，只需要将input的类型设置为number
+
+<input type="number" name="age" ng-model="user.age">
+
+6.URL，将input的类型设置为url
+ 
+
+由于表单的属性可以在其$scope对象中访问到，而我们又可以直接访问到$scope，因此js可以间接的访问DOM的表单属性，借助这些属性，我们可以对表单做出实时响应。
+
+这些属性有：
+
+1. 未修改的表单，用来判断用户是否修改了表单，如果修改了则为true，未修改则为false。
+
+formName.inputFieldName.$pristine
+
+2. 修改过的表单，只要用户修改过表单，无论输入是否通过验证，该值都将返回true
+
+    formName.inputFieldName.$dirty
+
+3. 合法的表单，这个属性是用来判断表单的内容是否合法的，如果合法则该属性的值为true
+
+formName.inputFieldName.$valid
+
+4. 不合法的表单，这个属性与上个属性正好相反，如果不合法，则该属性值为true
+
+formName.inputFieldName.$invalid
+
+5. 错误，$error对象包含了当前表单的所有验证内容，以及它们是否合法的信息，如果验证失败，该属性值为true，如果验证成功，则该值为false
+
+formName.inputFieldName.$error
+
+
+
+同时，ng针对这几种验证指令，针对性的设置了一些css样式，称为状态类
+
+它们包括：
+
+  
+.ng-valid  { }
+.ng-invalid { }
+.ng-pristine { }
+.ng-dirty  { }
+
+
+
+
+
+
+
+
+
+	  -->
+</body>
+</html>

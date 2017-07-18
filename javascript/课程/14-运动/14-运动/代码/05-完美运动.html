@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background: red;
+				opacity: 0.3;
+			}
+		</style>
+		<script type="text/javascript" src="startMove.js" ></script>
+		<script>
+			window.onload = function(){
+				var oBox = document.getElementById("box");
+				
+				
+				/* 问题:
+				1、 
+					width: 100
+					speed: 1
+					target: 101
+					width: 100 + 1 = 101
+					
+					height: 100
+					speed: 20
+					target: 300
+					height: 100 + 20 = 120
+					
+					opacity: 30
+					speed: 10
+					target: 100
+					opacity: 30 + 10 = 40
+					
+				2、
+					width: 101
+					speed: 1
+					判断是否等于target: 101
+						- 停止时钟
+						
+						
+				需要等到所有的属性都到达目标点(target)，才停止时钟;
+				(类似于旅游团有40个人，有10个人先到到达指点点，还不能开车走，得等到所有成员到达之后才出发)
+				 */
+				
+				oBox.onclick = function(){
+					startMove(this, {
+						width: 280,
+						height: 300,
+						opacity: 80,
+						fontSize: 20
+					});
+				}
+				
+				oBox.ondblclick = function(){
+					startMove(this, {
+						width: 100,
+						height: 100,
+						opacity: 30,
+						fontSize: 16
+					});
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="box">
+			完美运动框架
+		</div>
+	</body>
+</html>

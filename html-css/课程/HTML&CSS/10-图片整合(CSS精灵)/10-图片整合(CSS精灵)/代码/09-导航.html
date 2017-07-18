@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 1000px;
+				/*height: 100px;*/
+				height: 42px;
+				padding-top: 58px;
+				padding-left: 30px;
+				background: black;
+				margin: 0 auto;
+			}
+			#box li{
+				float: left;
+				list-style: none;
+				margin-right: 6px;
+			}
+			
+			#box li a{
+				color: white;
+				text-decoration: none;
+				float: left;
+				background: url(09-images/tab-left.gif) no-repeat left top;
+				/* 让内容往右移4px，即是顶出4px位置给背景显示*/
+				padding-left: 4px;
+			}
+			#box li:hover a{
+				background-position: left bottom;
+			}
+			#box li span{
+				display: block;
+				height: 42px;
+				/*padding: 0 10px;*/
+				padding: 0 10px 0 6px;
+				line-height: 42px;
+				/* 子元素的背景会覆盖父元素*/
+				background: url(09-images/tab-right.gif) no-repeat right top;
+			}
+			#box li:hover span{
+				background-position: right bottom;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="box">
+			<ul>
+				<li> 
+					<a href="#"> 
+						<span>首页</span> 
+					</a> 
+				</li>
+				<li> 
+					<a href="#"> 
+						<span>首页首页首页</span> 
+					</a> 
+				</li>
+				<li> <a href="#"> <span>关于我们</span> </a> </li>
+				<li> <a href="#"> <span>设置</span> </a> </li>
+				<li> <a href="#"> <span>加入我们吧</span> </a> </li>
+				<li> <a href="#"> <span>联系我们</span> </a> </li>
+			</ul>
+		</div>
+	</body>
+</html>

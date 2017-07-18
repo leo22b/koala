@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.bt{
+				width: 65px;
+				height: 65px;
+				background: url(img/icon_00.png);
+				float: left;
+				margin: 10px;
+			}
+		</style>
+	</head>
+	
+	
+	<body>
+		<div class="bt"></div>
+		<div class="bt"></div>
+		<div class="bt"></div>
+		<div class="bt"></div>
+		<div class="bt"></div>
+		<div class="bt"></div>
+		<div class="bt"></div>
+		<div class="bt"></div>
+		
+		
+		<script type="text/javascript">
+			var aBt = document.getElementsByTagName('div');
+			
+			for(var i=0; i<aBt.length; i++){
+//				// 所有的bt默认显示都是为img/icon_00.png
+//				aBt[i].src = 'img/icon_00.png';
+//				
+//				aBt[i].onclick = function(){
+//					// this --> 哪个按钮点击对应即哪个按钮
+//					// alert( this.src );
+//					
+//					if( this.src == 'img/icon_00.png' ){
+//						this.style.backgroundImage = 'url(img/icon_01.png)';
+//						this.src = 'img/icon_01.png';
+//					} else {
+//						this.style.backgroundImage = 'url(img/icon_00.png)';
+//						this.src = 'img/icon_00.png';
+//					}
+//				}
+
+
+
+
+				// img/icon_00.png  ---- img/icon_01.png
+				aBt[i].isShow = true;
+				aBt[i].index = i;
+				aBt[i].onclick = function(){
+					// false
+					this.isShow = !this.isShow;
+					
+					// false
+					this.style.backgroundImage = this.isShow ? 'url(img/icon_00.png)' : 'url(img/icon_01.png)';
+					
+					
+					// alert(i);	// 8
+					console.log(this.index);
+				}
+			}
+		</script>
+	</body>
+</html>

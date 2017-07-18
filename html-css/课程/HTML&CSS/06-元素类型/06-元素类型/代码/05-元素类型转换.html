@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			span{
+				background: red;
+				width: 100px;
+				height: 30px;
+				margin: 5px;
+			}
+			.span1{
+				/* 行内元素*/
+				/*display: inline;*/
+			}			
+			.span2{
+				/* 将元素类型改为 块级元素*/
+				display: block;
+			}
+			
+			
+			
+			p{
+				background: blue;
+				color: white;
+				width: 500px;
+				height: 30px;
+			}
+			.p1{
+				/*将元素类型改为 行内元素*/
+				display: inline;
+			}
+			.p2{
+				/* 块级元素*/
+				/*display: block;*/
+			}
+			
+			
+			
+			div{
+				width: 100px;
+				height: 100px;
+				color: white;
+				/* 将元素类型改为 行内块元素*/
+				display: inline-block;
+			}
+			.div1{
+				background: red;
+			}
+			.div2{
+				background: blue;
+			}
+			.div3{
+				background: blueviolet;
+			}
+			
+			.div4{
+				width: 300px;
+				height: 300px;
+				background: cadetblue;
+				/* 将元素隐藏*/
+				display: none;
+			}
+			
+			
+			i{
+				background: red;
+				color: white;
+				width: 100px;
+				height: 100px;
+				margin: 5px;
+				
+				/* 元素类型会发生改变*/
+				float: left;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<!-- 1、将行内元素转为块级元素-->
+		<span class="span1">span1</span>
+		<span class="span2">span2</span>
+		<span class="span3">span3</span>
+		
+		
+		<!-- 2、将块级元素转为行内元素-->
+		<p class="p1"> 1、每天一句：99分和100分的区别是在于</p>
+		<p class="p2"> 2、每天一句：99分和100分的区别是在于，满分只有100分。 </p>
+		
+		
+		<!-- 3、将块级元素转为行内块级元素-->
+		<br />
+		<div class="div1">div1</div>
+		<div class="div2">div2</div>
+		<div class="div3">div3</div>
+		
+		
+		<!-- 4、将元素隐藏-->
+		<div class="div4">div4</div>
+		
+		
+		
+		<!-- 5、添加浮动属性后，元素类型会改变-->
+		<br />
+		<br />
+		<i class="i1">浮动1</i>
+		<i class="i2">浮动2</i>
+		<i>浮动3</i>
+		<i>浮动4</i>
+	</body>
+</html>

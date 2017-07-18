@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			input {
+				width: 50px;
+				height: 30px;
+				border: 0;
+			}
+			
+			.active {
+				background: red;
+				color: white;
+			}
+			
+			div {
+				width: 200px;
+				height: 150px;
+				border: 1px solid gray;
+				display: none;
+			}
+		</style>
+		<script type="text/javascript">
+			/*
+						1、前提:所有东西都是在onload中;
+			  			2、改写:不能有函数嵌套，可以有全局变量；
+			  			3、
+			    				onload         -->         构造函数
+			    				全局变量        -->        属性
+			    				函数            -->         方法
+			  			4、改错: this的处理
+						 */
+						
+						
+			// 1、前提:所有东西都是在onload中;
+			// 2、改写:不能有函数嵌套，可以有全局变量；
+			// 3、onload -->构造函数   全局变量-->属性    函数-->方法
+			window.onload = function() {
+				var tab = new TabSwitch();
+			}
+
+			// 构造函数
+			function TabSwitch() {
+				// 属性啊
+				this.aBt = document.querySelectorAll("input");
+				this.aView = document.querySelectorAll("div");
+
+				for(var i = 0; i < this.aBt.length; i++) {
+					this.aBt[i].index = i;
+					this.aBt[i].onclick = this.click;
+				}
+			}
+
+			// 按钮点击
+			TabSwitch.prototype.click = function(){
+				
+				// this?
+				// this ==> TabSwitch对象
+				
+				// 清空样式
+				for(var j = 0; j < this.aBt.length; j++) {
+					this.aBt[j].className = '';
+					this.aView[j].style.display = 'none';
+				}
+
+				// 设置
+				this.aBt[this.index].className = 'active';
+				this.aView[this.index].style.display = 'block';
+			}
+		</script>
+	</head>
+
+	<body>
+		<input type="button" value="新闻" class="active" />
+		<input type="button" value="娱乐" />
+		<input type="button" value="体育" />
+
+		<br />
+		<br />
+		<div style="display: block;">
+			新闻
+		</div>
+		<div>
+			娱乐
+		</div>
+		<div>
+			体育
+		</div>
+	</body>
+
+</html>

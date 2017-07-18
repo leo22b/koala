@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+			}
+			#box{
+				width: 500px;
+				height: 400px;
+				border: 1px solid gray;
+				margin: 40px auto;
+			}
+			#box .bigView{
+				width: 500px;
+				height: 300px;
+				background: red;
+				position: relative;
+				overflow: hidden;
+			}
+			#box .bigView ul{
+				list-style: none;
+				width: 3500px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				/*left: -1000px;*/
+			}
+			#box .bigView ul li{
+				width: 500px;
+				height: 300px;
+				float: left;
+			}
+			#box .bigView img{
+				width: 500px;
+				height: 300px;
+				position: absolute;
+				float: left;
+			}
+			#box .back img,#box .next img{
+				width: 50px;
+				height: 50px;
+			}
+			#box .back{
+				width: 250px;
+				height: 300px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				z-index: 1000;
+				opacity: 0;
+				filter: alpha(opacity=0);
+			}
+			#box .back:hover{
+				opacity: 1;
+				filter: alpha(opacity=100);
+			}
+			#box .back img{
+				position: absolute;
+				left: 0;
+				top: 125px;
+			}
+			#box .next{
+				width: 250px;
+				height: 300px;
+				position: absolute;
+				right: 0;
+				top: 0;
+				z-index: 1000;
+				opacity: 0;
+				filter: alpha(opacity=0);
+			}
+			#box .next:hover{
+				opacity: 1;
+				filter: alpha(opacity=100);
+			}
+			#box .next img{
+				position: absolute;
+				right: 0;
+				top: 125px;
+			}
+			
+			
+			
+			
+			#box .smallView{
+				width: 500px;
+				height: 100px;
+				background: gray;
+				position: relative;
+				overflow: hidden;
+			}
+			#box .smallView ul{
+				width: 1190px;	
+				height: 100px;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+			#box .smallView li{
+				float: left;
+				opacity: 0.3;
+				filter: alpha(opacity=30);
+			}
+			#box .smallView img{
+				width: 160px;
+				height: 100px;
+				margin-right: 10px;
+			}
+			
+		</style>
+		
+		<script type="text/javascript" src="move.js" ></script>
+		<script>
+			window.onload = function(){
+				var oBox = document.getElementById("box");
+				var oBigView = oBox.getElementsByClassName('bigView')[0];
+				var oBack = oBigView.getElementsByClassName('back')[0];
+				var oNext = oBigView.getElementsByClassName('next')[0];
+				var oBigViewUl = oBigView.getElementsByTagName('ul')[0];
+				var aBigViewLi = oBigView.getElementsByTagName('li');
+				var oSmallView = oBox.getElementsByClassName('smallView')[0];
+				var oSmallUl = oSmallView.getElementsByTagName('ul')[0];
+				var aSmallLi = oSmallView.getElementsByTagName('li');
+				
+				// 控制下标
+				var index = 0;
+				// 小图点击下标
+				var nClick = 0;
+				
+				// 上一张
+				oBack.onclick = function(){
+					index--;
+					if(index < 0){
+						index = aBigViewLi.length - 1;
+					}
+					
+					changeView();
+				}
+				
+				// 下一张
+				oNext.onclick = function(){
+					index++;
+					if(index > aBigViewLi.length-1){
+						index = 0;
+					}
+					
+					changeView();
+				}
+				
+				// 小图
+				for(var i=0; i<aSmallLi.length; i++){
+					
+					aSmallLi[i].index = i;
+					
+					if(index == i){
+						aSmallLi[i].style.opacity = 1;
+						aSmallLi[i].style.filter = 'alpha(opacity=100)';
+					}
+					
+					
+					aSmallLi[i].onmouseover = function(){
+						startMove(this, 'opacity', 100);
+					}
+					aSmallLi[i].onmouseout = function(){
+						// 没有点击的，才恢复
+						if(this.index != nClick) {
+							startMove(this, 'opacity', 30);
+						}
+					}
+					
+					aSmallLi[i].onclick = function(){
+						index = this.index;
+						changeView();
+					}
+				}
+				
+				// 改变视图界面
+				function changeView(){
+					startMove(aSmallLi[nClick], 'opacity', 30);
+					nClick = index;
+					startMove(aSmallLi[nClick], 'opacity', 100);
+					
+					/*
+					 * 0: 0
+					 * 1: -500
+					 * 2: -1000
+					 * 3: -1500
+					 */
+					var tempW = aBigViewLi[0].offsetWidth;
+					startMove(oBigViewUl, 'left', -index*tempW);
+					
+					
+					/*
+					 * 0: 0
+					 * 1: -170 * (1 - 1)
+					 * 2: -170 * (2 - 1)
+					 * 
+					 */
+					tempW = aSmallLi[0].offsetWidth;
+					if(index == 0){
+						startMove(oSmallUl, 'left', 0);
+					} else if(index == aSmallLi.length-1){
+						startMove(oSmallUl, 'left', -(aSmallLi.length-3)*tempW);
+					}
+					else {
+						startMove(oSmallUl, 'left', -(index-1)*tempW);
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	
+	<body>
+		<div id="box">
+			<!-- 大图-->
+			<div class="bigView">
+				
+				<div class="back">
+						<a href="#">
+							<img src="images/left.png" />
+						</a>
+				</div>
+				<div class="next">
+						<a href="#">
+							<img src="images/right.png" />
+						</a>
+				</div>
+				
+				<ul>
+					<li> <img src="images/Kayle_Splash_0.jpg" /> </li>
+					<li> <img src="images/Kayle_Splash_1.jpg" /> </li>
+					<li> <img src="images/Kayle_Splash_2.jpg" /> </li>
+					<li> <img src="images/Kayle_Splash_3.jpg" /> </li>
+					<li> <img src="images/Kayle_Splash_4.jpg" /> </li>
+					<li> <img src="images/Kayle_Splash_5.jpg" /> </li>
+					<li> <img src="images/Kayle_Splash_6.jpg" /> </li>
+				</ul>
+			</div>
+			
+			<!-- 小图-->
+			<div class="smallView">
+				<ul>
+					<li> <img src="images/Kayle_Splash_0.jpg" /> </li>
+					<li> <img src="images/Kayle_Splash_1.jpg" /> </li>
+					<li> <img src="images/Kayle_Splash_2.jpg" /> </li>
+					<li> <img src="images/Kayle_Splash_3.jpg" /> </li>
+					<li> <img src="images/Kayle_Splash_4.jpg" /> </li>
+					<li> <img src="images/Kayle_Splash_5.jpg" /> </li>
+					<li> <img src="images/Kayle_Splash_6.jpg" /> </li>
+				</ul>
+			</div>
+			
+		</div>
+	</body>
+</html>

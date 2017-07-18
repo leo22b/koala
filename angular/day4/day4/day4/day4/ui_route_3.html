@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="myController">
+<head>
+    <meta charset="UTF-8">
+    <title>路由内嵌套路由</title>
+    <script src="lib/angular-1.3.0.js"></script>
+    <script src="lib/angular-ui-router.js"></script>
+    <style>
+        .cl{margin: 0px 40px;}
+        *{padding: 0x;margin: 0px;}
+        #container{width: 500px;margin: 0 auto}
+    </style>
+</head>
+<body>
+<div id="container">
+
+
+
+        <div ui-view></div>
+        <a ui-sref="home">home</a>
+        <a ui-sref="about" class="cl">about</a>
+        <a ui-sref="items">商品种类</a>
+
+</div>
+<script>
+    var myApp=angular.module('myApp',['ui.router'])
+    myApp.controller("myController",function($scope){
+
+    })
+    myApp.config(['$stateProvider',"$urlRouterProvider",function ($stateProvider,$urlRouterProvider) {
+        $stateProvider.state('home',{ //定义 home状态 对应的路由对象
+            url:'/userXXX', //定义状态地址栏的url
+            template:'<div style="width:300px;height:300px;background:red">首页</div>'
+        }).state('about',{ //定义 home状态 对应的路由对象
+            url:'/userXXX', //定义状态地址栏的url
+            template:'<div style="width:300px;height:300px;background:red">关于我们</div>'
+        }).state('items',{ //定义 home状态 对应的路由对象
+            url:'/userXXX', //定义状态地址栏的url
+            templateUrl:'items.html'
+        }).state("items.comp",{
+             url:'/userXXX', //定义状态地址栏的url
+             templateUrl:'computer.html'
+
+        }).state("items.print",{
+             url:'/userXXX', //定义状态地址栏的url
+             templateUrl:'printer.html'
+
+        }).state("items.others",{
+             url:'/userXXX', //定义状态地址栏的url
+             templateUrl:'others.html'
+
+        })
+        $urlRouterProvider.otherwise("home");  //定义默认展示页
+    }]);
+</script>
+<!--  案列简介
+
+        1：一个简单的
+
+
+ -->
+</body>
+</html>

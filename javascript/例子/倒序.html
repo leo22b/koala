@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//倒序1
+//			var str='hello';
+//			var temp='';
+//			for(var i=str.length-1;i>=0;i--){
+//				temp=temp+str[i];
+//			}
+//			alert(temp);
+			//倒序2
+			/*
+			 * split(''): 字符串一个个字符切分成数组 --> 数组
+			 * reverse(): 倒序 (将数组倒序)  --> 数组
+			 * join(''): 将数组拼接成字符串，且分隔符为''
+			 */
+			var str='hello';
+			document.write(str.split('').reverse().join(''));
+		</script>
+		
+		
+	</body>
+</html>

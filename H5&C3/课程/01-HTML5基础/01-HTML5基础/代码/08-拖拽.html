@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.view {
+				width: 100px;
+				height: 30px;
+				background: red;
+				/*position: absolute;*/
+				margin: 5px;
+			}
+			
+			.box {
+				width: 300px;
+				height: 300px;
+				border: 1px solid gray;
+				margin: 100px;
+			}
+			
+			.box i {
+				opacity: 0;
+			}
+		</style>
+
+		<script type="text/javascript">
+			window.onload = function() {
+				var aView = document.querySelectorAll(".view");
+				var oBox = document.querySelector(".box");
+				var oPlace = document.querySelector('.box i');
+				var oLogo = document.querySelector(".logo")
+
+				// 添加拖拽
+				for(var i = 0; i < aView.length; i++) {
+					aView[i].draggable = 'true';
+					
+					// 下标
+					aView[i].index = i;
+
+					// 拖拽开始
+					aView[i].ondragstart = function(ev) {
+						// 火狐的兼容性问题
+						// key/value
+						ev = ev || window.event;
+						// ev.dataTransfer.setData('name', '李明');
+						ev.dataTransfer.setData('index', this.index.toString());
+						
+						this.style.background = 'blue';
+						oPlace.style.opacity = 1;
+						
+						
+						// 改变显示
+						ev.dataTransfer.setDragImage(oLogo, 20, 20);
+					}
+
+					// 拖拽结束
+					aView[i].ondragend = function() {
+						this.style.background = 'red';
+						oPlace.style.opacity = 0;
+					}
+				}
+
+				/*******  目标的元素事件 *******/
+				// 进入
+				oBox.ondragenter = function() {
+					this.style.background = 'gray';
+					oPlace.innerHTML = '释放鼠标';
+				}
+
+				// 进入目标、离开目标之间，连续触发
+				oBox.ondragover = function(ev) {
+					ev = ev || window.event;
+					document.title = ++i;
+
+					// 阻止默认事件
+					// ev.preventDefault();
+
+					return false;
+				}
+
+				// 离开
+				oBox.ondragleave = function() {
+					this.style.background = '';
+					oPlace.innerHTML = '将文件拖拽到此处';
+				}
+
+				// 在目标元素内释放
+				oBox.ondrop = function(ev) {
+					
+					ev = ev || window.event;
+					// alert( ev.dataTransfer.getData('name') );
+					// alert( ev.dataTransfer.getData('index') );
+					
+					// 将对应元素，添加到oBox中
+					var index = parseInt(ev.dataTransfer.getData('index'));
+					this.appendChild(aView[index] );
+					
+					
+					this.style.background = '';
+					oPlace.innerHTML = '将文件拖拽到此处';
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="view">view1</div>
+		<div class="view">view2</div>
+		<div class="view">view3</div>
+		<div class="view">view4</div>
+
+		<div class="box">
+			<i> 将文件拖拽到此处 </i>
+		</div>
+		
+		<img src="images/pdf.gif" class="logo" />
+	</body>
+
+</html>

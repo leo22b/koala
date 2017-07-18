@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 300px;
+				height: 300px;
+				background: red;
+				position: absolute;
+			}
+			.small{
+				width: 100px;
+				height: 100px;
+				background: purple;
+				
+				/* 相对于谁？
+				 * 1、有父元素，但父元素没有定位  -->  相对于body
+				 * 2、没有父元素   --->  相对于body
+				 * 3、有父元素，且元素有定位   --> 相对于父元素box
+				 * 
+				 */
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+			
+			
+			.view1{
+				width: 800px;
+				height: 800px;
+				background: blue;
+				text-align: center;
+				
+				/* 定位*/
+				position: absolute;
+			}
+			
+			.view2{
+				width: 600px;
+				height: 600px;
+				background: purple;
+				
+				/* 定位*/
+				position: absolute;
+			}
+			
+			.view3{
+				width: 400px;
+				height: 400px;
+				background: gray;
+			}
+			
+			.view4{
+				width: 200px;
+				height: 200px;
+				background: black;
+			}
+			
+			.view5{
+				width: 50px;
+				height: 50px;
+				background: red;
+				color: white;
+				
+				/* 定位 --- 绝对定位*/
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<!-- 示例一 -->
+		<!--<div id="box">
+			<div class="small"></div>
+		</div>-->
+		
+		<!-- 示例二-->
+		<!--<div class="small"></div>-->
+		
+		
+		<!-- 示例三-->
+		<br />
+		<div class="view1">
+			<div class="view2">
+				<div class="view3">
+					<div class="view4">
+						<div class="view5">view5</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

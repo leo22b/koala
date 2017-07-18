@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#process{
+				width: 300px;
+				height: 30px;
+				border: 1px solid;
+				position: relative;
+			}
+			.bg{
+				/*width: 30px;*/
+				height: 30px;
+				background: gray;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.text{
+				width: 300px;
+				text-align: center;
+				line-height: 30px;
+				height: 30px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oFile = document.querySelector("#myFile");
+				var oSend = document.querySelector("#send");
+				var oProcess = document.querySelector("#process");
+				var oBg = document.querySelector(".bg");
+				var oText = document.querySelector(".text");
+				
+				oSend.onclick = function(){
+					var request = new XMLHttpRequest();
+					request.open('POST', 'upload_file.php', true);
+					
+					// 上传进度
+					var oUpload = request.upload;
+					oUpload.onprogress = function(ev){
+						ev = ev || window.event;
+						console.log(ev.total + ":" + ev.loaded);
+						var iScale = ev.loaded / ev.total;
+						oBg.style.width = oProcess.offsetWidth * iScale + 'px';
+						oText.innerHTML = parseInt(iScale * 100) + '%';
+					}
+					
+					// 拼接参数（文件）
+//					for(key in oFile.files[0]){
+//						console.log(key + ':' + oFile.files[0][key]);
+//					}
+					request.setRequestHeader('X-Request-With', 'XMLHttpRequest');
+					var oForm = new FormData();
+					oForm.append('file', oFile.files[0]);
+					request.send(oForm);
+					
+					request.onload = function(){
+						console.log(request.responseText);
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	
+	<body>
+		<input type="file" id="myFile" />
+		<input type="button" id="send" value="上传" />
+		
+		<div id="process">
+			<div class="bg"></div>
+			<div class="text"> 0% </div>
+		</div>
+	</body>
+</html>

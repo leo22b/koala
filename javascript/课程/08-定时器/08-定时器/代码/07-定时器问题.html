@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="zyz.js" ></script>
+		<script>
+			$(function(){
+				
+				// 每隔一秒，输出 'hello world!'
+				
+				var timer = null;
+				
+				// 不断的点击时，会不断的创建时钟
+				$('bt1').onclick = function(){
+					// timer = null  -->  false
+					//null类型转换为真假值为false
+					// !timer  ---> true
+					if(!timer){	// 只有timer为null时才会执行
+						timer = setInterval(speak, 1000);	
+					}
+				}
+				
+				$('bt2').onclick = function(){
+					// 停止时钟 【并不是将timer置为空】
+					clearInterval(timer);
+					timer = null;
+				}
+				
+				var index = 0;
+				function speak(){
+					index++;
+					console.log(index + '-hello world!');
+				}
+			});
+		</script>
+	</head>
+	
+	<body>
+		<input type="button" value="开始" id="bt1" />
+		<input type="button" value="停止" id="bt2" />
+	</body>
+</html>

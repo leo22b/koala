@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 400px;
+				height: 400px;
+				border: 1px solid gray;
+				margin: 20px auto;
+				
+				/* 景深*/
+				perspective: 400px;
+			}
+			.view{
+				width: 200px;
+				height: 200px;
+				text-align: center;
+				line-height: 200px;
+				background: red;
+				margin: 100px auto;
+				
+				/* 2d*/
+				/*transform: translateX(30px);*/
+				/*transform: translateY(50px);*/
+				/*transform: rotate(20deg);*/
+				
+				
+				/* 3d*/
+				
+				/* 建立3D空间*/
+				transform-style: preserve-3d;
+				
+				
+				
+				
+				/* 绕X轴旋转*/
+				/*transform: rotateX(60deg);*/
+				
+				/* 绕Y轴旋转*/
+				transform: rotateY(60deg);
+				
+				/* 绕Z轴旋转(垂直于浏览器)*/
+				/*transform: rotateZ(30deg);*/
+				
+				/* 朝Z轴方向移动*/
+				/*transform: translateZ(-600px)*/
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="box">
+			<div class="view">回忆里的那个人</div>
+		</div>
+	</body>
+</html>

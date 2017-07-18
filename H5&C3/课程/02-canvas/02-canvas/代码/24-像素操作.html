@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background: black;
+			}
+			
+			#box {
+				background: white;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				// 获取canvas元素
+				var oBox = document.getElementById("box");
+				// 绘制环境(上下文)
+				var oGC = oBox.getContext('2d');
+
+				
+				oGC.fillStyle = 'blue';
+				oGC.fillRect(0, 0, 100, 100);
+				
+				// 获取对应的像素点 (x, y, w, h)
+				// var oImg = oGC.getImageData(0, 0, 100, 100);
+				
+				// 创建对应大小的像素点
+				var oImg = oGC.createImageData(100, 100);
+				
+				// 操作获取到的像素点
+				// 像素点总数: oImg.width*oImg.height
+				for(var i=0; i<oImg.width*oImg.height; i++){
+					// 第一像素点: oImg.data[0] oImg.data[1] oImg.data[2] oImg.data[3] 
+					// 第二像素点: oImg.data[4] oImg.data[5] oImg.data[6] oImg.data[7] 
+					// 所有像素点设置为红色 255,0,0,1
+					oImg.data[4*i] = 255;	// r
+					oImg.data[4*i+1] = 0;	// g
+					oImg.data[4*i+2] = 0;	// b
+					oImg.data[4*i+3] = 255;	// a
+				}
+				
+				// 重新绘制(获取图像, x, y)
+				oGC.putImageData(oImg, 180, 180);
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<canvas id="box" width="300" height="300">
+			<i>浏览器不支持canvas</i>
+		</canvas>
+
+	</body>
+
+</html>

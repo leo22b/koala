@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+    // 案例3: 输出100以内所有7的倍数
+    // 能够被7整除的  --- 7的倍数
+    // for(var i=1; i<100; i++){
+    //     // 遍历所有内容，只要符合条件的即可
+    //     if (i%7 == 0) {
+    //         document.write(i);
+    //         document.write('<br/>');
+    //     }
+    // }
+
+
+    // 7的倍数 --- 1*7 2*7 3*7 4*7....  100以内
+    // 不固定次数
+    var i = 1;
+    while(1){
+        if (i*7 < 100) {    // 满足条件
+            document.write(i*7);
+            document.write('<br/>');
+        } else {    // 不满足条件，即大于100
+            break;   
+        }
+
+        i++;
+    }
+
+
+
+    // 100 / 7 = 14.2  ==> 14 ==> 次数是固定的
+    // for(var i=1; i<=parseInt(100/7); i++ ){
+    //     document.write(i*7);
+    //     document.write('<br/>');
+    // }
+</script>
+</body>
+</html>

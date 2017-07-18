@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			document.onclick = function(){
+				// 1、任意字符 [abc]
+				// a[123abc] --> a1/a2/a3/aa/ab/ac
+				var str = 'a1 sda2.fja4 acattea7acwj3 wqaarjowpja34ndflk a- rj  a+ fakrjw a^ a a. $';
+				// var rel = /a1|a2|a3/g;
+				// var rel = /a[123abc]/g;
+				// document.write(str.match(rel));
+				
+				
+				// 2、范围 [a-z]、[0-9]
+				// var rel = /a[1234567890]/g;
+				// var rel = /a[abcdefghi]/g;
+				
+				// var rel = /a[0-9]/g;
+				// var rel = /a[a-z0-9]/g;
+				// document.write(str.match(rel));
+				
+				
+				// 3、排除 [^a] (除了a以外的都可以)
+				// var rel = /a[0-9]/g;		// 包含0-9
+				// var rel = /a[^0-9]/g;		// 排除0-9(不包含0-9)
+				// var rel = /a[a-z0-9]/g;		// 包含a-z或0-9
+				// var rel = /a[^a-z0-9]/g;			// 不包含z-z或0-9
+				// document.write(str.match(rel));
+				
+				
+				// 4、转义字符
+				// var rel = /d/g;	// 字母d
+				// var rel /\d/g;	// \d数字
+				
+				
+				// 4-1、 .(点) —> 表示任意字符
+				// var rel = /a[0-9a-zA-Z,./)(*&^%$#@!~]/g;
+				// var rel = /a./g;
+				
+				// 只要找到 'a.' 这个字符串
+				// 因为点有特殊用途，所以需要进行转义 \.
+				// var rel = /a\./g;
+				
+				
+				// 只要找 '$' 这个字符串
+				// var rel = /\$/g;
+				
+				// + 多个
+				// . 任意字符
+				// var rel = /.+/;	// 任意字符有多个
+				// document.write( str.match(rel) );
+				
+				
+				
+				// 4-2、\d —> 表示[0-9],即数字
+				// var rel = /\d+/g;
+				// document.write(str.match(rel));
+				
+				
+				// 4-3、\D —> 表示[^0-9]，即除了数字
+				// var rel = /\D/g;
+				// document.write(str.match(rel));
+				
+				// 4-3、\w —> 表示[a-zA-Z0-9_]，即数字字母下划线
+				// var rel = /\w+/g;
+				// document.write(str.match(rel));
+				
+				// 4-4、\W —> 表示[^a-zA-Z0-9_],即除了数字字母下划线
+				var rel = /\W/g;
+				document.write(str.match(rel));
+			}
+			
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

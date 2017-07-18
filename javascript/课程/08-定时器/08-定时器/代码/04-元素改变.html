@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{width: 100px;height: 100px;background: red;}
+		</style>
+		
+		<script type="text/javascript" src="zyz.js" ></script>
+		<script>
+//			window.onload = function(){
+////				var oBox = getElement('box');
+////				var oBt1 = getElement('bt1');
+////				var oBt2 = getElement('bt2');
+//
+////				var oBt1 = $('bt1');
+////				
+////				oBt1.onclick = function(){
+////					alert(1);
+////				}
+//
+//
+//				$('bt1').onclick = function(){
+//					alert(1);
+//				}
+//				
+//				$('bt2').onclick = function(){
+//					alert(2);
+//				}
+//			}
+
+			$(function(){
+				$('bt1').onclick = function(){
+					$('box').style.width = parseInt(getStyle($('box'), 'width')) + 10 + 'px';
+					$('box').style.height = parseInt(getStyle($('box'), 'height')) + 10 + 'px';
+				}
+				
+				$('bt2').onclick = function(){
+					$('box').style.width = parseInt(getStyle($('box'), 'width')) - 10 + 'px';
+					$('box').style.height = parseInt(getStyle($('box'), 'height')) - 10 + 'px';
+				}
+			});
+		</script>
+	</head>
+	
+	<body>
+		<input type="button" value="+" id="bt1" />
+		<input type="button" value="-" id="bt2" /> <br /><br />
+		<div id="box"></div>
+	</body>
+</html>

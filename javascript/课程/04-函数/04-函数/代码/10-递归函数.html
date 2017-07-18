@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			// 函数调用函数本身
+			
+			// 10阶乘: 10 * 9 * 8 * 7 * 6  ... * 1
+			function test(num){
+				
+				// 10 * test(9)
+				// test(9): 9 * test(8)
+				// test(8): 8 * test(7);
+				// test(7): 7 * test(6);
+				// test(6): 6 * test(5);
+				// test(5): 5 * test(4);
+				// test(4): 4 * test(3);
+				// test(3): 3 * test(2);
+				// test(2): 2 * test(1);
+				// test(1): 1 * test(0);
+				// test(0): 0 * test(-1);
+				// .....根本不能停止
+				// return num * test(num-1);
+				
+				
+				
+				
+				// 10 * test(9)	   ==> 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1
+				// test(9): 9 * test(8);  ==>  9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1
+				// test(8): 8 * test(7);  ==>  8 * 7 * 6 * 5 * 4 * 3 * 2 * 1
+				// test(7): 7 * test(6);  ==>  7 * 6 * 5 * 4 * 3 * 2 * 1
+				// test(6): 6 * test(5);  ==>  6 * 5 * 4 * 3 * 2 * 1
+				// test(5): 5 * test(4);  ==>  5 * 4 * 3 * 2 * 1
+				// test(4): 4 * test(3);  ==>  4 * 3 * 2 * 1
+				// test(3): 3 * test(2);  ==>  3 * 2 * 1
+				// test(2): 2 * test(1);  ==>  2 * 1
+				// test(1): 1 
+				
+				// 递归的停止条件
+				if(num == 1){
+					return 1;
+				}
+				
+				// 调用函数本身
+				return num * test(num-1);
+			}
+			
+			// 函数调用
+			alert( test(4) );
+		</script>
+	</body>
+</html>

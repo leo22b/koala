@@ -1,0 +1,18 @@
+<div>
+
+   
+     <table border="1">
+       <tr><td>id</td><td>商品名</td><td>价格</td><td>操作</td></tr>
+       <tr ng-repeat="x in goods|filter:public">
+              <td>{{x.id}}</td>
+              <td>{{x.name}}</td>
+               <td>{{x.price}}</td>
+             <td><a ui-sref="items.{{x.name}}({username:'{{x.name}}'})">详情</a></td>
+
+         </tr>
+     </table>
+
+
+
+
+</div>

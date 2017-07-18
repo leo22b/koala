@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background: black;
+			}
+			
+			#box {
+				background: white;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				// 获取canvas元素
+				var oBox = document.getElementById("box");
+				// 绘制环境(上下文)
+				var oGC = oBox.getContext('2d');
+
+				
+				// 像素后面必须的内容
+				// oGC.font = '30px impact';
+				oGC.font = '100px 好';
+				oGC.fillStyle = 'red';
+				oGC.textAlign = 'left';
+				oGC.textBaseline = 'middel';
+				
+				// 文字高度: 字体大小
+				// 文字宽度?
+				var fontW = oGC.measureText('好').width;
+				
+				oGC.fillText('好', (oBox.width-fontW)/2, oBox.height/2);
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<canvas id="box" width="300" height="300">
+			<i>浏览器不支持canvas</i>
+		</canvas>
+
+	</body>
+
+</html>

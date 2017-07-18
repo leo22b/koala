@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/* Element[attr]*/
+			/*p[title]{
+				color: red;
+			}*/
+			
+			/* 2、Element[type="text"]*/
+			/*p[title='javascript']{
+				color: blue;
+			}*/
+			p[title=javascript]{
+				color: blue;
+			}
+			
+			
+			/* 3、Element[attr~="value"]*/
+			p[title~=html5]{
+				color: purple;
+			}
+			
+			
+			/* 4、Element[attr^="value"]*/
+			p[title^=css]{
+				color: yellow;
+			}
+			
+			/* 5、Element[attr$="value"]*/
+			p[title$=he]{
+				color: pink;
+			}
+			
+			/* 6、Element[attr*="value"]*/
+			p[title*=Str]{
+				color: aquamarine;
+			}
+			
+			/* 7、Element[attr|="value"]*/
+			p[title|=angular]{
+				color: deepskyblue;
+			}
+		</style>
+		
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				// Element[attr]
+//				$('p[title]').css('color', 'red');
+//				document.querySelector('p[title]').style.color = 'red';
+
+				// 2、Element[type="text"]
+//				$('p[title=javascript]').css('background', 'black');
+
+				// 3、Element[attr~="value"]
+//				$('p[title~=html5]').css('background', 'blue');
+
+				// 4、Element[attr^="value"]
+				$('p[title^=css]').css('background', 'black');
+				
+				// 5、Element[attr$="value"]
+				$('p[title$=-he]').css('background', 'gray');
+				
+				// 6、Element[attr*="value"]
+				$('p[title*=boot]').css('border', '1px solid gray');
+				
+				// 7、Element[attr|="value"]
+				$('p[title|=angular]').css('border', '1px solid red');
+			});
+		</script>
+	</head>
+	
+	<body>
+		<p> HTML </p>
+		<p title="haha css"> CSS </p>
+		<p title="javascript"> Javascript </p>
+		<p title="html5 haha hehe"> HTML5 </p>
+		<p title="css3"> CSS3 </p>
+		<p title="jquery-he"> jQuery </p>
+		<p title="bootStrap">Bootstrap</p>
+		<p title="angular">angular</p>
+		<p title="angular2">angular2</p>
+		<p title="angular-3">angular-3</p>
+	</body>
+</html>

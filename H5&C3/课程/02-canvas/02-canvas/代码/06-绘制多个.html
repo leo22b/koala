@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background: black;
+			}
+			
+			#box {
+				background: white;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				// 获取canvas元素
+				var oBox = document.getElementById("box");
+				// 绘制环境(上下文)
+				var oGC = oBox.getContext('2d');
+
+				
+				// 填充一个矩形 -- red
+				oGC.fillStyle = 'red';
+				oGC.fillRect(10, 10, 50, 50);
+				
+				// 填充一个三角形 -- blue
+				oGC.beginPath();		//  开始绘制路径
+				oGC.fillStyle = 'blue';
+				oGC.moveTo(80, 80);
+				oGC.lineTo(150, 150);
+				oGC.lineTo(100, 180);
+				oGC.fill();
+				oGC.closePath();   // 结束绘制路径
+				
+				
+				// 填充一个三角形 --- purple
+				oGC.beginPath();		//  开始绘制路径
+				oGC.fillStyle = 'purple';
+				oGC.moveTo(200, 200);
+				oGC.lineTo(260, 260);
+				oGC.lineTo(210, 250);
+				oGC.fill();
+				oGC.closePath();   // 结束绘制路径
+			}
+		</script>
+
+	</head>
+
+	<body>
+
+		<canvas id="box" width="300" height="300">
+			<i>浏览器不支持canvas</i>
+		</canvas>
+
+	</body>
+
+</html>

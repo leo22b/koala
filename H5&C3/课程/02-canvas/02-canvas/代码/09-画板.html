@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			body {
+				background: black;
+			}
+			
+			#box {
+				background: white;
+			}
+			
+			ul {
+				list-style: none;
+				display: inline-block;
+			}
+			
+			li {
+				float: left;
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				margin: 0 5px;
+			}
+			
+			img{
+				background: white;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				// 获取canvas元素
+				var oBox = document.getElementById("box");
+				// 绘制环境(上下文)
+				var oGC = oBox.getContext('2d');
+
+				var oClear = document.querySelector("#bt");
+				var aLi = document.querySelectorAll("li");
+
+				// 清除
+				oClear.onclick = function() {
+					oGC.clearRect(0, 0, oBox.width, oBox.height);
+				}
+
+				// 画笔样式
+				for(var i = 0; i < aLi.length; i++) {
+					aLi[i].onclick = function() {
+						oGC.strokeStyle = this.title;
+					}
+				}
+
+				// 绘制
+				oBox.onmousedown = function(ev) {
+					ev = ev || window.event;
+					oGC.beginPath();
+					// 移动到新的目标
+					oGC.moveTo(ev.offsetX, ev.offsetY);
+
+					oBox.onmousemove = function(ev) {
+						ev = ev || window.event;
+						oGC.lineTo(ev.offsetX, ev.offsetY);
+						oGC.stroke();
+					}
+
+					oBox.onmouseup = function() {
+						oBox.onmousemove = oBox.onmouseup = null;
+						oGC.closePath();
+					}
+				}
+
+				
+				var oSave = document.querySelector("#save");
+				
+				oSave.onclick = function(){
+					 var oImg = convertCanvasToImage(oBox);
+					 document.body.appendChild(oImg);
+				}
+				// 参数: canvas元素对象
+				function convertCanvasToImage(canvas) {
+					var image = new Image();
+					image.src = canvas.toDataURL("image/png");
+					
+					console.log(image);
+					
+					return image;
+				}
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<input type="button" value="保存" id="save" />
+		<input type="button" value="擦除" id="bt" />
+		<ul>
+			<li style="background: red;" title="red"></li>
+			<li style="background: blue;" title="blue"></li>
+			<li style="background: purple;" title="purple"></li>
+			<li style="background: yellow;" title="yellow"></li>
+			<li style="background: gray;" title="gray"></li>
+		</ul>
+		<br />
+		<canvas id="box" width="500" height="300">
+			<i>浏览器不支持canvas</i>
+		</canvas>
+
+	</body>
+
+</html>

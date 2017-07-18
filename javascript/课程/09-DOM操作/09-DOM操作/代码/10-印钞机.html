@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function() {
+
+//				for(var i = 0; i < 100; i++) {
+//					var oImg = document.createElement('img');
+//					oImg.src = 'test.jpeg';
+//					document.body.appendChild(oImg);
+//				}
+
+				var oImg = document.createElement('img');
+				oImg.src = 'test.jpeg';
+				var temp;
+				for(var i = 0; i < 4; i++) {
+					temp = oImg.cloneNode();
+					document.body.appendChild(temp);
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

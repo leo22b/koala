@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				width: 40px;
+				height: 40px;
+				border-radius: 20px;
+				background: red;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			
+			i {
+				width: 4px;
+				height: 4px;
+				background: black;
+				border-radius: 2px;
+				position: absolute;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				var oBox = document.getElementById("box");
+
+				// 速度
+				var speedX = 0;
+				var speedY = 0;
+
+				oBox.onmousedown = function(ev) {
+					ev = ev || event;
+					var downX = ev.offsetX;
+					var downY = ev.offsetY;
+					var lastX = ev.offsetX;
+					var lastY = ev.offsetY;
+
+					document.onmousemove = function(ev) {
+						ev = ev || event;
+						var left = ev.clientX - downX;
+						var top = ev.clientY - downY;
+
+						// 保存点的位置
+						lastX = oBox.offsetLeft;
+						lastY = oBox.offsetTop;
+
+						oBox.style.left = left + 'px';
+						oBox.style.top = top + 'px';
+
+
+						// 方便查看(出手时的速度)
+//						var oTest = document.createElement('i');
+//						oTest.style.left = left + 'px';
+//						oTest.style.top = top + 'px';
+//						document.body.appendChild(oTest);
+					}
+
+					document.onmouseup = function() {
+						document.onmousemove = document.onmouseup = null;
+
+						speedX = oBox.offsetLeft - lastX;
+						speedY = oBox.offsetTop - lastY;
+
+						if(speedX == 0 && speedY == 0) {
+							return;
+						} else {
+							startMove();
+						}
+					}
+				}
+
+				function startMove() {
+					// 物体大小
+					var viewW = oBox.offsetWidth;
+					var viewH = oBox.offsetHeight;
+
+					// 开启时钟
+					timer = setInterval(function() {
+						// 添加重力
+						speedY += 1.3;
+
+						// 窗口大小
+						var screenW = (document.body.clientWidth || document.documentElement.clientWidth) + 16;
+						var screenH = document.body.clientHeight || document.documentElement.clientHeight;
+						console.log(screenW);
+
+						// 预先将位置计算好
+						var offsetTop = oBox.offsetTop + speedY;
+						var offsetLeft = oBox.offsetLeft + speedX;
+
+						// 垂直方向
+						if(offsetTop >= screenH - viewH) { // 碰撞到底部
+							// 改变方向
+							speedY *= -0.9;
+							// 改变速度
+							speedX *= 0.9;
+
+							offsetTop = screenH - viewH;
+						} else if(offsetTop <= 0) { // 碰撞到顶部
+							// 改变方向
+							speedY *= -1;
+							// 改变速度
+							speedX *= 0.9;
+							offsetTop = 0;
+						}
+
+						// 水平
+						if(offsetLeft >= screenW - viewW) {
+							speedX *= -1;
+							// 改变速度
+							speedY *= 0.9;
+							offsetLeft = screenW - viewW;
+						} else if(offsetLeft <= 0) {
+							speedX *= -1;
+							// 改变速度
+							speedY *= 0.9;
+							offsetLeft = 0;
+						}
+
+						// 速度的小数处理
+						if(Math.abs(speedX) < 1) {
+							speedX = 0;
+						}
+						if(Math.abs(speedY) < 1) {
+							speedY = 0;
+						}
+
+						// 停止条件
+						if(speedX == 0 && speedY == 0) {
+							clearInterval(timer);
+						} else {
+							// 运动
+							oBox.style.left = offsetLeft + 'px';
+							oBox.style.top = offsetTop + 'px';
+						}
+
+					}, 50);
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="box"></div>
+	</body>
+
+</html>

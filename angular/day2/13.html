@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<script src="lib/angular-1.3.0.js"></script>
+</head>
+<body ng-app="">
+
+       <div ng-init="myVar = 'http://www.runoob.com'">
+
+                <p>访问 <a ng-href="{{myVar}}" href="http://www.baidu.com">{{myVar}}</a> 学习!</p>
+       </div>
+
+        <p>该实例可以使用了原生的 href 属性，但在 AngularJS 中， ng-href 属性更安全。</p>
+
+
+      <div ng-init="myVar = 'http://www.runoob.com/wp-content/uploads/2014/06/angular.jpg'">
+				<h1>Angular</h1>
+				<img ng-src="{{myVar}}">
+      </div>
+
+
+
+</body>
+</html>
+<!--  
+
+
+定义和用法
+
+ng-href 指令覆盖了原生的 <a> 元素 href 属性。
+
+如果在 href 的值中有 AngularJS 代码，则需要使用 ng-href 而不是 href。
+
+ng-href 指令确保了链接是正常的，即使在 AngularJS 执行代码前点击链接。
+
+
+
+定义和用法
+
+ng-src 指令覆盖了 <img> 元素的 src 属性。
+
+如果你使用了 AngularJS 代码设置图片地址，请使用 ng-src 指令替代 src 属性。
+
+ng-src 指令确保的 AngularJS 代码执行前不显示图片。
+
+ -->

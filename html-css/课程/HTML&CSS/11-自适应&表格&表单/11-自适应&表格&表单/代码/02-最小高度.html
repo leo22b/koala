@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.content{
+				width: 500px;
+				background: red;
+				/*height: auto;*/
+				
+				/* 方式一*/
+				/*min-height: 100px;
+				_height: 100px;*/
+				
+				
+				/* 方式二*/
+				/*
+				 * 高版本: 
+				 * 	1、最小高度为100px
+				 *  2、高度为自动 (最高优先级)
+				 *  3、高度为100px  (无效)
+				 * 
+				 * IE6:
+				 *  1、最小高度为100px  (不认识)
+				 *  2、高度为自动 (不认识最高优先级)
+				 *  3、高度为100px (覆盖上面的高度)
+				 * 	【会根据内容撑开元素 --- 自适应】
+				 */
+				min-height: 100px;
+				height: auto!important;
+				height: 100px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="content">
+			每天一句：如果你不能接受最差的我，你就不配拥有最好的我 ！如果你在我最低谷的时候离开， 你就不要在我最辉煌的时候回来 ！—-科比
+			
+		</div>
+	</body>
+</html>

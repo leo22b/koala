@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			label{
+				position: relative;
+				/* 超出部分隐藏*/
+				overflow: hidden;
+				/*background: red;*/
+				margin: 0 5px;
+				float: left;
+				height: 20px;
+				line-height: 20px;
+			}
+			label input{
+				position: absolute;
+				left: -20px;
+				top: -20px;
+			}
+			label span{
+				width: 18px;
+				height: 18px;
+				border-radius: 9px;
+				border: 1px solid gray;
+				float: left;
+				margin-right: 3px;
+			}
+			input:checked~span{
+				background: red;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<!-- 默认的单选框或复选框其样式都是改变不了的-->
+		<label>
+			<input type="checkbox" />男
+			<span></span>
+		</label>
+		
+		<label>
+			<input type="checkbox" />女
+			<span></span>
+		</label>
+		
+		<label>
+			<input type="checkbox" />中性
+			<span></span>
+		</label>
+	</body>
+</html>

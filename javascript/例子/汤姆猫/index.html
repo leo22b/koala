@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 320px;
+				height: 480px;
+				border: 8px solid slategray;
+			}
+			#box img {
+				width: 320px;
+				height: 480px;
+			}
+			#left img{
+				width: 60px;
+				height: 60px;
+				border: 0;
+				display: block;
+				border-radius: 30px;
+			}
+			#right img{
+				width: 60px;
+				height: 60px;
+				border: 0;
+				display: block;
+				border-radius: 30px;
+			}
+			#left{
+				position: absolute;
+				top: 341px;
+				left: 16px;
+			}
+			#right{
+				position: absolute;
+				top: 341px;
+				left: 276px;
+			}
+		</style>
+		<script type="text/javascript" src="js/zyz.js"></script>
+		<script type="text/javascript">
+		$(function(){
+			var time='';
+			var index=0;
+			//图片张数
+//			var numberof=[25,12,80,39,27,23,55];
+			//图片路径
+//			var imagepath=[angry,Buttons,cymbal,drink,eat,fart,pie,scratch];
+			//轮播暂停
+			function stop(){
+				clearInterval(time);
+				time='';
+			}
+			//轮播开始
+			function start(arrname,intervaltime){
+				if(time==''){
+					time=setInterval(arrname,intervaltime);
+				}
+			}
+			$('bt1').onclick=function(){
+				stop();
+				start(change,90);
+			}
+			$('bt2').onclick=function(){
+				stop();
+			}
+			$('left-1').onclick=function(){
+				stop();
+				start(left01,100);
+			}
+			$('left-2').onclick=function(){
+				stop();
+				start(left02,110);
+			}
+			$('left-3').onclick=function(){
+				stop();
+				start(left03,90);
+			}
+			$('right-1').onclick=function(){
+				stop();
+				start(right01,90);
+			}
+			$('right-2').onclick=function(){
+				stop();
+				start(right02,90);
+			}
+			$('right-3').onclick=function(){
+				stop();
+				start(right03,90);
+			}
+			//轮播功能封装
+			function mat(num,name){
+				index++;
+				if(index>num){
+					index=0;
+				}
+				$('img').src=name;
+			}
+			function change(){
+				mat(25,'img/angry/angry_' + format(index, 2) + '.jpg');
+			}
+			function left01(){
+				mat(12,'img/cymbal/cymbal_'+format(index, 2)+'.jpg');
+			}
+			function left02(){
+				mat(80,'img/drink/drink_' + format(index, 2) + '.jpg');
+			}
+			function left03(){
+				mat(39,'img/eat/eat_' + format(index, 2) + '.jpg');
+			}
+			function right01(){
+				mat(27,'img/fart/fart_' + format(index, 2) + '.jpg');
+			}
+			function right02(){
+				mat(23,'img/pie/pie_' + format(index, 2) + '.jpg');
+			}
+			function right03(){
+				mat(55,'img/scratch/scratch_' + format(index, 2) + '.jpg');
+			}
+			//优化 格式化
+			function format(index, num){
+				var str = index.toString();
+				while(str.length != num){
+					str = '0' + str;
+				}
+				return str;
+			}
+		});
+		</script>
+	</head>
+	<body>
+		<input type="button" value="开始" id="bt1" />
+		<input type="button" value="暂停" id="bt2" /> <br />
+		<div id="box">
+			<img src="img/angry/angry_00.jpg" id="img" />
+		</div>
+		
+		<div id="left">
+			<img id="left-1" src="img/Buttons/cymbal.png"/>
+			<img id="left-2" src="img/Buttons/drink.png"/>
+			<img id="left-3" src="img/Buttons/eat.png"/>
+		</div>
+		<div id="right">
+			<img id="right-1" src="img/Buttons/fart.png"/>
+			<img id="right-2" src="img/Buttons/pie.png"/>
+			<img id="right-3" src="img/Buttons/scratch.png"/>
+		</div>
+	</body>
+</html>

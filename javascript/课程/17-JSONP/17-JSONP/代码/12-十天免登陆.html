@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oText1 = document.getElementById("text1");
+				var oText2 = document.getElementById("text2");
+				var oCheck = document.getElementById("check");
+				var oLogin = document.getElementById("sub");
+				var oForm = document.getElementById('form');
+				
+				
+				
+				// 一打开页面，即检查是否有对应的账号密码，如果有即表示自动填充，并登陆
+				if( getCookie('user') && getCookie('password') ){
+					// 填充
+					oText1.value = getCookie('user');
+					oText2.value = getCookie('password');
+					
+					// 自动登陆
+					oForm.submit();
+				}
+				
+				
+				oLogin.onclick = function(){
+					// 是否勾选免登陆  -- 写入cookie
+					if(oCheck.checked){
+						var nowTime = new Date();
+						nowTime.setDate(nowTime.getDate()+10);
+						setCookie('user', oText1.value, nowTime);
+						setCookie('password', oText2.value, nowTime);
+					}
+				}
+				
+				
+				function setCookie(key, value, iDate){
+					if(iDate){
+						document.cookie = key + '=' + value + ';expires=' + iDate.toString();	
+					} else {
+						document.cookie = key + '=' + value;
+					}
+				}
+				
+				function getCookie(key){
+					// userName=liming; age=18
+					var arr = document.cookie.split('; ');
+					for(var i=0; i<arr.length; i++){
+						// userName=liming
+						var temp = arr[i].split('=');
+						// 判断
+						if(temp[0] == key){
+							return temp[1];
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<form method="get" action="12-login_get.php" id="form"> 
+			<!-- 账号
+				user=text1.value
+			-->
+			<input type="text" id="text1" name="user" /> <br />
+			<!-- 密码-->
+			<input type="password" id="text2" name="password" /> <br />
+			<input type="checkbox" id="check" />十天免登陆 <br />
+			<input type="submit" value="登陆" id="sub" />
+		</form>
+	</body>
+</html>

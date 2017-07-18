@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oBt = document.querySelector("#bt");
+				var oText = document.querySelector("#text1");
+				
+				oBt.onclick = function(){
+					navigator.geolocation.getCurrentPosition(function(position){	 // 定位成功
+						console.log(position.coords.latitude);
+						oText.innerHTML += '经度:' + position.coords.longitude;
+						oText.innerHTML += '维度:' + position.coords.latitude;
+						oText.innerHTML += '精确度:' + position.coords.accuracy;
+						oText.innerHTML += '海拔:' + position.coords.altitude;
+						oText.innerHTML += '海拔精确度:' +position.coords.altitudeAccuracy;
+						oText.innerHTML += '精确度:' + position.coords.accuracy;
+						oText.innerHTML += '行进方向:' + position.coords.heading;
+						oText.innerHTML += '速度:' +  position.coords.speed;
+						oText.innerHTML += '时间戳:' +  new Date(position.timestamp);
+						console.log(position.coords.longitude);
+					}, function(error){	// 定位错误
+						alert(error.code);
+					}, {
+						maximumAge:3000,
+						timeout: 10000
+					});
+				}
+			}
+		</script>
+	</head>
+	
+	
+	<body>
+		<input type="button" id="bt" value="定位" />
+		<p id="text1">
+			
+		</p>
+	</body>
+</html>

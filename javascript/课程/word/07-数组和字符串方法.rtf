@@ -1,0 +1,100 @@
+{\rtf1\ansi\ansicpg936\deff0{\fonttbl{\f0\fnil\fcharset0 SimSun;}{\f1\fnil\fcharset0 Consolas;}{\f2\fnil\fcharset134 PingFangSC-Regular;}}
+{\colortbl ;\red255\green0\blue0;\red0\green0\blue255;\red8\green8\blue8;\red149\green163\blue171;\red155\green28\blue235;\red36\green140\blue133;\red54\green75\blue192;\red87\green121\blue9;\red165\green120\blue0;\red62\green75\blue83;}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\cf1\lang1033\f0\fs20\u27599?\u22825?\u19968?\u21477?\u-230?\u22312?\u20320?\u24819?\u-30335?\u25918?\u24323?\u30340?\u-28509?\u19968?\u21051?\u-244?\u24819?\u24819?\u20026?\u20160?\u20040?\u24403?\u21021?\u-29328?\u21040?\u20102?\u-28711?\u-28212? \emdash\emdash - \u31185?\u27604?\cf2\par
+\par
+\u19968?\u12289?\u25968?\u32452?\cf0\par
+> splice()\u21024?\u-27036?\u12289?\u26367?\u25442?\u12289?\u28155?\u21152?;\par
+\tab arrayObject.splice(start, num);\par
+\tab\tab\u21442?\u25968?:\par
+\tab\tab\tab start: \u25805?\u20316?\u24320?\u22987?\u20301?\u32622?\par
+\tab\tab\tab num: \u25805?\u20316?\u30340?\u20010?\u25968?\par
+\pard\tab\cf3\f1  \cf4 // \lang2052\f2\'c9\'be\'b3\'fd\lang1033\f1 : \lang2052\f2\'b4\'d3\'b5\'da\lang1033\f1 1\lang2052\f2\'b8\'f6\'bf\'aa\'ca\'bc\'a3\'ac\'c9\'be\'b3\'fd\lang1033\f1 2\lang2052\f2\'b8\'f6\'d4\'aa\'cb\'d8\'a3\'ac\'b7\'b5\'bb\'d8\'d6\'b5\'ce\'aa\'c9\'be\'b3\'fd\'d4\'aa\'cb\'d8\cf0\lang1033\f0\par
+\tab\cf3\f1  arr.splice(\cf5 1\cf3 , \cf5 2\cf3 );\par
+\cf0\f0\tab\cf3\f1  \cf4 // \lang2052\f2\'cc\'e6\'bb\'bb\lang1033\f1 : \lang2052\f2\'b4\'d3\'b5\'da\lang1033\f1 0\lang2052\f2\'b8\'f6\'bf\'aa\'ca\'bc\'a3\'ac\'cc\'e6\'bb\'bb\lang1033\f1 3\lang2052\f2\'b8\'f6\'a3\'ac\'b7\'b5\'bb\'d8\'d6\'b5\'ce\'aa\'cc\'e6\'bb\'bb\'d4\'aa\'cb\'d8\cf3\lang1033\f1\par
+\cf0\f0\tab\cf3\f1  arr.splice(\cf5 0\cf3 , \cf5 3\cf3 , \cf6 '\lang2052\f2\'b2\'e2\'ca\'d4\lang1033\f1\rquote\cf3 );\par
+\cf0\f0\tab\cf3\f1  \cf4 // \lang2052\f2\'cc\'ed\'bc\'d3\lang1033\f1 : \lang2052\f2\'b4\'d3\'b5\'da\lang1033\f1 1\lang2052\f2\'b8\'f6\'bf\'aa\'ca\'bc\'a3\'ac\'cc\'e6\'bb\'bb\lang1033\f1 0\lang2052\f2\'b8\'f6\'a3\'ac\'b7\'b5\'bb\'d8\'d6\'b5\'ce\'aa\'bf\'d5\cf3\lang1033\f1\par
+\cf0\f0\tab\cf3\f1  arr.splice(\cf5 1\cf3 , \cf5 0\cf3 , \cf6 '\lang2052\f2\'b2\'e2\'ca\'d4\lang1033\f1\rquote\cf3 )\cf0\f0 ;\tab\par
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\cf2\u26696?\u20363?: \u25968?\u32452?\u21435?\u-28211?\par
+\cf0\par
+\tab\par
+> join()\u26041?\u27861?\u29992?\u20110?\u25226?\u25968?\u32452?\u20013?\u30340?\u25152?\u26377?\u20803?\u32032?\u25918?\u20837?\u19968?\u20010?\u23383?\u31526?\u20018?;\par
+\tab arrayObject.join(separtor);\par
+\tab\tab\u21442?\u25968?: \par
+\tab\tab\tab separtor: \u25351?\u23450?\u20351?\u29992?\u30340?\u20998?\u-26988?\u31526?\u-244?\u22914?\u26524?\u32570?\u30465?\u-244?\u21017?\u20351?\u29992?\u-28649?\u21495?\u20316?\u20026?\u20998?\u-26988?\u31526?;\par
+\pard\cf7\f1\tab\tab var \cf3 arr \cf8 = \cf3 [\cf5 1\cf3 ,\cf5 2\cf3 ,\cf5 3\cf3 ];\par
+\tab\tab\cf4 // \lang2052\f2\'d2\'d4-\'ce\'aa\'b7\'d6\'b8\'f4\'b7\'fb\'a3\'ac\'bd\'ab\'ca\'fd\'d7\'e9\'b4\'ae\'c1\'aa\'b3\'c9\'d7\'d6\'b7\'fb\'b4\'ae\cf0\lang1033\f1\par
+\cf3\tab\tab alert( arr.join(\cf6 '-'\cf3 ) );\par
+\cf0\f0\par
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803 > sort()\u26041?\u27861?\u26159?\u20174?\u23567?\u21040?\u22823?\u25490?\u24207?\u-244?\u-28716?\u22238?\u25490?\u24207?\u21518?\u30340?\u25968?\u32452?\u-244?\u-32756?\u28304?\u25968?\u32452?\u20063?\u26159?\u25490?\u24207?\u22909?\u30340?;\par
+\tab\u27880?1: sort\u-24872?\u-29788?\u26159?\u25353?\u29031?\u23383?\u31526?\u20018?\u-28709?\u-30644?\u22788?\u29702?\u30340?\u-244?\u21363?\u27604?\u-28797?\u-26218?\u23383?\u27597?; \u25968?\u32452?\u25490?\u24207?\u21644?\u25968?\u23383?\u23383?\u31526?\u20018?\u25490?\u24207?\u31639?\u27861?\u26159?\u19968?\u26679?\u30340?;\par
+\tab\u27880?2: sort\u26041?\u27861?\u24182?\u19981?\u26159?JS\u30340?\u26631?\u20934?\u20013?\u23450?\u21046?\u30340?\u-244?\u27599?\u20010?\u27983?\u-30264?\u22120?\u-28419?\u21487?\u20197?\u-32278?\u23450?\u20041?\u19981?\u21516?\u30340?\u25490?\u24207?\u26041?\u27861?;\par
+\tab\f1\tab   \cf4 // \lang2052\f2\'b8\'f8\lang1033\f1 sort\lang2052\f2\'b4\'ab\'b5\'dd\'d2\'bb\'b8\'f6\'b1\'c8\'bd\'cf\'ba\'af\'ca\'fd\cf0\lang1033\f1\par
+\pard\tab\tab\cf3 arr2.sort(\cf7 function\cf3 (\cf9 a\cf3 , \cf9 b\cf3 )\{\tab\cf0\par
+\cf3\tab\tab\tab\cf4 // return a - b;\tab // \lang2052\f2\'b4\'d3\'d0\'a1\'b5\'bd\'b4\'f3\cf0\lang1033\f1\par
+\tab\tab\tab\cf8 return \cf3 b \cf8 - \cf3 a;  \cf4 // \lang2052\f2\'b4\'d3\'b4\'f3\'b5\'bd\'d0\'a1\cf0\lang1033\f1\par
+\tab\tab\cf3\});\cf0\par
+\cf3\tab\tab\par
+\tab\cf0     \cf4 // \lang2052\f2\'c6\'e4\'cb\'fb\'c0\'e0\'d0\'cd\'b5\'c4\'b1\'c8\'bd\'cf\cf0\lang1033\f1\par
+\tab\tab\cf7 var \cf3 arrW \cf8 = \cf3 [\cf6 '123px'\cf3 ,\cf6 '23px'\cf3 ,\cf6 '1000px'\cf3 ,\cf6 '327px'\cf3 ];\cf0\par
+\cf3\tab\tab arrW.sort(\cf7 function\cf3 (\cf9 a\cf3 , \cf9 b\cf3 )\{\cf0\par
+\cf3\tab\tab\tab\cf8 return \cf3 parseInt(a) \cf8 - \cf3 parseInt(b);\cf0\par
+\cf3\tab\tab\});\cf0\par
+\cf3\tab\tab alert(arrW);\cf0\f0\par
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\cf2\u26696?\u20363?: \u-26993?\u26426?\u25490?\u24207?\u-244?\u21363?\u23558?\u25968?\u32452?\u25171?\u20081?\cf0\par
+\par
+> reverse()\u26041?\u27861?\u20174?\u22823?\u21040?\u23567?\u25490?\u24207?\u-244?\u-28716?\u22238?\u25490?\u24207?\u21518?\u30340?\u25968?\u32452?\u-244?\u-32756?\u28304?\u25968?\u32452?\u20063?\u26159?\u25490?\u24207?\u22909?\u30340?;\par
+\par
+\pard\par
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\par
+\cf2\u20108?\u12289?\u23383?\u31526?\u20018?\cf0\par
+\pard\cf4\f1\tab // \lang2052\f2\'d0\'c2\'bd\'a8\'d7\'d6\'b7\'fb\'b4\'ae\cf0\lang1033\f1\par
+\tab\cf7 var \cf3 str3 \cf8 = \cf6 '\lang2052\f2\'c3\'e6\'b6\'d4\'bc\'b2\'b7\'e7\'b0\'c9\lang1033\f1 ...'\cf3 ;\cf0\par
+\cf3\tab\cf7 var \cf3 str4 \cf8 = new \cf3 String(\cf6 '\lang2052\f2\'b9\'fe\'c8\'f6\'bb\'fa\lang1033\f1 ...'\cf3 );\cf0\par
+\cf3\tab\cf4 //new Number(),new Boolean(),new Date(),new Function(),new Array(),new Object() ==> (\lang2052\f2\'cd\'a8\'b9\'fd\lang1033\f1 new\lang2052\f2\'b9\'d8\'bc\'fc\'d7\'d6\'b5\'c3\'b5\'bd\'b5\'c4\'b6\'bc\'ca\'c7\'b6\'d4\'cf\'f3\'a3\'ac\'b5\'ab\'b2\'bb\'cd\'c6\'bc\'f6\'d3\'c3\'b7\'a8\lang1033\f1 )\cf0\f0\par
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\par
+\tab\cf4\f1 // \lang2052\f2\'bb\'f1\'c8\'a1\'d7\'d6\'b7\'fb\'b4\'ae\'b5\'c4\'b3\'a4\'b6\'c8\cf0\lang1033\f1\par
+\f0\tab\cf3\f1 str3.length\cf0\par
+\pard\cf10\tab\tab  \tab\tab\cf0\par
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\f0\tab\cf4\f1 // \lang2052\f2\'cd\'a8\'b9\'fd\'cf\'c2\'b1\'ea\'bb\'f1\'c8\'a1\'d7\'d6\'b7\'fb\'b4\'ae\'d6\'d0\'b5\'c4\'d7\'d6\'b7\'fb\cf0\lang1033\f1\par
+\f0\tab\cf3\f1 alert( str3[\cf5 1\cf3 ] );\par
+\par
+\cf0\f0\par
+> toUpperCase()\u-28820?\u20026?\u22823?\u20889?\par
+> toLowerCase()\u-28820?\u20026?\u23567?\u20889?\par
+\par
+> charAt()\u26041?\u27861?\u-28716?\u22238?\u25351?\u23450?\u20301?\u32622?\u30340?\u23383?\u31526?\par
+\tab\par
+> indexOf()\u26041?\u27861?\u-28716?\u22238?\u26576?\u20010?\u25351?\u23450?\u30340?\u23383?\u31526?\u20018?\u20540?\u22312?\u23383?\u31526?\u20018?\u20013?\u-26218?\u27425?\u20986?\u29616?\u30340?\u20301?\u32622?\par
+\tab stringObject.indexOf(searchValue\u-244?fromIndex);\par
+\tab\tab\u21442?\u25968?: \par
+\tab\tab\tab searchValue: \u24517?\u22635?\u-244?\u26816?\u32034?\u30340?\u23383?\u31526?\u20018?\u20540?;\par
+\tab\tab\tab fromIndex:  \u21487?\u-28663?\u-244?\u-30268?\u23450?\u22312?\u23383?\u31526?\u20018?\u20013?\u24320?\u22987?\u20301?\u32622?\u-244?\u-24872?\u-29788?\u23601?\u26159?0;\par
+\tab\tab\u-28716?\u22238?\u20540?: \par
+\tab\tab\tab\u-28716?\u22238?\u23545?\u24212?\u23383?\u31526?\u20018?\u30340?\u20301?\u32622?\u-244?\u22914?\u26524?\u19981?\u23384?\u22312?\u-28716?\u22238?-1;\par
+\tab\u27880?: indexOf()\u20174?\u24038?\u24448?\u21491?\u26597?\u25214?\u-229? lastIndexOf()\u20174?\u21491?\u24448?\u24038?\u-28743?\u26597?\u25214?\par
+\cf2\u26696?\u20363?: \u26597?\u25214?\u26576?\u20010?\u23383?\u31526?\u20018?\u20986?\u29616?\u30340?\u27425?\u25968?\cf0\par
+\par
+> substring()\u26041?\u27861?\u29992?\u20110?\u25552?\u21462?\u23383?\u31526?\u20018?\u20013?\u20171?\u20110?\u20004?\u20010?\u25351?\u23450?\u19979?\u26631?\u20043?\u-27148?\u30340?\u23383?\u31526?;\par
+\tab stringObject.substring(start, stop);\par
+\tab\tab\u-28716?\u22238?\u20540?: \u-28716?\u22238?\u30340?\u26159?stringObject\u30340?\u23376?\u23383?\u31526?\u20018?\u-244?\u20854?\u20869?\u23481?\u26159?\u20174?start\u22788?\u21040?stop-1\u22788?\u30340?\u25152?\u26377?\u23383?\u31526?;\par
+\tab\tab\u27880?: \u26159?\u19981?\u21253?\u21547?stop\u22788?\u30340?\u23383?\u31526?\u-229?start\u21644?stop\u22823?\u23567?\u27809?\u26377?\u20808?\u21518?\u-26502?\u24207?; \u24403?\u21442?\u25968?\u20026?\u-29409?\u25968?\u26102?\u-244?\u-29723?\u21442?\u25968?\u24403?0\u22788?\u29702?\u-229?\par
+\cf2\u26696?\u20363?: \u23637?\u24320?/\u25910?\u-29321?\u25928?\u26524?\cf0\par
+\par
+> split()\u26041?\u27861?\u29992?\u20110?\u25226?\u19968?\u20010?\u23383?\u31526?\u20018?\u20998?\u21106?\u25104?\u25968?\u32452?;\par
+\tab stringObject.split(separator,length);\par
+\tab\tab\u21442?\u25968?: \par
+\tab\tab\tab separator: \u20197?separator\u20998?\u21106?;\par
+\tab\tab\tab length: \u25351?\u23450?\u-28716?\u22238?\u30340?\u25968?\u32452?\u26368?\u22823?\u-27265?\u24230?;\par
+\tab\tab\u-28716?\u22238?\u20540?: \u-28716?\u22238?\u25968?\u32452?\u20013?\u30340?\u23383?\u31526?\u20018?\u19981?\u21253?\u21547?separator\u26412?\u-29013?;\tab\cf1\tab\u27880?: \u-32027?\u26080?\u21442?\u25968?\u-244?\u26159?\u23558?\u25972?\u20010?\u23383?\u31526?\u20018?\u25918?\u20837?\u25968?\u32452?\u-244?\u21363?\u26159?\u23383?\u31526?\u20018?\u-28820?\u20026?\u25968?\u32452?\u31867?\u22411?;\cf0\par
+\pard\f1\tab\tab\cf4 // \lang2052\f2\'ce\'de\'b2\'ce\'ca\'fd\'a3\'ac\'bc\'b4\'ca\'c7\'bd\'ab\'d7\'d6\'b7\'fb\'b4\'ae\'d7\'aa\'ce\'aa\'ca\'fd\'d7\'e9\cf0\lang1033\f1\par
+\tab\tab\cf7 var \cf3 arr1 \cf8 = \cf3 str.split();\cf0\par
+\cf3\tab\tab\cf0\par
+\tab\tab\cf4 // \lang2052\f2\'d2\'d4\lang1033\f1 '.'\lang2052\f2\'c7\'d0\'b8\'ee\'d7\'d6\'b7\'fb\'b4\'ae\cf0\lang1033\f1\par
+\tab\tab\cf7 var \cf3 arr2 \cf8 = \cf3 str.split(\cf6 '.'\cf3 );\cf0\par
+\cf3\tab\tab\cf0\par
+\tab\tab\cf4 // \lang2052\f2\'d2\'d4\lang1033\f1 ''\lang2052\f2\'bd\'ab\'d7\'d6\'b7\'fb\'b4\'ae\'d2\'bb\'b8\'f6\'b8\'f6\'d7\'d6\'b7\'fb\'c7\'d0\'b7\'d6\cf0\lang1033\f1\par
+\tab\tab\cf7 var \cf3 arr3 \cf8 = \cf3 str.split(\cf6 ''\cf3 );\cf2\f0\par
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\u26696?\u20363?(\u-26782?\u-29739?): \u-26464?\u20498?\u23383?\u31526?\u20018?\cf0\par
+\cf2\u32508?\u21512?\u26696?\u20363?: \u26597?\u25214?\u12289?\u26367?\u25442?\u25928?\u26524?(split\u21644?join\u32467?\u21512?\u20351?\u29992?)\cf0\par
+}
+ 

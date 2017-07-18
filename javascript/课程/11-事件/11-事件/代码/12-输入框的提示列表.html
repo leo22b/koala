@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#search{
+				width: 150px;
+				margin: 30px auto;
+			}
+			input{
+				width: 150px;
+			}
+			ul{
+				width: 152px;
+				list-style:  none;
+				border: 1px solid gray;
+				border-top: none;
+				/* 默认不显示*/
+				display: none;
+			}
+			li{
+				width: 140px;
+				height: 30px;
+				line-height: 30px;
+				padding-left: 10px;
+			}
+			.active{
+				background: gray;
+				color: white;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				var oInput = document.getElementById("text");
+				var aLi = document.getElementsByTagName('li');
+				var oUl = document.getElementsByTagName('ul')[0];
+				
+				// 获取焦点
+				oInput.onfocus = function(){
+					oUl.style.display = 'block';
+				}
+				
+				// 失去焦点
+				oInput.onblur = function(){
+					setTimeout(function(){
+						oUl.style.display = 'none';
+					}, 50)
+				}
+				
+				
+				// 添加点击事件 -- 每个li都需要添加点击事件
+//				for(var i=0; i<aLi.length; i++){
+//					aLi[i].onclick = function(){
+//						oInput.value = this.innerHTML;
+//					}
+//				}
+			
+			
+				
+				// 事件冒泡
+				// 每个li点击后，事件冒泡 --> ul
+				oUl.onclick = function(ev){
+					// alert(1);
+					
+					// 哪个li点击？ -- 通过获取对应的事件源
+					// this --> ul
+					ev = event || ev;
+					var self = ev.target || ev.srcElement;
+					oInput.value = self.innerHTML;
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="search">
+			<input type="text" id="text" placeholder="请输入要查找的内容" />
+			<ul>
+				<li>HTML学习</li>
+				<li>HTML5+</li>
+				<li>HTML5+ MUI</li>
+				<li>HTML5 app开发</li>
+				<li>HTML5 教学视频</li>
+				<li>HTML5 教程</li>
+			</ul>
+		</div>
+	</body>
+</html>

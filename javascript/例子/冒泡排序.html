@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr=[1,4,12,56,8,6];
+			for (var i=0;i<arr.length-1;i++) {
+				for (var j=0;j<arr.length-1-i;j++) {
+					if (arr[j]>arr[j+1]) {
+						var temp=arr[j+1];
+						arr[j+1]=arr[j];
+						arr[j]=temp;
+					}
+				}
+			}
+			alert(arr);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+        <script type="text/javascript">
+            window.onload = function(){
+                var oBt = document.getElementById('bt');
+
+                oBt.onclick = function(){
+                    alert(1);
+                }
+
+				
+				// 耗时操作  ---->  召唤小弟    ---->   创建worker对象(线程)
+                // for(var i=0; i<100000000; i++){
+                //     console.log(i);
+                // }
+                
+                // 需要操作的内容在哪里？
+                var zhangsan = new Worker('02-test.js');
+            }
+        </script>
+	</head>
+	
+	<body>
+    		<input type="button" value="按钮" id="bt" name="">
+	</body>
+</html>

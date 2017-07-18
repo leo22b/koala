@@ -1,0 +1,111 @@
+
+/*一、24格处理*/
+#iconWall{
+    width: 732px;
+    background-color: #f0f0f0;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-top: 1px;
+    padding-left: 1px;
+    list-style: none;
+}
+
+#iconWall li{
+    width: 121px;
+    height: 108px;
+    float: left;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    position: relative;
+}
+
+/*二、3D反转区域处理 */
+.img-back, .img-front{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    width: 121px;
+    height: 108px;
+    text-align: center;
+    line-height: 108px;
+}
+
+li img{
+    vertical-align: middle;
+}
+
+
+.img-3d{
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.img-back{
+    transform: rotateY(180deg);
+}
+
+/*三、换一批*/
+#btnRefresh{
+    text-align: center;
+    transition: .3s linear;
+    display: block;
+    width: 121px;
+    height: 108px;
+    text-decoration: none;
+    color: black;
+    float: right;
+}
+#btnRefresh:hover{
+    background-color: #dd2727;
+    transition: 0s;
+    text-decoration: underline;
+}
+#btnRefresh>.rotating{
+    width: 28px;
+    height: 28px;
+    background: url("../img/refresh.png");
+    margin: 32px auto 0;
+}
+
+
+/*四、处理浮层*/
+.mask{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 121px;
+    height: 108px;
+    background-color: rgba(0, 0, 0, .7);
+    opacity: 0;
+}
+
+.mask img{
+    float: right;
+    margin-top: 8px;
+    margin-right: 8px;
+}
+.mask p{
+    font-size: 12px;
+    color: #fff;
+    margin-top: 45px;
+    text-align: center;
+}
+.mask a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    background-color: red;
+    width: 70px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 9px;
+}
+
+li:hover .mask{
+    opacity: 1;
+    transition: .3s linear;
+}

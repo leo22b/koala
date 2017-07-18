@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			audio{
+				width: 800px;
+				height: 40px;
+			}
+			#box{
+				width: 400px;
+				height: 10px;
+				border: 1px solid gray;
+				position: relative;
+			}
+			#bg{
+				width: 400px;
+				height: 10px;
+				background: transparent;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#line{
+				width: 4px;
+				height:24px;
+				background: red;
+				position: absolute;
+				left: 0;
+				top: -6px;
+			}
+			#progress{
+				width: 40px;
+				height: 10px;
+				background: gray;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 0;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var oLine = document.querySelector("#line");
+				var oBox = document.querySelector("#box");
+				var oBg = document.querySelector("#bg");
+				var oProgress = document.querySelector("#progress");
+				var audio = document.querySelector("audio");
+				
+				
+				// 获取播放的当前时间(设置进度条)
+//				function startTimer(){
+//					
+//				}
+
+//				console.log(audio.duration);
+//				audio.currentTime = 30;
+//				audio.play();
+//				audio.pause();
+//				audio.muted = true;
+//				alert(audio.ended);
+				
+				var iScale = 0;
+				oBg.onmousedown = function(ev){
+					ev = ev || window.event;
+					
+					oBg.onmousemove = function(ev){
+						ev = ev || window.event;
+						oLine.style.left = ev.offsetX + 'px';
+						oProgress.style.width = ev.offsetX + 'px';
+						// 计算进度
+						iScale = oProgress.offsetWidth / oBg.offsetWidth;
+						audio.pause();
+					}
+					
+					oBox.onmouseup = function(){
+						oBg.onmousemove = oBg.onmouseup = null;
+						//  duration : 媒体总时间(只读)
+						audio.play();
+						audio.currentTime = parseInt(iScale * audio.duration);
+						console.log(parseInt(iScale * audio.duration));
+						
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	
+	<body>
+		<!-- controls： 用户控制-->
+		<audio src="105511007-1.mp3" controls="controls"></audio>
+		<!--<audio src="105511007-1.mp3" controls autoplay></audio>-->
+		<!--<audio src="105511007-1.mp3" controls="controls" autoplay="autoplay"></audio>-->
+	
+		<br />
+		<br />
+		<br />
+		<div id="box">
+			<div id="progress"></div>
+			<div id="bg"></div>
+			<i id="line"></i>
+		</div>
+	</body>
+</html>

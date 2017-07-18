@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.view{
+				width: 100px;
+				height: 100px;
+				background: red;
+				/*position: absolute;*/
+			}
+			
+			.box{
+				width: 300px;
+				height: 300px;
+				border: 1px solid gray;
+				margin: 100px;
+			}
+			.box i{
+				opacity: 0;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var oView = document.querySelector(".view");
+				var oBox = document.querySelector(".box");
+				var oPlace = document.querySelector('.box i');
+				
+				
+//				oView.onmousedown = function(ev){
+//					ev = ev || window.event;
+//					// 鼠标位置
+//					var dowX = ev.offsetX;
+//					var dowY = ev.offsetY;
+//					
+//					document.onmousemove = function(ev){
+//						ev = ev || window.event;
+//						oView.style.left = ev.clientX - dowX + 'px';
+//						oView.style.top = ev.clientY - dowY + 'px';
+//					}
+//					
+//					document.onmouseup = function(){
+//						document.onmousemove = document.onmouseup = null;
+//					}
+//				}
+
+
+				/*******  被拖拽的元素事件 *******/
+				// 拖拽开始
+				oView.ondragstart = function(){
+					this.style.background = 'blue';
+					oPlace.style.opacity = 1;
+				}
+				
+				// 拖拽开始、拖拽结束之间，连续触发 (和onmousemove不一样)
+				var i = 0;
+				oView.ondrag = function(){
+//					document.title = ++i;
+				}
+				
+				// 拖拽结束
+				oView.ondragend = function(){
+					this.style.background = 'red';
+					oPlace.style.opacity = 0;
+				}
+				
+				
+				
+				/*******  目标的元素事件 *******/
+				// 进入
+				oBox.ondragenter = function(){
+					this.style.background = 'gray';
+					oPlace.innerHTML = '释放鼠标';
+				}
+				
+				// 进入目标、离开目标之间，连续触发
+				oBox.ondragover = function(ev){
+					ev = ev || window.event;
+					document.title = ++i;
+					
+					// 阻止默认事件
+					// ev.preventDefault();
+					
+					return false;
+				}
+				
+				// 离开
+				oBox.ondragleave = function(){
+					this.style.background = '';
+					oPlace.innerHTML = '将文件拖拽到此处';
+				}
+				
+				// 在目标元素内释放
+				oBox.ondrop = function(){
+					alert('正在上传');
+					this.style.background = '';
+					oPlace.innerHTML = '将文件拖拽到此处';
+				}
+			}
+		</script>
+	</head>
+	
+	
+	<body>
+		<div class="view" draggable="true"></div>
+		
+		
+		<div class="box">
+			<i> 将文件拖拽到此处 </i>
+		</div>
+	</body>
+</html>

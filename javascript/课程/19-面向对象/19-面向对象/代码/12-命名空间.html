@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> jd | 首页 </title>
+		
+		<!--
+			按功能划分模块: 
+			张三：搜索功能(12-search.js)
+			王五: 新闻功能(12-news.js)
+			赵六: 商品展示(12-shops.js)
+			
+			
+			按页面划分模块:
+			小王: 首页 (搜索功能、商品展示)
+			小李: 购物车(搜索功能、商品展示)
+			小赵: 商品详情(商品展示)
+			小三: 支付
+		-->
+		<script>
+			var jd = {};
+			
+			jd.commit = {
+				'getStyle': function(){
+					alert(1);
+				},
+				'addEvent': function(){
+					
+				},
+				'removeEvent': function(){
+					
+				}
+			};
+			
+			
+			jd.annimation = {
+				'getStyle': function(){
+					alert(2);
+				},
+				'startMove': function(){
+					
+				}
+			};
+			
+//			jd.commit.getStyle();
+//			jd.annimation.getStyle();
+			
+			
+			
+//			var tengxun = {};
+//			tengxun.zhangsan = {};
+//			tengxun.lisi = {};
+//			tengxun.wangwu = {};
+		</script>
+		
+		
+		<script src="12-shops.js"></script>
+		<script src="12-search.js"></script>
+		<script src="12-news.js"></script>
+		
+		
+		<script>
+			
+			getStyle();
+			
+		</script>
+	</head>
+	
+	
+	<body>
+	</body>
+</html>

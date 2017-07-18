@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 800px;
+				height: 530px;
+				background: red;
+				text-align: center;
+				margin: 30px auto;
+				position: relative;
+			}
+			#box .title{
+				color: white;
+				line-height: 30px;
+				font-size: 18px;
+			}
+			#box .bigImg{
+				width: 800px;
+				height: 470px;
+				display: block;
+			}
+			#box .back,#box .next{
+				position: absolute;
+				width: 80px;
+				height: 30px;
+				top: 250px;
+				background: red;
+				color: white;
+				text-decoration: none;
+				line-height: 30px;
+			}
+			#box .back{
+				left: 0;
+			}
+			#box .next{
+				right: 0;
+			}
+			
+			#box .page i{
+				height: 30px;
+				width: 30px;
+				display: inline-block;
+				color: white;
+				background: black;
+				line-height: 30px;
+				font-size: 20px;
+				font-style: normal;
+				border-radius: 15px;
+				margin: 0 4px;
+			}
+			#box .page .active{
+				background: purple;
+			}
+			
+			#box .smallImg{
+				width: 120px;
+				height: 80px;
+				position: absolute;
+				bottom: 30px;
+				left: 340px;
+				display: none;
+			}
+		</style>
+	</head>
+	
+	
+	<body>
+		<!--
+			1、基本布局(基本样式)
+			2、上一张/下一张功能
+			3、改变标题显示
+			4、根据对应的图片展示，生成对应的下标
+			6、下标，跟随图片的切换而切换
+			7、下标点击
+			8、下标鼠标移入显示微缩图
+		-->
+		
+		<div id="box">
+			<!-- 标题-->
+			<h3 class="title"></h3>
+			
+			<!-- 显示大图-->
+			<img class="bigImg" />
+			
+			<!-- 按钮-->
+			<a href="#" class="back">上一张</a>
+			<a href="#" class="next">下一张</a>
+			
+			<!-- 下标-->
+			<p class="page">
+				<!--<i>1</i>
+				<i>1</i>
+				<i>1</i>-->
+			</p>
+			
+			<!-- 小图-->
+			<img class="smallImg" />
+		</div>
+		
+		
+		<script type="text/javascript">
+			// 大盒子
+			var oBox = document.getElementById("box");
+			// 标题
+			var oTitle = document.getElementsByTagName('h3')[0];
+			// 大图
+			var oBigImg = oBox.getElementsByTagName('img')[0];
+			// 小图(微缩图)
+			var oSmallImg = oBox.getElementsByTagName('img')[1];
+			// 上一张
+			var oBack = oBox.getElementsByTagName('a')[0];
+			// 下一张
+			var oNext = oBox.getElementsByTagName('a')[1];
+			// 下标视图
+			var oPageView = oBox.getElementsByTagName('p')[0];
+			// 图片下标(与图片数组与之对应)
+			var index = 0;
+			// 显示图片的数组
+			var imageNames = ['background.jpg','Kayle_Splash_0.jpg','Kayle_Splash_1.jpg','Kayle_Splash_2.jpg','Kayle_Splash_3.jpg','Kayle_Splash_4.jpg','Kayle_Splash_5.jpg','Kayle_Splash_6.jpg'];
+			
+			// 默认显示
+			oBigImg.src = 'images/' + imageNames[index];
+			oTitle.innerHTML = imageNames[index];
+			
+			
+			// 上一张
+			oBack.onclick = function(){
+				index--;
+				if(index < 0){
+					// imagesName: 5个元素
+					// 下标: 0~4
+					// imageNames.length: 5
+					// imageNames[5]	: 数组越界
+					index = imageNames.length - 1;
+				}
+				
+				changeView();
+			}
+			
+			// 下一张
+			oNext.onclick = function(){
+				index++;
+				if(index > imageNames.length-1){
+					index = 0;
+				}
+				
+				changeView();
+			}
+			
+			
+			// 根据图片数组，生成对应的下标
+			var str = '';
+			for(var i=1; i<=imageNames.length; i++){
+				// 默认是第一个开始
+				if(i == 1){
+					str += '<i class="active">' + i + '</i>';
+				} else {
+					str += '<i>' + i + '</i>';
+				}
+			}
+			oPageView.innerHTML = str;
+			
+			// 获取对应的下标
+			var aPage = oPageView.getElementsByTagName('i');
+			
+			
+			// 给对应的下标添加事件
+			for(var i=0; i<aPage.length; i++){
+				// 自定义属性
+				aPage[i].index = i;
+				
+				// 点击操作
+				aPage[i].onclick = function(){
+					index = this.index;
+					
+					changeView();
+				}
+				
+				// 鼠标移入
+				aPage[i].onmouseover = function(){
+					oSmallImg.style.display = 'block';
+					oSmallImg.src = 'images/' + imageNames[this.index];
+				}
+				
+				// 鼠标移出
+				aPage[i].onmouseout = function(){
+					oSmallImg.style.display = 'none';
+				}
+			}
+			
+			
+			// 改变视图显示  --- 只要下标即可
+			function changeView(){
+				// 根据下标，获取到对应的图片名，改变大图
+				oBigImg.src = 'images/' + imageNames[index];
+				
+				// 改变标题显示
+				oTitle.innerHTML = imageNames[index];
+				
+				// 改变下标 -- 先清空
+				for(var i=0; i<aPage.length; i++){
+					aPage[i].className = '';
+				}
+				
+				// 改变下标 -- 再改变
+				aPage[index].className = 'active';
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	
+	<body>
+	
+		<script>
+			
+			// 
+			var num1 = 100;
+			var num2 = num1;
+			
+			num2 = 99;
+			
+			// alert(num1); // 100
+			
+			
+			
+			var arr1 = ['张三', '李四'];
+			var arr2 = arr1;		// 并不是将整个数组复制过去
+			
+			arr2[0] = 'Hello';
+
+			// document.write(arr1);
+			
+			
+			
+			var arr3 = ['张三', '李四','王五', '赵六'];
+			var arr4 = [];
+			// 数组的复制
+			for(var i=0; i<arr3.length; i++){
+				arr4[i] = arr3[i];
+			}
+			
+			arr4[0] = '测试';
+			
+			document.write(arr3);
+			document.write('<br/>');
+			document.write(arr4);
+			
+			
+			
+		</script>
+	</body>
+</html>

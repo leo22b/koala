@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			document.onclick = function(){
+				// 1、打开浏览器
+				var request = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+				
+				
+				// 2、输入网址
+				request.open('GET', './getData.php', true);
+				
+				// 3、回车发送
+				request.send();
+				
+				// 4、接收数据(服务器相应)
+				request.onreadystatechange = function(){
+					// console.log(request.response);
+					
+					if(request.readyState == 4){
+						if(request.status == 200){
+							console.log(request.response);
+						} else {
+							alert('其他信息:' + request.status);
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

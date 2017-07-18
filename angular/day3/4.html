@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>自定义服务的方法二</title>
+<meta charset="utf-8">
+  <script src="lib/angular-1.3.0.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+     
+<script>
+var app = angular.module("myApp", []);
+    //service形式服务  返回的是实例化对象
+	app.service('myService', function() {
+        this.name="zhangsan";
+        this.say = function (x) {
+              alert( this.name);
+        }
+     
+       
+    });
+
+	//在控制器使用服务时，必须依赖服务
+app.controller("myCtrl", function($scope,myService) {
+           myService.say(); //调用服务的方法
+           console.log(myService.name)
+    
+})
+
+ 
+
+
+</script>
+
+</body>
+</html>

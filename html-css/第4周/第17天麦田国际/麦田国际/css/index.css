@@ -1,0 +1,205 @@
+/* 横幅*/
+#main .banner{
+	/*width: 100%;*/
+	width: 1441px;
+	height: 458px;
+	margin: 0 auto;
+	background: url(../img/banner.png) center;
+}
+
+/* 战略合作*/
+#main .strategic{
+	width: 100%;
+	/*height: 388px;*/
+	background: #f7f7f7;
+}
+#main .strategic-cont{
+	width: 1141px;
+	/*height: 388px;*/
+	margin: 0 auto;
+	text-align: center;
+	padding: 38px 0 58px 0;
+}
+#main .strategic-cont p{
+	height: 58px;
+	line-height: 58px;
+	color: #88888A;
+}
+/* 方式一*/
+#main .strategic-cont li {
+	float: left;
+	
+	/* 边框处理*/
+	border: 1px solid #88888A;
+	margin: -1px 0 0 -1px;
+}
+/* 方式二*/
+#main .strategic-cont table{
+	border: 1px solid #88888A;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+#main .strategic-cont table td{
+	border: 1px solid #88888A;
+}
+
+/* 我们的优势*/
+#main .our{
+	/*width: 100%;*/
+	/*height: 544px;*/
+	background: black;
+}
+#main .our-cont{
+	width: 1141px;
+	margin: 0 auto;
+	padding: 52px 0 66px 0;
+	text-align: center;
+}
+#main .our-cont h3{
+	color: white;
+}
+#main .our-cont p{
+	color: white;
+	line-height: 38px;
+}
+#main .our-cont .show{
+	margin-top: 100px;
+	/*height: 260px;*/
+}
+#main .our-cont .show .section{
+	width: 260px;
+	height: 190px;
+	float: left;
+	background: #cfcfcf;
+	text-align: center;
+	padding:70px 40px 0;
+	position: relative;
+}
+#main .our-cont .show .section h4{
+	font-size: 16px;
+	color: #f85b52;
+	height: 66px;
+	line-height: 66px;
+}
+#main .our-cont .show .section p{
+	width: 252px;
+	text-align: center;
+	line-height: 28px;
+	color: black;
+}
+#main .our-cont .show .section i{
+	display: block;
+	width: 130px;
+	height: 130px;
+	border-radius: 65px;
+	background: url(../img/img01.png);
+	position: absolute;
+	top: -65px;
+	left: 105px;
+}
+
+
+/* 成功案例*/
+#main .success{
+	background: white;
+}
+#main .success-cont{
+	width: 1141px;
+	padding: 36px 0 60px 0;
+	margin: 0 auto;
+	text-align: center;
+}
+#main .success-cont h3{
+	color: black;
+	font-size: 26px;
+}
+#main .success-cont p{
+	line-height: 60px;
+	color: #88888A;
+	height: 60px;
+}
+#main .success-cont .select{
+	height: 66px;
+	width: 800px;
+	margin: 0 auto;
+}
+#main .success-cont .select a{
+	/*background: #666666;*/
+	width: 200px;
+	height: 48px;
+	float: left;
+	color: white;
+	line-height: 40px;
+}
+#main .success-cont .select .active{
+	background: url(../img/select.png);
+}
+#main .success-cont .select span{
+	display: block;
+	width: 100%;
+	height: 40px;
+	background: #666;
+}
+
+/* 方式一*/
+#main .success-cont .shop{
+	/*width: 1141px;*/
+	/* 盒子调整大一点，为了放下整个内容*/
+	width: 1171px;
+}
+#main .success-cont .shop a{
+	float: left;
+	margin: 0 30px 30px 0;
+}
+#main .success-cont .fixBox{
+	width: 1141px;
+	height: 540px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+
+/* 方式二*/
+#main .success-cont table{
+	width: 1141px;
+	border-spacing: 30px;
+	margin: 0 auto;
+}
+
+/* 新闻*/
+#main .news{
+	background: #f2f2f2;
+}
+#main .news-cont{
+	width: 1141px;
+	height: 351px;
+	margin: 0 auto;
+}
+#main .news-cont .section{
+	width: 344px;
+	height: 351px;
+	/*background: red;*/
+	float: left;
+}
+#main .news-cont .section h4{
+	font-size: 17px;
+	height: 84px;
+	line-height: 84px;
+}
+#main .news-cont ul li{
+	height: 30px;
+	line-height: 30px;
+}
+#main .news-cont ul li a{
+	float: left;
+}
+#main .news-cont ul li span{
+	float: right;
+	color: #88888A;
+}
+#main .news-cont .more{
+	display: block;
+	width: 117px;
+	height: 32px;
+	margin-top: 12px;
+}

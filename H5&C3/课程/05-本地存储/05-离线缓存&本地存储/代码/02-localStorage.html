@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oText1 = document.querySelector("#key");
+				var oText2 = document.querySelector("#value");
+				var oBt1 = document.querySelector("#bt1");
+				var oBt2 = document.querySelector("#bt2");
+				var oBt3 = document.querySelector("#bt3");
+				var oBt4 = document.querySelector("#bt4");
+				
+				// 添加数据
+				oBt1.onclick = function(){
+					// key/value
+					window.localStorage.setItem(oText1.value, oText2.value);
+					alert('添加成功');
+				}
+				
+				// 获取数据
+				oBt2.onclick = function(){
+					// key
+					alert(window.localStorage.getItem(oText1.value));
+				}
+				
+				// 删除数据
+				oBt3.onclick = function(){
+					window.localStorage.removeItem(oText1.value);
+				}
+				
+				// 清空
+				oBt4.onclick = function(){
+					window.localStorage.clear();
+				}
+			}
+		</script>
+	</head>
+	
+	
+	<body>
+		key: <input type="text" id="key" /> <br />
+		value: <input type="text" id="value" /> <br />
+		<input type="button" value="添加" id="bt1" />
+		<input type="button" value="获取" id="bt2" />
+		<input type="button" value="删除" id="bt3" />
+		<input type="button" value="清空" id="bt4" />
+	</body>
+</html>

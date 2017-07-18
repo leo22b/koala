@@ -1,0 +1,99 @@
+*{margin: 0;padding: 0;}
+body{
+	/*background: green;*/
+	font-size: 12px;
+}
+.clearfix:after{
+	content: " ";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+}
+a{
+	color: black;
+	text-decoration: none;
+}
+ul{
+	list-style: none;
+}
+#header .case1{
+	width: 100%;
+	/*background: green;*/
+}
+#header .case1 .logo{
+	width: 962px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+#header .case1 .logo .ico{
+	width: 320px;
+	height: 49px;
+	background: url(../img/logo.jpg)no-repeat;
+	margin-top: 24px;
+	float: left;
+}
+#header .case1 .logo .font{
+	width: 250px;
+	height: 73px;
+	background: url(../img/tu1.jpg) no-repeat right bottom;
+	float: right;
+	overflow: hidden;
+}
+#header .case1 .logo .font p{
+	text-align: right;
+	margin-right: 36px;
+}
+#header .case1 .logo .font .p1{
+	margin-top: 40px;
+}
+#header .case1 .logo .font .p2{
+	font-size: 16px;
+	color: green;
+}
+#header .case1 .nav{
+	width: 962px;
+	text-align: center;
+	margin: 0 auto;
+}
+#header .case1 .nav li{
+	display: block;
+	width: 80px;
+	height: 70px;
+	line-height: 80px;
+	float: left;
+}
+#header .case1 .nav .action{
+	color: gray;
+}
+#header .case1 .banner{
+	width:1220px;
+	height: 315px;
+	margin: 0 auto;
+}
+
+/*尾部footer*/
+#footer{
+	width: 100%;
+	text-align: center;
+	background: url(../img/tu3.jpg);
+}
+#footer .list li{
+	display: inline-block;
+	margin-top: 14px;
+}
+#footer .list a{
+	padding:0 5px;
+}
+#footer .list .first a{
+	text-decoration: underline;
+}
+#footer .list .last li{
+	margin-top: 11px;
+}
+
+
+
+
+
+

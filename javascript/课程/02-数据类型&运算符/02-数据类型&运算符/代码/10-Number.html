@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				/* 16进制*/
+				background: #ffffff;
+			}
+		</style>
+	</head>
+	
+	<body>
+		
+		<script>
+			// 10进制
+			var num = 10;
+			
+			
+			/* 计数方式( 遇n进1 )
+			 * 2进制、8进制、10进制、16进制
+			 * 
+			 * 10进制: 9 + 1 = 10  [遇10进1]
+			 * 8进制: 7 + 1 = 10   [遇8进1]
+			 * 2进制: [遇2进1]
+			 * 		1 + 1 = 10   
+			 * 		10 + 1 = 11
+			 * 		11 + 1 = 100
+			 * 		100 + 1 = 101
+			 * 		101 + 1 = 110   --> 
+			 * 
+			 * 
+			 * 		11
+			 * 		 1
+			 * -------------
+			 * 	   100
+			 * 
+			 * 
+			 * 16进制: 0~9 a~f
+			 * 		9 + 1 = a
+			 * 		a + 1 = b
+			 * 		b + 1 = c
+			 * 		c + 1 = d
+			 * 		d + 1 = e
+			 * 		e + 1 = f
+			 * 		f + 1 = 10
+			 */
+			
+			// 0前缀，8进制写法
+			var num2 = 053;
+//			alert(num2);		// 输出10进制: 43
+			
+			var num3 = 081;	// 8进制，但不符合负规则，直接变为10进制81
+//			alert(num3);
+
+		
+				
+			// 0x10  --> f + 1 = 0x10
+			var num4 = 0x1f;
+//			alert(num4);
+			
+			
+			
+			// alert( 0 / 0 );
+			// document.write(1);	// 上面代码输出NaN便面程序错误，而导致程序终止
+			// alert( NaN == NaN );		// false,NaN不与任何值相等(包括它自己)
+			
+			
+			// isNaN (是不是为 NaN) 【】
+			// 试图转换为Number，如果不能转换即是NaN
+			// alert( isNaN( 0/0 ) );	// true，即是一个NaN
+			// alert( isNaN(1) );	// false
+			// alert( isNaN('hello') );		// 'hello'是不是数值? NaN
+			// alert( isNaN(true) );	// true对应的是1，是一个数值，不是为NaN,false
+			// alert( isNaN('3') ); // '3'能转为3，3是一个数值，false
+			
+		
+		
+		
+			// Number()
+			// alert( Number(3) );
+			// alert( Number(true) );	// true为1， false为0
+			
+			// 如果对于字符串来说，其实就是将双引号去除，判断是否为数值
+			// alert( Number('33') );	// 33
+			// alert( Number('hello') );	// NaN
+			// alert( Number('13.1') );	// 13.1
+			// alert( Number('10.3.2') );		// NaN
+			// alert( Number('123flsdkfjsk') );	// NaN
+			
+			
+			
+			// parseInt() 取整
+			// alert( parseInt('123') );	// 123
+			// alert( parseInt('123qq') );	// 123
+			// alert( parseInt('123qq123') );	// 123
+			// alert( parseInt(' qq321 ') );	// NaN
+			// alert( parseInt('10.3.2') );		// 10
+			
+			
+			// parseFloat()
+			// alert( parseFloat('123qq') ); // 123
+			// alert( parseFloat('10.3.2') );	// 10.3
+		</script> 
+	</body>
+</html>

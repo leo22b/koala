@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table {
+				width: 700px;
+				height: 300px;
+				border: 1px solid gray;
+				margin: 30px auto;
+				border-collapse: collapse;
+				text-align: center;
+				font-size: 18px;
+			}
+			
+			td {
+				border: 1px solid gray;
+				width: 140px;
+				height: 50px;
+			}
+			
+			input {
+				width: 138px;
+				height: 50px;
+				border: 0;
+				background: yellowgreen;
+				font-size: 18px;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				var oTable = document.getElementsByTagName('table')[0];
+
+				// 给每个td添加双击事件 ？
+
+				// 利用事件冒泡，减少事件绑定，优化效率
+				oTable.ondblclick = function(ev) {
+
+					// 哪个td点击 ？  -- > 事件源
+					ev = event || ev;
+					var self = ev.target || ev.srcElement;
+
+					// 将td中的innerHTML替换换成input
+					var oInput = document.createElement('input');
+					oInput.type = 'text'
+					oInput.value = self.innerHTML;
+					self.innerHTML = ''; // 	清空掉之前的内容
+					self.appendChild(oInput);
+
+					// 获取焦点
+					oInput.focus();
+					
+					// 禁止事件冒泡
+					ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
+
+					
+					// 添加的位置
+					document.onclick = function() {
+						// 将输入框中的内容，保存到td中
+						self.innerHTML = oInput.value;
+					}
+				}
+				
+//				document.onclick = function() {
+//						// 将输入框中的内容，保存到td中
+//
+//				}
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<table>
+			<tr>
+				<td>
+					<!--<input type="text" value="1、单元格" />-->
+					1、单元格
+				</td>
+				<td>2、单元格</td>
+				<td>3、单元格</td>
+				<td>4、单元格</td>
+				<td>5、单元格</td>
+			</tr>
+			<tr>
+				<td>1、单元格</td>
+				<td>2、单元格</td>
+				<td>3、单元格</td>
+				<td>4、单元格</td>
+				<td>5、单元格</td>
+			</tr>
+			<tr>
+				<td>1、单元格</td>
+				<td>2、单元格</td>
+				<td>3、单元格</td>
+				<td>4、单元格</td>
+				<td>5、单元格</td>
+			</tr>
+			<tr>
+				<td>1、单元格</td>
+				<td>2、单元格</td>
+				<td>3、单元格</td>
+				<td>4、单元格</td>
+				<td>5、单元格</td>
+			</tr>
+			<tr>
+				<td>1、单元格</td>
+				<td>2、单元格</td>
+				<td>3、单元格</td>
+				<td>4、单元格</td>
+				<td>5、单元格</td>
+			</tr>
+			<tr>
+				<td>1、单元格</td>
+				<td>2、单元格</td>
+				<td>3、单元格</td>
+				<td>4、单元格</td>
+				<td>5、单元格</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

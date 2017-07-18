@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 500px;
+				height: 300px;
+				border: 1px solid red;
+				
+				/* 2、水平方向居中*/
+				text-align: center;
+				
+				/* 垂直居中是有参考的基线
+				 * 1、添加一个参照
+				 * 2、设置参照的样式(转为内联块元素)
+				 * 3、高度必须和外层盒子一致(宽度不影响)  -->  100%
+				 * 4、vertical-align: middle;
+				 * 5、将该参考隐藏(宽度为0)
+				 */
+			}
+			
+			/* 参照*/
+			.box span{
+				display: inline-block;
+				width: 100px;
+				/*height: 500px;*/
+				background: red;
+				vertical-align: middle;
+				/*width: 0;*/
+				height: 100%;
+			}
+			
+			
+			.view{
+				width: 100px;
+				height: 100px;
+				background: purple;
+				color: white;
+				
+				vertical-align: middle;
+				
+				/* view是块元素，只能通过margin设置居中
+				 * 问题: 当view大小发生改变时，margin值又要重新设置
+				 */
+				/*margin: 125px auto 0;*/
+				
+				
+				/* (如果想要使用以下两种属性设置，元素类型必须是内联元素或内联块元素)
+				 * 水平方向: text-align
+				 * 垂直方向: vertical-align
+				 */
+				
+				/* 1、先将元素类型改变*/
+				display: inline-block;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="box">
+			<div class="view"></div>
+			
+			<!-- 作为view的参照-->
+			<span></span>
+		</div>
+	</body>
+</html>

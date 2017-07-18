@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="customersCtrl">
+<head>
+    <meta charset="UTF-8">
+    <title>返回当前url的地址</title>
+    <script src="lib/angular-1.3.0.js"></script>
+</head>
+<body>
+<h1>{{myUrl}}</h1>
+<h2>{{windoww}}</h2>
+<script>
+    /*$location服务是一个参数 需要传入到controller中*/
+   var url=angular.module('myApp',[]);
+   /**
+    $location 服务是作为一个参数传递到 controller 中。如果要使用它，需要在 controller 中定义。
+   * */
+    url.controller('customersCtrl',function ($scope,$location) {
+        $scope.myUrl=$location.absUrl();
+        $scope.windoww=window.location;
+    })
+</script>
+</body>
+</html>

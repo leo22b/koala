@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		
+		<script src="02-app.js"></script>
+		
+		<script>
+			
+			// 在同一个script中，允许先调用，后定义 (最好还是先定义后调用)
+			// 在不同script种，必须是先定义，后调用
+			
+			sayHello();
+			
+			sayHi();
+			
+			
+			// 函数定义 -- 命名函数
+			function sayHi(){
+				document.writeln('hello');
+			}
+			
+			
+			// 函数定义  --- 匿名函数
+			// 只是变量fn中存的是一个函数
+			var fn = function(){
+				document.write('我是一个匿名函数');
+			};
+			// 函数调用
+			fn();
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

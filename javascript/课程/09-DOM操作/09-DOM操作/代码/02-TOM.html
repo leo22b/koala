@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 320px;
+				height: 568px;
+				margin:  0 auto;
+				position: relative;
+			}
+			#box .bigImg{
+				width: 320px;
+				height: 568px;
+			}
+			#box .bt{
+				position: absolute;
+				text-decoration: none;
+			}
+			#box .bt1{
+				left: 5px;
+				bottom: 135px;
+			}
+			#box .bt2{
+				left: 5px;
+				bottom: 65px;
+			}
+			#box .bt3{
+				left: 5px;
+				bottom: 5px;
+			}
+			#box .bt4{
+				right: 5px;
+				bottom: 135px;
+			}
+			#box .bt5{
+				right: 5px;
+				bottom: 65px;
+			}
+			#box .bt6{
+				right: 5px;
+				bottom: 5px;
+			}
+		</style>
+		<script type="text/javascript" src="zyz.js" ></script>
+		<script>
+			$(function(){
+				
+				var oImg = $('box').getElementsByTagName('img')[0];
+				var aBt = $('box').getElementsByTagName('a');
+				var timer = null;
+				var page = 0;
+				var currentBt = null;	// 哪个按钮点击
+				
+				for(var i=0; i<aBt.length; i++){
+					aBt[i].onclick = function(){
+						stopTimer();
+						
+						// 哪个按钮点击
+						currentBt = this;
+						
+						startTimer();
+					}
+				}
+				
+				// 开启时钟
+				function startTimer(){
+					if(timer == null){
+						timer = setInterval(upDate, 100); 
+					}
+				}
+				
+				// 停止时钟
+				function stopTimer(){
+					clearInterval(timer);
+					timer = null;
+				}
+				
+				// 时钟事件
+				function upDate(){
+					page++;
+					
+					changeView();
+				}
+				
+				// 改变视图
+				function changeView(){
+					console.log(page);
+					
+					// 按钮中保存有对应的图片张数、图片名
+					var temp = currentBt.getElementsByTagName('img')[0];
+					
+					// 图片张数
+					if(page > temp.alt){
+						page = 0;
+						stopTimer();	
+					}
+					
+					// 图片名
+					oImg.src = 'images/' + temp.name + '/' + temp.name + '_' + format(page, 2) + '.jpg';
+				}
+				
+				// 格式化
+				function format(index, number){
+					var str = index.toString();
+					while(str.length != number){
+						str = '0' + str;
+					}
+					
+					return str;
+				}
+			});
+		</script>
+	</head>
+	
+	
+	<body>
+		<div id="box">
+			<img class="bigImg" src="images/angry/angry_00.jpg" />
+			
+			<a href="#" class="bt bt1"> <img src="images/Buttons/cymbal.png" name="cymbal" alt="12" /> </a>
+			<a href="#" class="bt bt2"> <img src="images/Buttons/drink.png" name="drink" alt="80" /> </a>
+			<a href="#" class="bt bt3"> <img src="images/Buttons/eat.png" name="eat" alt="39" /> </a>
+			<a href="#" class="bt bt4"> <img src="images/Buttons/fart.png" name="fart" alt="27" /> </a>
+			<a href="#" class="bt bt5"> <img src="images/Buttons/pie.png" name="pie" alt="23" /> </a>
+			<a href="#" class="bt bt6"> <img src="images/Buttons/scratch.png" name="scratch" alt="55" /> </a>
+		</div>
+	</body>
+</html>

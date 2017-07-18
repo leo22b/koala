@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			video{
+				width: 1000px;
+				height: 400px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			img{
+				width: 1000px;
+				height: 450px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var video = document.querySelector("video");
+				var oImg = document.querySelector("img");
+				
+//				setTimeout(function(){
+//					oImg.style.display = 'none';
+//				}, 3000);
+				
+//				video.play();
+//				video.currentTime = 300;
+				video.width = 1000;
+				video.height = 400;
+
+
+				video.addEventListener('ended', function(){
+//					alert('正在为你切换到下一集....');
+					video.src = 'http://127.0.0.1/%E9%9F%B3%E9%A2%91%E8%A7%86%E9%A2%91/0.mp4';
+					video.play();
+				});
+				
+				video.poster = 'test.png';
+			}
+		</script>
+	</head>
+	
+	<body>
+		<video src="http://127.0.0.1/%E9%9F%B3%E9%A2%91%E8%A7%86%E9%A2%91/1.mp4" controls></video>
+		<!--<img src="test.png" />-->
+	</body>
+</html>

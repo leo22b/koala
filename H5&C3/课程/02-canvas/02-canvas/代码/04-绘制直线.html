@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background: black;
+			}
+			#box{
+				background: white;
+			}
+		</style>
+		
+		<script>
+			window.onload = function(){
+				// 获取canvas元素
+				var oBox = document.getElementById("box");
+				// 绘制环境(上下文)
+				var oGC = oBox.getContext('2d');
+				
+				
+				
+				// 移动到新的目标点
+				oGC.moveTo(50, 50);	// 起始点
+				// 新的目标点
+				oGC.lineTo(200, 200);
+				
+				// 绘制
+				oGC.stroke();
+			}
+		</script>
+		
+	</head>
+	
+	<body>
+		
+		<canvas id="box" width="300" height="300">
+			<i>浏览器不支持canvas</i>
+		</canvas>
+		
+	</body>
+</html>

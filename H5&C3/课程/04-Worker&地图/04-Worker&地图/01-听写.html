@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+</head>
+
+<body>
+<h2>1、使用canvas绘制一条直线 </h2>
+    // 界面中添加canvas元素: canvas id="box" width="300" height="300<br>
+
+    // 获取canvas元素<br>
+    var oBox = document.getElementById("box");<br>
+    // 绘制环境(上下文)<br>
+    var oGC = oBox.getContext('2d');<br>
+                
+                
+    // 移动到新的目标点<br>
+    oGC.moveTo(50, 50); // 起始点<br>
+    // 新的目标点<br>
+    oGC.lineTo(200, 200);<br>
+                
+    // 绘制<br>
+    oGC.stroke();<br>
+
+<h2>2、事件绑定和普通事件有什么区别</h2>
+div1.onclick=function(){};
+1、如果说给同一个元素绑定了两次或者多次相同类型的事件，那么后面的绑定会覆盖前面的绑定
+2、不支持DOM事件流 事件捕获阶段⇒目标元素阶段=>事件冒泡阶段
+
+addEventListener
+1、  如果说给同一个元素绑定了两次或者多次相同类型的事件，所以的绑定将会依次触发
+2、  支持DOM事件流的
+3、  进行事件绑定传参不需要on前端
+addEventListener(“click”,function(){},true);//此时的事件就是在事件冒泡阶段执行
+
+
+<h2>3、javascript的typeof返回哪些数据类型</h2>
+object number function boolean underfind string
+
+<h2>4、例举3种强制类型转换和2种隐式类型转换?</h2>
+强制（parseInt,parseFloat,Number()）
+隐式（==）
+1==”1”//true
+null==undefined//true
+
+<h2>5、对于JS，在IE和标准下有哪些兼容性的写法</h2>
+var ev = ev || window.event
+document.documentElement.clientWidth || document.body.clientWidth
+var target = ev.srcElement||ev.target
+
+
+<h2>6、rgba()和opacity的透明效果有什么不同？</h2>
+rgba()和opacity都能实现透明效果，但最大的不同是opacity作用于元素，以及元素内的所有内容的透明度，
+而rgba()只作用于元素的颜色或其背景色。（设置rgba透明的元素的子元素不会继承透明效果！）
+
+
+</body>
+</html>

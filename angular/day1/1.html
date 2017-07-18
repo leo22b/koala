@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>第一个angular应用</title>
+	<script src="lib/angular-1.3.0.js"></script>
+</head>
+<body>
+  
+     <div ng-app="" >
+          <input type="text" ng-model="name" placeholder="your name">
+          <h1>hello {{name}}</h1>
+     </div>
+<!-- 
+    实例讲解
+		    实例中的ng-app 和ng-model 我们称之为angularjs指令，指令是具有自定义功能的标签属性，
+
+		    ng-app指令表示启动了一个angularjs应用程序，
+		    ng-model指令的功能是将表单控件元素的值绑定到应用程序变量name中
+		    {{}}双大号把应用程序变量 name 绑定到某个标签的 innerHTML。
+
+
+
+-->
+
+</body>
+</html>

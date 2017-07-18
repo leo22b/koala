@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#view1 {
+				width: 100px;
+				height: 100px;
+				background: red;
+				border-radius: 50%;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			
+			#view2 {
+				width: 100px;
+				height: 100px;
+				background: blue;
+				border-radius: 50%;
+				position: absolute;
+				left: 0;
+				top: 110px;
+			}
+			
+			#view3 {
+				width: 100px;
+				height: 100px;
+				background: black;
+				border-radius: 50%;
+				position: absolute;
+				left: 0;
+				top: 220px;
+			}
+			
+			#view4 {
+				width: 100px;
+				height: 100px;
+				background: purple;
+				border-radius: 50%;
+				position: absolute;
+				left: 0;
+				top: 330px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var view1 = new DagView('#view1');
+				var view2 = new DagView('#view2');
+				var view3 = new DagView('#view3');
+				var view4 = new DagView('#view4');
+			}
+			
+			// 构造函数
+			function DagView(name){
+				this.oView1 = document.querySelector(name);
+				// this.oView1.onmousedown = this.downFn;
+				var _this = this;
+				this.oView1.onmousedown = function(){
+					// this => oView1
+					_this.downFn();
+				}
+				//全局变量=>属性 
+				this.dowX = 0;
+				this.dowY = 0;
+				
+				console.log(this);
+			}
+
+			// 1、前提:所有东西都是在onload中;
+			// 2、改写:不能有函数嵌套，可以有全局变量；
+			// 3、onload=>构造函数  全局变量=>属性   函数=>方法
+			// 4、改错: this的处理
+			
+			//函数=>方法
+			DagView.prototype.downFn = function(ev){
+				// this => oView1
+				// this => view1
+				
+				ev = ev || window.event;
+				this.dowX = ev.offsetX;
+				this.dowY = ev.offsetY;
+
+				var _this = this;
+				document.onmousemove = function(){
+					_this.moveFn();
+				}
+				document.onmouseup = this.upFn;
+			}
+			//函数=>方法
+			DagView.prototype.moveFn = function(ev){
+				// this => document
+				
+				ev = ev || window.event;
+				this.oView1.style.left = ev.clientX - this.dowX + 'px';
+				this.oView1.style.top = ev.clientY - this.dowY + 'px';
+			}
+			//函数=>方法
+			DagView.prototype.upFn = function(){
+				document.onmousemove = document.onmouseup = null;
+				
+				console.log('upFn');
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="view1"></div>
+
+		<div id="view2"></div>
+		
+		<div id="view3"></div>
+		
+		<div id="view4"></div>
+	</body>
+
+</html>

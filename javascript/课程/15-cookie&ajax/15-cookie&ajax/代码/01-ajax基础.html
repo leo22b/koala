@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			// dataSource文件放在www目录下 --> 127.0.0.1/dataSource/xxx
+			// dataSource文件放在www目录中ajax目录下  --> 127.0.0.1/ajax/dataSource/xxx
+			
+			document.onclick = function(){
+				// 1、打开浏览器
+				var request = new XMLHttpRequest();
+				
+				// 2、输入网址
+				/*
+				 * 请求方式: get/post
+				 * 请求地址: url(文件)
+				 * 同步/异步
+				 */
+				request.open('GET', 'http://127.0.0.1/dataSource/JSON1.json', true);
+				
+				// 3、回车(发送)
+				request.send();
+				
+				// 4、接收数据
+				request.onreadystatechange = function(){
+					if(request.readyState == 4){
+						if(request.status = 200){
+							// 数据已经获取到了 request.response
+							document.write(request.response);
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		
+	</body>
+</html>

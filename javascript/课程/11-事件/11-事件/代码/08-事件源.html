@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#view {
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+			
+			#test {
+				width: 100px;
+				height: 100px;
+				background: blue;
+			}
+		</style>
+
+		<script type="text/javascript">
+			window.onload = function() {
+				var oView = document.getElementById("view");
+				var oTest = document.getElementById('test');
+
+				// 错误的，访问不了
+				// oTest.'id'
+				// 正确访问
+				// oTest.id
+				// alert(oTest['id']);
+
+//				oTest.onclick = function() {
+//					alert(1);
+//				}
+
+
+				// 事件源  
+				// 点击blue时，也会触发，blue就是为事件源
+				oView.onclick = function(ev){
+					// alert(1);
+					
+					// 事件触发时，会将事件相关信息保存到event对象中
+					ev = event || ev;
+					
+					// 事件信息中，就包含有事件源
+					var self = ev.target || ev.srcElement;
+					
+					alert(self.id);
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="view">
+			<div id="test"></div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<!--
+			输入成绩判断等级:
+				90~100: A 优秀
+				80~89： B 良好   
+				70~79： C 中上
+				60~69： D 中下
+				60以下: 不及格 
+		-->
+		<input type="text" id="text" placeholder="请输入成绩" />
+		<input type="button" value="等级" id="bt" />
+		
+		<script>
+			var oText = document.getElementById('text');
+			var oBt = document.getElementById('bt');
+			
+			oBt.onclick = function(){
+				// 如果是90~100，就为A  【90~100条件】
+				// 如果是80~89，就为B   【80~89条件】
+				
+				/* 条件判断
+				 * 语法：
+				 * 		if(条件)	{
+				 * 			// 符合条件的操作
+				 * 		}
+				 * 
+				 * 
+				 * 		if(条件){
+				 * 			// 符合条件
+				 * 		} else {
+				 * 			// 不符合条件
+				 * 		}
+				 * 
+				 * 
+				 * 		
+				 */
+				
+				// 获取到输入框中的内容，并转为number类型
+				var num = Number(oText.value);
+				
+				// 条件判断 91
+//				if(num > 90){
+//					alert('A');
+//				}
+//				
+//				if(num > 80){
+//					alert('B');
+//				}
+//				
+//				if(num > 70){
+//					alert('C');
+//				}
+//				
+//				if(num > 60){
+//					alert('D')
+//				}
+//				
+//				if(num < 60){
+//					alert('恭喜你，留级成功');
+//				}
+
+
+				if(num > 90){
+					alert('A');
+				}
+				else if(num > 80){	// 肯定num是小于90的
+					alert('B');
+				}
+				else if(num > 70){	// 肯定num是小于80
+					alert('C');
+				}
+				else if(num > 60){	// 肯定num是小于70
+					alert('D')
+				}
+				else {				// 其他
+					alert('恭喜你，留级成功');
+				}
+			}
+			
+			
+			var test = 20;	
+				// '=' 赋值
+				// '==' 判断是否等于
+				if( test == 10 ){
+					alert('符合');
+				} else {
+					alert('不符合');
+				}
+		</script>
+	</body>
+</html>

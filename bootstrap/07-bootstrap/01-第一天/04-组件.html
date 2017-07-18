@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<!-- 编码类型-->
+		<meta charset="utf-8">
+		<!-- 如果在IE浏览器下则使用最新的标准渲染当前文档-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 视口-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- 标题-->
+		<title>Bootstrap 101 Template</title>
+
+		<!-- Bootstrap样式表 -->
+		<link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- 条件注释(兼容性) -->
+		<!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    		body{
+    			height: 1000px;
+    			padding-top: 50px;
+    		}
+    </style>
+	</head>
+
+	<body>
+		<br />
+
+		<!-- 1、导航-->
+		<div class="container">
+			<ul class="nav nav-tabs">
+				<li role="presentation" class="active">
+					<a href="#">首页</a>
+				</li>
+				<li role="presentation">
+					<a href="#">案例</a>
+				</li>
+				<li role="presentation">
+					<a href="#">联系方式</a>
+				</li>
+				<li role="presentation">
+					<a href="#">关于我们</a>
+				</li>
+			</ul>
+		</div>
+
+		<br />
+		<br />
+		<style type="text/css">
+			.nav-pills>li.active>a,
+			.nav-pills>li.active>a:focus,
+			.nav-pills>li.active>a:hover {
+				background-color: red;
+			}
+		</style>
+		<div class="container">
+			<ul class="nav nav-pills nav-stacked">
+				<li role="presentation" class="active">
+					<a href="#">首页</a>
+				</li>
+				<li role="presentation">
+					<a href="#">案例</a>
+				</li>
+				<li role="presentation">
+					<a href="#">联系方式</a>
+				</li>
+				<li role="presentation" class="disabled">
+					<a href="#">关于我们</a>
+				</li>
+			</ul>
+		</div>
+
+		<br />
+		<div class="container">
+			<ul class="nav nav-pills">
+				<li role="presentation" class="active">
+					<a href="#">首页</a>
+				</li>
+				<li role="presentation">
+					<a href="#">案例</a>
+				</li>
+				<li role="presentation">
+					<a href="#">联系方式</a>
+				</li>
+				<li role="presentation" class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						关于我们
+						<span class="caret"></span>
+					</a>
+
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#">微信</a>
+						</li>
+						<li>
+							<a href="#">QQ</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<!-- 2、导航长条-->
+		<br />
+		<br />
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<!-- logo -->
+				<div class="navbar-header">
+					<a href="#" class="navbar-brand">
+						<img src="Snip20170626_23.png" style="width: 35px;" />
+					</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<!-- nav导航，导航是放在导航长条里面 -->
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="#"> 首页 </a>
+						</li>
+						
+						<li>
+							<a href="#"> 首页 </a>
+						</li>
+						<li>
+							<a href="#"> 首页 </a>
+						</li>
+					</ul>
+					
+					
+					<!-- 搜索栏 -->
+					<form class="navbar-form navbar-right">
+						<div class="form-group">
+							<input type="text" class="form-control" />
+						</div>
+						
+						<div class="form-group">
+							<input type="button" class="btn btn-default" value="搜索" />
+						</div>
+					</form>
+					
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+		</div>
+
+
+		<!-- 3、面包屑-->
+		<ol class="breadcrumb">
+			<li>
+				<a href="#">首页</a>
+			</li>
+			<li>
+				<a href="#">新闻</a>
+			</li>
+			<li>
+				<a href="#">高考分数线</a>
+			</li>
+			<li class="active">
+					广东 -- 高考分数线
+			</li>
+		</ol>
+		
+		<!-- Bootstrap依赖于jQuery的 -->
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<!-- bootstrap 脚本代码 -->
+		<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	</body>
+
+</html>

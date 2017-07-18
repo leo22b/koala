@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box1,#box2{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				left: 0;
+				top: 50px;
+			}
+			#box2{
+				left: 600px;
+				background: blue;
+				top: 180px;
+			}
+			#line{
+				width: 1px;
+				height: 300px;
+				background: black;
+				position: absolute;
+				top: 0;
+				left: 300px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oBox1 = document.getElementById("box1");
+				var oBox2 = document.getElementById("box2");
+				
+				oBox1.onclick = function(){
+					startMove(this, 300);
+				}
+				oBox2.onclick = function(){
+					startMove(this, 200);
+				}
+				
+				var timer = null;
+				function startMove(obj, target) {
+					clearInterval(timer);
+					
+					var speed = 7; // 速度
+					speed = obj.offsetLeft < target ? speed : -speed;
+					
+					timer = setInterval(function() {
+//						console.log(obj.offsetLeft);
+						// 匀速运动: 距离足够近 ?
+						// 297 + 11 = 308
+						// target - obj.offsetLeft < speed
+						// 300 - 297 < 11 成立，说明足够接近目标点
+						// 300 - 280 < 11 不成立， --> 280+11=291
+						// 300 - 291 < 11 成立,说明足够接近目标点
+						
+						// 从右往左
+						// 200 - 210 < -11	
+						// 10 < 11
+						
+						// target = obj.offsetLeft + speed;
+						// target - obj.offsetLeft = speed;
+						
+						// target < obj.offsetLeft + speed;
+						// target - obj.offsetLeft < speed;
+						if( Math.abs(target - obj.offsetLeft) < Math.abs(speed) ) { // 停止
+							obj.style.left = target + 'px';
+							clearInterval(timer);
+						} else { // 运动
+							obj.style.left = obj.offsetLeft + speed + 'px';
+						}
+						
+					}, 100);
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="box1"></div>
+		<div id="line"></div>
+		<div id="box2"></div>
+	</body>
+</html>

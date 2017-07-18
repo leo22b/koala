@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 50px;
+				background: red;
+				transition: all 2s;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oBox = document.querySelector("div");
+				
+				document.onclick = function(){
+					oBox.style.width = '300px';
+//					oBox.style.height = '300px';
+					// 宽度改变之后，再改变高度
+					addEvent(oBox, changeFn);
+				}
+				
+				// 第一次: 宽度过渡结束时触发
+				// 第二次: 高度过渡结束时触发 (解决，在第一次执行时，删除该事件)
+				function changeFn(){
+					console.log(1);
+					oBox.style.height = '300px';
+					removeEvent(oBox, changeFn);
+				}
+				
+				
+				// obj: 过渡的元素
+				// callBack: 事件触发的函数
+				function addEvent(obj, callBack){
+					obj.addEventListener('webkitTransitionEnd', callBack, false);
+					obj.addEventListener('transitionend', callBack, false);
+				}
+				
+				
+				function removeEvent(obj, callBack){
+					obj.removeEventListener('webkitTransitionEnd', callBack, false);
+					obj.removeEventListener('transitionend', callBack, false);
+				}
+			}
+		</script>
+	</head>
+	
+	
+	<body>
+		<div></div>
+	</body>
+</html>

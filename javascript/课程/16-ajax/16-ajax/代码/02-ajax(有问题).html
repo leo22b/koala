@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="02-ajax.js"></script>
+		<script>
+			document.onclick = function(){
+				console.log(1);
+				var response = ajax('http://127.0.0.1/dataSource/box.json');
+				
+				// response还没有获取到数据，代码就已经往下执行了
+				
+				if(response){
+					// 数据解析，添加到界面中显示....
+					// var dataSource = JSON.parse(response);
+					
+					var dataSource = response;
+					console.log(dataSource);
+					
+					for(var i=0; i<dataSource.length; i++){
+						console.log(dataSource[i].name);
+					}
+				} else {
+					console.log(response);
+				}
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

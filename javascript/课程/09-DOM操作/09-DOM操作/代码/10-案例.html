@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box {
+				width: 320px;
+				height: 568px;
+				border: 1px solid black;
+				overflow: auto;
+			}
+			.section {
+				width: 310px;
+				padding: 5px;
+				border-bottom: 1px solid gray;
+			}
+			.section a{
+				text-decoration: none;
+				color: black;
+				font-weight: bold;
+			}
+			.section a img {
+				width: 30px;
+				height: 30px;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var oBox = document.getElementById("box");//大盒子
+
+				var oSeciotn = null;//小盒子
+				var oName = null;
+				var oHead = null;
+				var oContent = null;
+				var oText = null;
+				
+				// 广告
+				var oAd = null;
+				for(var i = 0; i < 10; i++) {
+					if(i == 3) { // 插入广告
+						oAd = document.createElement('div');//全部小盒子
+						oAd.className = 'section';
+						oBox.appendChild(oAd);
+
+						oName = document.createElement('a');
+						oName.href = '#';
+						oAd.appendChild(oName);
+
+						oText = document.createTextNode('苹果8');
+						oName.appendChild(oText);
+
+						oContent = document.createElement('p');
+						oContent.innerHTML = '苹果，xxxxxxxxxxxxxxxxxxx';
+						oAd.appendChild(oContent);
+					}
+
+					oSeciotn = document.createElement('div');
+					oSeciotn.className = 'section';
+					oBox.appendChild(oSeciotn);
+
+					oName = document.createElement('a');
+					oName.href = '#';
+					oSeciotn.appendChild(oName);
+
+					oHead = document.createElement('img');
+					oHead.src = 'images/icon_0' + i + '.png';
+					oName.appendChild(oHead);
+
+					oText = document.createTextNode(i + '、名字');
+					oName.appendChild(oText);
+
+					oContent = document.createElement('p');
+					oContent.innerHTML = '每天一句：成长的速度取决于在过程中发现和解决问题的速度，最终这是一个量变引发质变的过程；';
+					oSeciotn.appendChild(oContent);
+				}
+				
+				// 5秒后，删除广告
+				setTimeout(function(){
+					oBox.removeChild(oAd);
+				}, 5000);
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<!-- 先写一个，可以完成结构和样式-->
+		<div id="box">
+			<!--<div class="section">
+				<a href="#">
+					<img src="images/icon_00.png" />0、 张三
+				</a>
+				<p>每天一句：成长的速度取决于在过程中发现和解决问题的速度，最终这是一个量变引发质变的过程；</p>
+			</div>-->
+		</div>
+
+	</body>
+
+</html>

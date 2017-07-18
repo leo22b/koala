@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#view1{
+				text-align: right;
+				color: white;
+				width: 300px;
+				height: 300px;
+				background: red;
+			}
+			#view2{
+				width: 200px;
+				height: 200px;
+				background: blue;
+			}
+			#view3{
+				width: 100px;
+				height: 100px;
+				background: purple;
+			}
+			#view4{
+				width: 50px;
+				height: 50px;
+				background: pink;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var oView1 = document.getElementById("view1");
+				var oView2 = document.getElementById("view2");
+				var oView3 = document.getElementById("view3");
+				var oView4 = document.getElementById("view4");
+				
+				
+				// true表示采用事件捕获，若false事件冒泡
+				oView1.addEventListener('click', function(){
+					alert('view1 -- 事件捕获');
+				}, true);
+				oView2.addEventListener('click', function(){
+					alert('view2 -- 事件捕获');
+				}, true);
+				oView3.addEventListener('click', function(){
+					alert('view3 -- 事件捕获');
+				}, true);
+				oView4.addEventListener('click', function(){
+					alert('view4 -- 事件捕获');
+				}, true);
+				
+				
+				
+				// 点击view3时，view1、view2、view3都会触发 ---事件冒泡
+				
+				oView4.onclick = function(){
+					alert('view4');
+				}
+				oView4.onclick = function(){
+					alert('oView4.onclick');
+				}
+				
+				oView3.onclick = function(){
+					alert('view3');
+				}
+				
+				oView2.onclick = function(){
+					alert('view2');
+				}
+				
+				oView1.onclick = function(){
+					alert('view1');
+				}
+				
+
+
+				// 方式一
+				// oView4.onclick = null;	
+				// oView4.removeEventListener('click');
+			}
+		</script>
+	</head>
+	
+	<body>
+		
+		<div id="view1">
+			view1
+			<div id="view2">
+				view2
+				<div id="view3">
+					view3
+					<div id="view4">
+						view4
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

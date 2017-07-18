@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<!--
+			type="text"    属性名="属性值"
+			value="hello"  
+		-->
+		<input type="text" value="12312312312" id="txt" />
+		<input type="button" value="获取" id="bt1" />
+		<input type="button" value="改变" id="bt2" />
+		
+		<!-- js-->
+		<script>
+			// 点击获取，获取输入框内容
+			// 点击改变，修改输入框的内容为hello world
+			
+			
+			// 1、获取对应的元素
+			// 通过id获取到对应的元素，并保存到变量中
+			var oText = document.getElementById('txt');	// 输入框
+			var oBt1 = document.getElementById('bt1');	// 获取按钮
+			var oBt2 = document.getElementById('bt2');  // 改变按钮
+			
+			
+			// 2、按钮点击事件 (点击之后想要做一件事情)
+			oBt1.onclick = function(){
+				// 点击之后才做的事情
+				// alert(1);
+				
+				// 获取输入框的内容  【属性读操作: 获取、找到】
+				alert( oText.value );
+			}
+			
+			
+			oBt2.onclick = function(){
+				// 改变输入框的内容  【属性写操作: 添加、替换】
+				oText.value = 'Hello world!';
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,104 @@
+
+
+a {
+	text-decoration: none;
+	font-size: 12px;
+}
+a:hover {
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+
+.first-p {
+	float: left;
+	color: white;
+	font-size: 12px;
+	margin: 12px 0 0 90px;
+	padding: 10px 40px 10px 60px;
+	background: url(../images/3-.jpg) black no-repeat 30px center;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.wrap {
+	width: 872px;
+	height: 360px;
+	margin: 0px auto;
+	position: relative;
+	position: absolute;
+	left: 90px;
+	top: 52px;
+	/*background: white;*/
+}
+
+
+.wrap .item {
+	width: 148px;
+	height: 36px;
+	background: red;
+}
+
+.wrap .item .oli {
+	float: left;
+	background-color: #0e111a;
+	position: relative;
+	width: 148px;
+	height: 36px;
+	z-index: 100;
+}
+
+.wrap .item .oli a {
+	color: white;
+	display: block;
+	width: 93px;
+	height: 20px;
+	line-height: 20px;
+	padding: 8px 26px 8px 29px;
+	position: absolute;
+	top: 0;
+	background: url(../images/right.jpg) no-repeat 125px center;
+	background-size: 5px 10px;
+}
+
+.wrap .item .oli a img {
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+.wrap .item .oli a em {
+	position: absolute;
+	left: 12px;
+	top: 35px;
+	width: 130px;
+	border-bottom: 1px solid #1a1d26;
+}
+.wrap .item .oli a .oi{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 3px;
+	height: 100%;
+	background: #E31436;
+	display: none;
+}
+
+.wrap .item .item-list {
+	display: none;
+	position: absolute;
+	left: 148px;
+	top: 0px;
+	width: 723px;
+	height: 358px;
+	line-height: 358px;
+	background: green;
+	border: 1px solid black;
+	border-left: 0;
+	z-index: 10;
+	font-size: 40px;
+	text-align: center;
+}

@@ -1,0 +1,16 @@
+AngularJS中为我们提供了众多的内置服务，通过这些内置服务可以轻松的实现一些常用功能。下面对Angular中常用的内置服务进行一下总结。
+
+
+$location服务
+	
+$location服务用于返回当前页面的URL地址，示例代码如下：
+var app = angular.module('myApp', []); 
+app.controller('customersCtrl', function($scope, $location) { 
+ $scope.myUrl = $location.absUrl(); 
+}); 
+
+
+
+$location服务中的一些方法
+
+absUrl()    当前页面的绝对路径

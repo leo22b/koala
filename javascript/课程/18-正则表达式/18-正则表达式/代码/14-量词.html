@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oContent = document.getElementById("content");
+				var oBt = document.getElementById("bt");
+				// QQ5~11位
+				var rel = /[1-9][0-9]{4,10}/;
+				
+				oBt.onclick = function(){
+					if(rel.test(oContent.value)){
+						alert('正在查找中....');
+					} else {
+						alert('账号输入错误');
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<input type="text" id="content" />
+		<input type="button" value="查找" id="bt" />
+	</body>
+</html>

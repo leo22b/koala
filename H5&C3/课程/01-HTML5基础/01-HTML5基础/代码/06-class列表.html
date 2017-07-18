@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.view{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+			.blueView{
+				background: blue;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var oView = document.querySelector(".view");
+				var isShow = true;
+				
+				document.onclick = function(){
+					// alert( oView.classList[1] );
+					
+					// oView.classList.add('blueView');
+					
+					// oView.classList.remove('section');
+					
+					oView.classList.toggle('blueView');
+				}
+			}
+		</script>
+	</head>
+
+
+	<body>
+		
+		<div class="view view1 section"></div>
+		
+	</body>
+
+</html>

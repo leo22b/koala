@@ -1,0 +1,37 @@
+#main{
+	widows: 100%;
+}
+#main .main-cont{
+	width: 953px;
+	margin: 0 auto;
+}
+#main .main-cont .photo{
+	margin-top: 20px;
+}
+#main .main-cont .photo img{
+	display: block;
+	float: left;
+}
+#main .main-cont .content{
+	width: 953px;
+	min-height: 900px;
+	height: auto !important;
+	height: 900px;
+	padding-bottom: 20px;
+}
+#main .main-cont .content .first{
+	height: 47px;
+	line-height: 40px;
+}
+#main .main-cont .content .p2{
+	width: 55px;
+	border-bottom: 1px dashed gray;
+}
+#main .main-cont .content .p1{
+	border-bottom: 1px dashed gray;
+}
+#main .main-cont .content p{
+	line-height: 34px;
+	margin-bottom: 22px;
+	text-indent: 24px;
+}

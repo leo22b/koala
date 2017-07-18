@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.show{
+				/* 1、宽度*/
+				width: 300px;
+				/* 2、高度*/
+				height: 100px;
+				/* 3、字体颜色
+				 * color: red;
+				 * color: #ff0000; 	16进制
+				 * 		十六进制: 0 1 2 3 4 5 6 7 8 9 a b c d e f
+				 * color: rgb(37, 19, 109);
+				 * color: rgba(88, 23, 23);
+				 * 
+				 * 
+				 * 
+				 * x进制只是一种计数方式(遇x进1)
+				 * 十进制: 0 1 2 3 4 5 6 7 8 9   【遇10进1】
+				 * 		9 + 1 = 10
+				 * 		18 + 1 = 19
+				 * 		19 + 2 = 21
+				 * 八进制: 0 1 2 3 4 5 6 		【遇8进1】
+				 * 		6 + 1 = 7
+				 * 		7 + 1 = 10
+				 * 		10 + 5 = 15
+				 * 		15 + 3 = 20
+				 * 二进制: 0 					【遇2进1】
+				 * 		1 + 0 = 1
+				 * 		1 + 1 = 10
+				 * 		10 + 1 = 11
+				 * 		11 + 1 = 100
+				 * /
+				/*color: red;*/
+				/*color: #a12;*/
+				/*color: rgb(89, 14, 72);*/
+				/*color: rgba(202, 39, 34, 1);*/
+				color: purple;
+				
+				/* 4、字体大小(16px)*/
+				font-size: 30px;
+				
+				/* 5、字体类型*/
+				font-family:Tahoma,"微软雅黑",MicrosoftYahei,"宋体";
+				
+				/* 6、字体样式*/
+				font-style: italic;
+				
+				/* 7、字体加粗*/
+				font-weight: bolder;
+				
+				/* 8、字体大小写*/
+				font-variant: normal;
+				
+				/* 9、对齐方式*/
+				text-align: justify;
+				
+				
+				/* 10、垂直对齐(需要参考基线)*/
+				/*vertical-align: bottom;*/
+				
+				
+				/*
+				 * font-size/line-heihgt font-family
+				 * font-style font-weight font-size/line-height font-family
+				 */
+				font: italic bold 20px/40px "微软雅黑";
+				
+			}
+			img{
+				/* 10、垂直对齐*/
+				vertical-align: middle;
+			}
+			
+			
+			p{
+				/* 11、行高*/
+				line-height: 40px;
+			}
+			i{
+				color: blue;
+				font-size: 23px;
+				/* 不倾斜*/
+				font-style: normal;
+				/* 加粗*/
+				font-weight: bold;
+			}
+			b{
+				color: red;
+				font-weight: 900;
+				font-size: 25px;
+			}
+			
+			
+			.box{
+				width: 300px;
+				height: 100px;
+				background: red;
+				text-align: center;
+				/* 行高
+				 * 行高 < 容器: 文本即垂直中线 以上
+				 * 行高 = 容器: 文本即垂直方向居中
+				 * 行高 > 容器: 文本即垂直中线 以下
+				 */
+				/*line-height: 50px;*/
+				/*line-height: 100px;*/
+				/*line-height: 150px;*/
+				
+				/* 倍数(和字体大小有关)*/
+				/*line-height: 2em;*/
+				line-height: 1.5;
+				
+				/* 字体大小*/
+				/*font-size: 12px;*/
+				/* 16px == 12pt   12px == 9pt*/
+				font-size: 12pt;
+			}
+		</style>
+	</head>
+	
+	<body>
+		两只黄雀鸣翠柳，
+		<div class="show">
+			<img src="qq.png" />
+			五十块钱走不走。
+			<br />
+			Hello Wolrd;
+		</div>
+		
+		<p> 走过过来千万不要错过，苹果 <i>9</i> 代，不要 <b>9999</b> ，只要99。走过路过千万不要错过。99你买不了吃亏，99你买不了上当，99苹果 <i>9</i> 代值得拥有。 </p>
+		
+		
+		<br />
+		<div class="box">
+			万水千山总有情，不给小费行不行。
+		</div>
+	</body>
+</html>

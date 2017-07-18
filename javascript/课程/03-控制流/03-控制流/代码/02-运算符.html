@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		
+		<script>
+			// 1、= 赋值
+			
+			
+			// 2、一元运算符 ( 一个数值 ) ++、--
+			var i = 3;
+			
+			// 自增，i = i + 1;
+			// i++;		
+			// ++i;
+			
+			// 自减，i = i - 1;
+			// i--;
+			// --i;
+			// alert(i);
+			
+			
+			// 3、二元运算符( 算术运算符+、-、*、/、%)
+			// var a = 10;
+			// var b = 5;
+			// a + b;
+			// a - b;
+			// a -;
+			
+			
+			
+			
+			
+			
+			var j = 10;
+			var k = 30;
+			var num = 0;
+			var test = 0;
+			
+			// ++(或--)前置(或后置)，加加或减减操作肯定会做!
+			
+			// ++(或--)前置
+			// num = ++j;	// 先加加操作，后赋值
+			// alert( num );	// 11
+			// alert(j);		// 11
+			
+			// ++(或--)后置
+			// num = j++;		// 先赋值，后加加操作
+			// alert( num );	// 10
+			// alert(j);       // 11
+			
+			
+			// j + 3  ==>  j?
+			// j: 先赋值，后加加  ==> j=10
+			// num = 10 + 3;
+			// num = j+++3;	
+			// alert(num); 	// 13
+			// alert(j); // 11
+			
+			// num = j++ + ++k;
+			// j: j++先赋值，后加加 ==> j=10
+			// k: ++k先加加，后赋值 ==> k=31
+			// num = j + k;
+			// num = j++ + ++k;
+			// alert(num);
+			
+			
+			
+			// j: ++j先加加，后赋值  ==> j=11
+			// k: ++k先加加，后赋值  ==> k=31
+			// num = j + k;
+			//  num = ++j + ++k;
+			// alert(num);
+			
+			// j: j--先赋值后减减 ==> j=10
+			// k: --k先减减后赋值 ==> k=29
+			// num = j + k
+			 num = j-- + --k;
+			// j: 9
+			// k: 29
+			
+			// j: ++j先加加，后赋值 => 11  错误的
+			// K: k++先赋值，后加加 => 30  错误的
+			// j: ++j先加加，后赋值 ==> j=10
+			// K: k++先赋值，后加加 ==> k=29
+			// test = j + k
+			// test = ++j + k++;
+			// alert(num);		// 39
+			// alert(test)	;	// 39
+			 
+			 
+			 // 4、二元运算符(关系运算符)
+			 var num1 = 3;
+			 var num2 = 5;
+			 var num3 = '3';
+			 var str = 'hello';
+			 
+			 // 等于 ==
+//			 if(num1 == num2){
+//			 	alert('相等');
+//			 } else {
+//			 	alert('不相等');
+//			 }
+			// num1： 3
+			// num3：'3' ==>  3
+//			if(num1 == num3){
+//				alert('等于');
+//			} else {
+//				alert('不等于');
+//			}
+			 
+			 // 不等于 !=
+//			if(str != ''){
+//				alert('不为空');
+//			}
+//			if(str == ''){
+//				alert('空');
+//			} else {
+//				alert('不为空');
+//			}
+//			if(str){
+//				alert('不为空');
+//			} else {
+//				alert('空');
+//			}
+			 
+			 // 恒等于 === 
+//			 if(num1 === num3){
+//			 	alert('完全相等');
+//			 } else {
+//			 	alert('不相等');
+//			 }
+
+
+			// 逻辑运算符
+			// 逻辑与&& (并且)
+			// 条件1 && 条件2 .... 当所有子条件都成立时，此处返回true
+			var num = 23;
+			var sex = '女';
+//			if(num>18 && num<30 && sex=='男'){
+//				alert('符合条件');
+//			} else {
+//				alert('不符合');
+//			}
+			
+			// 逻辑或 || (或)
+			// 条件1 || 条件2 .... 只要有一个子条件成立，此处返回true
+//			if(num<18 || num>30){
+//				alert('不符合');
+//			} else {
+//				alert('符合');
+//			}
+
+			// 逻辑非 ! (取反)
+			// alert( !true );
+			
+			var test = 'hello';
+			
+			
+//			if(test == ''){
+//				alert('空字符串，即没有内容');
+//			} else {
+//				alert('非空字符串，即有内容');
+//			}
+		
+		
+			// test ==> true  ==> !true  ==> false
+//			if(!test){
+//				alert('空字符串，即没有内容');
+//			} else {
+//				alert('非空字符串，即有内容');
+//			}
+
+
+			
+			
+			// 三目运算符
+			var num5 = 10;
+			var num6 = 20;
+//			if(num5 < num6){
+//				alert('num6比较大');
+//			} else {
+//				alert('num5比较大');
+//			}
+			
+			// 条件 ? true时 : false时;
+			num5 < num6 ? alert('num6比较大') : alert('num5比较大');
+			
+		</script>
+	</body>
+</html>

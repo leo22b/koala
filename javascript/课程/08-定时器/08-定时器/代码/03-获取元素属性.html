@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{width: 200px; height: 200px; background: purple;}
+		</style>
+		
+		<script>
+			window.onload = function(){
+				var oBt = document.getElementsByTagName('input')[0];
+				var oBox = document.getElementsByTagName('div')[0];
+				
+				
+				oBt.onclick = function(){
+					// style只能获取到内联样式表中的样式
+					// alert(oBox.style.width);
+					
+					// 非IE
+					// var boxStyle = getComputedStyle(oBox);
+					// alert(boxStyle.width);
+					
+					
+					// IE
+					// var boxStyle = oBox.currentStyle;
+					// alert(boxStyle.width);
+					
+					
+					// 兼容写法
+//					var boxStyle = null;
+//					if(window.getComputedStyle){		// 非IE
+//						boxStyle = getComputedStyle(oBox);
+//					} else {		// IE
+//						boxStyle = oBox.currentStyle;
+//					}
+//					
+//					alert(boxStyle.width);
+
+					
+					// 封装
+					alert( getStyle(oBox, 'height') );
+					
+					alert( getStyle(this, 'width') );
+				}
+				
+				// 封装函数  --- 参数
+				// 调用函数怎么方便，就怎么写
+				// obj: 元素对象
+				// att: 获取的属性名
+				function getStyle(obj, att){
+					if(window.getComputedStyle){
+						// 错误的，因为正确的是getComputedStyle(obj).height;
+						// return getComputedStyle(obj).'height';
+						return getComputedStyle(obj)[att];
+					} else {
+						return obj.currentStyle[att];	
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<input type="button" value="获取" />
+		<!--<div id="box" style="width: 100px;"></div>-->
+		<div id="box"></div>
+	</body>
+</html>

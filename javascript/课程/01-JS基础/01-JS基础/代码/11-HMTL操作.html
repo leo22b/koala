@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<!-- 属性名 = 属性值 -->
+		<input type="text" id="text1" value="0" />	 <br />  <br /> 
+		<i id="text2"> 0 </i>
+		
+		<br />
+		<br />
+		<input type="button" id="bt" value="增加" />
+		
+		<script>
+			// 记录点击次数，并显示出来
+			
+			
+			var oText1 = document.getElementById('text1');
+			var oText2 = document.getElementById('text2');
+			var oBt = document.getElementById('bt');
+			
+			// 开始时，为0次
+			var index = 0;
+			
+			
+			// 按钮点击
+			oBt.onclick = function(){
+				// alert(1);
+				
+				index = index + 1;
+				// alert(index);
+				
+				
+				// 属性的写操作
+				oText1.value = index;
+				
+				// 标签中内容: 元素.innerHTML
+				oText2.innerHTML = index;
+			}
+			
+		</script>
+	</body>
+</html>

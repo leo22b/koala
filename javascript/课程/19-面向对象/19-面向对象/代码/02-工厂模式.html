@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!-- 
+			工厂模式: 是一种设计模式
+			(23种设计模式，什么是设计模式？ 设计模式即是解决问题的一种方案)
+			
+			
+			
+			钢化膜代工厂: 
+				1、原料
+				2、加工
+				3、出货
+		-->
+		
+		<script type="text/javascript">
+//			// 张三
+//			var zhangsan = new Object();
+//			zhangsan.name = '张三';
+//			zhangsan.sex = '女';
+//			zhangsan.speak = function(){
+//				alert('hello, 我叫' + this.name);
+//			}
+//			// 李四
+//			var lisi = new Object();
+//			lisi.name = '李四';
+//			lisi.sex = '男';
+//			lisi.speak = function(){
+//				alert('hello, 我叫' + this.name);
+//			}
+			
+			
+			// 人 类
+			function Person(name, sex){	// 构造函数(类)
+				// 1、原料
+				var obj = new Object();
+				
+				// 2、加工
+				obj.name = name;
+				obj.sex = sex;
+				
+				// 3、出货
+				return obj;
+			}
+			
+			
+			// 张三
+			var zhangsan = Person('张三', '男');
+			
+			// 李四
+			var lisi = Person('李四', '女');
+			
+			// 王五
+			var wangwu = Person('王五', '男');
+		</script>
+		
+	</head>
+	
+	<body>
+	</body>
+</html>

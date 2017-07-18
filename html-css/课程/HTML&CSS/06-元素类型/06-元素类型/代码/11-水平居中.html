@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.view1{
+				width: 300px;
+				height: 300px;
+				border: 1px solid gray;
+				
+				/* 文本对齐方式(内联元素和内联块元素都是有效的)*/
+				text-align: center;
+				
+				/* 块元素的水平方向居中*/
+				margin: 0 auto;
+			}
+			.view1 p{
+				background: red;
+				/*text-align: center;*/
+			}
+			.view1 span{
+				background: blue;
+				color: white;
+			}
+			
+			.view1 .info{
+				width: 50px;
+				height: 30px;
+				/* 水平方向居中*/
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="view1">
+			<p>99分和100分的区别</p>
+			
+			<span>居中测试</span>
+			
+			<br />
+			<img src="qq.png" />
+			
+			<p class="info"> 块元素 </p>
+		</div>
+	</body>
+</html>

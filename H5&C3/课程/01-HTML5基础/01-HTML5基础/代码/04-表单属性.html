@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	</head>
+	
+	<body>
+		<!-- action: 服务器地址-->
+		<form>
+			
+			<input type="text" placeholder="账号" autocomplete="on" pattern="\d{1,5}" /> 
+			<br />
+			<input type="password" placeholder="密码" autofocus />
+			<br />
+			
+			<!--提交给服务器(发送给张三)-->
+			<input type="submit" value="发送" formaction="www.a.com/send.php" />
+			
+			<!-- 提交给服务(保存内容)-->
+			<input type="submit" value="保存到副本" formaction="www.a.com/save.php" />
+		</form>
+	</body>
+</html>

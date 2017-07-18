@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<input type="button" value="改变背景颜色" id="bt" />
+		<h3>02-test文件，open跨文档消息通信测试文件</h3>
+		
+		<ul>
+			
+		</ul>
+		
+		<script type="text/javascript">
+			var oBt = document.querySelector("#bt");
+			
+			oBt.onclick = function(){
+				// window.opener --> 父窗口(谁打开当期那页面)
+				window.opener.document.body.style.background = 'purple';
+			}
+		</script>
+	</body>
+</html>

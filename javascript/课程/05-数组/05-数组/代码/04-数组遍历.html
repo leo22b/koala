@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+	
+		<script>
+			var arr = [1,2,3,4,5,6,7];
+			
+			// 遍历方式1
+//			for(var i=0; i<arr.length; i++){
+//				document.write( arr[i] );
+//				document.write('<br/>');
+//			}
+
+			// 遍历方式2
+			// for( 下标 in 对象 ){}
+//			for(index in arr){
+//				document.write( arr[index] );
+//				document.write('<br/>');
+//			}
+
+
+			// 数组元素103~300
+			// 数组的大小也是可以调整
+			var arr1 = [];	// 空数组
+			for(var i=103; i<=300; i++){
+				// i从103开始，而数组下标从0开始
+				// arr1[i] = 
+				
+				// 下标为0，长度1
+				// 下标为1，长度2
+				arr1[arr1.length] = i;
+			}
+			
+			// arr1 = [1,2,3];
+			// arr1[0],arr1[1],arr1[2]
+			// arr1[3] = 5;
+			
+			
+			// 输出数组内容
+			for(index in arr1){
+				document.writeln(arr1[index]);
+			}
+		
+		</script>
+	
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	
+	<body>
+		
+		<input type="button" value="按钮" id="bt1" />
+		
+		<script>
+			var oBt = document.getElementById('bt1');
+			
+			// 按钮点击
+//			oBt.onclick = function(){
+//				alert(1);
+//			}
+
+			// 函数定义 -- 匿名函数
+			var fn = function(){
+				alert(2);
+			}
+			
+			
+			// 区分什么是函数调用，什么是赋值?
+			
+			// 函数调用
+			// fn();
+			
+			oBt.onclick = fn;
+			
+			// 错误写法
+			// oBt.onclick = fn();
+		</script>
+	</body>
+</html>

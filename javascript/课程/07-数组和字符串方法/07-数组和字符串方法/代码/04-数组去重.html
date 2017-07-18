@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	
+	<body>
+		
+		<script>
+			var arr = [3,3,3,3,54,32,34,23,2,5,75,6,4,31,32,5,3,2,23];
+			
+			// 拿出元素，与后面的进行比较
+			for(var i=0; i<arr.length; i++){
+				
+				for(var j=i+1; j<arr.length; j++){
+					
+					if(arr[i] == arr[j] ){
+						arr.splice(j, 1);
+						
+						// 因为删除了一个元素，所以要回退一步!!!!
+						j--;
+					}
+				}
+				
+			}
+			
+			document.write(arr);
+			
+		</script>
+	</body>
+</html>

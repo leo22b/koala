@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!-- 表单域-->
+		<form method="post" action="http://127.0.0.1/API_PHP/login_post.php">
+			<!-- 登陆页面-->
+			<input type="text" placeholder="请输入账号" name="user" /> <br />
+			<input type="password" placeholder="请输入密码" name="password" /> <br />
+			<!-- 提交(和重置按钮一样)只能是操作在form里面的-->
+			<input type="submit" value="登陆" />
+			<input type="button" value="注册" />
+			<!-- 重置按钮-->
+			<input type="reset" value="重置" />
+		</form>
+		<br />
+
+		<!-- 4*3-->
+		<table width="700" height="240" border="1" cellspacing="0" bordercolor="red">
+			<form>
+				<!-- 第1行-->
+				<tr>
+					<!-- 合并行-->
+					<td rowspan="4" width="150" align="center">总体信息</td>
+					<td colspan="2" align="center">用户注册</td>
+					<!--<td>3</td>-->
+				</tr>
+
+				<!-- 第2行-->
+				<tr>
+					<!--<td>1</td>-->
+					<td width="170" align="right">用户名:</td>
+					<td> <input type="text" /> </td>
+				</tr>
+
+				<!-- 第3行-->
+				<tr>
+					<!--<td>1</td>-->
+					<td width="170" align="right">密码:</td>
+					<td> <input type="password" /> </td>
+				</tr>
+
+				<!-- 第4行-->
+				<tr>
+					<!--<td>1</td>-->
+					<td colspan="2" align="center">
+						<input type="submit" value="提交" />
+						<input type="reset" value="重置" />
+					</td>
+					<!--<td>3</td>-->
+				</tr>
+			</form>
+		</table>
+	</body>
+
+</html>

@@ -1,0 +1,84 @@
+/* 公共样式*/
+
+
+/* 重置样式*/
+
+* {
+	padding: 0;
+	margin: 0;
+	/* box-sizing设置盒子宽度从什么开始计算(从边框或者内容或边界中计算)
+ * 设置所有的都是以边框开始计算宽度，百分比布局容易到值盒子溢出
+ * 大部分浏览器是基于webkit开发，注意兼容问题兼容
+ */
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 13px;
+	font-family: "微软雅黑", "宋体";
+	background: #f5f5f5;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+b,
+strong {
+	font-weight: normal;
+}
+
+i,
+em {
+	font-style: normal;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+input {
+	outline: none;
+}
+
+.clearfix:after,
+.clearfix:before {
+	content: '';
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+	overflow: hidden;
+}
+
+.f_left{
+	float: left;
+}
+.f_right{
+	float: right;
+}
+.b_right{
+	border-right: 1px solid gray;
+}
+.b_bottom{
+	border-bottom: 1px solid gray;
+}
+.b_left{
+	border-left: 1px solid gray;
+}
+.b_top{
+	border-top: 1px solid gray;
+}
+
+/* 小图标*/
+[class^='icon_'] {
+	/* 背景图: 400*400*/
+	background: url(../img/sprites.png);
+	background-size: 200px 200px;
+}

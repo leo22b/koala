@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				width: 400px;
+				height: 30px;
+				margin: 30px auto;
+				background: gray;
+			}
+			li{
+				list-style: none;
+				float: left;
+				width: 100px;
+				line-height: 30px;
+				text-align: center;
+			}
+			.active{
+				background: red;
+			}
+			li a{
+				text-decoration: none;
+			}
+			li .title{
+				color: white;
+			}
+			
+			li .content{
+				width: 100px;
+				background: blue;
+				display: none;
+			}
+			li .content a{
+				display: block;
+				color: white;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var aLi = document.getElementsByTagName('li');
+				var currentLi = aLi[0];
+				var oContent = null;
+				var ocontent=document.getElementsByClassName('content');
+				
+				for(var i=0; i<aLi.length; i++){
+					aLi[i].onmouseover = function(){
+//						currentLi.className = '';
+//						currentLi = this;
+//						currentLi.className = 'active';
+
+						this.className = 'active';
+						
+						// 获取li中对应的div
+						oContent = this.getElementsByTagName('div')[0];
+						oContent.style.display = 'block';
+					}
+					
+					aLi[i].onmouseout = function(){
+						this.className = '';
+						
+						oContent = this.getElementsByTagName('div')[0];
+						oContent.style.display = 'none';
+					}
+					ocontent[i].onmouseover=function(ev){
+						ev=event||ev;
+						var self=ev.target||ev.srcElement;
+						self.style.background='green';
+						self.style.color='black';
+					}
+					ocontent[i].onmouseout=function(ev){
+						ev=event||ev;
+						var self=ev.target||ev.srcElement;
+						self.style.background='blue';
+						self.style.color='white';
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	
+	<body>
+		
+		<ul>
+			<li>
+				<a href="#" class="title">首页</a>
+				
+				<div class="content">
+					<a href="#">首页1</a>
+					<a href="#">首页2</a>
+					<a href="#">首页3</a>
+					<a href="#">首页4</a>
+					<a href="#">首页5</a>
+				</div>
+			</li>
+			
+			<li>
+				<a href="#" class="title">联系</a>
+				
+				<div class="content">
+					<a href="#">联系1</a>
+					<a href="#">联系2</a>
+					<a href="#">联系3</a>
+					<a href="#">联系4</a>
+					<a href="#">联系5</a>
+				</div>
+			</li>
+			
+			<li>
+				<a href="#" class="title">案例</a>
+				
+				<div class="content">
+					<a href="#">案例1</a>
+					<a href="#">案例2</a>
+					<a href="#">案例3</a>
+					<a href="#">案例4</a>
+					<a href="#">案例5</a>
+					<a href="#">案例5</a>
+					<a href="#">案例5</a>
+					<a href="#">案例5</a>
+				</div>
+			</li>
+			
+			<li>
+				<a href="#" class="title">关于</a>
+				
+				<div class="content">
+					<a href="#">关于1</a>
+					<a href="#">关于2</a>
+					<a href="#">关于3</a>
+					<a href="#">关于4</a>
+					<a href="#">关于5</a>
+				</div>
+			</li>
+		</ul>
+	</body>
+</html>

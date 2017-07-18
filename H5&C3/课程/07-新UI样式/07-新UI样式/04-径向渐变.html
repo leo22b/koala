@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				border: 1px solid gray;
+				
+				/*background: radial-gradient(red, blue);*/
+				/*background: radial-gradient(50px, red, black);*/
+				/*background: radial-gradient(100px 100px, red, black);*/
+				background: -webkit-radial-gradient(50px 50px, 100px 100px, red, black);
+			}
+			
+			div{
+				width: 300px;
+				height: 300px;
+				border: 1px solid gray;
+				margin: 5px;
+				color: white;
+			}
+			#view1{
+				/* 半径为从圆心到最近端*/
+				background: -webkit-radial-gradient(100px 100px, closest-side, red, black);
+			}
+			#view2{
+				/* 半径为从圆心到最近角closest-corner*/
+				background: -webkit-radial-gradient(100px 100px, closest-corner, red, black);
+			}
+			#view3{
+				/*  半径为从圆心到最远端farthest-side*/
+				background: -webkit-radial-gradient(100px 100px, farthest-side, red, black);
+			}
+			#view4{
+				/*  半径为从圆心到最远角farthest-corner*/
+				background: -webkit-radial-gradient(100px 100px, farthest-corner, red, black);
+			}
+			#view5{
+				/* 包含contain*/
+				background: -webkit-radial-gradient(100px 100px, contain, red, black);
+			}
+			#view6{
+				/* 覆盖cover*/
+				background: -webkit-radial-gradient(100px 100px, cover, red, black);
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="box"></div>
+		
+		<div id="view1">
+			closest-side
+		</div>
+		<div id="view2">
+			closest-corner
+		</div>
+		<div id="view3">
+			farthest-sid
+		</div>
+		<div id="view4">
+			farthest-corner
+		</div>
+		<div id="view5">
+			contain
+		</div>
+		<div id="view6">
+			cover
+		</div>
+	</body>
+</html>

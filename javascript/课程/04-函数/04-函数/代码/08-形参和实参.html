@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	
+	<body>
+	
+	<script>
+		var a = 10;
+		var b = 20;
+		
+		
+		// 求和函数，函数中有两个参数
+		// 形参: 声明函数时括号内定义的变量  --- num1和num2是形参
+		function sum(num1, num2){
+			// 形参修改，并不会影响到实参
+			num1 = 13;
+		}
+		
+		// 函数调用
+		// 实参: 函数调用时传递的参数 --- a和b是实参
+		sum(a, b);
+		
+		// alert(a);	// 10
+		// alert(b);	// 20
+		
+		
+		// 三个参数
+		function test1(num1, num2, num3){
+			// alert(num1 + num2 + num3);
+			
+			alert( arguments.length );
+		}
+		// 函数有三个参数，至少得传递三个参数
+		test1(10, 20, 30);
+		test1(10, 20, 30, 40);
+	</script>
+	</body>
+</html>

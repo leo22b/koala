@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				list-style: none;
+			}
+			
+			#box{
+				width: 250px;
+				border: 1px solid black;
+			}
+			#box h3{
+				border: 1px solid black;
+				height: 30px;
+				line-height: 30px;
+				padding-left: 20px;
+				background: deepskyblue url(img/ico2.gif) no-repeat 7px center;
+			}
+			#box ul li{
+				padding-left: 30px;
+				line-height: 30px;
+				border: 1px solid black;
+			}
+			#box ul .active{
+				background: purple;
+				color: white;
+			}
+		</style>
+	</head>
+	
+	
+	<body>
+		<div id="box">
+			<!-- 一个分组-->
+			<div class="section">
+				<!-- 分组标题-->
+				<h3>我的好友 <span>(3/10)</span> </h3>
+				
+				<!-- 分组好友-->
+				<ul>
+					<li>我的好友1</li>
+					<li>我的好友2</li>
+					<li>我的好友3</li>
+					<li>我的好友4</li>
+					<li>我的好友5</li>
+					<li>我的好友6</li>
+				</ul>
+			</div>
+			
+			<!-- 一个分组-->
+			<div class="section">
+				<!-- 分组标题-->
+				<h3>我的损友 <span>(3/10)</span> </h3>
+				
+				<!-- 分组好友-->
+				<ul>
+					<li>我的好友1</li>
+					<li>我的好友2</li>
+					<li>我的好友3</li>
+					<li>我的好友4</li>
+					<li>我的好友5</li>
+					<li>我的好友6</li>
+					<li>我的好友7</li>
+					<li>我的好友8</li>
+				</ul>
+			</div>
+			
+			<!-- 一个分组-->
+			<div class="section">
+				<!-- 分组标题-->
+				<h3>大学同学 <span>(3/10)</span> </h3>
+				
+				<!-- 分组好友-->
+				<ul>
+					<li>我的好友1</li>
+					<li>我的好友2</li>
+					<li>我的好友3</li>
+					<li>我的好友4</li>
+					<li>我的好友5</li>
+					<li>我的好友6</li>
+				</ul>
+			</div>
+		</div>
+	
+		
+		<script type="text/javascript">
+			
+			/*
+			 * 1、先获取到title
+			 * 2、给title添加点击事件
+			 * 3、点击之后的具体操作(展开/折叠)
+			 * 
+			 * 
+			 * 1、先获取到对应li  (ul  -->  div)
+			 */
+			
+			var oBox = document.getElementById('box');
+			// 多少分组
+			var aSection = oBox.getElementsByTagName('div');
+			
+			// 给每个分组中的标题添加点击操作
+			for(var i=0; i<aSection.length; i++){
+				// 获取到对应分组的标题元素
+				var oTitle = aSection[i].getElementsByTagName('h3')[0];
+				// 默认全部是展开
+				oTitle.isShow = true;
+				// 下标
+				oTitle.index = i;
+				
+				// title添加点击事件
+				oTitle.onclick = function(){
+					// this -->  标题  -->  h3标签
+
+					// 改变状态
+					this.isShow = !this.isShow;
+					
+					
+					//  (谁展开，谁折叠?   ---> 好友列表  ---> ul)
+					// 不能这样写，原因是i是固定的，而不是获取到标题对应的ul
+					//  aSection[i].getElementsByTagName('ul')[0];
+					// alert(i);
+					// this.index 获取对应标题的下标
+					// 根据对应的下标，获取到对应的div，再获取该div中的ul
+					var oLists = aSection[this.index].getElementsByTagName('ul')[0];
+					
+					// 根据状态修改
+					if(this.isShow){	// 展开
+						oLists.style.display = 'block';
+						this.style.backgroundImage = 'url(img/ico2.gif)';
+					} else {		// 折叠
+						oLists.style.display = 'none';
+						this.style.backgroundImage = 'url(img/ico1.gif)';
+					}
+				}
+			
+				
+				// 要获取到每个分组，并给获取到每个分组中的li
+				var aFriend = aSection[i].getElementsByTagName('li');
+				// 给每个li添加对应的点击事件
+				for(var j=0; j<aFriend.length; j++){
+					aFriend[j].onclick = function(){
+						// 改变对应li样式
+						// this  -->  li
+						
+						// 先清除样式(全部)
+						for(var k=0; k<aSection.length; k++){
+							// 获取到分组对应的li
+							 var aTemp = aSection[k].getElementsByTagName('li');
+
+							// 清除
+							 for(var y=0; y<aTemp.length; y++){
+							 	aTemp[y].className = '';
+							 }
+						}
+
+						// 设置对应的li
+						this.className = 'active';
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

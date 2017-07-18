@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>使用过滤器实现条件查询 </title>
+	<script src="lib/angular-1.3.0.js"></script>
+	<style>
+          ng-cloak{display: none;}
+	</style>
+</head>
+<body ng-controller="myController" ng-cloak>
+  
+
+   <table id="searchTextResults">
+       <tr><th>名称</th><th>Phone</th></tr>
+	 
+	   <tr ng-repeat="friend in friends|filter:searchText:true "> <!-- 	true表示区分大小写，达到精准查询的作用 	 -->	
+	   			 <td>{{friend.name}}</td>   
+	   			 <td>{{friend.phone}}</td>  
+	   			
+	   </tr>
+   </table>
+	
+	 <script>
+
+             angular.module("myApp",[])
+             .controller("myController",function($scope, $window){
+                        
+                        var searchText=location.search.split("=")[1];
+//                       $window.alert("greeting");
+
+//                       console.log(typeof searchText)
+                        $scope.searchText=searchText;
+             
+                                              
+                         $scope.friends = [
+	                         {name:'John', phone:'555-1276'},
+	                         {name:'Mary', phone:'800-BIG-MARY'},
+	                         {name:'Mike', phone:'555-4321'},
+	                         {name:'Adam', phone:'555-5678'},
+	                         {name:'Julie', phone:'555-8765'},
+	                         {name:'Juliette', phone:'555-5678'}
+                         ]
+                                    
+             	})
+                       
+             
+
+	 </script>
+	 <!-- 利用这个原理可以实现查看商品的详情信息 -->
+</body>
+</html>

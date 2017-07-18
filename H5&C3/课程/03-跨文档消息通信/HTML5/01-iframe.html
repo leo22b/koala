@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		
+		<input type="button" value="改变子页面的背景颜色" id="bt" />
+		
+		<!-- 子页面-->
+		<iframe src="01-test.html" id="frame"></iframe>
+		
+		
+		<script type="text/javascript">
+			var oFrame = document.getElementById("frame");
+			var oBt = document.getElementById("bt");
+			var index = 0;
+			
+			oBt.onclick = function(){
+				// 改变子页面的背景
+				// oFrame.contentWindow --> 子页面的window
+				// oFrame.contentWindow.document.body.style.background = 'red';
+			
+				// 改变子页面的显示内容
+				var oH = oFrame.contentWindow.document.querySelector('h3');
+				index ++;
+				oH.innerHTML +=  index;
+			}
+			
+		</script>
+		
+	</body>
+</html>

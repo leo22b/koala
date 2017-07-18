@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			input{
+				width: 50px;
+				height: 30px;
+				border: 0;
+			}
+			.active{
+				background: red;
+				color: white;
+			}
+			
+			div{
+				width: 200px;
+				height: 150px;
+				border: 1px solid gray;
+				display: none;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var aBt = document.querySelectorAll("input");
+				var aView = document.querySelectorAll("div");
+				
+				for(var i=0; i<aBt.length; i++){
+					aBt[i].index = i;
+					aBt[i].onclick = function(){
+						// 清空样式
+						for(var j=0; j<aBt.length; j++){
+							aBt[j].className = '';
+							aView[j].style.display = 'none';
+						}
+						
+						// 设置
+						aBt[this.index].className = 'active';
+						aView[this.index].style.display = 'block';
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<input type="button" value="新闻" class="active" />
+		<input type="button" value="娱乐" />
+		<input type="button" value="体育" />
+		
+		<br />
+		<br />
+		<div style="display: block;">
+			新闻
+		</div>
+		<div>
+			娱乐
+		</div>
+		<div>
+			体育
+		</div>
+	</body>
+</html>

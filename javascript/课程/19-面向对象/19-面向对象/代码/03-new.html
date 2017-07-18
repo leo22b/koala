@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			// 人 类
+			function Person(name, sex){	// 构造函数(类)
+				// this表示当前对象
+				this.name = name;
+				this.sex = sex;
+				
+				// 方法
+				this.speak = function(){
+					alert(this.name + ':' + this.sex);
+				}
+			}
+			
+			// 张三
+			var zhangsan = new Person('张三', '男');
+//			zhangsan.speak();
+			
+			// 李四
+			var lisi = new Person('李四', '女');
+//			lisi.speak();
+			
+			// 王五
+			var wangwu = new Person('王五', '男');
+//			wangwu.speak();
+
+
+			// 它们的speak方法是不一样的
+			alert(zhangsan.speak === lisi.speak);
+		</script>
+		
+	</head>
+	
+	<body>
+	</body>
+</html>

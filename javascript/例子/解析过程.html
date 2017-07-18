@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			预解析
+			var a;
+			fo=function(){document.write(a);document.write('<br />')}
+			var a;
+			fo=function(){document.write(a);document.write('<br />')}
+			逐行解析
+			
+		-->
+		<script type="text/javascript">
+			document.write(a);
+			document.write('<br />')
+			var a=2;
+			function a(){
+				document.write('asas');
+				document.write('<br />')
+			}
+			var a=6;	
+			document.write(a);
+			document.write('<br />')
+			function a(){
+				document.write('a');
+			}
+			document.write(a);
+			document.write('<br />')
+		</script>
+	</body>
+</html>

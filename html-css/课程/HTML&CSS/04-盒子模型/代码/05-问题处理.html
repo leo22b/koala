@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.div1 {
+				width: 300px;
+				height: 300px;
+				background: red;
+				margin-top: 30px;
+				overflow: hidden;
+			}
+			
+			.div2 {
+				width: 200px;
+				height: 100px;
+				background: purple;
+				/* 此时是没有效果的，而且还会影响到大盒子的位置；
+				 解决: 在大盒子中加overflow: hidden;*/
+				margin-top: 100px;
+			}
+			
+			.div3 {
+				width: 200px;
+				height: 100px;
+				background: paleturquoise;
+				/*margin-bottom: 10px;*/
+				float: left;
+				margin-right: 30px;
+			}
+			
+			.div4 {
+				width: 300px;
+				height: 100px;
+				background: mediumpurple;
+				/*margin-top: 20px;*/
+				float: left;
+				margin-left: 10px;
+			}
+			
+			.div5 {
+				width: 200px;
+				height: 100px;
+				background: cadetblue;
+				float: left;
+				margin-right: 30px;
+			}
+			
+			.div6 {
+				width: 300px;
+				height: 100px;
+				background: cornflowerblue;
+				float: left;
+			}
+			
+			#box{
+				width: 600px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- 问题点1-->
+		<div class="div1">
+			div1
+			<div class="div2">div2</div>
+		</div>
+
+		<br />
+		<div id="box">
+			<!-- 问题点2-->
+			<div class="div3">div3</div>
+			<div class="div4">div4</div>
+
+			<!-- 对比-->
+
+			<div class="div5">div3</div>
+			<div class="div6">div4</div>
+		</div>
+	</body>
+
+</html>

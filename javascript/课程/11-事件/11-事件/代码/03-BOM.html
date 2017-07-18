@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function() {
+				var oBt1 = document.getElementById("bt1");
+				var oBt2 = document.getElementById("bt2");
+				
+				var oW = null;
+				
+				oBt1.onclick = function() {
+					// window.document
+
+					// 空白的
+//					window.open('', '_blank');
+					oW = window.open('http://www.baidu.com', '_blank');
+				}
+				
+				oBt2.onclick = function(){
+					// 关闭
+					// oW.close();
+					
+					window.close();
+				}
+				
+				// 操作系统信息以及浏览器信息
+				console.log(window.navigator.userAgent);		
+//				if( window.navigator.userAgent.indexOf('MSIE') != -1 ){
+//					alert('IE浏览器');
+//				} else {
+//					alert('非IE');
+//				}
+
+//				alert( window.navigator.userAgent.indexOf('Firefox') );
+				if( window.navigator.userAgent.indexOf('Firefox') != -1 ){
+					alert('火狐');
+				} else if(window.navigator.userAgent.indexOf('Chrome') != -1){
+					alert('谷歌');
+				} else if( window.navigator.userAgent.indexOf('MSIE') != -1 ){
+					alert('IE');
+				} else {
+					alert('其他');
+				}
+				
+				// url中'?'后面的内容
+				// alert( window.location.search );
+				//url中'#'后面的内容
+				// alert(window.location.hash);
+				// alert(window.location);
+			}
+		</script>
+	</head>
+
+	<body>
+		<input type="button" value="打开" id="bt1" />
+		<input type="button" value="关闭" id="bt2" />
+	</body>
+
+</html>

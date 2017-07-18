@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul{
+				width: 200px;
+				border: 1px solid red;
+			}
+			a{
+				text-decoration: none;
+				color: black;
+			}
+		</style>
+	</head>
+	
+	<body>
+		
+		<!--<ul>
+			<li> <a href="#">北京</a> </li>
+			<li> <a href="#">上海</a> </li>
+			<li> <a href="#">广州</a> </li>
+			<li> <a href="#">深圳</a> </li>
+		</ul>-->
+		
+		
+		<script>
+			var a = '北京111';
+			var b = '上海----';
+			var c = '广州0.0';
+			var d = '深圳^_^';
+			var e = '测试';
+			var list = '';
+			
+			
+			
+			list = list + '<ul>';
+			
+			list = list + '<li> <a href="#"> ' + a + ' </a> </li>';
+			list = list + '<li> <a href="#">' + b + '</a> </li>';
+			list = list + '<li> <a href="#">' + c + '</a> </li>';
+			list = list + '<li> <a href="#">' + d + '</a> </li>';
+			list = list + '<li> <a href="#">' + e + '</a> </li>';
+			
+			list = list + '</ul>';
+			
+//			alert(list);
+			document.write(list);
+			
+			
+			// 相同的引号(单引号或双引号)，不能相互嵌套
+//			document.write( " <a href="#">百度一下</a> " );	// 错误
+//			document.write( " <a href='#'>百度一下</a> " );
+//			document.write( ' <a href="#">百度一下</a> ' );
+			
+			// 相同的引号(单引号或双引号)如果需要嵌套，可以对单引号或算引号进行转义，使用反斜杠'\'
+//			document.write( " <a href=\"#\">百度一下</a> " );
+
+
+			// 输出:  'JS基础'
+//			document.write("  'JS基础'  ");
+			document.write('  \'JS基础\'  ');
+			
+			
+			
+			// 如果多个地方使用的同一个内容时
+//			document.write( '加号有两种含义，如果都是为number类型时，即是加法操作；如果有一个是为字符串类型，即是字符串拼接。' );
+//			console.log( '加号有两种含义，如果都是为number类型时，即是加法操作；如果有一个是为字符串类型，即是字符串拼接。' );
+//			alert('加号有两种含义，如果都是为number类型时，即是加法操作；如果有一个是为字符串类型，即是字符串拼接。');
+
+//			document.write(a);
+//			console.log(a);
+//			alert(a);
+
+			
+		</script>
+		
+	</body>
+</html>

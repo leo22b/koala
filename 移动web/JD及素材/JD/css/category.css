@@ -1,0 +1,155 @@
+body{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+}
+
+
+/************ 搜索栏 ************/
+.jd_search{
+	width: 100%;
+	height: 45px;
+	background: #f0f0f0;
+	position: relative;
+}
+.jd_search > .icon_back{
+	width: 12px;
+	height: 20px;
+	background-position-x: -25px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin: 10px 14px 0;
+}
+.jd_search > form{
+	width: 100%;
+	padding: 0 40px;
+}
+.jd_search > form > input{
+	width: 100%;
+	height: 30px;
+	margin-top: 6px;
+	border-radius: 15px;
+	border: none;
+}
+.jd_search > .icon_menu{
+	width: 20px;
+	height: 20px;
+	background-position-x: -60px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin: 10px;
+}
+
+
+
+/************ 主体内容 ************/
+.jd_main{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: white;
+}
+.jd_main > .jd_category_list{
+	width: 90px;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.jd_main > .jd_category_list > ul{
+	width: 100%;
+	height: 100%;
+}
+.jd_main > .jd_category_list > ul > li{
+	height: 50px;
+	width: 100%;
+	border-right: 1px solid gray;
+	border-bottom: 1px solid gray;
+	background: #f3f4f6;
+}
+.jd_main > .jd_category_list > ul > li > a{
+	display: block;
+	text-align: center;
+	line-height: 50px;
+}
+.jd_main > .jd_category_list > ul > .active > a{
+	background: white;
+	color: #7D0010;
+}
+
+.jd_main > .jd_category_list > ul > li > a{
+	display: block;
+	text-align: center;
+	line-height: 50px;
+}
+.jd_main > .jd_category_list > ul > .active > a{
+	background: white;
+	color: #7D0010;
+}
+
+/* 修改*/
+.jd_main > .jd_category_list{
+	padding-bottom: 45px;
+}
+.jd_main > .jd_category_list > .swiper-wrapper >.swiper-slide{
+	height: 50px;
+	width: 100%;
+	border-right: 1px solid gray;
+	border-bottom: 1px solid gray;
+	background: #f3f4f6;
+}
+.jd_main > .jd_category_list > .swiper-wrapper > .swiper-slide > a{
+	display: block;
+	text-align: center;
+	line-height: 50px;
+}
+.jd_main > .jd_category_list > .swiper-wrapper > .active > a{
+	background: white;
+	color: #7D0010;
+}
+
+.jd_main > .jd_category_content{
+	width: 100%;
+	height: 100%;
+	/* 用于显示分类列表*/
+	padding-left: 90px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.jd_main > .jd_category_content > a{
+	width: 100%;
+	padding: 10px;
+	display: block;
+}
+.jd_main > .jd_category_content > a > img{
+	width: 100%;
+}
+.jd_main > .jd_category_content > .jd_product{
+	width: 100%;
+	padding: 10px;
+}
+.jd_main > .jd_category_content > .jd_product > h3{
+	line-height: 30px;
+}
+.jd_main > .jd_category_content > .jd_product > ul{
+	width: 100%;
+}
+.jd_main > .jd_category_content > .jd_product > ul > li{
+	float: left;
+	width: 33.3%;
+	text-align: center;
+}
+.jd_main > .jd_category_content > .jd_product > ul > li > a{
+	width: 100%;
+	display: block;
+}
+.jd_main > .jd_category_content > .jd_product > ul > li > a > img{
+	
+}
+.jd_main > .jd_category_content > .jd_product > ul > li > a > p{
+	line-height: 30px;
+}

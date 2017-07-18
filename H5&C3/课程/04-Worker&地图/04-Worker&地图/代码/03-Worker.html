@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			window.onload = function(){
+				var lisi = new Worker('03-test.js');
+				var oText = document.querySelector("#text1");
+				var oBt = document.querySelector("#bt");
+				
+				oBt.onclick = function(){
+					
+					// 发送消息
+					lisi.postMessage(oText.value);
+				}
+				
+				// 接收回来的消息
+				lisi.addEventListener('message', function(ev){
+				ev = ev || window.event;
+				alert(ev.data);
+				});
+			}
+			
+			
+		</script>
+	</head>
+	
+	
+	<body>
+		<input type="text" id="text1" /> 
+		<input type="button" value="发送" id="bt" />
+	</body>
+</html>

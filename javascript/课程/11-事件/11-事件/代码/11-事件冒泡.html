@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#view1{
+				text-align: right;
+				color: white;
+				width: 300px;
+				height: 300px;
+				background: red;
+			}
+			#view2{
+				width: 200px;
+				height: 200px;
+				background: blue;
+			}
+			#view3{
+				width: 100px;
+				height: 100px;
+				background: purple;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var oView1 = document.getElementById("view1");
+				var oView2 = document.getElementById("view2");
+				var oView3 = document.getElementById("view3");
+				
+				// 点击view3时，view1、view2、view3都会触发 ---事件冒泡
+				
+				oView3.onclick = function(ev){
+					ev = event || ev;
+					// 阻止事件冒泡
+					ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
+					
+					alert('view3');
+				}
+				
+				oView2.onclick = function(){
+					alert('view2');
+				}
+				
+				oView1.onclick = function(){
+					alert('view1');
+				}
+				
+				document.onclick = function(){
+					alert('docuemnt');
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		
+		<div id="view1">
+			view1
+			<div id="view2">
+				view2
+				<div id="view3">
+					view3
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

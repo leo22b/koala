@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="text1" placeholder="请输入一个整数" />
+		<br />
+		<input type="text" id="text2" placeholder="请输入另一个整数" />
+		<br />
+		<input type="button" id="btn" value="生成" />
+		<script type="text/javascript">
+			var otext1=document.getElementById('text1');
+			var otext2=document.getElementById('text2');
+			var obtn=document.getElementById('btn');
+			var min="";
+			var max="";
+			function fff(n,m){
+				var min=Number(otext1.value);
+				var max=Number(otext2.value);
+				var random=parseInt(Math.random()*(max-min)+ min);
+				alert(random);
+			}
+			obtn.onclick=function(){
+				fff(min,max);
+			}
+			
+		</script>
+	</body>
+</html>

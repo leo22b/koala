@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>angularjs和传统js的区别</title>
+    <script src="lib/jquery-1.11.1.min.js"></script>
+    <script src="lib/angular-1.3.0.js"></script>
+</head>
+<body>
+        <p>原生js</p>
+        输入姓名:
+        <input type="text" onkeyup="update(this)" >
+        <div id="output"></div>
+           <hr>
+        <p>jq</p>
+        输入姓名:
+        <input name="your-name" id="your-name" type="text"></input>
+        <div id="output2">Hello</div>
+           <hr>
+        <p>ng</p>
+      
+        <input type="text" ng-model="name">
+        <a href="#" ng-click="name='robin'">修改名字</a>
+        <div>Hello {{name}}</div>
+
+</body>
+<script>
+    function update(elem) {
+        var name=elem.value;
+        var ele=document.getElementById("output");
+        ele.innerHTML="hello "+name;
+    }
+    $('#your-name').on('input', function() {
+        var name = $(this).val();
+        // now you can use "name" here
+        $('#output2').html("Hello " + name);
+    });
+</script>
+  <!-- 实例讲解  
+        1:无论是原生js 还是 jquery  都通过 DOM 的操作来实现这个数据的实时更新,尽管这个过程不复杂，但是它要求开发者对整个DOM结构都有所了解，并强迫我们在js代码中加入复杂的控制逻辑，用于操作外部的DOM
+        2：而angularjs则通过原生的MVC（模型-视图-控制器）功能增强了html,结果表明，这个选择可以快捷和愉悦的构建出极富表现力的客户端应用
+  -->
+</html>

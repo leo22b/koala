@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			function fn1(){
+				alert(1);
+			}
+			// 函数调用
+			// fn1();
+
+			
+			// 把匿名函数，赋值给变量sum
+			var sum = function(a, b){
+					return a + b;
+			}
+			// 变量sum存的是一个函数
+			// alert( sum(10, 20) );
+			
+			
+			
+			
+						
+			function fn2(){				
+				// 返回匿名函数
+				return function(a, b){ return a + b; }
+			}
+			// var test1 = fn2;	// 将函数fn2赋值给变量test1
+			// var test2 = test1();		// 调用函数，请问返回值是什么？ 返回值是一个函数
+			// alert( test2(99, 99) );
+			
+			// 什么意思?
+			// fn2()函数调用，然后返回一个函数，并赋给变量test3
+			// var test3 = fn2();
+			// alert( test3(33, 33) );
+			
+			
+			
+			
+			function fn3(a){
+				alert(a);
+			}
+			// fn3(10);
+			
+			
+			// 将上面的fn3转换一下 -- 闭包
+			// function(a){} 这只是在定义函数，并不会调用
+			// (function(a){})   和    function(a){}  等同
+			// (function(a){})()  函数调用   【但函数调用时，没有参数】
+			// (funcgion(a){})(10) 	函数调用，并传递参数
+			(function(a){
+				alert(a);
+			})(10);
+			
+			
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

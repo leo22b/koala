@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#nav1{
+				width: 1000px;
+				height: 20px;
+				/*background: purple;*/
+				margin: 30px auto 0;
+				border-bottom: 8px solid red;
+				text-align: center;
+			}	
+			#nav1 li{
+				/* 1、可以设置宽高，行内逐个显示*/
+				/*display: inline-block;*/
+				
+				/* 2、通过浮动*/
+				/*float: left;*/
+				display: inline-block;
+				
+				list-style: none;
+				width: 80px;
+				height: 20px;
+				background: gray;
+				margin-right: 2px;
+				text-align: center;
+				font-size: 13px;
+			}		
+			#nav1 li a{
+				text-decoration: none;
+				color: black;
+				
+				/* 行内元素 -->  块级元素(宽度可以不设置，是与父级元素宽度一致)*/
+				/*display: block;*/
+				height: 20px;
+				
+				/* 默认是不显示*/
+				display: none;
+			}
+			/* span的样式*/
+			#nav1 li span{
+				/* 不设置宽度，和li的宽度是一样的，默认是显示的*/
+				display: block;
+				height: 20px;
+				line-height: 20px;
+			}
+			
+			/* 鼠标移入效果*/
+			#nav1 li:hover a{
+				/* 显示*/
+				display: block;
+				color: white;
+				background: red;
+			}
+			#nav1 li:hover span{
+				display: none;
+			}
+			
+			
+
+			
+			
+			/*
+			 * 此处有问题，因为整个li位置应该都是可以点击的(样式可以达到效果，但是功能没达到)
+			 */
+			/*#nav1 li:hover{
+				background: red;
+			}
+			#nav1 li:hover a{
+				color: white;
+			}*/
+		</style>
+	</head>
+	
+	<body>
+		<!-- 第一个导航-->
+		<ul id="nav1">
+			<li> <a href="#">首页</a> <span>Home</span> </li>
+			<li> <a href="#">财经</a> <span>Blog</span> </li>
+			<li> <a href="#">体育</a> <span>Guestbook</span> </li>
+			<li> <a href="#">国内</a> <span>Pickbar</span> </li>
+			<li> <a href="#">娱乐</a> <span>fansir</span> </li>
+			<li> <a href="#">国际</a> <span>Home</span> </li>
+		</ul>
+	</body>
+</html>

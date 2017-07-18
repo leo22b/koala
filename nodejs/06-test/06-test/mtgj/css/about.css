@@ -1,0 +1,21 @@
+#main .main-content{
+	overflow: hidden;
+}
+#main .main-content .section1{
+	margin-top: 90px;
+	height: 228px;
+}
+#main .main-content .section1 .detail{
+	width: 740px;
+	height: 228px;
+	/*background: red;*/
+	border-bottom: 1px solid gray;
+}
+#main .main-content .section1 .detail h4{
+	height: 54px;
+	font-size: 14px;
+}
+#main .main-content .section1 .detail h4 p{
+	font-size: 12px;
+	line-height: 32px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box1,
+			#box2,
+			#box3 {
+				width: 100px;
+				height: 50px;
+				background: red;
+				margin: 20px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var aBox = document.getElementsByTagName('div');
+				
+				// box1: 100 -> 300 [时钟] 
+				
+				// box1: 200 --> 鼠标移到box2 --> 200 -> 100 [时钟]
+				// 鼠标移到box2: 100 -> 300 [时钟]
+
+				for(var i = 0; i < aBox.length; i++) {
+					aBox[i].onmouseover = function() {
+						startMove(this, 300);
+					}
+					aBox[i].onmouseout = function() {
+						startMove(this, 100);
+					}
+					
+					// 给每个物体添加时钟 (自带时钟)  ---  自定义属性
+					aBox[i].timer = null;
+				}
+
+				function startMove(obj, target) {
+					// 先停止时钟
+					clearInterval(obj.timer);
+
+					obj.timer = setInterval(function() {
+						// 速度 = (目标值-当前值)/缩放系数
+						var speed = (target - obj.offsetWidth) / 7;
+						speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+						console.log(speed);
+
+						if(obj.offsetWidth == target) { // 停止
+							clearInterval(obj.timer);
+						} else { // 运动
+							obj.style.width = obj.offsetWidth + speed + 'px';
+						}
+
+					}, 80);
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="box1"></div>
+		<div id="box2"></div>
+		<div id="box3"></div>
+	</body>
+
+</html>

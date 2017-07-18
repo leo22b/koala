@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#title{
+				width: 300px;
+				color: white;
+				background: red;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<p id="title" style="color: blue;"> 
+			每天一句：每周80+，付出是为了以后更好的生活，付出是为了更快速的成长。
+		</p>
+		
+		
+		<script>
+			var oTitle = document.getElementById('title');
+			// img是p标签没有的，自定义属性
+			oTitle.img = '1.png';
+			oTitle.test = '添加一个属性';
+			
+			// 背景切换功能
+			oTitle.bg = 'red';
+			
+			document.onclick = function(){
+				// alert(oTitle.img);
+				// alert(oTitle.test);
+				
+				
+				// 注意: 元素.style无法获取到定义在<style></style>和通过<link href=“styles.css”>加载进来的样式属性的;
+				// alert(oTitle.style.height);
+				
+				
+				// 红色和紫色背景切换
+				// 注意: 背景不能判断;
+				// alert( oTitle.style.background );
+				if(oTitle.bg == 'red'){
+					oTitle.style.background = 'purple';
+					oTitle.bg = 'purple';
+				} else {
+					oTitle.style.background = 'red';
+					oTitle.bg = 'red';
+				}
+				
+				alert(oTitle.style.color);
+			}
+			
+		</script>
+	</body>
+</html>

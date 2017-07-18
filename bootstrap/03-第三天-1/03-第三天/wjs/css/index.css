@@ -1,0 +1,665 @@
+body{
+	height: 2000px;
+}
+
+/* 添加自己的字体*/
+@font-face {
+	/* 字体名称(自己定义)*/
+	font-family: 'cxy';
+	/* 要导入字体的路径*/
+	src:  
+	url('../fonts/MiFie-Web-Font.eot') format('embedded-opentype'),
+    	url('../fonts/MiFie-Web-Font.ttf') format('truetype'),
+    url('../fonts/MiFie-Web-Font.woff') format('woff'),
+    url('../fonts/MiFie-Web-Font.svg') format('svg');
+}
+/* 字体测试*/
+/*.fontTest{
+	font-family: 'cxy' !important;
+}*/
+/*body{
+	font-family: "微软雅黑";
+}*/
+.icon-wifi:before{
+	/* content中的是对应字体的编码*/
+	content: "\e91b";
+	/*content: '你好';*/
+}
+
+[class^='icon-']{
+	font-family: 'cxy' !important;
+}
+/* 手机样式*/
+.icon-phone:before{
+	content: "\e908";
+}
+/* 联系样式*/
+.icon-tel:before{
+	content: '\e909';
+}
+/* logo*/
+.icon-logo:before{
+	content: "\e920";
+}
+/* 微金所*/
+.icon-wjs:before{
+	content: "\e93e";
+}
+/* 支付交易保障*/
+.icon-uniE907:before{
+	content: '\e907';
+}
+.icon-uniE906:before{
+	content: '\e906';
+}
+.icon-uniE905:before{
+	content: '\e905';
+}
+.icon-news1:before{
+	content: '\e90e';
+}
+.icon-news2:before{
+	content: '\e90f';
+}
+.icon-news3:before{
+	content: '\e910';
+}
+.icon-news4:before{
+	content: '\e911';
+}
+.icon-uniE930:before{
+	content: "\e946";
+}
+
+
+a:hover{
+	text-decoration: none;
+}
+
+
+/******************** 1、头部********************/
+#header > .topbar{
+	border-bottom: 1px solid #f3f3f3;
+}
+/* 普通写法*/
+/*#header > .topbar > .container > .row > div{
+	height: 40px;
+	border-right: 1px solid #f3f3f3;
+}
+#header > .topbar > .container > .row > div:last-of-type{
+	border-right: 0;
+}*/
+/* h1 + p {margin-top:50px;}
+ 选择紧接在 h1 元素后出现的段落p，h1 和 p 元素拥有共同的父元素*/
+/* 总共有4个，找的是后面三个*/
+#header > .topbar > .container > .row > div{
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: gray;
+}
+#header > .topbar > .container > .row > div + div{
+	border-left: 1px solid #f3f3f3;
+}
+#header > .topbar > .container > .row > div > a{
+	color: gray;
+}
+#header > .topbar > .container > .row > div > a:hover > img{
+	display: block;
+}
+#header > .topbar > .container > .row > div > a > img
+{
+	position: relative;
+    z-index: 10000;
+    top: -13px;
+    left: 21px;
+    display: none;
+}
+
+#header .navbar{
+	
+}
+#header .icon-logo{
+	color: red;
+	font-size: 50px;
+	vertical-align: middle;
+}
+#header .icon-wjs{
+	color: black;
+	font-size: 40px;
+	vertical-align: middle;
+}
+
+
+
+/******************** 2、轮播图********************/
+/*#main-ad > .slide > .carousel-inner > div > img{
+	height: 410px;
+}*/
+
+/* 给大屏幕中，背景图设置的*/
+#main-ad > .slide > .carousel-inner > a {
+	height: 410px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+/* 媒体查询 -- 小屏幕*/
+@media only screen and (max-width: 768px) {
+	#main-ad > .slide > .carousel-inner > a{
+		height: auto;
+	}
+	#main-ad > .slide > .carousel-inner > a > img{
+		width: 100%;
+	}
+}
+
+
+
+
+/******************** 3、特色介绍********************/
+#synopsis{
+	padding: 70px 0;
+}
+#synopsis .media span{
+	font-size: 36px;
+}
+#synopsis > .container > .row > div{
+	padding: 15px;
+}
+#synopsis > .container > .row > div > a:hover{
+	color: red;
+}
+
+
+
+/******************** 4、立即预约********************/
+#bespeak{
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+}
+#bespeak > .container > p{
+	padding: 15px 0;
+	/*line-height: 40px;*/
+	/*height: 40px;*/
+	margin-bottom: 0;
+}
+#bespeak > .container > p > i{
+	font-style: normal;
+	color: red;
+}
+#bespeak > .container > p:first-of-type > a{
+	color: red;
+	border-bottom: 1px dashed red;
+}
+#bespeak > .container > p:last-of-type > a{
+	color: gray;
+}
+
+
+
+/******************** 5、产品推荐********************/
+#commend > .container > .nav-tabs>li.active>a{
+	/*border: 0;*/
+	background: transparent;
+	border-bottom: 3px solid red;
+	font-weight: 800;
+	color: black;
+}
+#commend > .container > .nav-tabs> li > a{
+	color: gray;
+	font-size: 17px;
+	border: 0;
+}
+#commend > .container > .nav-tabs > li > a:hover{
+	background: transparent;
+	/*border: 0;*/
+	color: black;
+	font-weight: 800;
+	border-bottom: 3px solid red;
+}
+#commend > .container > .nav-tabs > li:last-of-type > a:hover{
+	color: gray;
+	font-weight: normal;
+	border-bottom: 0;
+}
+
+
+
+/******************** 6、新闻列表********************/
+#news{
+	padding: 20px 0;
+}
+#news > .container > .row > div > h4{
+	border-bottom: 1px dashed gray;
+	text-align: center;
+	height: 30px;
+	position: relative;
+	margin-bottom: 0;
+}
+#news > .container > .row > div > h4:before{
+	content: '';
+	width: 8px;
+	height: 8px;
+	border: 1px solid gray;
+	position: absolute;
+	right: -8px;
+	bottom: -4px;
+	border-radius: 50%;
+}
+
+#news .nav-tabs{
+	border-bottom: 0;
+}	
+/* 中大屏幕*/
+#news .nav-tabs>li>a{
+	width: 60px;
+	height: 60px;
+	border-radius: 5px;
+	line-height: 60px;
+	text-align: center;
+	margin-right: 0;
+	padding: 0;
+	color: gray;
+}
+/* 小屏幕时，显示是25%*/
+@media only screen and (max-width: 992px) {
+	#news .nav-tabs>li{
+		width: 25%;
+	}
+	#news .nav-tabs>li>a{
+		width: 100%;
+	}
+}
+
+#news .nav-tabs>li.active>a{
+	border: 0;
+	background: #337ab7;
+	color: white;
+}
+#news .nav-tabs>li>a>span{
+	font-size: 30px;
+}
+
+#news .tab-content > .tab-pane > ul{
+	list-style: none;
+}
+#news .tab-content > .tab-pane > ul > li{
+	line-height: 30px;
+}
+#news .tab-content > .tab-pane > ul > li > a{
+	color: black;
+}
+
+
+
+/******************** 7、合作伙伴********************/
+#partner{
+	border-top: 1px solid gray;
+	text-align: center;
+}
+#partner > h3{
+	line-height: 50px;
+}
+#partner > ul{
+	list-style: none;
+}
+#partner > ul > li{
+	display: inline-block;
+}
+#partner > ul > li > a{
+	font-size: 80px;
+	color: gray;
+	padding: 10px 15px;
+}
+#partner > ul > li > a:hover{
+	color: red;
+}
+
+#partner > ul > li + li > a{
+	border-left: 1px dashed gray;
+}
+
+
+
+/******************** 8、脚注部分********************/
+#footer{
+	background: black;
+	padding: 30px 0;
+}
+#footer > .container >  .row > div > ul {
+	list-style: none;
+}
+#footer > .container > .row > div > ul > li{
+	float: left;
+	padding: 0 10px;
+}
+#footer > .container > .row > div > ul > li > a{
+	color: gray;
+}
+#footer > .container > .row > div > p{
+	color: gray;
+	padding-right: 30px;
+	text-align: right;
+}
+@media only screen and (max-width: 992px) {
+	#footer > .container  > .row > div > p{
+		text-align: center;
+		padding-right: 0;
+	}
+}
+
+
+
+/* bootstrap自定义 --- 面版*/
+.panel-cxy {
+  border-color: #ddd;
+  background: white;
+  margin-top: 20px;
+}
+.panel-cxy > .panel-heading {
+	width: 120px;
+	height: 150px;
+	float: right;
+	border-bottom: 0;
+	border-left: 1px dashed gray;
+	padding: 40px 0;
+	position: relative;
+}
+.panel-cxy > .panel-heading:after,
+.panel-cxy > .panel-heading:before{
+	content: '';
+	width: 20px;
+	height: 20px;
+	background-color: #f5f5f5;
+	position: absolute;
+	border-radius: 50%;
+}
+.panel-cxy > .panel-heading:after{
+	left: -10px;
+	top: -10px;
+}
+.panel-cxy > .panel-heading:before{
+	left: -10px;
+	bottom: -10px;
+	/* 内部阴影*/
+	box-shadow: 0 1px 1px #ddd inset;
+	
+	/*box-shadow: 0 1px 3px red inset;*/
+}
+
+.panel-cxy > .panel-heading > p{
+	text-align: center;
+	margin-bottom: 0;
+}
+.panel-cxy > .panel-heading > p > strong{
+	font-size: 23px;
+	font-weight: 800;
+}
+.panel-cxy > .panel-heading > p.mytooltip{
+	position: absolute;
+	left: 0;
+	top: 20px;
+	width: 100%;
+}
+.panel-cxy > .panel-heading > p.mytooltip > a{
+	width: 24px;
+	height: 24px;
+	margin-right: 8px;
+}
+.panel-cxy > .panel-heading > p.mytooltip > a.tooltip-one{
+	border: 1px solid red;
+	color: red;
+}
+.panel-cxy > .panel-heading > p.mytooltip > a.tooltip-two{
+	border: 1px solid blue;
+	color: blue;
+}
+
+
+
+.panel-cxy > .panel-body {
+  padding-bottom: 0;
+  
+  /* 左边的panel-headding宽度是120px*/
+ margin-right: 120px;
+}
+.panel-cxy > .panel-body > .row > div > p{
+	margin-bottom: 5px;
+	font-size: 13px;
+	color: gray;
+}
+.panel-cxy > .panel-body > .row > div > p > strong{
+	font-size: 12px;
+	color: black;
+}
+.panel-cxy > .panel-body > .row > div > p > sub{
+	font-size: 10px;
+	color: black;
+}
+
+.panel-cxy > .panel-heading .badge {
+  color: #f5f5f5;
+  background-color: #333;
+}
+
+
+/* .active*/
+/* li.active{}*/
+.panel-cxy.active{
+	background-color: red;
+	color: white;
+	position: relative;
+}
+.panel-cxy.active:after{
+	content: '\e915';
+	/* 字体类型*/
+	font-family: 'cxy' !important;
+	font-size: 50px;
+	position: absolute;
+	left: 0;
+	top: -10px;
+}
+.panel-cxy.active > .panel-body > .row > div > p{
+	color: white;
+}
+.panel-cxy.active > .panel-body > .row > div > p > strong{
+	color: white;
+}
+.panel-cxy.active > .panel-body > .row > div > p > sub{
+	color: white;
+}
+.panel-cxy.active > .panel-heading{
+	border-color: white;
+}
+
+/* disabled*/
+.panel-cxy.disabled{
+	background-color: darkgray;
+}
+
+
+.panel-status-1:before,
+.panel-status-2:before,
+.panel-status-3:before,
+.panel-status-4:before{
+	font-family: 'cxy'!important;
+	font-size: 100px;
+	position: absolute;
+	color: red;
+	/*left: 120px;*/
+	top: 30px;
+	left: 50%;
+	margin-left: -50px;
+}
+/* 已结清*/
+.panel-status-1:before{
+	content: '\e926';
+}
+/* 还款中*/
+.panel-status-2:before{
+	content: '\e925';
+}
+/* 已完成*/
+.panel-status-3:before{
+	content: '\e927';
+}
+/* 已满标*/
+.panel-status-4:before{
+	content: '\e928';
+}
+
+
+
+/* bootstrap自定义 --- 按钮*/
+.btn-login { 
+  color: #ffffff; 
+  background-color: #611BBD; 
+  border-color: #130269; 
+} 
+ 
+.btn-login:hover, 
+.btn-login:focus, 
+.btn-login:active, 
+.btn-login.active, 
+.open .dropdown-toggle.btn-login { 
+  color: #ffffff; 
+  background-color: #1531BF; 
+  border-color: #130269; 
+} 
+ 
+.btn-login:active, 
+.btn-login.active, 
+.open .dropdown-toggle.btn-login { 
+  background-image: none; 
+} 
+ 
+.btn-login.disabled, 
+.btn-login[disabled], 
+fieldset[disabled] .btn-login, 
+.btn-login.disabled:hover, 
+.btn-login[disabled]:hover, 
+fieldset[disabled] .btn-login:hover, 
+.btn-login.disabled:focus, 
+.btn-login[disabled]:focus, 
+fieldset[disabled] .btn-login:focus, 
+.btn-login.disabled:active, 
+.btn-login[disabled]:active, 
+fieldset[disabled] .btn-login:active, 
+.btn-login.disabled.active, 
+.btn-login[disabled].active, 
+fieldset[disabled] .btn-login.active { 
+  background-color: #611BBD; 
+  border-color: #130269; 
+} 
+ 
+.btn-login .badge { 
+  color: #611BBD; 
+  background-color: #ffffff; 
+}
+
+
+/* bootstrap自定义 --- 导航条*/
+.navbar-cxy {/*   background-color: #f8f8f8; */border-color: #e7e7e7;/*   background-color: red; */
+top: 0;
+width: 100%;
+margin-bottom: 0px;
+z-index: 9999;
+background: white;
+}
+.navbar-cxy .navbar-brand {
+  color: #777;
+}
+.navbar-cxy .navbar-brand:hover,
+.navbar-cxy .navbar-brand:focus {
+  color: #5e5e5e;
+  background-color: transparent;
+}
+.navbar-cxy .navbar-text {
+  color: #777;
+}
+.navbar-cxy .navbar-nav > li > a {
+  color: #777;
+}
+.navbar-cxy .navbar-nav > li > a:hover,
+.navbar-cxy .navbar-nav > li > a:focus {
+  color: #333;
+  background-color: transparent;
+  border-bottom: 2px solid red;
+}
+.navbar-cxy .navbar-nav > .active > a,
+.navbar-cxy .navbar-nav > .active > a:hover,
+.navbar-cxy .navbar-nav > .active > a:focus {
+  color: #555;
+/*   background-color: #e7e7e7; */
+	border-bottom: 2px solid red;
+}
+.navbar-cxy .navbar-nav > .disabled > a,
+.navbar-cxy .navbar-nav > .disabled > a:hover,
+.navbar-cxy .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+.navbar-cxy .navbar-toggle {
+  border-color: #ddd;
+}
+.navbar-cxy .navbar-toggle:hover,
+.navbar-cxy .navbar-toggle:focus {
+  background-color: #ddd;
+}
+.navbar-cxy .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+.navbar-cxy .navbar-collapse,
+.navbar-cxy .navbar-form {
+  border-color: #e7e7e7;
+}
+.navbar-cxy .navbar-nav > .open > a,
+.navbar-cxy .navbar-nav > .open > a:hover,
+.navbar-cxy .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+@media (max-width: 767px) {
+  .navbar-cxy .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+  .navbar-cxy .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-cxy .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+    background-color: transparent;
+  }
+  .navbar-cxy .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-cxy .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-cxy .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+  }
+  .navbar-cxy .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-cxy .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-cxy .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+}
+.navbar-cxy .navbar-link {
+  color: #777;
+}
+.navbar-cxy .navbar-link:hover {
+  color: #333;
+}
+.navbar-cxy .btn-link {
+  color: #777;
+}
+.navbar-cxy .btn-link:hover,
+.navbar-cxy .btn-link:focus {
+  color: #333;
+}
+.navbar-cxy .btn-link[disabled]:hover,
+fieldset[disabled] .navbar-cxy .btn-link:hover,
+.navbar-cxy .btn-link[disabled]:focus,
+fieldset[disabled] .navbar-cxy .btn-link:focus {
+  color: #ccc;
+}

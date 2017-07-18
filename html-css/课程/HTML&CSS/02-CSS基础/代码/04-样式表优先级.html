@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<!--<link rel="stylesheet" href="04-styles.css" type="text/css" />-->
+		
+		<!-- 行内样式 > 内部样式表-->
+		<style>
+			span{
+				background: purple;
+				color: white;
+			}
+			
+			.div1{
+				width: 200px;
+				height: 200px;
+				background: blue;
+			}
+		</style>
+		
+		<link rel="stylesheet" href="04-styles.css" type="text/css" />
+	</head>
+	
+	<body>
+		<br />
+		<br />
+		<span style="background: red;">样式表优先级冲突测试...</span>
+		
+		
+		<br />
+		<br />
+		<div class="div1" ></div>
+	</body>
+</html>

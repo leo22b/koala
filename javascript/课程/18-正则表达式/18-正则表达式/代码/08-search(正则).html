@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			document.onclick = function(){
+				var str = 'fAFsdf weroIj314 1jk9234 234923Afd22 - `12;';
+				
+				// document.write(str.search('af'));
+				
+				
+				// i 表示忽略大小写
+				// var rel = /oi/i;
+				// document.write(str.search(rel));
+				
+				var rel = /gecko/i;
+				
+				 document.write(window.navigator.userAgent);
+				alert( window.navigator.userAgent.search(rel) );
+			}
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

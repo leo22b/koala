@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<script>
+			// 1、赋值
+			var a = 'hello';
+
+			// 2、一元运算符
+			var b = 2;
+			//			b = b + 1;
+			//			b++;		// 自增
+			//			++b;		// 自增
+			//			b--;		// 自减
+			//			--b;		// 自减
+			//			alert(b);
+
+			// 前置(先自增，后赋值)  加加操作完成后才拿去用
+			var c = 10;
+			// 11 + 1
+//			c = ++c + 1;	// 12
+
+			// 后置(先赋值，后自增)	先拿去用之后再加加操作
+//			c = c++ + 1;
+
+//			alert(c);		// 11
+
+
+			var i = 10;
+			var j = 5;
+			
+			//  5   +  11
+//			j = j++ + ++i;
+
+			//   6     11
+//			j = ++j + ++i;
+
+			//  5   +  10
+//			j = j++ + i++;
+//			alert(j);
+
+
+
+			var k = 0;
+			//   5  +  11
+			k = j++ + ++i;
+			alert(k);	// 16
+			alert(j);	// 6
+			alert(i);	// 11
+			
+		</script>
+	</body>
+
+</html>

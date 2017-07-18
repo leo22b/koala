@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<!-- 元素内的HTML内容-->
+		<p id="p1"> Hello World! </p>
+		<input type="button" value="点击" id="bt1" />
+		
+		
+		<script>
+			// 1、获取到对应元素
+			var oP = document.getElementById('p1');
+			var oBt = document.getElementById('bt1');
+			
+			// 2、按钮点击事件
+			oBt.onclick = function(){
+				// 点击之后的操作
+				
+				// 获取
+				// alert( oP.innerHTML );
+				
+				// 修改
+				oP.innerHTML = '修改试试';
+			}
+		</script>
+	</body>
+</html>

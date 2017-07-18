@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 800px;
+				height: 530px;
+				background: slategray;
+				text-align: center;
+				margin: 30px auto;
+				position: relative;
+			}
+			#box .title{
+				color: white;
+				line-height: 30px;
+				font-size: 18px;
+			}
+			#box .photo{
+				width: 800px;
+				height: 470px;
+				display: block;
+			}
+			#box .slt{
+				width: 120px;
+				height: 80px;
+				position: absolute;
+				bottom: 30px;
+				left: 340px;
+				display: none;
+			}
+			#box .left,#box .right{
+				position: absolute;
+				width: 80px;
+				height: 30px;
+				top: 250px;
+				background: purple;
+				color: white;
+				text-decoration: none;
+				line-height: 30px;
+			}
+			#box .left{
+				left: 0;
+			}
+			#box .right{
+				right: 0;
+			}
+			#box .index{
+				height: 30px;
+			}
+			#box .index i{
+				background: black;
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				font-style: normal;
+				border-radius: 15px;
+				color: white;
+			}
+			#box .index .active{
+				background: darkred;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<h3 class="title"></h3>
+			<img class="photo"/>
+			<a class="left" href="#">上一张</a>
+			<a class="right" href="#">下一张</a>
+			<p class="index">
+				<!--<i></i>
+				<i></i>
+				<i></i>
+				<i></i>
+				<i></i>-->
+			</p>
+			<img class="slt" src="img/background.jpg"/>
+		</div>
+		<script type="text/javascript">
+			//大盒子
+			var obox=document.getElementById('box');
+			//标题
+			var otitle=obox.getElementsByTagName('h3')[0];
+			//大图片
+			var ophoto=obox.getElementsByTagName('img')[0];
+			//缩略图
+			var oslt=obox.getElementsByTagName('img')[1];
+			//上一张
+			var oleft=obox.getElementsByTagName('a')[0];
+			//下一张
+			var oright=obox.getElementsByTagName('a')[1];
+			//缩略图下标
+			var oindex=obox.getElementsByTagName('p')[0];
+			//图片下标
+			var index=0;
+			//图片数组
+			var images=['background.jpg','Kayle_Splash_0.jpg','Kayle_Splash_1.jpg','Kayle_Splash_2.jpg','Kayle_Splash_3.jpg','Kayle_Splash_4.jpg','Kayle_Splash_5.jpg','Kayle_Splash_6.jpg'];
+			//默认显示的图片、图片名
+			ophoto.src = 'img/' + images[index];
+			otitle.innerHTML = images[index];
+			oleft.onclick = function(){
+				index--;
+				if(index<0){
+					index=images.length-1;
+				}
+				change();
+			}
+			oright.onclick = function(){
+				index++;
+				if(index>images.length-1){
+					index=0;
+				}
+				change();
+			}
+			//生成下标     
+			var str='';
+			for (var i=1;i<=images.length;i++) {
+				if (i == 1) {
+					str=str+'<i class="active">'+i+'</i>';
+				} else{
+					str=str+'<i>'+i+'</i>';
+				}
+			}
+			//把下标内容赋值给p标签
+			oindex.innerHTML=str;
+			//从p里面获取所有的i
+			var ocontent=oindex.getElementsByTagName('i');
+			//遍历数组里面的i
+			for (var j=0;j<ocontent.length;j++) {
+				//遍历获取对应的下标
+				ocontent[j].index=j;
+				//遍历下标点击按钮
+				ocontent[j].onclick=function(){
+					index=this.index;
+					change();
+				}
+				//鼠标移入
+				ocontent[j].onmouseover=function(){
+					oslt.style.display='block';
+					oslt.src='img/'+images[this.index];
+				}
+				//鼠标移出
+				ocontent[j].onmouseout=function(){
+					oslt.style.display='none';
+				}
+			}
+			
+			
+			function change(){
+				//设置对应图片路径
+				ophoto.src='img/'+images[index];
+				//设置对应标题名称
+				otitle.innerHTML=images[index];
+				//遍历清除i样式
+				for (var k=0;k<ocontent.length;k++) {
+					ocontent[k].className='';
+				}
+				//设置对应图片的缩略图下标i按钮的样式
+				ocontent[index].className='active';
+			}
+		</script>
+	</body>
+</html>

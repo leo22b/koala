@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		
+		<input type="button" value="+" id="bt1" />
+		<input type="button" value="-" id="bt2" />
+		
+		<!-- style="font-size: 20px;"-->
+		<p id="info">
+			没有方向感，我们不知道自己走向哪里。没有方向感，我们所有的努力就缺乏一个标准，我们每时每刻所有的努力都处在一种混沌与盲目的状态之中：没有对错、没有进退、没有成败得失。
+		</p>
+		
+		
+		
+		<script>
+			var oText = document.getElementById('info');
+			var oBt1 = document.getElementById('bt1');
+			var oBt2 = document.getElementById('bt2');
+			// 默认字体大小为16
+			var size = 16;
+			
+			// 加操作
+			oBt1.onclick = function(){
+				// alert(1);
+				
+				size = size + 1;
+				console.log(size);
+				
+				// 属性写操作
+				// 问题1: js中不能出现'-'
+				// 问题2: 注意有无单位
+				oText.style.fontSize = size + 'px';
+			}
+			
+			// 减操作
+			oBt2.onclick = function(){
+				// alert(2);
+				
+				size = size - 1;
+				console.log(size);
+			}
+		</script>
+	</body>
+</html>

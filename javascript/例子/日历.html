@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			#box{
+				width: 200px;
+				height: 360px;
+				background: #e5e4e4;
+				margin: 30px auto;
+				position: relative;
+				padding: 20px;
+			}
+			#box ul{
+				list-style: none;
+			}
+			#box li{
+				width: 58px;
+				height: 53px;
+				background: gray;
+				color: white;
+				text-align: center;
+				border: 1px solid white;
+				float: left;
+				margin: 0 10px 10px 0;
+			}
+			#box .active{
+				color: #e1356d;
+				border-color: black;
+				background: white;
+			}
+			#box li span{
+				font-weight: bold;
+				height: 28px;
+				line-height: 28px;
+			}
+			#box ul .content{
+				width: 168px;
+				height: 66px;
+				background: #ededed;
+				color: black;
+				text-align: left;
+				position: absolute;
+				left: 20px;
+				bottom: 20px;
+				padding: 12px 20px 12px 12px;
+				display: none;
+			}
+			#box ul .content h3{
+				font-size: 13px;
+				height: 30px;
+			}
+			#box ul .content p{
+				font-size: 11px;
+				height: 17px;
+				line-height: 17px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li>
+					<span>1</span><p>JAN</p>
+					<div class="content">
+					</div>
+				</li>
+				<li>
+					<span>2</span><p>FER</p>
+					<div class="content">
+					</div>
+				</li>
+				<li style="margin: 0 0 10px 0;">
+					<span>3</span><p>MAR</p>
+					<div class="content">
+					</div>
+				</li>
+				<li>
+					<span>4</span><p>APR</p>
+					<div class="content">
+					</div>
+				</li>
+				<li>
+					<span>5</span><p>MAY</p>
+					<div class="content">
+					</div>
+				</li>
+				<li style="margin: 0 0 10px 0;">
+					<span>6</span><p>JUN</p>
+					<div class="content">
+					</div>
+				</li>
+				<li>
+					<span>7</span><p>JUL</p>
+					<div class="content">
+					</div>
+				</li>
+				<li>
+					<span>8</span><p>AUG</p>
+					<div class="content">
+					</div>
+				</li>
+				<li style="margin: 0 0 10px 0;">
+					<span>9</span><p>SEP</p>
+					<div class="content">
+					</div>
+				</li>
+				<li>
+					<span>10</span><p>OCT</p>
+					<div class="content">
+					</div>
+				</li>
+				<li>
+					<span>11</span><p>NOV</p>
+					<div class="content">
+					</div>
+				</li>
+				<li style="margin: 0 0 10px 0;">
+					<span>12</span><p>DEC</p>
+					<div class="content">
+					</div>
+				</li>
+				
+			</ul>
+		</div>
+		<script type="text/javascript">
+		window.onload=function(){
+			var nowtime=new Date();
+			var oli=document.getElementsByTagName('li');
+			oli[nowtime.getMonth()].className='active';
+			var ocontent=document.getElementsByClassName('content');
+			ocontent[nowtime.getMonth()].style.display='block';
+			
+			var ah3=['1月活动','2月活动','3月活动','4月活动','5月活动','6月活动','7月活动','8月活动','9月活动','10月活动','11月活动','12月活动'];
+			var ap=['快过年了，大家可以商量着去哪玩吧~','八目共赏，赏金赏银赏耳光！','设计专来忽悠你 ','材料只给五七折！','啊？后退数步，鲜血狂喷','大师真行呀，大师好棒啊！','设计专来忽悠你 ','设计专来忽悠你 ','设计专来忽悠你 ','设计专来忽悠你 ','设计专来忽悠你 ','设计专来忽悠你 '];
+			var temp='';
+			for (var k=0;k<oli.length;k++) {
+				temp='<h3>'+ah3[k]+'</h3>'+'<p>'+ ap[k] +'</p>';
+				ocontent[k].innerHTML=temp;
+			}
+			
+			
+			var ocont=null;
+			for (var i=0;i<oli.length;i++) {				
+				oli[i].onmouseover=function(){
+					for (var j=0;j<oli.length;j++) {
+						oli[j].className='';
+						ocontent[j].style.display='none';
+					}
+					this.className='active';
+					ocont=this.getElementsByClassName('content')[0];
+					ocont.style.display='block';
+				}
+			}
+		}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>自定义服务的方法一factory</title>
+<meta charset="utf-8">
+  <script src="lib/angular-1.3.0.js"></script>
+    <script src="3.js"></script>
+    <script src="3_2.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+     
+<script>
+var app = angular.module("myApp", ["service","service2"]);
+    //以factory形式服务  返回的是对象
+	 // app.factory('factoryService', function() {   	 
+		// 	  return{
+  //                  name:"zhangsan",
+  //                  run: function(a, b) {
+		// 			     alert("heelo")
+		// 			  },
+		// 		   say:function(){
+		// 		   	  console.log("hello")
+		// 		   }	  
+
+		// 	  };
+		// });
+	//在控制器使用服务时，必须依赖服务
+app.controller("myCtrl", function($scope,factoryService,factoryService2) {
+           factoryService.run(); //调用服务的方法
+           factoryService.say(); 
+           factoryService2.run2(); 
+       
+    
+})
+
+ 
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			document.onclick = function(){
+				var str = 'hEllo world!';
+				
+				// 小写e
+				// var rel = new RegExp('e');
+				// 大小写e
+				// var rel = new RegExp('e', 'i');
+				
+				// var rel = /e/;
+				var rel = /e/i;
+				
+				
+				// 检查字符串中是否有e字母
+				// rel.test() 返回值: true存在/false不存在
+				alert(rel.test(str));
+			}
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

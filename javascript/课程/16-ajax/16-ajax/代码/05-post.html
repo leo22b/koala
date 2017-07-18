@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function() {
+				document.onclick = function() {
+					var request = new XMLHttpRequest();
+					request.open('POST', 'login_post.php', true);
+					// 设置请求头
+					request.setRequestHeader('content-type','application/x-www-form-urlencoded');
+					// 设置请求参数 (请求体)
+					request.send('user=张三&password=123321');
+					request.onreadystatechange = function() {
+						if(request.readyState == 4) {
+							if(request.status == 200) {
+								document.write(request.response);
+							}
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

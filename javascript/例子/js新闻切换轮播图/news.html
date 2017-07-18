@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+		*{margin: 0;padding: 0;}
+		a{
+			text-decoration: none;
+		}
+		#box{
+			width: 340px;
+			height: 350px;
+			border: 1px solid gray;
+			padding-top: 3px;
+			margin: 30px auto;
+		}		
+		#box ul{
+			padding: 0 10px 0;
+			display: none;
+			margin-top: 51px;
+			height: 100%;
+			list-style: none;
+		}
+		#box ul li{
+			width: 100%;
+			height: 29px;
+			line-height: 29px;
+			float: left;
+			border-bottom: 1px solid gray;
+		}
+		#box ul li h3{
+			display: inline;
+			margin: 0 10px;
+			float: left;
+		}
+		#box ul li i{
+			float: right;
+			font-style: normal;
+		}
+		#box ul li a{
+			display: block;
+			float: left;
+			background: none;
+			color: black;
+		}
+		#box .title a{
+			display: block;
+			float: left;
+			width: 110px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			background: black;
+			color: white;
+			font-size: 16px;
+		}
+		#box .title .active{
+			background: white;
+			color: black;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="title">
+				<a href="#">点击排行</a>
+				<a href="#" style="margin: 0 5px;">观看排行</a>
+				<a href="#">分享排行</a>
+			</div>
+			<div class="content">
+				<ul>
+					<li><h3>1</h3><a href="#">中国最美高铁今天全线通车</a><i>1</i></li>
+					<li><h3>2</h3><a href="#">中国最美高铁今天全线通车</a><i>2</i></li>
+					<li><h3>2</h3><a href="#">中国最美高铁今天全线通车</a><i>2</i></li>
+					<li><h3>3</h3><a href="#">中国最美高铁今天全线通车</a><i>3</i></li>
+					<li><h3>4</h3><a href="#">中国最美高铁今天全线通车</a><i>4</i></li>
+					<li><h3>5</h3><a href="#">中国最美高铁今天全线通车</a><i>5</i></li>
+					<li><h3>6</h3><a href="#">中国最美高铁今天全线通车</a><i>6</i></li>
+					<li><h3>7</h3><a href="#">中国最美高铁今天全线通车</a><i>7</i></li>
+					<li><h3>8</h3><a href="#">中国最美高铁今天全线通车</a><i>8</i></li>
+					<li><h3>9</h3><a href="#">中国最美高铁今天全线通车</a><i>9</i></li>
+				</ul>
+				<ul>
+					<li><h3>1</h3><a href="#">111111111111111111</a><i>1</i></li>
+					<li><h3>2</h3><a href="#">111111111111111111</a><i>2</i></li>
+					<li><h3>2</h3><a href="#">111111111111111111</a><i>2</i></li>
+					<li><h3>3</h3><a href="#">111111111111111111</a><i>3</i></li>
+					<li><h3>4</h3><a href="#">111111111111111111</a><i>4</i></li>
+					<li><h3>5</h3><a href="#">111111111111111111</a><i>5</i></li>
+					<li><h3>6</h3><a href="#">111111111111111111</a><i>6</i></li>
+					<li><h3>7</h3><a href="#">111111111111111111</a><i>7</i></li>
+					<li><h3>8</h3><a href="#">111111111111111111</a><i>8</i></li>
+					<li><h3>9</h3><a href="#">111111111111111111</a><i>9</i></li>
+				</ul>
+				<ul>
+					<li><h3>1</h3><a href="#">222222222222222222</a><i>1</i></li>
+					<li><h3>2</h3><a href="#">222222222222222222</a><i>2</i></li>
+					<li><h3>2</h3><a href="#">222222222222222222</a><i>2</i></li>
+					<li><h3>3</h3><a href="#">222222222222222222</a><i>3</i></li>
+					<li><h3>4</h3><a href="#">222222222222222222</a><i>4</i></li>
+					<li><h3>5</h3><a href="#">222222222222222222</a><i>5</i></li>
+					<li><h3>6</h3><a href="#">222222222222222222</a><i>6</i></li>
+					<li><h3>7</h3><a href="#">222222222222222222</a><i>7</i></li>
+					<li><h3>8</h3><a href="#">222222222222222222</a><i>8</i></li>
+					<li><h3>9</h3><a href="#">222222222222222222</a><i>9</i></li>
+				</ul>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			//大盒子
+			var obox=document.getElementById('box');
+			//标题  
+			var otitle=obox.getElementsByTagName('div')[0];
+			//标题里面的a
+			var oa=otitle.getElementsByTagName('a');
+			//默认第一个标题样式为active
+			oa[0].className='active';
+			//内容
+			var ocontent=obox.getElementsByTagName('div')[1];
+			//内容里面的ul
+			var olists=ocontent.getElementsByTagName('ul');
+			//默认第一个列表为显示状态
+			olists[0].style.display='block';
+			//遍历数组oa里面的a
+			for (var i=0;i<oa.length;i++) {
+				//获取对应a的下标
+				oa[i].index=i;
+				//遍历点击标题
+				oa[i].onclick=function(){
+					//遍历数组里面的列表ul
+					for (var j=0;j<olists.length;j++) {
+						//清空所有标题的样式
+						oa[j].className='';
+						//隐藏所有ul
+						olists[j].style.display='none';
+					}
+					//设置对应的标题样式  已清空其它标题样式
+					this.className='active';
+					//显示对应的ul 已隐藏其它ul
+					olists[this.index].style.display='block';
+				}
+			}
+			
+			
+		</script>
+	</body>
+</html>

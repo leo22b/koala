@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			/*
+			 * > 预解析
+			 * 		var a;
+			 * 		a = function(){ alert('1--我是函数a'); }	// 变量名和函数重名，只留函数
+			 * 		var a;
+			 * 		a = function(){alert('2--我是函数a');}
+			 * 		
+			 * 
+			 * > 逐行解析
+			 * 		alert(a); --> function(){alert('2--我是函数a');}
+			 * 		a = 1;
+			 * 		alert(a); --> 1
+			 * 		a = 3;
+			 * 		alert(a); --> 3
+			 * 		alert(a); --> 3
+			 * 
+			 */
+			alert(a);		// 1
+			var a = 1;
+
+			function a() {
+				alert('1--我是函数a');
+			}
+			alert(a);		// 1
+			var a = 3;
+			alert(a);		// 3
+
+			function a() {
+				alert('2--我是函数a');
+			}
+			alert(a);		// 3
+
+		
+		
+//			function speak(){
+//				alert(1);
+//			}
+//			alert( speak );
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			table{
+				width: 800px;
+				height: 400px;
+				border: 1px solid gray;
+				border-collapse: collapse;
+				text-align: center;
+			}
+			table td{
+				border: 1px solid gray;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				var oRow = document.getElementById("row");
+				var oCol = document.getElementById("col");
+				var oBt = document.getElementById("bt");
+				
+				oBt.onclick = function(){
+					var _row = oRow.value;
+					var _col = oCol.value;
+					
+					// 表格
+					var _table = document.createElement('table');
+					document.body.appendChild(_table);
+					
+					// 添加行
+					for(var i=0; i<_row; i++){
+						var _tr = document.createElement('tr');
+						_table.appendChild(_tr);
+						
+						// 隔行变色
+						if((i+1) % 2 == 0){
+							_tr.style.background = 'purple';
+							_tr.style.color = 'white';
+						}
+						
+						// 每行中对应单元格
+						for(var j=0; j<_col; j++){
+							var _td = document.createElement('td');
+							_td.innerHTML = (i+1) + '-' + (j+1);
+							_tr.appendChild(_td);
+						}
+						
+						// 添加删除列
+						var _deleteTd = document.createElement('td');
+						_tr.appendChild(_deleteTd);
+						var _deleteBt = document.createElement('input');
+						_deleteBt.type = 'button';
+						_deleteBt.value = '删除';
+						_deleteTd.appendChild(_deleteBt);
+						// 添加删除功能
+						_deleteBt.onclick = function(){
+							// this --> _deleteBt
+							// this.parentNode  --> _deleteTd
+							// this.parentNode.parentNode -->  对应的tr
+							_table.removeChild(this.parentNode.parentNode);
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		行: <input type="text" id="row" /> <br />
+		列: <input type="text" id="col" /> <br />
+		<input type="button" id="bt" value="生成" />
+		
+		<table>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+		</table>
+	</body>
+</html>

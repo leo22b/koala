@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app >
+<head>
+	<meta charset="UTF-8">
+	<title>控制器函数写法</title>
+	<script src="lib/angular-1.3.0.js"></script>
+</head>
+<body>
+  
+     <div ng-controller="myController1" >
+          <input type="text" ng-model="name" placeholder="your name">
+          <h1>hello {{name}}</h1>  
+     </div>
+
+
+     <hr>
+
+
+
+
+    <div ng-controller="myController2" >
+          <input type="text" ng-model="name" placeholder="your name">
+          <h1>hello {{name}}</h1>  
+     </div>
+
+
+ 
+
+
+     <script>
+      function myController1($scope){
+             $scope.name="控制器1"; //充当数据模型
+
+      }
+     function myController2($scope){
+             $scope.name="控制器2";
+
+      }
+
+     </script>
+<!-- 
+    实例讲解
+         1 ng-app指令定义了应用, ng-controller指令定义了控制器。
+
+         2 控制器的功能是用来确定程序的作用域 ，一个angularjs应用中可以有多个控制器
+
+         3:控制器是一个函数   这个函数中有一个angularjs自动注入的$scope对象参数，$scope对象充当数据模型，
+           angularjs应用程序中的数据就是这个$scope对象的属性
+         
+		 4：在js中，将函数代码全部定义在全局命名空间中不是什么好事，这样会导致冲突从而使调式变得非常困难，浪费宝贵的时间。 所以换一种写法  （看下一个domo 4.html）
+     
+
+-->
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/angular-1.3.0.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+</head>
+<body >
+<div ng-app="myApp" >
+    <a ui-sref="index">一个ui-view='index'填充了3个模板表示为xxx@index</a><br/>
+    <a ui-sref="index.content1">填充模板1</a>
+    <a ui-sref="index.content2">填充模板2</a>
+    <div ui-view="index"><div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    var app = angular.module('myApp', ['ui.router']);
+    app.config(["$stateProvider",  function ($stateProvider) {
+        $stateProvider
+            .state("index", {
+                url: '/index',
+                views:{
+                    'index':{template:"<div><div ui-view='header'></div>  <div ui-view='nav'></div> <div ui-view='body'></div>  </div>"},
+                    //这里必须要绝对定位
+                    'header@index':{template:"<div>头部内容header</div>"},
+                    'nav@index':{template:"<div>菜单内容nav</div>"},
+                    'body@index':{template:"<div>展示内容contents</div>"}
+                }
+            })
+            //绝对定位
+            .state("index.content1", {
+                url: '/content1',
+                views:{
+                    'body@index':{template:"<div>content11111111111111111</div>"}
+                    //'body@index'表时名为body的view使用index模板
+                }
+            })
+            //相对定位：该状态的里的名为body的ui-view为相对路径下的（即没有说明具体是哪个模板下的）
+            .state("index.content2", {
+                url: '/content2',
+                views:{
+                    'body':{template:"<div>content2222222222222222222</div>"}//
+                }
+            })
+
+    }]);
+
+</script>
+
+
+</html>

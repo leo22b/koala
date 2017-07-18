@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 190px;
+				height:190px;
+				background: red;
+				
+				/* 定位(为了view有参考)  ---- 包含块*/
+				/*position: relative;*/
+				
+				/* 会脱离文档流*/
+				position: absolute;
+			}
+			.view{
+				width: 50px;
+				height: 50px;
+				background: purple;
+				
+				/* 绝对定位*/
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				
+				/* 相对定位*/
+				/*position: relative;
+				right: -100px;
+				bottom: -50px;*/
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="box">
+			<!-- 显示在右下脚位置-->
+			<div class="view"></div>
+		</div>
+		
+		<p>每天一句：如果能走的时候请不要站着，能跑的时候请不要走，能飞的时候请不要跑。</p>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			// 构造函数
+			function Person(name){
+				this.name = name;
+			}
+			Person.prototype.speak = function(){
+				alert(this.name);
+			}
+			
+//			var liming = new Person('李明');
+//			liming.speak();
+//			var zhangsan = new Person('张三');
+//			zhangsan.speak();
+			
+			
+			
+			// key/value 键值对
+			var wangwu = {
+				'name': '王五',
+				'age': 15,
+				'sex': '男',
+				'speak': function(){
+					// this即wangwu对象本身
+					alert(this.name);
+				},
+				'running': function(){
+					alert(this.name + '跑...');
+				}
+			}
+			// wangwu.speak();
+			// wangwu.running();
+			
+			// 重新写
+			var zhaoliu = {}
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

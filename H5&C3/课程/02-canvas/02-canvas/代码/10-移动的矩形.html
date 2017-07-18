@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background: black;
+			}
+			#box{
+				background: white;
+				width: 300px;
+				height: 300px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oBox = document.querySelector("#box");
+				var oGC = oBox.getContext('2d');
+				var timer = null;
+				var num = 0;
+				timer = setInterval(function(){
+					num++;
+					if(num >= 250) {
+						clearInterval(timer);
+					} else {
+						//清空
+						oGC.clearRect(0, 0, oBox.width, oBox.height);
+						// 绘制
+						oGC.fillRect(num, num, 50, 50);	
+					}
+				}, 100);
+				
+				
+			}
+		</script>
+	</head>
+	
+	<body>
+		<!-- 设置画布大小: width和height属性，并不是style中的属性-->
+		<!--
+			画布默认: 300*150  (图片大小300*150原图大小)
+			画布样式: 300*300  (图片放在300*300的中显示，图片将会被拉伸)
+		-->
+		<!--<canvas id="box">
+			<i>浏览器不支持canvas</i>
+		</canvas>-->
+		
+		
+		<canvas id="box" width="300" height="300">
+			<i>浏览器不支持canvas</i>
+		</canvas>
+	</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				/*width: 100px;*/
+				width: 100px;
+				/*h:200*/
+				height: 200px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		
+		<!-- 10列-->
+		<!--ul>li*10>a[href='#']{$百度一下}-->
+		
+		<!-- 5行4列 -->
+		<!--table>tr*5>td{$}*4-->
+		
+		
+			
+		<!--  1、" > " 父子元素
+			ul>li
+		-->
+		<ul>
+			<li></li>
+		</ul>
+		
+		
+		<!-- 2、" + " 同级别元素
+			ul>li>a+span
+		-->
+		<ul>
+			<li> 
+				<a href="#"></a> 
+				<span></span>  
+			</li>
+		</ul>
+		
+		<!-- 3、 " * " 多少个元素
+			ul>li*5
+		-->
+		<!--<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>-->
+		<!-- ul>li*5>a+span -->
+		<ul>
+			<li><a href="#"></a><span></span></li>
+			<li><a href="#"></a><span></span></li>
+			<li><a href="#"></a><span></span></li>
+			<li><a href="#"></a><span></span></li>
+			<li><a href="#"></a><span></span></li>
+		</ul>
+		
+		<!-- 4、 "{}" 元素中的内容
+			h2{百度一下}
+		-->
+		<h2>百度一下</h2>
+		
+		<!-- 5、"[]" 元素中的属性
+			属性名=属性值
+			
+			// 书写顺序: 元素属性、元素中内容、元素个数
+			a[href='#']{百度一下}*5
+			
+			// 括号: 类似于四则运算中先乘除后加减
+			(a[href='#']{百度一下}+br)*5
+		-->
+		<a href="www.baidu.com">百度一下</a>
+		<br />
+		<a href="www.baidu.com">百度一下</a>
+		<br />
+		<a href="www.baidu.com">百度一下</a>
+		<br />
+		<a href="www.baidu.com">百度一下</a>
+		<br />
+		<a href="www.baidu.com">百度一下</a>
+		<br />
+		
+		<!-- 6、" $ " 序号(默认从1开始)
+			@可以改变序号起始
+			
+			ul>li*5>a[href='#']{$、百度}
+			table>tr*6>td{$}*5
+			
+			// 表示序号从5开始，而不是1开始
+			div>p{header $@5}*6
+		-->
+		<ul>
+			<li><a href="#">1、百度</a></li>
+			<li><a href="#">2、百度</a></li>
+			<li><a href="#">3、百度</a></li>
+			<li><a href="#">4、百度</a></li>
+			<li><a href="#">5、百度</a></li>
+		</ul>
+		
+		<!--table>tr*6>td{$}*5-->
+		
+		<div>
+			<a href="#img1">1</a>
+			<a href="#img2">2</a>
+			<a href="#img3">3</a>
+			<a href="#img4">4</a>
+			<a href="#img5">5</a>
+		</div>
+		
+		<div>
+			<p>header 5</p>
+			<p>header 6</p>
+			<p>header 7</p>
+			<p>header 8</p>
+			<p>header 9</p>
+			<p>header 10</p>
+		</div>
+		
+		
+		
+		<!--
+			input:text
+			input:button
+		-->
+		<input type="text" name="" id="" />
+	</body>
+</html>

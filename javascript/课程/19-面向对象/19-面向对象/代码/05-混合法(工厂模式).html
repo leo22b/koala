@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			// 类: 人类
+			function Person(name, age){
+				this.name = name;
+				this.age = age;
+			}
+			// 添加方法
+			Person.prototype.speak = function(){
+				alert('我叫' + this.name + ',今年' + this.age);
+			}
+			Person.prototype.running = function(){
+				alert(this.name + '，正在跑....');
+			}
+			
+			
+			// 张三
+			var zhangsan = new Person('张三', 18);
+			// zhangsan.speak();
+			// zhangsan.running();
+			
+			// 李明
+			var lisi = new Person('李明', 20);
+			// lisi.speak();
+			// lisi.running();
+			
+			
+			alert( zhangsan.speak === lisi.speak );
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

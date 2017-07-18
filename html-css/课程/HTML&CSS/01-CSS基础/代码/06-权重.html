@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/* 不是先后顺序问题，而且权重问题
+			 * 类型选择符: 0001
+			 * 类别选择符: 0010
+			 * id选择符:   0100
+			 */
+			.div1{
+				background: purple;
+			}
+			
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+			
+			#box{
+				background: pink;
+			}
+			
+			
+			.div2{
+				background: blue;
+			}
+			.div3{
+				background: purple;
+			}
+			.div2 .div3 .title{
+				color: red;
+			}
+			.div2 .title{
+				color: white;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<!--<p class="title">程序猿教育</p>-->
+		
+		<div class="div2">
+			<p class="title">程序猿教育</p> 
+			
+			<div class="div3">
+				<p class="title">春晓</p>
+			</div>
+		</div>
+		<br />
+		
+		<div></div>
+		
+		<br />
+		<div class="div1" id="box"></div>
+	</body>
+</html>

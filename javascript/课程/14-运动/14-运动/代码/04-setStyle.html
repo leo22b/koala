@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+		
+		<script>
+			window.onload = function(){
+				var oBox = document.getElementById("box");
+				
+				oBox.onclick = function(){
+					
+					setStyle(this,{
+						width: '300px',
+						height: '300px',
+						backgroundColor: 'purple'
+					});
+					
+				}
+				
+				function setStyle(obj, attJSON){
+					for(key in attJSON){
+						obj.style[key] = attJSON[key];
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="box"></div>
+	</body>
+</html>

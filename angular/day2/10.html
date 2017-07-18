@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <script src="lib/angular-1.3.0.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<h1 ng-style="{'background':'red','color':'green'}" style="font-size:50px">angularjs教程</h1>
+<h1 ng-style="myObj">angularjs教程</h1>
+
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope) {
+  
+  $scope.myObj = {
+    "color" : "white",
+    "background-color" : "coral",
+    "font-size" : "60px",
+    "padding" : "50px"
+  }
+});
+</script>
+
+</body>
+</html>

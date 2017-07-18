@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background: black;
+			}
+			
+			#box {
+				background: white;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				// 获取canvas元素
+				var oBox = document.getElementById("box");
+				// 绘制环境(上下文)
+				var oGC = oBox.getContext('2d');
+					
+				
+				setInterval(function(){
+					draw();
+				}, 1000);
+				
+				function draw(){
+					var x = 150;
+					var y = 150;
+					var r = 100;
+					
+					
+					// 获取当前时间
+					var nowTime = new Date();
+					// 备注: 钟表起始点是12点，绘制图的起始点是3点
+					// 时 -- 弧度
+//					var oH = (nowTime.getHours() * 30 - 90) * Math.PI / 180;
+					// 分针走到30时，时针得走一半(一小时)
+					// 一小时即30°，分针走到30时，时针走多少度？ ==> 15°
+					var oH = (nowTime.getHours() * 30 - 90 + nowTime.getMinutes()/2 ) * Math.PI / 180;
+					var oM = (nowTime.getMinutes() * 6 - 90) * Math.PI / 180;
+					var oS = (nowTime.getSeconds() * 6 - 90) * Math.PI / 180;
+					
+					// 分刻度(每刻度为6°)
+					for(var i=0; i<60; i++){
+						oGC.beginPath();
+						oGC.moveTo(x, y);
+						oGC.arc(x, y, r, i*6*Math.PI/180, (i+1)*Math.PI/180, false);
+						oGC.stroke();
+						oGC.closePath();
+					}
+					// 擦除中间部分(在上面盖上一个白色的圆形)
+					oGC.beginPath();
+					oGC.arc(x, y, r-8, 0, 360*Math.PI/180, false);
+					oGC.fillStyle = 'white';
+					oGC.fill();
+					oGC.closePath();
+				
+						
+					// 时刻度(每刻度30°)
+					for(var i=0; i<12; i++){
+						oGC.beginPath();
+						oGC.moveTo(x, y);
+						oGC.arc(x, y, r, i*30*Math.PI/180, (i+1)*Math.PI/180, false);
+						oGC.stroke();
+						oGC.closePath();
+					}
+					// 擦除中间部分
+					oGC.beginPath();
+					oGC.arc(x, y, r-14, 0, 360*Math.PI/180, false);
+					oGC.fillStyle = 'white';
+					oGC.fill();
+					oGC.closePath();
+					
+					
+					// 时
+					oGC.beginPath();
+					oGC.moveTo(x, y);
+					oGC.arc(x, y, 60, oH, oH, false);
+					oGC.lineWidth = 5;
+					oGC.strokeStyle = 'black';
+					oGC.stroke();
+					oGC.closePath();
+					
+					// 分
+					oGC.beginPath();
+					oGC.moveTo(x, y);
+					oGC.arc(x, y, 75, oM, oM, false);
+					oGC.lineWidth = 3;
+					oGC.strokeStyle = 'black';
+					oGC.stroke();
+					oGC.closePath();
+					
+					// 秒
+					oGC.beginPath();
+					oGC.moveTo(x, y);
+					oGC.arc(x, y, 85, oS, oS, false);
+					oGC.lineWidth = 1;
+					oGC.strokeStyle = 'black';
+					oGC.stroke();
+					oGC.closePath();
+				}
+				
+			}
+		</script>
+
+	</head>
+
+	<body>
+
+		<canvas id="box" width="300" height="300">
+			<i>浏览器不支持canvas</i>
+		</canvas>
+
+	</body>
+
+</html>

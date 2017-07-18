@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<!-- 内部样式表-->
+		<style type="text/css">
+			.div1{
+				height: 200px; background: red; width: 200px;
+				/* 一个属性名对应多个属性值，属性值没有顺序可言*/
+				border: solid  black 2px ;
+			}
+		</style>
+		
+		<!-- 外部样式表     通过link标签
+			href: 样式表的路径
+		-->
+		<!--<link href="03-styles.css" rel="stylesheet" type="text/css" />-->
+		
+		
+		<!--外部样式表      通过@import
+			url('样式表的路径')
+		-->
+		<style type="text/css">
+			@import url("03-styles.css");
+		</style>
+	</head>
+	
+	<body>
+		<!-- 内联样式表、行间样式、行内样式、嵌入样式
+			属性名: 属性值;
+		-->
+		<p style="width: 200px; height: 200px; background: purple;"></p>
+		
+		
+		<div class="div1"></div>
+	</body>
+</html>

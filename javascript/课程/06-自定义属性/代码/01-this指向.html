@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	
+	
+	<body>
+		
+		<input type="button" value="按钮" id="bt" />
+		
+		<script>
+
+			// 1、this这，这里 ？   -->  具体是哪里？			
+			// alert(this);  // window
+			// console.log(this);
+			
+			
+			function fn(){
+				// this ?
+				console.log(this);	
+			}
+			
+			// 2、this这，这里 ？   -->  具体是哪里？	
+			// window调用 
+			// 谁调用即指向谁(this指的是调用函数的那个对象)
+			// fn();   // window
+			
+			
+			
+			// 3、this这，这里 ？   -->  具体是哪里？
+			var oBt = document.getElementById('bt');
+			// 没有点击，会不会调用这个匿名函数？
+			// 点击，匿名函数就会被调用执行		
+//			oBt.onclick = function(){
+//				// alert(this);
+//				console.log(this);	// bt
+//			}
+			
+			// 4、this这，这里 ？   -->  具体是哪里？
+			// oBt.onclick = fn;	// bt
+			
+			
+			// 5、this这，这里 ？   -->  具体是哪里？
+			oBt.onclick = function(){
+				
+				
+				console.log(this);	// bt
+				
+				// 函数调用  
+				fn();		// window
+				
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    
+    <script type="text/javascript">
+        //  案例1: for循环生成1000个按钮(优化处理);
+        //  循环100次
+        var str = '';
+        for(var i=1; i<=1000; i++){
+            // document.write('<input type="button" value="' + i + '按钮" />');
+
+
+            // str = str + '<input type="button" value="' + i + '按钮" />';
+            str += '<input type="button" value="' + i + '按钮" />';
+        }
+        document.write(str);
+    </script>
+</body>
+</html>

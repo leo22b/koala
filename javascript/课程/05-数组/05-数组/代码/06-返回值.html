@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<script>
+			
+			// 求和功能
+			function zhangsan(a, b){
+				// document.write(a+b);
+				
+				var temp = a + b;
+				
+				// 返回值
+				return temp;
+			}
+			
+			// 帮我求5和3的和， 
+			// 张三帮我带份饭回来，直接把饭吃了
+			
+			
+			// 拿到zhangsan求的和
+			var sum = zhangsan(5,3);
+			
+//			alert(sum);
+
+
+
+
+			/*
+			 * name: 名字
+			 * sex: 性别
+			 * age: 年龄
+			 * str: 座右铭
+			 */
+			function speak(name, sex, age, str){
+				if(age < 18){
+					return '未满18岁....';
+				}
+				
+				return '我叫' + name + '，性别:' + sex + '，今年' + age + '岁。' + '座右铭:' + str + '。';
+			}
+			
+			var zhangsan = speak('张三', '男', 17, '。。。。。。。');
+			alert(zhangsan);
+			
+			alert( speak('王五', '男', 20, '你有困难我帮忙，我住隔壁我性王') );
+		</script>
+	</body>
+</html>

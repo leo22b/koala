@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background: black;
+			}
+			#box{
+				background: white;
+			}
+		</style>
+		
+		<script>
+			window.onload = function(){
+				// 获取canvas元素
+				var oBox = document.getElementById("box");
+				// 绘制环境(上下文)
+				var oGC = oBox.getContext('2d');
+				
+				// 边线样式
+				 oGC.strokeStyle = 'blue';
+				 
+				// 边线大小
+				oGC.lineWidth = 10;
+				
+				// 边线连接点
+				oGC.lineJoin = 'bevel';
+				 
+				// 绘制矩形 strokeRect(x, y, w, h);
+				// oGC.strokeRect(100, 100, 100, 100);
+				 oGC.strokeRect(30, 30, 70, 50);
+				
+				
+				// 填充样式
+				// oGC.fillStyle = 'red';
+				// 填充矩形
+				// oGC.fillRect(30, 30, 50, 50);
+			}
+		</script>
+		
+	</head>
+	
+	<body>
+		
+		<canvas id="box" width="300" height="300">
+			<i>浏览器不支持canvas</i>
+		</canvas>
+		
+	</body>
+</html>

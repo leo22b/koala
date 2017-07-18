@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table{
+				width: 400px;
+				border: 1px solid gray;
+				text-align: center;
+				border-collapse: collapse;
+			}
+			table td{
+				border: 1px solid gray;
+			}
+		</style>
+		
+		<script>
+			window.onload = function(){
+				var oId = document.getElementById("iD");
+				var oName = document.getElementById("name");
+				var oTel = document.getElementById("tel");
+				var oBt = document.getElementById("bt");
+				var oTable = document.getElementsByTagName('table')[0];
+				console.log(oTable.firstChild.nextSibling);
+				
+				oBt.onclick = function(){
+					var _tr = document.createElement('tr');
+					// 往tobody中添加tr
+					oTable.firstChild.nextSibling.appendChild(_tr);
+					
+					var _td1 = document.createElement('td');
+					_td1.innerHTML = oId.value;
+					_tr.appendChild(_td1);
+					
+					var _td2 = document.createElement('td');
+					_td2.innerHTML = oName.value;
+					_tr.appendChild(_td2);
+					
+					var _td3 = document.createElement('td');
+					_td3.innerHTML = oTel.value;
+					_tr.appendChild(_td3);
+					
+					var _td4 = document.createElement('td');
+					_td4.innerHTML = '<a href="#">删除</a>';
+					_tr.appendChild(_td4);
+					// 添加删除功能
+					_td4.firstChild.onclick = function(){
+				
+						// table --> tbody
+						// oTable.firstChild.nextSibling --> tdoby
+						oTable.firstChild.nextSibling.removeChild(this.parentNode.parentNode);
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		ID: <input type="text" name="" id="iD" /> 
+		NAME: <input type="text" name="" id="name" /> 
+		TEL: <input type="text" name="" id="tel" /> 
+		<input type="button" value="保存" id="bt" />
+		
+		<br />
+		<br />
+		<table>
+			<tr>
+				<td>序号</td>
+				<td>名字</td>
+				<td>联系</td>
+				<td>操作</td>
+			</tr>
+		</table>
+	</body>
+</html>

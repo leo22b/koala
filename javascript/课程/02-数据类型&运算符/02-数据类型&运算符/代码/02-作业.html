@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<input type="text" id="text1" />
+		<select name="" id="select">
+			<!-- 
+				有value属性，选项对应的即是value属性名对应的属性值;
+			-->
+			<option value="+">加法</option>
+			<option value="-">减法</option>
+			<option value="*">乘法</option>
+			<option value="/">除法</option>
+			<!-- 没有value属性，选项内容即是value值；-->
+			<option>%</option>
+		</select>
+		<input type="text" id="text2" />
+		<input type="button" id="bt" value="计算" />
+		
+		
+		<script type="text/javascript">
+			// 1、获取对应元素
+			var oText1 = document.getElementById('text1');
+			var oText2 = document.getElementById('text2');
+			var oSelect = document.getElementById('select');
+			var oBt = document.getElementById('bt');
+			
+			// 2、点击操作
+			oBt.onclick = function(){
+				// alert(1);
+				
+				// 获取输入框中内容
+				var num1 = Number(oText1.value);
+				var num2 = Number(oText2.value);
+				
+				
+				// 判断哪种类型
+				// 如果是加法操作，那么下面的5个if语句都会执行
+//				if( oSelect.value == '+'){	// 加法
+//					alert( num1 + num2 );
+//				}
+//				
+//				if( oSelect.value == '-'){	// 减法s
+//					alert( num1 - num2 );
+//				}
+//				
+//				if( oSelect.value == '*'){	// 乘法
+//					alert( num1 * num2 );
+//				}
+//				
+//				if( oSelect.value == '/'){	// 除法
+//					alert( num1 / num2 );
+//				}
+//				
+//				if( oSelect.value == '%'){	// 取余
+//					alert( num1 % num2 );
+//				}
+
+				
+				// 如果是加法操作，只有一个if会执行
+				if( oSelect.value == '+'){	// 加法
+					alert( num1 + num2 );
+				} else if( oSelect.value == '-'){	// 减法s
+					alert( num1 - num2 );
+				} else if( oSelect.value == '*'){	// 乘法
+					alert( num1 * num2 );
+				} else if( oSelect.value == '/'){	// 除法
+					alert( num1 / num2 );
+				} else if( oSelect.value == '%'){	// 取余
+					alert( num1 % num2 );
+				}
+
+			}
+		</script>
+	</body>
+</html>

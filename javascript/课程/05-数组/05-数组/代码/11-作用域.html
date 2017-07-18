@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<script>
+			
+			/*
+			 * > 预解析
+			 * 		var b;
+			 * 		fn1 = function(){ alert(a); a = 10; b = 3;}
+			 * 
+			 * > 逐行解析
+			 * 		b = 10;
+			 * 		fn1()函数调用:
+			 * 			> 预解析
+			 * 		
+			 * 			> 逐行解析
+			 * 				alert(a);	// 没有这个变量 -->  程序错误
+			 */
+			
+			var b = 10;
+			
+			function fn1(){
+				alert(a);			// 报错
+				
+				a = 10;
+				b = 3;
+				
+//				alert(a);			// 允许
+			}
+			
+			fn1();
+			alert(b);	
+		</script>
+	</body>
+</html>

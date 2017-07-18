@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	
+	<body>
+		<script>
+			/*
+			 案例8: 对应打印出下列图案2
+		                  *          第1行: 1个* + 6个空格 = 7
+		                * *　         第2行: 2个* + 5个空格 = 7
+		              * * *           第3行: 3个* + 4个空格 = 7
+		            * * * *           第4行: 4个* + 3个空格 = 7
+		          * * * * *			  第5行: 5个* + 2个空格 = 7
+		        * * * * * *			  第6行: 6个* + 1个空格 = 7
+		      * * * * * * *           第7行: 7个* + 0个空格 = 7 
+		     
+		     输出多少？ 最大的行数 = 空格 + *
+		     
+		     	max = 4
+		     		第1行: 1个*, (4-1)个空格
+		     		第2行: 2个*, (4-2)个空格
+			 */
+			
+			var max = 20;
+			for(var i=1; i<=max; i++){	// i表示的即为行
+				// 需要输出多少个空格？  max - i
+				for(var k=0; k<(max-i); k++){
+					// document.write('&nbsp;');
+					document.write('^');
+				}
+			
+				// 不是输出下标
+				// document.write(i);
+				// 输出的是对应的* [第i行，i个*]
+				for(var j=0; j<i; j++){
+					document.write('*');
+				}
+				
+				document.write('<br/>');
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>照片墙</title>
+<style>
+	*{
+		margin:0;padding:0;
+		}
+	body{background:gray}
+	.box{
+		width:800px;
+		margin:50px auto;
+		}
+	img{
+		width:130px;
+		height:180px;
+		transition:all 2s;
+		border-width:8px;
+		border-style:solid;
+		border-color:pink;
+		border-radius:15px;
+		box-shadow: 10px 10px 5px black;
+		}
+	img:hover{
+		transform:rotate(0deg) scale(1.2);
+		position:relative;
+		z-index:1;
+		}
+	.image01{
+			transform: rotate(10deg) ;border-color:#ccc;
+			}
+	.image02{
+			transform: rotate(-7deg);border-color:#000;
+			}
+	.image03{
+			transform: rotate(8deg);border-color:#F9C;
+			}
+	.image04{
+			transform: rotate(-8deg);border-color:#CFF;
+			}
+	.image05{
+			transform: rotate(10deg);border-color:0cc;
+			}
+	.image06{
+			transform: rotate(-6deg);border-color:#696;
+			}
+	.image07{
+			transform: rotate(6deg);border-color:#pink;
+			}
+	.image08{
+			transform: rotate(-12deg);border-color:#3C9;
+			}
+	.image09{
+			transform: rotate(8deg);border-color:#fff;
+			}
+</style>
+</head>
+
+<body>
+<div class="box">
+	<img class="image01" src="images/1.jpg"/>
+	<img class="image02" src="images/2.jpg"/>
+	<img class="image03" src="images/3.jpg"/>
+	<img class="image04" src="images/4.jpg"/>
+	<img class="image05" src="images/1.jpg"/>
+	<img class="image06" src="images/2.jpg"/>
+	<img class="image07" src="images/3.jpg"/>
+	<img class="image08" src="images/4.jpg"/>
+	<img class="image09" src="images/1.jpg"/>
+</div>
+</body>
+</html>

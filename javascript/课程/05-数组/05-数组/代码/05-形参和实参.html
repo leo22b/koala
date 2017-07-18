@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<script>
+			var a = 10;
+			var b = 3;
+			
+			// 求和函数
+			function sumFn(n, m){
+				// n和m形参，形参改变时，实参不会受影响
+				n = n + 1;	// 形参改变, 11
+				m = m + 2;	// 形参改变, 5
+				document.writeln(n+m);
+			}
+			
+			
+			// a和b实参
+			sumFn(a, b);
+			
+			alert(a);	// 10
+			alert(b);	// 3
+		</script>
+	</body>
+</html>

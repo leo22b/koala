@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+			.view2{
+				width: 100px;
+				height: 100px;
+				background: blue;
+			}
+			
+			.image{
+				width: 100px;
+				height: 100px;
+				background: purple;
+			}
+		</style>
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script>
+			window.onload = function(){
+				// getElementsByClassName
+				// var oView = document.getElementsByClassName('view view2')[0];
+				
+				// $
+				// querySelector
+				// var oBox = document.querySelector('#box');
+				// var oView = document.querySelector('.view');
+				// var oView = document.querySelector('div');
+				// var oView = document.querySelector('.image');
+				// var oView = document.querySelector('[title=hello]');
+				
+				
+				// var aLi = document.querySelectorAll('li');
+				// var oView = document.querySelectorAll('#box')[0];
+				var aHref = document.querySelectorAll('ul li a');
+				
+				
+				document.onclick = function(){
+					// oView.style.background = 'purple';
+					
+					// oView.innerHTML = '测试';
+					
+//					for(var i=0; i<aLi.length; i++){
+//						aLi[i].style.background = 'red';
+//					}
+
+
+					for(var i=0; i<aHref.length; i++){
+						aHref[i].style.color = 'red';
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="box" class="view"></div>
+		<div class="view test view2"></div>
+		<div class="image view" title="hello"></div>
+		
+		<a href="#">百度一下</a>
+		
+		<ul>
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li><a href="#">6</a></li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background: black;
+			}
+			
+			#box {
+				background: white;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				// 获取canvas元素
+				var oBox = document.getElementById("box");
+				// 绘制环境(上下文)
+				var oGC = oBox.getContext('2d');
+				
+				
+				oGC.save();	// 保存绘图状态(无任何状态)
+				oGC.fillStyle = 'blue';
+				oGC.rotate(10*Math.PI/180);	// 旋转
+				oGC.fillRect(30, 30, 50, 50);
+				oGC.restore();	// 恢复上次保存的图片状态(此时，没有任何状态)
+				
+				
+				oGC.save();
+				oGC.fillStyle = 'red';
+				oGC.rotate(20*Math.PI/180);	// 旋转
+				oGC.fillRect(100, 100, 50, 50);
+				oGC.restore();
+				
+				
+				oGC.fillStyle = 'purple';
+				oGC.fillRect(200, 200, 50, 50);
+				
+				
+				// 清除画布
+				// oGC.clearRect(100, 100, 100, 100);
+			}
+		</script>
+
+	</head>
+
+	<body>
+
+		<canvas id="box" width="300" height="300">
+			<i>浏览器不支持canvas</i>
+		</canvas>
+
+	</body>
+
+</html>

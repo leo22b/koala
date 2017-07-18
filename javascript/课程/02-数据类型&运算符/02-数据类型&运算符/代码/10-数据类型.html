@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		
+		<script>
+			
+			// 1、Undefined类型 【友情提示: 定义变量时给上初始值】
+			var a;	// 系统对于未初始化的，给上一个Undefined未定义
+			// alert(typeof a);		// a变量是有定义的
+			// alert(typeof b);		// b是没有定义的
+			
+			// alert(a);	// 输出undefind
+			// alert(b);	// 报错，程序就会终止，即不会往下执行!!! b is not defined
+			
+			// 2、Null类型
+			var box = null;
+			// alert(typeof box);
+			// alert(box);
+			
+			// true即表示两个是相等的
+			// alert(null == undefined);
+			
+			
+			// 3、Boolean类型
+			var d = true;
+			// alert(typeof d);
+			var str1 = 'hello world';
+			
+			// 强制转换
+			// alert( Boolean(str1) );
+			
+			// 隐式转换(因为在if中，只有true、false)
+//			if(str1){	// 符合条件的,true
+//				alert('真');
+//			} else {
+//				alert('假');
+//			}
+
+
+			// alert( Boolean(10) );		// true，只要非0的数值，都是为true
+			// alert( Boolean(0) );		// false
+			
+			// alert( Boolean('sdfjadsfj') );		// true，只要是非空字符串，就是为true
+			// alert( Boolean(''));			// false
+			
+			
+			
+			// 4、Number类型
+			var i = 10;		// 十进制
+			
+			var j = 012;		// 八进制，0开头，0~7
+			var k = 079;		// 不是八进制，八进制是0~7
+			
+			var h = 0x21aaaa;	// 十六进制，0x开头，0~9，a~f
+			
+			
+			// NaN，非数值
+			// alert( 10/'a' );		// 就算不能操作，也不能报错，NaN
+			
+			alert( NaN == NaN );		// false，NaN与任何值都不相等!!
+		</script>
+	</body>
+</html>

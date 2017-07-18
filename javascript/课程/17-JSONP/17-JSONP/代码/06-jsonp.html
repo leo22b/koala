@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			// 获取到数据之后的操作
+			function showList1(data){
+				console.log(data);
+				var oUl = document.createElement('ul');
+				document.body.appendChild(oUl);
+				for(var i=0; i<data.length; i++){
+					var oLi = document.createElement('li');
+					oLi.innerHTML = data[i];
+					oUl.appendChild(oLi);
+				}
+			}
+			
+			
+			function sayHello(data){
+				alert(data);
+			}
+			
+			function speak(data){
+				alert(data);
+			}
+		</script>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var oBt1 = document.getElementById("bt1");
+				var oBt2 = document.getElementById("bt2");
+				var oBt3 = document.getElementById("bt3");
+				
+				oBt1.onclick = function(){
+					var oScript = document.createElement('script');
+					oScript.src = 'data/03-data.php?t=news&callBack=showList1';
+					document.head.appendChild(oScript);
+				}
+				
+				oBt2.onclick = function(){
+					var oScritp = document.createElement('script');
+					oScritp.src = 'data/03-data.php?t=num&callBack=sayHello'
+					document.head.appendChild(oScritp);
+				}
+				
+				oBt3.onclick = function(){
+					var oScript = document.createElement('script');
+					oScript.src = 'data/03-data.php?t=str&callBack=speak';
+					document.head.appendChild(oScript);
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<input type="button" value="按钮1" id="bt1" />
+		<input type="button" value="按钮2" id="bt2" />
+		<input type="button" value="按钮3" id="bt3" />
+	</body>
+</html>

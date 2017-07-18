@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	
+	<body>
+		<script>
+			// 求和功能
+			function test1(num1, num2){
+				// alert(num1+num2);
+				
+				// 返回值
+				return num1 + num2;
+			}
+			
+			
+			// var a = 0;
+			// a = test1(10, 20);
+			
+			
+			// 四则运算功能
+			// str运算符(+、-、*、/、%)
+			function test2(num1, num2, str){
+				switch(str){
+					case '+':
+						return num1 + num2;
+						
+						// 检测会不会调用
+						alert(1);
+						alert(2);
+						alert(3);
+					break;
+					
+					case '-':
+						return num1 - num2;
+					break;
+					
+					case '*':
+						return num1 * num2;
+					break;
+					
+					case '/':
+						return num1 / num2;
+					break;
+					
+					case '%':
+						return num1 % num2;
+					break;
+					
+					default:
+						alert('请检查参数，参数有误....');
+						return 0;
+					break;
+				}
+			}
+			
+			 alert( test2(20, 10, "+") );
+			
+			
+			function test3(){
+				for(var i=1; i<=5; i++){
+					if(i == 3){
+						return;
+					}
+					
+					document.write(i);
+					document.write('<br/>');
+				}
+			}
+			
+			test3();
+		</script>
+	</body>
+</html>

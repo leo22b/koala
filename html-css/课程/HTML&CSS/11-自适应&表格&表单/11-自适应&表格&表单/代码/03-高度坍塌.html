@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 1000px;
+				/*height: ;*/
+				background: red;
+				
+				
+				/* 高度坍塌1*/
+				/*overflow: hidden;*/
+			}
+			
+			.left{
+				width: 100px;
+				height: 100px;
+				background: blue;
+				float: left;
+			}
+			.right{
+				width: 300px;
+				height: 300px;
+				background: purple;
+				float: right;
+			}
+			
+			.test{
+				/* 高度坍塌2: 清除浮动*/
+				clear: both;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<!-- box盒子高度由 left和right撑开
+			但是left和right浮动，浮动是会脱离文档流，即box “无内容”，导致高度坍塌
+			
+			引起高度坍塌的原因是: 浮动
+		-->
+		<div class="box">
+			<div class="left"></div>
+			<div class="right"></div>
+			
+			<div class="test"></div>
+		</div>
+		
+		<!-- 假如有10个地方出现或更多地方出现高度坍塌，怎么办？-->
+		
+		<p>每天一句：如果你不能接受最差的我，你就不配拥有最好的我 ！如果你在我最低谷的时候离开， 你就不要在我最辉煌的时候回来 ！—-科比</p>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var aLi = document.querySelectorAll("li");
+				
+				
+				// 获取对应下标
+//				for(var i=0; i<aLi.length; i++){
+//					// 解决方式，添加自定义属性
+//					aLi[i].index = i;
+//					aLi[i].onclick = function(){
+//						// alert(i); 不行的
+//						alert(this.index);
+//					}
+//				}
+
+
+				// 闭包方式
+				for(var i=0; i<aLi.length; i++){
+					// 函数调用，并且传递参数
+					(function(index){	// index固定值
+						// console.log(index);
+						
+						aLi[index].onclick = function(){
+							alert(index);
+						}
+						
+					})(i);
+					
+					// (0)(0)
+					// (1)(1)
+					// (2)(2)
+					// (3)(3)
+					// (4)(4)...
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<ul>
+			<li>1、星期一</li>
+			<li>2、星期一</li>
+			<li>3、星期一</li>
+			<li>4、星期一</li>
+			<li>5、星期一</li>
+			<li>6、星期一</li>
+			<li>7、星期一</li>
+		</ul>
+	</body>
+</html>

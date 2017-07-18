@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oContent = document.getElementById("content");
+				var oBt = document.getElementById("bt");
+				
+				/*
+				 123456@qq.com
+				 haha_123@163.com
+				 123nihao_qq@sina.com
+				 */
+				
+				// [\w!#$%&'*+/=?^_`{|}~-]+   (?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*   @(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?
+				
+				var re=/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+				
+				oBt.onclick = function(){
+					if(rel.test(oContent.value)){
+						// alert('账号格式正确');
+						alert(oContent.value.match(rel));
+					} else {
+						alert('账号格式错误!!!');
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<input type="text" id="content" />
+		<input type="button" value="登陆" id="bt" />
+	</body>
+</html>

@@ -1,0 +1,22 @@
+.btn .badge {
+position: relative;
+top: -1px;
+}
+.btn-xs .badge {
+top: 0;
+padding: 1px 5px;
+}
+a.badge:hover,
+a.badge:focus {
+color: #fff;
+text-decoration: none;
+cursor: pointer;
+}
+a.list-group-item.active> .badge,
+.nav-pills > .active > a > .badge {
+color: #428bca;
+background-color: #fff;
+}
+.nav-pills > li > a > .badge {
+margin-left: 3px;
+}

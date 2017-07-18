@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <script src="lib/angular-1.3.0.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+        
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope) {
+  
+  var defau = {
+     "tel":1233,
+     "city":"shengzhen",
+     "name":"lisi"
+  }
+  var opti = {
+      "name":"zhangsan",
+      "age":"20"
+  }
+  var newobj=angular.extend({},defau,opti)
+  console.log(newobj)//Object { tel: 1233, city: "shengzhen", name: "zhangsan", age: "20" }
+
+/*案列解析
+angular.extend() 相当于jquery中的$.extend()都是用来合并对象生成 新的对象
+
+新生成对象属性是两个对象所有属性的合集 ，如果opti对象中的属性与defau对象中的属性相同时，
+opti属性替换defau中相同的属性
+
+
+*/
+// 插件写法
+ $.fn.plugin=function(option){
+          var default={"color":"red","background":"green"}
+           var newobj=$.extend({},default,option)
+           this.css({"color":newobj.color})   
+ }
+
+ $("div").plugin({"color":"blue"});
+
+
+		function text(opti){
+
+              var defau = {
+			     "tel":1233,
+			     "city":"shengzhen",
+			     "name":"lisi"
+              }
+           var newobj=angular.extend({},defau,opti)
+		       console.log(newobj.tel)
+		}
+
+          text({"name":"zhangsan"});
+});
+
+
+</script>
+
+</body>
+</html>

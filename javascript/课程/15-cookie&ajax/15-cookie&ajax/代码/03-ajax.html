@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#header{
+				height: 100px;
+				background: red;
+			}
+			
+			#footer{
+				height: 100px;
+				background: blue;
+			}
+			
+			#content{
+				/*background: gray;*/
+				overflow: hidden;
+				width: 1110px;
+				margin: 0 auto;
+			}
+			#content .section{
+				width: 200px;
+				height: 360px;
+				font-size: 12px;
+				margin: 10px;
+				border: 1px solid gray;
+				float: left;
+			}
+			#content .section img{
+				width: 200px;
+				height: 300px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oContent = document.getElementById("content");
+				
+				// 1、打开浏览器
+				var request = new XMLHttpRequest();
+				
+				// 2、输入网址
+				request.open('GET', 'http://127.0.0.1/dataSource/shops.json', true);
+				
+				// 3、发送(回车)
+				request.send();
+				
+				// 4、接收到数据
+				request.onreadystatechange = function(){
+					if(request.readyState == 4){
+						// 获取数据成功
+						if(request.status == 200){
+							// 1、json数据解析
+							var dataSource = JSON.parse(request.response);
+							
+							// 2、获取商品的数组
+							var shops = dataSource.data;
+							
+							// 3、遍历(先打印，再说添加到界面中)
+							for(var i=0; i<shops.length; i++){
+								// shops[i]即一个商品详情
+								// console.log(shops[i].describe);
+								/*
+								 <div class="section">
+									<img src="http://gaitaobao3.alicdn.com/tfscom/TB1LKkGGVXXXXb4XpXXXXXXXXXX.jpg" />
+									<p>	</p>
+								 </div>
+								 */
+								
+								var oSection = document.createElement('div');
+								oSection.className = 'section';
+								oContent.appendChild(oSection);
+								
+								var oImg = document.createElement('img');
+								oImg.src = shops[i].zs_pic;
+								oSection.appendChild(oImg);
+								
+								var oDec = document.createElement('p');
+								oDec.innerHTML = shops[i].describe.substring(0, 40) + '.....';
+								oSection.appendChild(oDec);
+							}
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		
+		<div id="header"></div>
+		
+		<div id="content">
+			<!--<div class="section">
+				<img src="http://gaitaobao3.alicdn.com/tfscom/TB1LKkGGVXXXXb4XpXXXXXXXXXX.jpg" />
+				<p>
+					酒红极颜色很正，相信会有很多姑娘都喜欢酒红色，特别显气质，也显皮肤气色好，内搭简洁的毛衣+打底裤，上班或者休闲都可以穿。
+				</p>
+			</div>
+			
+			<div class="section">
+				<img src="http://gaitaobao3.alicdn.com/tfscom/TB1LKkGGVXXXXb4XpXXXXXXXXXX.jpg" />
+				<p>
+					酒红极颜色很正，相信会有很多姑娘都喜欢酒红色，特别显气质，也显皮肤气色好，内搭简洁的毛衣+打底裤，上班或者休闲都可以穿。
+				</p>
+			</div>
+			
+			<div class="section">
+				<img src="http://gaitaobao3.alicdn.com/tfscom/TB1LKkGGVXXXXb4XpXXXXXXXXXX.jpg" />
+				<p>
+					酒红极颜色很正，相信会有很多姑娘都喜欢酒红色，特别显气质，也显皮肤气色好，内搭简洁的毛衣+打底裤，上班或者休闲都可以穿。
+				</p>
+			</div>
+			
+			<div class="section">
+				<img src="http://gaitaobao3.alicdn.com/tfscom/TB1LKkGGVXXXXb4XpXXXXXXXXXX.jpg" />
+				<p>
+					酒红极颜色很正，相信会有很多姑娘都喜欢酒红色，特别显气质，也显皮肤气色好，内搭简洁的毛衣+打底裤，上班或者休闲都可以穿。
+				</p>
+			</div>
+			
+			<div class="section">
+				<img src="http://gaitaobao3.alicdn.com/tfscom/TB1LKkGGVXXXXb4XpXXXXXXXXXX.jpg" />
+				<p>
+					酒红极颜色很正，相信会有很多姑娘都喜欢酒红色，特别显气质，也显皮肤气色好，内搭简洁的毛衣+打底裤，上班或者休闲都可以穿。
+				</p>
+			</div>
+			
+			<div class="section">
+				<img src="http://gaitaobao3.alicdn.com/tfscom/TB1LKkGGVXXXXb4XpXXXXXXXXXX.jpg" />
+				<p>
+					酒红极颜色很正，相信会有很多姑娘都喜欢酒红色，特别显气质，也显皮肤气色好，内搭简洁的毛衣+打底裤，上班或者休闲都可以穿。
+				</p>
+			</div>-->
+		</div>
+		
+		<div id="footer"></div>
+		
+	</body>
+</html>

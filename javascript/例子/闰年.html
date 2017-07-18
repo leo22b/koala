@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+	</head>
+	<body>
+		<input type="text" id="text"/>
+		<input type="button" id="btn1" value="判断" />
+		
+		<script type="text/javascript">	
+			var obtn=document.getElementById('btn1');
+			var otext=document.getElementById('text');
+			obtn.onclick=function(){
+				var num1=Number(otext.value);
+				if(num1!=""){
+					if(num1!=Number(otext.value)){
+						alert("请输入数字!")
+					}
+					else{
+						if((num1 % 4==0&& num1%100!=0)||(num1%100==0&&num1%400==0)){
+							alert('闰年');
+						}
+						else{
+							alert('平年')
+						}
+					}
+					
+				}
+				else{
+					alert("请输入数字!");
+				}
+			}
+		</script>
+	</body>
+</html>

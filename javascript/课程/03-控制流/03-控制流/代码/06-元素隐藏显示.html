@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<!--<input type="button" value="显示" id="bt1" />
+		<input type="button" value="隐藏" id="bt2" />-->
+		<input type="button" value="显示/隐藏" id="bt3" />
+		<br />
+		<img src="kb3.jpg" id="image" />
+		
+		
+		<script>
+			var oBt1 = document.getElementById('bt1');
+			var oBt2 = document.getElementById('bt2');
+			var oBt3 = document.getElementById('bt3');
+			var oImg = document.getElementById('image');
+			
+			// 默认是显示的
+			var isShow = true;
+			
+			// 显示
+//			oBt1.onclick = function(){
+//				oImg.style.display = 'block';
+//			}
+//			
+//			// 隐藏
+//			oBt2.onclick = function(){
+//				oImg.style.display = 'none';
+//			}
+			
+			oBt3.onclick = function(){
+				// 改变状态 false
+				isShow = !isShow;
+				
+				console.log(isShow);
+				
+//				if(isShow){	// 显示
+//					oImg.style.display = 'block';
+//				} else {		// 隐藏
+//					oImg.style.display = 'none';
+//				}
+	
+	
+				// 三目运算符
+				oImg.style.display = isShow ? 'block' : 'none';
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/angular-1.3.0.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+
+</head>
+<body >
+<div ng-app="myApp" >
+    <a ui-sref="index">点我显示index内容</a>
+    <div ui-view="header" style="background: red"></div>
+    <div ui-view="nav" style="background: grey"></div>
+    <div ui-view="body" style="background: yellow"></div>
+</div>
+</body>
+
+<script type="text/javascript">
+    var app = angular.module('myApp', ['ui.router']);
+    app.config(["$stateProvider",  function ($stateProvider) {
+        $stateProvider
+            .state("index", {
+                url: '/index',
+                views:{
+                    'header':{template:"<div>头部内容</div>"},
+                    'nav':{template:"<div>菜单内容</div>"},
+                    'body':{template:"<div>展示内容</div>"}
+                }
+            })
+
+    }]);
+
+</script>
+
+</html>

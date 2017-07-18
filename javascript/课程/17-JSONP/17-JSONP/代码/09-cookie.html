@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oBt1 = document.getElementById("bt1");
+				var oBt2 = document.getElementById("bt2");
+				
+				oBt1.onclick = function(){
+					document.cookie = 'name=张三';
+					document.cookie = 'id=001';
+					alert('存储数据成功');
+				}
+				
+				oBt2.onclick = function(){
+					alert(document.cookie);
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<input type="button" value="存储数据" id="bt1" />
+		<input type="button" value="获取数据" id="bt2" />
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/angular-1.3.0.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <script src="js/t8.js"></script>
+</head>
+<body>
+<div ui-view></div>
+<a ui-sref="state1">视图1</a>
+<a ui-sref="state2">视图2</a>
+
+<!-- <script>
+ /**
+ * Created by Administrator on 2017/5/31.
+ */
+var myApp = angular.module('myApp', ['ui.router']);
+myApp.config(function ($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/state1');
+    $stateProvider.state('state1', {
+        url: '/state1',
+        templateUrl: '../template/state1.html'
+    })
+    .state('state1.list', {
+        url: '/list',
+        templateUrl: '../template/state1.list.html',
+        controller: function ($scope) {
+            $scope.items = ['rose', 'jack', 'karl'];
+        }
+    })
+    .state('state2.list', {
+        url: '/list',
+        templateUrl: '../template/state2.list.html',
+        controller: function ($scope) {
+            $scope.items = ['apple', 'pear', 'pine'];
+        }
+    })
+    .state('state2', {
+        url: '/state2',
+        templateUrl: '../template/state2.html',
+
+    });
+
+
+    //$stateProvider.state('state2',{});
+})
+
+
+</script> -->
+
+</body>
+</html>

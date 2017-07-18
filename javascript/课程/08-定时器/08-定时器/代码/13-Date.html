@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="zyz.js" ></script>
+		<script>
+			$(function(){
+				document.onclick = function(){
+					var nowTime = new Date();
+					// document.write(nowTime.getTime());
+					
+					// 年
+					document.write( nowTime.getFullYear()+'-' );
+
+					// 月0~11
+					document.write( nowTime.getMonth()+1+'-' );
+
+					// 日
+					document.write( nowTime.getDate() +' ');
+
+					// 星期
+//					document.write( nowTime.getDay() );
+
+					// 时
+					document.write( nowTime.getHours() +':');
+
+					// 分钟
+					document.write( nowTime.getMinutes() +':' );
+
+					// 秒
+					document.write( nowTime.getSeconds());
+				}
+			})
+		</script>
+	</head>
+	
+	
+	<body>
+	</body>
+</html>

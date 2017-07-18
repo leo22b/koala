@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 80px;
+				background: red;
+				/* 添加border就会出现问题*/
+				border: 1px solid gray;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oBox= document.getElementById("box");
+				
+				var timer = null;
+				oBox.onmouseover = function(){
+					/*
+					 oBox.style.width = oBox.offsetWidth - 1
+					 
+					 开始: 202px
+					 width = 202 - 1 = 201px ==> border: 1px   ==>203px;   
+					 width = 203 - 1 = 202px ==> border: 1px    ==204px
+					 */
+					timer = setInterval(function(){
+						// 有边框时是有问题
+//						oBox.style.width = oBox.offsetWidth - 1 + 'px';
+
+						oBox.style.width =  getStyle(oBox, 'width') - 1 + 'px';
+					}, 100);
+				}
+				oBox.onmouseout = function(){
+					clearInterval(timer);
+				}
+				
+				
+				function getStyle(obj, att){
+					return parseInt(window.getComputedStyle ? getComputedStyle(obj)[att] :  obj.currentStyle[att]);
+				}
+			}
+		</script>
+	</head>
+	
+	
+	<body>
+		<div id="box"></div>
+	</body>
+</html>

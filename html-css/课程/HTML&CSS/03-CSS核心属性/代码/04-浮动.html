@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				/*widht: 299px*/
+				width: 330px;
+				height: 300px;
+				border: 1px solid gray;
+			}
+			.div1,.div2,.div3{
+				width: 100px;
+				height: 100px;
+				color: white;
+				
+				/* 浮动 (脱离文档流)
+				 * 左浮动: 从左到右进行排版，如果位置不够，就换行(div1、div2、div3)
+				 * 右浮动: div3、div2、div1
+				 */
+				/*float: right;*/
+			}
+			
+			.div1{
+				background: blue;
+				/*float: right;*/
+			}
+			.div2{
+				background: purple;
+				/*float: left;*/
+			}
+			.div3{
+				background: green;
+				/*float: left;*/
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="box">
+			<div class="div1">div1</div>
+			<div class="div2">div2</div>
+			<div class="div3">div3</div>
+		</div>
+	</body>
+</html>

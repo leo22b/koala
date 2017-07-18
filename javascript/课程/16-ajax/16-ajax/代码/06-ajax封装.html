@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="ajax.js"></script>
+		<script type="text/javascript">
+			document.onclick = function(){
+//				ajax('get', 'login_get.php', 'user=zhangsna&password=789456', function(response){
+//					console.log(response);
+//				});
+
+				ajax('post', 'login_post.php', 'user=张三&password=qq123', function(response){
+					console.log(response);
+				})
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

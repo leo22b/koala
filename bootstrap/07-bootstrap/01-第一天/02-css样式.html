@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<!-- 编码类型-->
+		<meta charset="utf-8">
+		<!-- 如果在IE浏览器下则使用最新的标准渲染当前文档-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 视口-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- 标题-->
+		<title>Bootstrap 101 Template</title>
+
+		<!-- Bootstrap样式表 -->
+		<link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- 条件注释(兼容性) -->
+		<!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+		<style type="text/css">
+			mark {
+				background: red;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<!-- 1、排版(统一样式) -->
+		<h1>
+			h1. Bootstrap heading
+			<small>副标题</small>
+		</h1>
+		<h2>
+			h2. Bootstrap heading
+			<spa class="small"> 副标题在哪里？ </div>
+		</h2>
+		<h3>h3. Bootstrap heading</h3>
+		<h4>h4. Bootstrap heading</h4>
+		<h5>h5. Bootstrap heading</h5>
+		<h6>h6. Bootstrap heading</h6>
+
+		<p class="text-center text-uppercase">
+			<abbr title="bootstrap">boot</abbr>: <mark>Nullam</mark> quis risus eget urna mollis ornare vel eu leo. <del> Cum sociis natoque penatibus et magnis dis parturient montes</del>, nascetur ridiculus mus. Nullam id dolor <mark>id</mark> <ins> nibh ultricies vehicula.</ins>
+		</p>
+
+		<blockquote class="blockquote-reverse">
+			<p>
+				注: 为什么选择Bootstrap？
+			</p>
+			<footer>zyz</footer>
+		</blockquote>
+
+		<ul class="list-inline">
+			<li>
+				<a href="#">首页1</a>
+			</li>
+			<li>
+				<a href="#">首页2</a>
+			</li>
+			<li>
+				<a href="#">首页3</a>
+			</li>
+		</ul>
+		<br />
+		<br />
+		<br />
+
+		<!-- 2、按钮-->
+		<!--<input type="button" value="按钮" />-->
+		<a href="#" class="btn btn-default" role='button'>首页</a>
+		<button class="btn btn-default">财经</button>
+		<input class="btn btn-default" value="体育" type="button" />
+
+		<a href="#" class="btn btn-danger btn-lg">测试</a>
+		<a href="#" class="btn btn-info">测试</a>
+		<a href="#" class="btn btn-success btn-sm">测试</a>
+		<a href="#" class="btn btn-primary btn-xs">测试</a>
+		<a href="#" class="btn btn-warning" disabled="disabled">测试</a>
+		<br />
+		<br />
+		<br />
+
+		<!-- 3、表格-->
+		<style type="text/css">
+			.myTable {
+				width: 500px;
+			}
+		</style>
+		<table class="table table-striped table-bordered table-hover table-condensed myTable">
+			<tr class="active">
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+			</tr>
+			<tr class="success">
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+			</tr>
+			<tr class="info">
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+			</tr>
+			<tr class="warning">
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+			</tr>
+			<tr class="danger">
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+			</tr>
+		</table>
+
+		<!-- 4、表单-->
+		<form class="form-inline">
+			<div class="form-group">
+				<label>账号:</label>
+				<input type="text" />
+			</div>
+
+			<div class="form-group">
+				<label>密码:</label>
+				<input type="text" />
+			</div>
+		</form>
+
+		<div class="form-group has-success has-feedback">
+			<label class="control-label" for="inputSuccess2">请输入密码</label>
+			<input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
+			
+			<!-- 5图标-->
+			<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+			<span id="inputSuccess2Status" class="sr-only">(success)</span>
+		</div>
+		
+		
+			<!-- 5、图片-->
+			<img src="Snip20170626_21.png" class="img-responsive img-thumbnail"  />
+			
+			
+			<!-- 6、辅助类-->
+			<p class="text-warning">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh</p>
+			<p class="text-primary">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh</p>
+			<p class="bg-info">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh</p>
+			<p class="bg-success">
+				Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh
+				
+				<span class="caret"></span>
+			</p>
+			
+			<p class="bg-danger">
+				Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
+				
+				<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</p>
+
+
+			<p class="bg-info hidden">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh</p>
+			
+			
+			<!-- 7、代码类-->
+			<p>
+				usce dapibus, tellus ac cursus commodo,  <code>for</code> tortor mauris nibh.
+				<kbd> 1、打开‘我的电脑’</kbd>
+				<kbd> 2、进入C盘 </kbd>
+			</p>
+			
+			<pre>
+				hello world!
+			</pre>
+			
+		<br />
+		<br />
+		<br />
+		<!-- Bootstrap依赖于jQuery的 -->
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<!-- bootstrap 脚本代码 -->
+		<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	</body>
+
+</html>

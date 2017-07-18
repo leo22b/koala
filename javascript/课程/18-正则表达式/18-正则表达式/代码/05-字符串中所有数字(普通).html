@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			document.onclick = function() {
+				var str = '1jjjkh 1231 423kfad 331dsf rewr23fds';
+
+				var temp = '';
+				for(var i = 0; i < str.length; i++) {
+					if(str.charAt(i) >= '0' && str.charAt(i) <= '9') {
+						temp += str.charAt(i);
+					} else {
+						if(temp) {
+//							document.write(temp + '<br/>');
+							arr.push(temp);
+							temp = '';
+						}
+					}
+
+				}
+
+				document.write(arr);
+			}
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

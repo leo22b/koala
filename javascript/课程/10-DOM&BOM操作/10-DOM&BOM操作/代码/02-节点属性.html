@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+				var oBox = document.getElementById("box");
+				// 自定义属性
+				// oBox.tab = 10;
+				
+				// 获取节点属性 -- 1
+				// alert(oBox.tab);
+				
+				// 获取节点属性 -- 2
+				// alert( oBox.getAttribute('data-tab') );
+				
+				
+				// 设置节点属性
+				// oBox.style.color = 'red';
+				
+				// style="color: red;"
+				// oBox.setAttribute('style', 'color: red;');
+				// oBox.setAttribute('class', 'view1');
+				
+				// 删除节点属性
+				oBox.removeAttribute('class');
+			}
+		</script>
+	</head>
+	
+	<body>
+		<!-- 自定义属性: data-属性名  -->
+		<div id="box" class="active view" data-tab="10" >
+			hello world!
+		</div>
+	</body>
+</html>

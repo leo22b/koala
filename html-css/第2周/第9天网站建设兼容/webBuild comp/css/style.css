@@ -1,0 +1,298 @@
+*{margin: 0;padding: 0;}
+/*body{background: green;}*/
+/********01头部header********/
+img{
+	border: 0;
+}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden;
+	height: 0;
+}
+#header{
+	width: 1100px;
+	height: 65px;
+	margin: 0 auto;
+	background: #f2f2f2;
+	overflow: hidden;
+}
+#header .case1 img{
+	margin-left: 50px;
+	margin-top: 15px;
+	float: left;
+}
+#header .case1{
+	width: 300px;
+	height: 65px;
+	float: left;
+}
+#header .case2{
+	/*width: 450px;*/
+	/*height: 20px;*/
+	float: right;
+	margin-top: 30px;
+	overflow: hidden;
+}
+#header .case2 p{
+	float: left;
+	margin-right: 42px;
+	font-size: 12px;
+	display: inline;
+}
+#header .case2 a{
+	color: #494949;
+	text-decoration: none;
+}
+/********02横幅banner********/
+#banner{
+	width: 1100px;
+	height: 424px;
+	margin: 0 auto;
+}
+#banner img{
+	display: block;
+}
+/********03内容content********/
+#content{
+	width: 1100px;
+	background: #F2F2F2;
+	margin: 0 auto;
+	overflow: hidden;
+}
+/********盒子01********/
+#content .case3{
+	width: 470px;
+	height: 288px;
+	margin-left: 50px;
+	float: left;
+	display: inline;
+}
+#content h3{
+	color: #5fc4ee;
+	font-size: 14px;
+	width: 120px;
+	height: 126px;
+	float: left;
+}
+#content .case3 .case4 .case5{
+	width: 350px;
+	height: 126px;
+	float: left;
+}
+#content .case3 .case4 p{
+	width: 338px;
+	height: 126px;
+	float: left;
+	font-size: 12px;
+	line-height: 20px;
+}
+#content .case3 .case6 .case7{
+	width: 350px;
+	height: 126px;
+	float: left;
+}
+#content .case3 .case6 p{
+	width: 338px;
+	height: 126px;
+	float: left;
+	font-size: 12px;
+	line-height: 20px;
+}
+
+/********盒子02********/
+#content .case8 img{
+	float: left;
+}
+#content .case8{
+	width: 540px;
+	height: 288px;
+	float: left;
+	margin-left: 40px;
+}
+#content .case8 .box1{
+	width: 488px;
+	height: 217px;
+	float: left;
+	margin-top: 21px;
+}
+#content .case9{
+	width: 154px;
+	height: 217px;
+	float: left;
+}
+#content .case10{
+	width: 162px;
+	height: 217px;
+	float: left;
+	margin: 0 5px;
+}
+#content .case11{
+	width: 162px;
+	height: 217px;
+	float: left;
+}
+
+/********04关于about********/
+#about{
+	width: 1100px;
+	/*height: 430px;*/
+	margin: 0 auto;
+	background: #F2F2F2;
+	overflow: hidden;
+}
+#about .box{
+	margin-top: 66px;
+	display: inline;
+}
+#about h2{
+	font-size: 18px;
+}
+#about p{
+	font-size: 10px;
+	line-height: 20px;
+	color: #747474;
+}
+#about a{
+	color: #747474;
+	text-decoration:none;
+}
+#about .p1{
+	text-align: right;
+	margin-right: 10px;
+	font-size: 10px;
+}
+#about .box{
+	/*height: 362px;*/
+	float: left;
+}
+#about .box1{
+	width: 300px;
+	margin-left: 50px;
+}
+#about .box1 .border1{
+	/*height: 165px;*/
+}
+#about .box1 .border1 p{
+	width: 290px;
+}
+#about .box1 .p2 .span{
+	width: 134px;
+}
+#about .box1 .p2{
+	width: 190px;
+}
+#about .box1 .p3{
+	width: 210px;
+	margin-top: 30px;
+}
+#about .box1 i{
+	width: 50px;
+	height: 50px;
+	background: #00b5ee;
+	float: left;
+	margin-top: 108px;
+}
+#about .box2{
+	width: 298px;
+}
+#about .box2 .border2{
+	height: 165px;
+	border-right: 2px solid #e4e4e4;
+	border-left: 2px solid #e4e4e4;
+}
+#about .box2 h2{
+	margin-left: 40px;
+}
+#about .box2 img{
+	margin-left: 26px;
+	margin-top: 12px;
+}
+#about .box2 .p4{
+	margin-left: 26px;
+}
+#about .box2 .p4 a{
+	color: #747474;
+	text-decoration:none;
+}
+#about .box3{
+	width: 400px;
+	margin-right: 50px;
+}
+#about .box3 .border3{
+	height: 165px;
+}
+#about .box3 h2{
+	padding-left: 22px;
+}
+#about .box3 p{
+	margin-left: 20px;
+	line-height: 23px;
+}
+#about .box3 p a{
+	color: #747474;
+	text-decoration:none;
+}
+#about .box3 .border3 .a1{
+	margin-right: -10px;
+}
+#about .box3 span{
+	margin-right: 7px;
+	float: right;
+}
+
+/********05尾部footer********/
+#footer{
+	width: 985px;
+	height: 230px;
+	background: #383838;
+	margin: 0 auto;
+	padding: 0 68px 26px 47px;
+}
+#footer .bx1{
+	width: 100%;
+	padding-top: 47px;
+	float: left;
+}
+#footer .bx1 p{
+	float: left;
+	line-height: 20px;
+	color:#979797 ;
+}
+#footer .bx1 a{
+	color:#cacaca ;
+	text-decoration:none;
+	font-size: 13px;
+}
+#footer .bx1 .pp1 span{
+	font-size: 22px;
+}
+#footer .bx1 .right{
+	width: 165px;
+	float: right;
+}
+#footer .bx2{
+	width: 425px;
+	height: 100px;
+	float: left;
+}
+#footer .bx2 p{
+	font-size: 12px;
+	line-height: 22px;
+	color: #7f7f7f;
+}
+#footer .bx2 .pp2{
+	line-height: 26px;
+	text-align: left;
+}
+#footer .bx3{
+	width: 100%;
+	height: 20px;
+	font-size: 12px;
+	text-align: center;
+	color: #7f7f7f;
+	margin-top:20px;
+	float: left;
+}

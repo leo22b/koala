@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="box"></div>
+		
+		
+		<script>
+			// 点击box，弹出提示框 'Hello world!'
+			
+			// 1、获取元素
+			var oBox = document.getElementById('box');
+			
+			// 2、点击操作
+			oBox.onclick = function(){
+				alert('Hello world!');
+			}
+		</script>
+	</body>
+</html>

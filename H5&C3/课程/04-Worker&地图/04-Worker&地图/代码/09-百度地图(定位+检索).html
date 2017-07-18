@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<style type="text/css">
+			body,
+			html,
+			#allmap {
+				width: 100%;
+				height: 100%;
+				/*width: 800px;*/
+				/*height: 400px;*/
+				overflow: hidden;
+				margin: 0;
+				font-family: "微软雅黑";
+			}
+		</style>
+		<!-- 注意: 修改成自己的App key-->
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wTnjIz5RQtSSEElpOplWH2LIvK7lGYHS"></script>
+		<title>地图展示</title>
+	</head>
+
+	<body>
+		<input type="button" value="定位" id="bt" /><br />
+		<input type="text" placeholder="检索内容" id="text" />
+		<input type="button" value=" 搜索" id="search" />
+		<div id="allmap"></div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(116.331398, 39.897445);
+	map.centerAndZoom(point, 15);
+	
+	// 当前位置
+	var currentPoint = new BMap.Point(116.331398, 39.897445);
+
+	// 定位
+	var oBt = document.querySelector("#bt");
+	oBt.onclick = function() {
+		var geolocation = new BMap.Geolocation();
+		geolocation.getCurrentPosition(function(r) {
+			if(this.getStatus() == BMAP_STATUS_SUCCESS) { // 定位成功
+				// 改变当前位置
+				currentPoint = r.point;
+
+				// 创建一个标注
+				var mk = new BMap.Marker(r.point);
+				// 将标注添加到地图中
+				map.addOverlay(mk);
+				// 移动到对应标注的位置
+				map.centerAndZoom(r.point, 18);
+
+				// 信息窗口相关参数	
+				var opts = {
+					width: 200, // 信息窗口宽度
+					height: 100, // 信息窗口高度
+					title: "海底捞王府井店", // 信息窗口标题
+					enableMessage: true, //设置允许信息窗发送短息
+					message: "亲耐滴，晚上一起吃个饭吧？戳下面的链接看下地址喔~"
+				}
+				var infoWindow = new BMap.InfoWindow("地址：北京市东城区王府井大街88号乐天银泰百货八层", opts); // 创建信息窗口对象 
+				mk.addEventListener("click", function() {
+					map.openInfoWindow(infoWindow, r.point); //开启信息窗口
+				});
+
+			} else { // 定位失败
+				alert('failed' + this.getStatus());
+			}
+		}, { enableHighAccuracy: true });
+	}
+
+	// 检索
+	var oSeach = document.querySelector("#search");
+	var oText = document.querySelector("#text");
+
+	oSeach.onclick = function() {
+		// 删除覆盖物
+		map.clearOverlays();         
+		
+		// var mPoint = new BMap.Point(116.404, 39.915);
+		map.enableScrollWheelZoom();
+
+		var circle = new BMap.Circle(currentPoint, 1000, { fillColor: "blue", strokeWeight: 1, fillOpacity: 0.3, strokeOpacity: 0.3 });
+		map.addOverlay(circle);
+		var local = new BMap.LocalSearch(map, { renderOptions: { map: map, autoViewport: false } });
+		local.searchNearby(oText.value, currentPoint, 1000);
+	}
+</script>

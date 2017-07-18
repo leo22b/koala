@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			i{
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				background: red;
+				color: white;
+				line-height: 30px;
+				text-align: center;
+				font-size: 20px;
+			}
+		</style>
+
+		<script type="text/javascript" src="zyz.js"></script>
+		<script>
+			$(function() {
+				var aI = document.getElementsByTagName('i');
+				
+				document.onclick = function() {
+					setInterval(function() {
+						// 倒计时 = 结束时间 - 当前时间
+
+						var time = new Date();
+
+						// 当前时间
+						var nowTime = time.getTime();
+
+						// 设置结束时间 
+						// 5月6号12点0分0秒
+						time.setDate(6);
+						time.setHours(12);
+						time.setMinutes(0);
+						time.setSeconds(0);
+						var endTime = time.getTime();
+
+						// 差值
+						var offsetTime = (endTime - nowTime) / 1000;
+						// document.write(offsetTime);
+
+						var s = parseInt(offsetTime % 60);
+						var m = parseInt(offsetTime / 60 % 60);
+						var h = parseInt(offsetTime / 60 / 60);
+
+//						str = '<i>' + h + '</i>' + ':';
+//						str += '<i>' + m + '</i>' + ':';
+//						str += '<i>' + s + '</i>';
+//						document.write(str);
+						aI[0].innerHTML = h;
+						aI[1].innerHTML = m;
+						aI[2].innerHTML = s;
+					}, 1000);
+				}
+			});
+		</script>
+	</head>
+
+	<body>
+		<i></i> : <i></i> : <i></i>
+	</body>
+
+</html>

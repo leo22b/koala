@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			i{
+				background: yellow
+			}
+		</style>
+	</head>
+	
+	
+	<body>
+		
+		<input type="text" name="" id="text1" />
+		<input type="button" value="查找" id="bt1" /><br />
+		<input type="text" name="" id="text2" />
+		<input type="button" value="替换" id="bt2" /><br />
+		
+		<p>
+			# 每天一句：成长的速度取决于在过程中发现和解决问题的速度，最终这是一个量变引发质变的过程；# 每天一句：成长的速度取决于在过程中发现和解决问题的速度，最终这是一个量变引发质变的过程；# 每天一句：成长的速度取决于在过程中发现和解决问题的速度，最终这是一个量变引发质变的过程；# 每天一句：成长的速度取决于在过程中发现和解决问题的速度，最终这是一个量变引发质变的过程；# 每天一句：成长的速度取决于在过程中发现和解决问题的速度，最终这是一个量变引发质变的过程；
+		</p>
+		
+		
+		
+		<script>
+			var oText1 = document.getElementById("text1");
+			var oText2 = document.getElementById("text2");
+			var oBt1 = document.getElementById("bt1");
+			var oBt2 = document.getElementById("bt2");
+			var oContent = document.getElementsByTagName('p')[0];
+			// 将内容保存起来
+			var content = oContent.innerHTML;
+			
+			oBt1.onclick = function(){
+				// 恢复原样
+				oContent.innerHTML = content;
+				
+				var search = oText1.value;
+				// 用search拆分成数组
+				// oContent.innerHTML.split(search);
+				
+				// 替换过程
+				var temp = '<i>' + search +  '</i>';
+				oContent.innerHTML = oContent.innerHTML.split(search).join(temp);
+			}
+			
+			oBt2.onclick = function(){
+				var search = oText1.value;
+				var temp = oText2.value;
+				
+				oContent.innerHTML = oContent.innerHTML.split(search).join(temp);
+				
+				// 修改
+				content = oContent.innerHTML;
+			}
+		</script>
+	</body>
+</html>

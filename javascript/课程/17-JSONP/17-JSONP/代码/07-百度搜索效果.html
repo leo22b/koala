@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 300px;
+				margin: 50px auto;
+			}
+			#text{
+				width: 298px;
+				height: 30px;
+				border: 1px solid gray;
+				font-size: 24px;
+			}
+			#list{
+				width: 298px;
+				border: 1px solid gray;
+				list-style: none;
+				border-top: 0;
+				display: none;
+			}
+			#list li{
+				line-height: 30px;
+			}
+			#list li a{
+				text-decoration: none;
+				color: black;
+				display: block;
+			}
+			#list li a:hover{
+				background: rgba(1,1,1, 0.3);
+			}
+		</style>
+		
+		<script type="text/javascript">
+			// 获取到数据的操作
+			function setList(data){
+				 console.log(data);
+				var oList = document.getElementById("list");
+				
+				// 清空
+				oList.innerHTML = '';
+				
+				// 添加
+				var dataArr = data.s;
+				for(var i=0; i<dataArr.length; i++){
+					var oLi = document.createElement('li');
+					oList.appendChild(oLi);
+					
+					var oA = document.createElement('a');
+					oA.innerHTML = dataArr[i];
+					oA.href = 'https://www.baidu.com/s?wd=' + dataArr[i];
+					oLi.appendChild(oA);
+				}
+			}
+		</script>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var oText = document.getElementById("text");
+				var oList = document.getElementById("list");
+				
+				oText.onkeyup = function(){
+					if(this.value.length){
+						var oScript = document.createElement('script');
+						oScript.src = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=' + this.value + '&cb=setList';
+						document.head.appendChild(oScript);
+						
+						// 显示
+						oList.style.display = 'block';
+					} else {
+						oList.style.display = 'none';
+					}
+				}
+				
+			}
+		</script>
+	</head>
+	
+	<!--
+		检索的接口: 
+		完整版(get请求方式)
+		https://www.baidu.com/  s  ? ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&  wd=nba  &rsv_pq=a8b7f16400004fc1&rsv_t=0419chdXTRWxXXaW6qjoeF9PQM3BLscrDu05nm4aOlMhgnVWIava3f%2FLLXU&rqlang=cn&rsv_enter=1&rsv_sug3=3&rsv_sug1=4&rsv_sug7=100
+		
+		简化版(wd=检索的关键字)
+		https://www.baidu.com/s?wd=nike
+		
+		
+		关键字列表接口:
+		完整版
+		https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su ?wd=nike%20kobe%20  &  json=1  &  p=3  &  sid=22161_1464_21115_17001_20929  &  req=2  &  bs=nike%20kobe&csor=10  &  pwd=nike%20kobe   &  cb=jQuery110209053721789804854_1495078243821 & _=1495078243824
+		简化版1(wd=检索的关键字,cb=函数名)
+		https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=nike&cb=jQuery110209053721789804854_1495078243821
+		返回值
+		jQuery110209053721789804854_1495078243821({"q":"nike kobe ","p":false,"bs":"nike kobe","csor":"10","status":0,"g":[ { "q": "nike kobe x", "t": "n", "st": { "q": "nike kobe x", "new": 0 } }, { "q": "nike kobe 8", "t": "n", "st": { "q": "nike kobe 8", "new": 0 } }, { "q": "nike kobe x ep", "t": "n", "st": { "q": "nike kobe x ep", "new": 0 } }, { "q": "nike kobe 9 elite", "t": "n", "st": { "q": "nike kobe 9 elite", "new": 0 } }, { "q": "nike kobe ad nxt", "t": "n", "st": { "q": "nike kobe ad nxt", "new": 0 } }, { "q": "nike kobe ad", "t": "n", "st": { "q": "nike kobe ad", "new": 0 } }, { "q": "nike kobe 11", "t": "n", "st": { "q": "nike kobe 11", "new": 0 } }, { "q": "nike kobe 衣服", "t": "n", "st": { "q": "nike kobe 衣服", "new": 0 } }, { "q": "nike kobe a.d. nxt", "t": "n", "st": { "q": "nike kobe a.d. nxt", "new": 0 } }, { "q": "nike kobe a.d. nxt logo", "t": "n", "st": { "q": "nike kobe a.d. nxt logo", "new": 0 } } ],"s":["nike kobe x","nike kobe 8","nike kobe x ep","nike kobe 9 elite","nike kobe ad nxt","nike kobe ad","nike kobe 11","nike kobe 衣服","nike kobe a.d. nxt","nike kobe a.d. nxt logo"});
+		
+		
+		简化版2
+		https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=nike&cb=zyz
+		返回值
+		zyz({q:"nike",p:false,s:["nike官网","nike air force 1","nike香港官网","nike air max","nike+","妮柯斯","nike id","nike美国官网","尼克胡哲","尼克斯"]})
+		
+	-->
+	
+	<body>
+		<div id="box">
+			<input type="text" id="text" />
+			<ul id="list">
+				<!--<li> <a href="#"> 关键字1 </a> </li>
+				<li> <a href="#"> 关键字1 </a> </li>
+				<li> <a href="#"> 关键字1 </a> </li>-->
+			</ul>
+		</div>
+	</body>
+</html>

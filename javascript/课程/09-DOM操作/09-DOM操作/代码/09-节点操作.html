@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			a{
+				color: blue;
+				text-decoration: none;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+
+				//				var str = '<ul class="view">';
+				//				
+				//				for(var i=0; i<10; i++){
+				//					str += '<li>' + (i+1) + '、hello world!</li>'
+				//				}
+				//				
+				//				str += '</ul>'
+				//				document.write(str);
+
+				// createElement
+				// 创建元素节点
+				var oTitle = document.createElement('h1');
+				// 设置元素节点
+				oTitle.innerHTML = '你好!';
+				// 添加元素节点到界面中
+				document.body.appendChild(oTitle);
+
+				var oBd = document.createElement('a');
+				oBd.href = '#';
+				oBd.innerHTML = '百度一下';
+
+				// oTitle和oBd是同级别关系
+				 document.body.appendChild(oBd);
+
+				// oTitle和oBd是父子关系
+//				oTitle.appendChild(oBd);
+
+				// p标签显示 '<h1> 标题标签 </h1>'
+				var oContent = document.createElement('p');
+				// 是给p添加了一个h1标签
+				 oContent.innerHTML = '<h1> 标题标签 </h1>';
+				// createTextNode(显示的文本) 创建文本节点
+				var oText = document.createTextNode('<h1> 标题标签 </h1>');
+				oContent.appendChild(oText); 
+				document.body.appendChild(oContent);
+
+				// insertBefore(): 将新节点插入到前面
+				var oList = document.getElementById("list");
+				// 创建元素节点
+				var oLi = document.createElement('li');
+				oLi.innerHTML = '测试代码';
+				// 在oList前面添加oLi
+//				 oList.parentNode.insertBefore(oLi, oList);
+				 
+				/* 示例代码
+				insertBefore(newChild: Node, refChild: Node): NodeNode
+				
+				var obj=document.getElementById('EmailAddress');
+				var newElement=document.createElement('label');
+				var refElement=obj.childNodes[3];
+				obj.insertBefore(newElement, refElement);
+				 */
+				// 往头部追加子元素
+				 oList.insertBefore(oLi, oList.firstChild);
+				// 往后面追加子元素
+//				 oList.appendChild(oLi);
+			}
+		</script>
+	</head>
+
+	<body>
+		<ul id="list">
+			<li>1、hello world!</li>
+			<li>2、hello world!</li>
+			<li>3、hello world!</li>
+		</ul>
+	</body>
+
+</html>

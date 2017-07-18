@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			form{
+				width: 360px;
+			}
+			
+			fieldset{
+				/*border-color: red;*/
+				border: 0;
+				border-top: 1px solid #c9dca6;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<form>
+			<fieldset>
+				<legend>个人信息</legend>
+				姓名*<input type="text" required="required" /> <br />
+				地址*<input type="text" required /> <br />
+				出生*
+				<select>
+					<option>1</option>
+					<option>2</option>
+				</select>
+				<select>
+					<option>01</option>
+					<option>02</option>
+				</select>
+				<select>
+					<option>1979</option>
+					<option>1980</option>
+				</select>
+				<br />
+				性别*
+				<select>
+					<option>男</option>
+					<option>女</option>
+				</select>
+			</fieldset>
+			
+			<fieldset>
+				<legend>其他信息</legend>
+				
+				<!-- 是可以相互嵌套的-->
+				<fieldset>
+					<legend>你喜欢这个表单吗?</legend>
+					<input type="radio" name="line1" />喜欢
+					<input type="radio" name="line1" />不喜欢
+				</fieldset>
+				
+				<fieldset>
+					<legend>你喜欢什么运动?</legend>
+					<input type="checkbox" />篮球
+					<input type="checkbox" />足球
+					<input type="checkbox" />排球
+				</fieldset>
+			</fieldset>
+			
+			<fieldset>
+				<legend>照片</legend>
+				
+				<input type="file" value="上传照片" />
+			</fieldset>
+			
+			<input type="submit" value="提交" />
+		</form>
+	</body>
+</html>

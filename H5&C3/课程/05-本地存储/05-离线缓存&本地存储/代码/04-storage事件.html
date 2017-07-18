@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function() {
+					var oBt1 = document.querySelector("#bt1");
+					var oBt2 = document.querySelector("#bt2");
+					var oText = document.querySelector("#text");
+
+					oBt1.onclick = function() {
+						window.localStorage.setItem('text', oText.value);
+					}
+					oBt2.onclick = function() {
+						window.localStorage.removeItem('text');
+					}
+
+					window.addEventListener('storage', function(ev) {
+							ev = ev || window.event;
+							console.log('key:' + ev.key);
+							console.log('newValue:' + ev.newValue);
+							console.log('oldVaue:' + ev.oldValue);
+							 console.log('url:' + ev.url);  
+					});
+			}
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="text" />
+		<input type="button" id="bt1" value="存储" />
+		<input type="button" id="bt2" value="删除" />
+	</body>
+
+</html>

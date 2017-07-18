@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+		</style>
+	</head>
+	
+	<body>
+		<input type="button" value="显示" id="bt1" />
+		<input type="button" value="隐藏" id="bt2" />
+		<img src="IMG_1710.JPG" id="img" />
+		
+		
+		<script>
+			var oBt1 = document.getElementById('bt1');
+			var oBt2 = document.getElementById('bt2');
+			var oImg = document.getElementById('img');
+			
+			
+			oBt1.onclick = function(){
+				// alert(1);
+				
+				oImg.style.display = 'block';
+			}
+			oBt2.onclick = function(){
+				// alert(2);
+				
+				oImg.style.display = 'none';
+			}
+		</script>
+	</body>
+</html>

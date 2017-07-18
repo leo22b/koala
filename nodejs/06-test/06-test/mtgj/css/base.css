@@ -1,0 +1,166 @@
+/* 公共样式*/
+
+
+/* 所有元素都重置样式*/
+/**{
+	margin: 0;
+	padding: 0;
+}*/
+
+
+/* 统一样式*/
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+	margin:0; 
+	padding:0; 
+} 
+li{
+	list-style: none;
+}
+img{
+	border: 0;
+	display: block;
+}
+body{
+	font-size: 13px;
+	font-family: "微软雅黑","宋体";
+}
+a{
+	text-decoration: none;
+	color: #888888;
+}
+i,em{
+	font-style: normal;
+}
+b,strong{
+	font-weight: normal;
+}
+
+/* 清除浮动*/
+.clearfix:after{
+	content: '';
+	display: block;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden;
+	height: 0;
+}
+
+
+
+.center{
+	width: 1140px;
+	margin: 0 auto;
+}
+.float-l{
+	float: left;
+}
+.float-r{
+	float: right;
+}
+
+/**************** 头部 ****************/
+#header .header-content{
+	height: 104px;
+	/*background: red;*/
+}
+
+#header .header-content .logo{
+	width: 400px;
+	height: 82px;
+	/*background: blue;*/
+	padding-top: 22px;
+}
+#header .header-content .logo .view{
+	width: 116px;
+	height: 82px;
+	text-align: center;
+	font-style: italic;
+	color: #999999;
+	background: url(../img/line1.png) no-repeat left 8px;
+}
+
+#header .header-content .nav{
+	width: 640px;
+	/*height: 104px;*/
+	height: 74px;
+	/*background: purple;*/
+	padding-top:30px;
+}
+#header .header-content .nav a{
+	float: left;
+	height: 74px;
+	line-height: 74px;
+	width: 90px;
+	text-align: center;
+	color: black;
+}
+#header .header-content .nav .active{
+	color: white;
+	background: url(../img/navBg.png);
+}
+
+
+/**************** 尾部 ****************/
+#footer{
+	background: #363636;
+	height: 108px;
+	padding-top: 30px;
+	text-align: center;
+	color: #7b7b7b;
+}
+#footer p{
+	height: 30px;
+}
+#footer p i{
+	margin: 0 8px;
+}
+
+
+/**************** 路径 ****************/
+#path{
+	background: url(../img/locationBg.png);
+}
+#path .path-content{
+	height: 200px;
+	overflow: hidden;
+}
+#path .path-content h2{
+	font-size: 22px;
+	color: white;
+	margin-top: 68px;
+	margin-bottom: 25px;
+}
+#path .path-content h2 i{
+	color: #ffb39c;
+	line-height: 24px;
+	font-size: 16px;
+}
+#path .path-content h2 span{
+	color: #ffb39c;
+	margin: 0 14px;
+}
+#path .path-content p{
+	color: #ffb39c;
+	font-size: 12px;
+}
+#path .path-content p i{
+	color: white;
+}
+
+
+/**************** 发展历程 ****************/
+#course{
+	background: #f7f7f7;
+}
+#course .course-content .content{
+	width: 380px;
+	height: 60px;
+	/*background: red;*/
+	padding-right: 13px;
+	text-align: right;
+}
+#course .course-content .content a{
+	margin-left: 34px;
+	line-height: 60px;
+	color: black;
+}

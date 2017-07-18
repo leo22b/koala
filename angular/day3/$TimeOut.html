@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+<head>
+    <meta charset="UTF-8">
+    <title>$timeout 服务</title>
+    <script src="lib/angular-1.3.0.js"></script>
+</head>
+<body ng-controller="settimeout">
+<h1>{{test}}</h1>
+<h2>{{current}}</h2>
+<script>
+    var demo = angular.module('demo', []);
+    demo.controller("settimeout", function ($scope, $timeout, $interval) {
+        $scope.test = "这里一会会变";
+        $timeout(function () {
+            $scope.test = "我是变化后的内容";
+        }, 2000);
+        $scope.current = new Date().toLocaleString();
+        $interval(function () {
+            $scope.current = new Date().toLocaleString()
+        }, 1000)
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;padding: 0;
+			}
+			#box {
+				width: 320px;
+				height: 568px;
+				border: 1px solid black;
+				overflow: auto;
+			}
+			.case {
+				width: 310px;
+				padding: 5px;
+				border-bottom: 1px solid gray;
+			}
+			.case a{
+				text-decoration: none;
+				color: black;
+				font-weight: bold;
+				display: block;
+				height: 35px;
+				line-height: 35px;
+			}
+			.case a img{
+				width: 30px;
+				height: 30px;
+				margin-right: 7px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<!--<div class="case">
+				<a href="#">
+					<img src="img/icon_00.png"/>1、名字
+				</a>
+				<p>每天一句：成长的速度取决于在过程中发现和解决问题的速度，最终这是一个量变引发质变的过程</p>
+			</div>-->
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+				var obox=document.getElementById('box');
+				var ocase=null;
+				var oa=null;
+				var oimg=null;
+				var ocontent=null;
+				var op=null;
+				
+				var del=null;
+				for (var i=0;i<10;i++) {
+					if (i==3) {
+						del=document.createElement('div');
+						del.className='case';
+						obox.appendChild(del);
+						
+						oa=document.createElement('a');
+						oa.href='#';
+						del.appendChild(oa);
+						
+						ocontent=document.createTextNode('~\(≧▽≦)/~啦啦啦');
+						oa.appendChild(ocontent);
+						
+						op=document.createElement('p');
+						op.innerHTML='广告广告广告广告广告广告广告广';
+						del.appendChild(op);
+					}
+					
+					
+					ocase=document.createElement('div');
+					ocase.className='case';
+					obox.appendChild(ocase);
+				
+					oa=document.createElement('a');
+					oa.href='#';
+					ocase.appendChild(oa);
+				
+					oimg=document.createElement('img');
+					oimg.src='img/icon_0'+i+'.png';
+					oa.appendChild(oimg);
+					
+					ocontent=document.createTextNode(i+'、名字');
+					oa.appendChild(ocontent);
+					
+					op=document.createElement('p');
+					op.innerHTML='每天一句：成长的速度取决于在过程中发现和解决问题的速度，最终这是一个量变引发质变的过程';
+					ocase.appendChild(op);
+				}
+				setTimeout(function(){
+					obox.removeChild(del);
+				},3000);
+			}
+		</script>
+	</body>
+</html>

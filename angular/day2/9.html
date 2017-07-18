@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <script src="lib/angular-1.3.0.js"></script>
+<style>
+     .even{background: red}
+     .odd{background: green}
+</style>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+ 
+      <table >  <!-- 遍历数组并排序 -->
+              <tr ng-repeat="x in records | orderBy:'country'" > 
+                    <td>键:{{x.Name}}</td>
+                    <td>索引:{{$index}} </td>
+                    <td>值:{{x.Country}}</td>  
+
+              </tr>
+      </table>
+<hr>
+   <!--    遍历对象 -->
+       <table >
+              <tr ng-repeat="(k,v) in myObj " > 
+                    <td>键：{{k}}</td>
+                    <td>索引:{{$index}}</td>
+                    <td>值:{{v}}</td>  
+              </tr>
+      </table>
+
+    <hr>
+  
+            <li ng-repeat="item in items" ng-class="{even:$even,odd:$odd}">
+                   索引{{$index}} 数组项{{item}} {{$even}}
+
+            </li>
+
+
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope) {
+
+            $scope.records = [
+              {
+                "Name" : "Alfreds Futterkiste",
+                "Country" : "Germany"
+              },
+              {
+                "Name" : "Berglunds snabbk",
+                "Country" : "Sweden"
+              },
+              {
+                "Name" : "Centro comercial",
+                "Country" : "Mexico"
+              },
+              {
+                "Name" : "Ernst Handel",
+                "Country" : "Austria"
+              }
+            ]
+
+       $scope.myObj = {
+          "Name" : "Alfreds Futterkiste",
+          "Country" : "Germany",
+          "City" : "Berlin"
+       }
+       $scope.items=["one","tow","three"]
+          
+
+       
+});
+</script>
+  <!-- 指令用于循环输出指定次数的 HTML 元素。集合必须是数组或对象。
+
+
+            
+      遍历数组：
+          <li ng-repeat="item in array">{{item}}</li>
+
+      遍历对象：
+          key：对象的key
+          value：对象的value
+          <li ng-repeat="(key,value) in obj">{{key}} | {{value}}</li>
+
+       内藏的一些特殊属性
+
+                1：$index  索引
+                2：$first  当元素是遍历的第一个时值为true
+                3：$middle 当元素处于第一个和最后元素之间时值为true
+                4: $last   当元素是遍历的最后一个时值为true
+                5: $odd    当$index值是奇数时为值为true
+                6：$even 
+
+
+
+
+
+
+
+
+
+
+   -->
+</body>
+</html>

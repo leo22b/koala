@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				border: 1px solid gray;
+				width: 200px;
+				height: 200px;
+				text-align: center;
+			}
+			.box #text{
+				width: 180px;
+				height:50px;
+			}
+			.box #btn{
+				width: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h3>竞猜</h3>
+			<p>已经生成随机数1~100</p>
+			<input type="text" id="text"/>
+			<input type="button" id="btn" value="竞猜" /><br />
+			<span id="span1"></span>
+			
+		</div>
+		<script type="text/javascript">
+			var otext=document.getElementById('text');
+			var obtn=document.getElementById('btn');
+			var ospan1=document.getElementById('span1');
+			var random=parseInt(Math.random()*100+1);
+//			console.log(parseInt(Math.random()*100+1));
+			obtn.onclick=function(){
+				var otxt=Number(otext.value);
+				if(otxt > random){
+					ospan1.innerHTML="大了";
+				}
+				else if(otxt < random){
+					ospan1.innerHTML="小了";
+				}
+				else if(otxt = random){
+					ospan1.innerHTML="恭喜你猜对了";
+				}
+				else{
+					ospan1.innerHTML="请输入正确答案！！";
+				}
+			}
+			
+		</script>
+		
+	</body>
+</html>

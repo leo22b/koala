@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>$http情求</title>
+      <style>
+            .ng-cloak{display: none;}
+
+      </style>
+</head>
+<body>
+    <div ng-app="myApp"><!-- 声明angular应用 程序-->
+       <div ng-controller="myController" ng-cloak class="ng-cloak">   <!-- 声明控制器，确定作用域 范围-->
+                 <button ng-click="send()">发送情求</button>
+                 <table>
+                       <tr ng-repeat="x in names">
+                            <td>{{x.name}}</td>
+                            <td>{{x.age}}</td>
+                            <td>{{x.city}}</td>
+                            <td><button ng-click="delete(x.name)">删除</button></td>
+                       </tr>
+                 </table>
+                 
+               <!--  {{names}} -->
+       </div>
+   
+    </div>
+
+
+	<script src="lib/angular-1.3.0.js"></script>
+	<script>
+      var myApp=angular.module("myApp",[]); 
+
+      myApp.controller("myController",["$scope","$http",function($scope,$http){//注入$http服务
+              
+            $scope.send=function(){//http开始
+              	// 1 创建promise 对象
+				   
+				               var promise=$http.get("data/data.json?id=10");
+	                 
+                       promise.success(function(data,status,config,headers){
+                               console.log(data);
+                               $scope.names=data;
+                              //console.log(headers);
+                              
+                       })                    
+              }   //http 结束 
+
+			    $scope.delete=function(name){
+
+			     	 
+			     	  angular.forEach($scope.names,function(el,index,list){
+                            if(name==el.name){
+                            	  console.log(name)
+                            	  $scope.names.splice(index,1);
+                            }
+
+
+
+			     	  })
+			     }
+
+      }])
+
+
+
+	</script>
+</body>
+</html>

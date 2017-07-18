@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		
+		<script>
+//			var i = 0;
+//			while(1){
+//				// 添加一个结束条件
+//				if(i == 365){
+//					break;
+//				}
+//				
+//				i++;
+//				document.writeln(i);
+//			}
+
+			// 求和，1+2.....  = 最接近98
+			var sum = 0;
+			var i = 1;
+			while(1){
+				sum = sum + i;
+				i++;
+				
+				// 结束条件
+				if(sum+i >= 98){
+					document.writeln(i);
+					document.writeln(sum);
+					break;
+				}
+			}
+		</script>
+	</body>
+</html>

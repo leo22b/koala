@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			a{
+				line-height: 30px;
+			}
+			
+			/* 1、Element:nth-child(n)
+			  Element的父元素中，其第n个子元素(下标从1开始)，并且是Element类型
+			 */
+			/*p:nth-child(3) a{
+				color: red;
+			}
+			p:nth-child(2n+1) a{
+				color: purple;
+			}
+			p:nth-child(2n) a{
+				color: red;
+			}*/
+			
+			/* p的父元素(#nav), 它的第三个子元素，并且是p*/
+			p:nth-child(3){
+				background: red;
+			}
+			
+			/* 2、Element:nth-last-child(n) 
+			 从后往前
+			 */
+			p:nth-last-child(1) a{
+				background: red;
+				color: white;
+			}
+			
+			/* 3、Element:nth-of-type(n)
+			 Element的父元素，其子元素类型为Element的第n个
+			  */
+			 
+			 /* 先第n个，再类型为Element*/
+			p:nth-child(3){	
+				background: red;
+			}
+			/* 先类型为Element，再第n个*/
+			p:nth-of-type(3){
+				background: red;
+			}
+			
+			/* 4、Element:nth-last-of-type(n)*/
+			p:nth-last-of-type(2){
+				background: yellow;
+			}
+			
+			/* 5、Element:first-child 等同于Element:nth-child(1)*/
+			p:first-child{
+				background: red;
+			}
+			
+			/* 6、Element:firtst-of-type 等同于 Element:nth-of-type(1)*/
+			p:first-of-type{
+				background: gray;
+			}
+			
+			/* 7、Element:last-child 等同于Element:nth-last-child(1)*/
+			p:last-child{
+				background: yellow;
+			}
+			
+			/* 8、Element:last-of-type 等同于Element:nth-last-of-type(1)*/
+			p:last-of-type{
+				background: blue;
+			}
+		</style>
+	</head>
+	
+	
+	<body>
+		<div id="nav">
+			<h2>测试代码</h2>
+			<p><a href="#">星期一</a></p> 
+			<p><a href="#">星期二</a></p>
+			<h3> 测试代码 </h3>
+			<p><a href="#">星期三</a></p>
+			<p><a href="#">星期四</a></p>
+			<p><a href="#">星期五</a></p>
+			<p><a href="#">星期六</a></p>
+			<p><a href="#">星期天</a></p>
+		</div>
+	</body>
+</html>

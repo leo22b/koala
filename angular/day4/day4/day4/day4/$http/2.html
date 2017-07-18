@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>$http跨域请求</title>
+
+</head>
+<body>
+    <div ng-app="myApp"><!-- 声明angular应用 程序-->
+       <div ng-controller="myController">   <!-- 声明控制器，确定作用域 范围-->
+                 <button ng-click="send()">发送情求</button>
+
+       </div>
+   
+    </div>
+
+
+	<script src="lib/angular-1.3.0.js"></script>
+	<script>
+      var myApp=angular.module("myApp",[]); 
+
+      myApp.controller("myController",["$scope","$http",function($scope,$http){//注入$http服务
+        
+              $scope.send=function(){
+              	// 1 创建promise 对象
+					var promise=$http.jsonp("http://www.runoob.com/try/ajax/jsonp.php?jsoncallback=JSON_CALLBACK");
+				// 2 调用promise对象的success()方法	      
+                      promise.success(function(data){
+                        console.log(data)
+
+                      })
+
+
+              }       
+
+      }])
+
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			#box{
+				width: 250px;
+				height: 65px;
+				margin: 30px auto;
+				padding: 10px 4px;
+				position: relative;
+			}
+			#box img{
+				float: left;
+				display: block;
+			}
+			#box p{
+				position: absolute;
+				bottom:15px;
+				left: 4px;
+			}
+			ul{
+				list-style: none;
+			}
+			ul li{
+				width: 25px;
+				height: 27px;
+				background: url(img/star.jpg) no-repeat;
+				float: left;
+			}
+			ul .active{
+				background: url(img/star.jpg) no-repeat 0 -29px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<!--<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>-->
+			<p></p>
+		</div>
+		<script type="text/javascript">
+			var obox=document.getElementById('box');
+			var oimg=obox.getElementsByTagName('img');
+			var op=obox.getElementsByTagName('p')[0];
+			for (var i=0;i<10;i++) {
+				var aimg=document.createElement('img');
+				aimg.src='img/star1.jpg';
+				obox.appendChild(aimg);
+			}
+			for (var i=0;i<oimg.length;i++) {
+				oimg[i].index=i;
+				oimg[i].onmouseover=function(){
+					index=this.index;
+					op.innerHTML='';
+					for (var i=0;i<oimg.length;i++) {
+						oimg[i].src='img/star1.jpg';
+					}
+					for (var j=0;j<=index;j++) {
+						oimg[j].src='img/star2.jpg';
+					}
+				}
+				oimg[i].onclick=function(){
+					for (var j=0;j<=index;j++) {
+						op.innerHTML='你打了'+(j+1)+'分';
+					}
+				}
+				oimg[i].onmouseout=function(){
+					index=this.index;
+					op.innerHTML='';
+					for (var i=0;i<oimg.length;i++) {
+						oimg[i].src='img/star1.jpg';
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

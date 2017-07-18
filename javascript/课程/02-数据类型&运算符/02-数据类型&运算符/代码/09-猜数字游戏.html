@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 300px;
+				height: 300px;
+				border: 1px solid gray;
+				text-align: center;
+			}
+			#text{
+				width: 50px;
+				height: 50px;
+				text-align: center;
+				font-size: 40px;
+			}
+			#bt{
+				width: 50px;
+				height: 40px;
+				margin: 10px 0;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="box">
+			<h1>猜数字游戏</h1>
+			<p>已经生成随机数1~100，猜中有惊喜...</p>
+			<input type="text" id="text" />	<br />
+			<input type="button" value="竞猜" id="bt" /> <br />
+			<span id="span1">提示...</span>
+		</div>
+		
+		<script>
+			// 1、生成随机数
+			// Math.random(): 0~1
+			// Math.random()*100: 0~100
+			// console.log( parseInt( Math.random()*100 + 1) );
+			var random = parseInt( Math.random()*100 + 1);
+			
+			// 2、获取到对应元素
+			var oText = document.getElementById('text');
+			var oBt = document.getElementById('bt');
+			var oSpan = document.getElementById('span1');
+			
+			// 3、点击按钮(判断大小)
+			oBt.onclick = function(){
+				var value = Number( oText.value );
+				
+				// 等于、大于、小于
+				if(value > random){	
+					oSpan.innerHTML = '大了...';
+				} else if(value < random){
+					oSpan.innerHTML = '小了...';
+				} else if(value == random){
+					oSpan.innerHTML = '答对了，继续竞猜有惊喜...';
+				} else {
+					oSpan.innerHTML = '滚回你的火星去...';
+				}
+			}
+		</script>
+	</body>
+</html>

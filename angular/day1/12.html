@@ -1,0 +1,50 @@
+    <!DOCTYPE html>  
+    <html >  
+        <head>  
+            <meta charset="UTF-8">  
+            <title>AngularJS表达式</title>  
+             <script src="lib/angular-1.3.0.js"></script>
+             <script src="https://cdn.bootcss.com/angular.js/1.5.0-beta.0/angular-sanitize.min.js"></script>
+        </head>  
+        <body>  
+            <div ng-app="myApp" ng-controller="myController">  
+                <input type="text" ng-model="count"/> +  <input type="text" ng-model="price"/><br>              
+                总数：{{5+2}}<br><br>  
+                总共：{{count*price}}<br><br>  
+                人员：{{"姓名："+name+"年龄："+age}}<br><br>  
+                姓名：<span ng-bind="student.name"></span><br><br>  
+                性别：<span ng-bind="student.sex"></span><br><br>  
+                分数：<span ng-bind="score[2]"></span><br><br>  
+                <div>{{div}}</div>
+                <span ng-bind="div"></span>
+                <span ng-bind-html="div"></span>          
+            </div>  
+              <script>  
+                        var myApp=angular.module("myApp",['ngSanitize']);
+                         myApp.controller("myController",function($scope){
+
+                             $scope.count=10;
+                             $scope.price=10;
+                             $scope.name="zhangsan";
+                             $scope.age=20;
+                             $scope.student={  "name":"zhangsan", "sex":"男"};
+                             $scope.score=[60,70,80,90,100];
+                             $scope.div="<h1>hello</h1>"
+
+                         })
+              </script> 
+    <!-- 实例解析 
+             表达式分为：
+                  1）直接计算的加减乘除
+                  2）利用变量实现的加减乘除
+                  3）字符串表达式
+                  4）对象表达式
+                  5）数组表达式
+                  AngularJS 表达式不支持条件判断，循环及异常。但是可以使用三目运算符
+            1 $scope对象充当数据模型
+            2 $scope对象的属性值可以是"string","array","obj","function"
+            3 ng-bind指令和{{}}双大号都可以将数据绑定到视图中，但是对数据中的标签不解析
+            4 ng-bind-html指令也可以将数据绑定到视图中，并且对数据中的标签进行解析，但是要在当前模块中依赖"ngSanitize"模块
+    -->
+        </body>  
+    </html>  

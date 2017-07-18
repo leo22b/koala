@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/**{
+				margin: 0;
+				padding: 0;
+			}*/
+			#view{
+				width: 200px;
+				height: 200px;
+				background: red;
+				border: 5px solid black;
+				/*border-right-width: 20px;*/
+				padding: 10px;
+				overflow: auto;
+				position: absolute;
+				/*left: 50px;*/
+				/*top: 100px;*/
+				margin: 40px 20px 50px 80px;
+			}
+			#test{
+				width: 100px;
+				height: 100px;
+				background: blue;
+			}
+		</style>
+		
+		<script>
+			window.onload = function(){
+				var oView = document.getElementById("view");
+				var oTest = document.getElementById("test");
+				
+				document.onclick = function(){
+					
+					// 1、通过style内联获取元素的大小
+					// alert( oView.style.width );
+					
+					
+					// 2、通过计算获取元素的大小
+					var height = window.getComputedStyle ?  getComputedStyle(oView).height : oView.currentStyle.height;
+					// alert(height);
+					
+					
+					// 3、clientWidth获取元素可视区域width+padding
+					// alert( oView.clientWidth );
+					
+					
+					// 4、offsetWidth实际大小即占位大小: width + padding + border
+					// alert( oView.offsetWidth );
+					
+					
+					// 5、滚动内容大小
+					// alert( oView.scrollHeight );
+					
+					
+					// 6、元素边框大小
+					// 右边框: oView.offsetWidth - oView.clientWidth - oView.clientLeft
+					// alert( oView.clientLeft );
+					
+					// 7、相对于父元素的位置
+					// alert(oView.offsetTop);
+					alert(oTest.offsetTop);
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="view">
+			注: 通过计算获取元素的大小，不管是内联、内部、外部样式，它都经过计算后得到结果。如果本身设置有大小，即返回元素的大小；如果没有设置，非IE会返回默认大小，IE返回auto;
+			注: 通过计算获取元素的大小，不管是内联、内部、外部样式，它都经过计算后得到结果。如果本身设置有大小，即返回元素的大小；如果没有设置，非IE会返回默认大小，IE返回auto;
+			注: 通过计算获取元素的大小，不管是内联、内部、外部样式，它都经过计算后得到结果。如果本身设置有大小，即返回元素的大小；如果没有设置，非IE会返回默认大小，IE返回auto;
+			
+			<div id="test"></div>
+		</div>
+	</body>
+</html>

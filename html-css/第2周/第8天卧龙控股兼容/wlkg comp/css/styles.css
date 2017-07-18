@@ -1,0 +1,305 @@
+*{margin:0;padding:0;}
+/* 头部header*/
+img{
+	border: 0;
+}
+.clearfix:after{
+	content: " ";
+	display: block;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden;
+	height: 0;
+}
+#header{
+	width: 999px;
+	height: 100px;
+	background-color:#FFFFFF;
+	margin:0 auto;
+}
+#header .logo{
+	margin-left: 20px;
+	margin-top: 40px;
+	float: left;
+	/*line-height: 100px;*/
+}
+#header .search{
+	background: #f1f1f1;
+	width: 225px;
+	height: 28px;
+	float: right;
+	margin-right: 20px;
+	margin-top: 40px;
+	border: none;
+}
+#header .search form{
+	width: 225px;
+	height: 28px;
+	overflow: hidden;
+}
+#header .search .text{
+	width: 174px;
+	height: 28px;
+	margin-left: 14px;
+	background: #F1F1F1;
+	border: 0;
+	float: left;
+}
+#header .search .submit{
+	width: 28px;
+	height: 28px;
+	float: right;
+	border: none;
+	background: url(../img/search.png) no-repeat; 
+}
+/*2 导航nav*/
+#nav{
+	width: 999px;
+	height: 60px;
+	margin: 0px auto;
+	background: black;
+}
+#nav ul{
+		margin-left: 25px;
+		font-size: 13px;
+}
+#nav ul li{
+	float: left;
+	width: 120px;
+	list-style:none;
+	float: left;
+	text-align: center;
+	line-height: 60px;
+	border-right:1px solid lightgray ;
+}
+#nav a{
+	color: white;
+	text-decoration:none;
+}
+#nav ul .last{
+	border-right:none;
+}
+
+/*3 横幅banner*/
+#banner{
+	width: 999px;
+	height: 465px;
+	background:blue;
+	margin: 0 auto;
+	background: url(../img/banner.png) no-repeat;
+}
+/*4 新闻news*/
+#news{
+	width: 999px;
+	height: 240px;
+	background: #FFFFFF;
+	margin: 0 auto;
+}
+#news h2{
+	margin-left: 20px;
+	margin-top: 35px;
+	font-size: 20px;
+}
+#news .case{
+	height: 240px;
+	float: left;
+}
+#news .case1{
+	width: 500px;
+}
+#news .case1 ul{
+	list-style-position: inside;
+	margin-top: 18px;
+	width: 460px;
+	height: 150px;
+	list-style: none;
+}
+#news .case1 ul li{
+	margin-left: 20px;
+	line-height: 25px;
+	float: left;
+	display: inline;
+	width: 440px;
+	background: url(../img/list.jpg) no-repeat left 9px;
+}
+#news .case1 li a{
+	text-decoration: none;
+	color: #4f4f4f;
+	font-size: 13px;
+	float: left;
+	margin-left: 13px;
+}
+#news .case1 span{
+	float: right;
+	font-size: 13px;
+	color: dimgrey;
+}
+/*-------------------------*/
+#news .case2{
+	width: 240px;
+	background: #F1F1F1;
+}
+#news .case2 p{
+	margin-left: 20px;
+}
+#news .case2 .p1{
+	font-size: 14px;
+	margin-top: 35px;
+	width: 136px;
+	line-height: 25px;
+}
+#news .case2 .p2{
+	margin-top: 25px;
+	width: 190px;
+	line-height: 22px;
+	font-size: 11px;
+	color: #8e8e8e;
+}
+#news .case2 .p1 span{
+	line-height: 22px;
+	font-size: 11px;
+}
+/*--------------------------*/
+#news .case3{
+	width: 259px;
+	background: #FFFFFF;
+	overflow: hidden;
+}
+#news .case3 p{
+	margin-left: 20px;
+	margin-top: 25px;
+	font-size: 11px;
+	line-height: 25px;
+	width: 180px;
+}
+#news .case3 a img{
+	margin-left: 20px;
+	margin-top: 55px;
+	float: left;
+}
+#news .case3 img{
+	float: right;
+	margin-top: -17px;
+}
+
+/********5 市场market********/
+#market{
+	width: 999px;
+	height: 305px;
+	margin: 0 auto;
+}
+#market h3{
+	padding: 27px 20px 0;
+	font-size: 20px;
+}
+#market .box{
+	margin-left: 20px;
+	margin-right: 20px;
+	float: left;
+	color: #575757;
+	width: 210px;
+	margin-top: 18px;
+	display: inline;
+}
+#market .box img{
+	width: 210px;
+	height: 138px;
+	display: block;
+}
+#market .box dd{
+	margin-top: 17px;
+	width: 210px;
+	font-size: 12px;
+	line-height:22px;
+}
+#market .box4{
+	margin-right: 0px;
+}
+
+/********6 产品product********/
+#product{
+	width: 999px;
+	height: 250px;
+	background: #e5e5e5;
+	margin: 0 auto;
+}
+#product h4{
+	line-height: 30px;
+	padding-left: 12px;
+	border-bottom: 1px solid #c2c2c2;
+	font-weight: normal;
+	color: #5c5c5c;
+}
+#product .boxx{
+	height: 222px;
+	float: left;
+	margin-top: 28px;
+	display: inline;
+}
+#product .boxx a{
+	text-decoration: none;
+	color: #595959;
+	font-size: 11px;
+	margin-left: 11px;
+	float: left;
+	display: inline-block;
+}
+#product .boxx ul{
+	float: left;
+	list-style: none;
+	list-style-position: outside;
+	margin-top: 20px;
+	font-size: 11px;
+	width: 145px;
+	line-height: 26px;
+}
+#product .boxx li{
+	background: url(../img/jiankuohao.jpg) no-repeat left 4px;
+	height: 26px;
+	display: block;
+}
+#product .box4{
+	width: 450px;
+	margin-left: 19px;
+}
+#product .box5{
+	width: 155px;
+	margin: 28px 50px 0;
+}
+#product .box6{
+	width: 256px;
+}
+#product .box6 img{
+	margin-left: 20px;
+}
+/********7 底部footer********/
+#footer{
+	width: 977px;
+	margin: 0 auto;
+	padding: 24px 0 56px 22px;
+}
+#footer p{
+	float: left;
+	font-size: 11px;
+}
+#footer .box1{
+	line-height: 20px;
+	float: left;
+}
+#footer .box1 a{
+	color: #7c7c7c;
+	text-decoration: none;
+	display: inline-block;
+	float: left;
+	font-size: 10px;
+}
+#footer .box2{
+	margin-right: 0px;
+	width: 570px;
+	float: right;
+}
+#footer .box2 p{
+	font-size: 10px;
+	color: #7c7c7c;
+	line-height: 20px;
+}

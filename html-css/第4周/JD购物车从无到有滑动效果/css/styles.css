@@ -1,0 +1,108 @@
+*{margin: 0;padding: 0;}
+body{
+	/*background: red;*/
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden;
+	height: 0;
+}
+.box{
+	width: 53px;
+	height: 323px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.box ul li{
+	margin-bottom: 1px;
+	position: relative;
+}
+.box ul .last{
+	margin: 0;
+}
+.box ul li a{
+	display: block;
+	height: 53px;
+}
+.box ul li .man{
+	background: url(../img/list1.jpg);
+}
+.box ul li:hover .man{
+	background: url(../img/list2.jpg) no-repeat ;
+}
+.box ul li .car{
+	background: url(../img/list1.jpg) no-repeat center -54px;
+}
+.box ul li:hover .car{
+	background: url(../img/list2.jpg) no-repeat center -53px;
+}
+.box ul li .heart{
+	background: url(../img/list1.jpg) no-repeat center -108px;
+}
+.box ul li:hover .heart{
+	background: url(../img/list2.jpg) no-repeat center -106px;
+}
+.box ul li .foot{
+	background: url(../img/list1.jpg) no-repeat center -162px;
+}
+.box ul li:hover .foot{
+	background: url(../img/list2.jpg) no-repeat center -159px;
+}
+.box ul li .message{
+	background: url(../img/list1.jpg) no-repeat center -216px;
+}
+.box ul li:hover .message{
+	background: url(../img/list2.jpg) no-repeat center -212px;
+}
+.box ul li .refer{
+	background: url(../img/list1.jpg) no-repeat center -270px;
+}
+.box ul li:hover .refer{
+	background: url(../img/list2.jpg) no-repeat center -265px;
+}
+.box ul li span{
+	background: #7a6e6e;
+	width: 90px;
+	height: 53px;
+	line-height: 53px;
+	font-size: 18px;
+	text-align: center;
+	border-radius: 5px 0 0 5px;
+	position: absolute;
+	top: 0;
+	right: -90px;
+	transition: all 0.4s;
+	z-index: -1;
+}
+.box ul li:hover span{
+	position: absolute;
+	top: 0;
+	right: 53px;
+	z-index: -1;
+	background: url(../img/bg.jpg);
+}
+.box ul li:hover a{
+	background: url(../img/bg.jpg) no-repeat;
+}
+.right{
+	width: 9px;
+	height: 100%;
+	background: #7a6e6e;
+	float: right;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+}
+

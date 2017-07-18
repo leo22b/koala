@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 49px;
+				height: 49px;
+				position: fixed;	
+				right: 5px;
+				bottom: 5px;
+			}
+			#home{
+				width: 49px;
+				height: 49px;
+				background: url(img/home.png);
+				position: absolute;
+				transition: 3s;
+			}
+			#menu{
+				width: 42px;
+				height: 42px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#menu img{
+				width: 42px;
+				height: 42px;
+				position: absolute;
+				transition: 3s;
+				left: 0;
+				top: 0;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var oHome = document.querySelector("#home");
+				var aItem = document.querySelector("#menu").querySelectorAll('img');
+				
+				var isShow = false;
+				var iR = 150;
+				
+				oHome.onclick = function(){
+					isShow = !isShow;
+					if(isShow){
+						this.style.transform = 'rotate(-360deg)';
+						//图片长度
+						for(var i=0; i<aItem.length; i++){
+							var iDeg = (90/4) * i;
+							var left = -compute(iR, iDeg);
+							var top = -compute(iR, (90-iDeg));
+							aItem[i].style.left = left + 'px';
+							aItem[i].style.top = top + 'px';
+							
+							aItem[i].style.transform = 'rotate(360deg)';
+						}
+						
+					} else {
+						this.style.transform = 'rotate(0)';
+						
+						for(var i=0; i<aItem.length; i++){
+							aItem[i].style.left = 0 + 'px';
+							aItem[i].style.top = 0 + 'px';
+							
+							aItem[i].style.transform = 'rotate(0)';
+						}
+					}
+				}
+				
+				// 根据sin值和斜边，求对边  iR为斜边
+				function compute(iR,iDeg){
+					return Math.sin(iDeg*Math.PI/180) * iR;
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="box">
+			<div id="menu">
+				<img src="img/clos.png" />
+				<img src="img/full.png" />
+				<img src="img/open.png" />
+				<img src="img/prev.png" />
+				<img src="img/refresh.png" />
+			</div>
+			<div id="home"></div>
+		</div>
+	</body>
+</html>

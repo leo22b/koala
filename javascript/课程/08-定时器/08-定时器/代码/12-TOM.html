@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			img {
+				width: 320px;
+				height: 480px;
+			}
+		</style>
+
+		<script type="text/javascript" src="zyz.js"></script>
+		<script>
+			$(function() {
+				var timer = null;
+				var index = 0;
+
+				$('bt1').onclick = function() {
+					if(timer == null) {
+						timer = setInterval(changeView, 90);
+					}
+				}
+
+				$('bt2').onclick = function() {
+					clearInterval(timer);
+					timer = null;
+				}
+
+				function changeView() {
+					index++;
+					if(index > 25) {
+						index = 0;
+					}
+
+					// 1 -->  01
+					// 1 -->  001
+					
+					$('img').src = '../图片/02-images/angry/angry_' + format(index, 2) + '.jpg'
+					// console.log(format(index, 2));
+				}
+				
+				/* 格式化
+				 * index: 数字
+				 * num: 位数
+				 */
+				function format(index, num){
+					var str = index.toString();
+					while(str.length != num){
+						str = '0' + str;
+					}
+					return str;
+				}
+			});
+		</script>
+	</head>
+
+	<body>
+		<input type="button" value="开始" id="bt1" />
+		<input type="button" value="暂停" id="bt2" /> <br />
+		<img src="../图片/02-images/angry/angry_00.jpg" id="img" />
+	</body>
+
+</html>

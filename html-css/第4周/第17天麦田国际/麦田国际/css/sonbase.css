@@ -1,0 +1,45 @@
+#main .position{
+	width: 100%;
+	margin: 0 auto;
+	background: url(../img/fangkuang.jpg);
+}
+#main .success{
+	width: 1140px;
+	padding: 64px 0;
+	margin: 0 auto;
+}
+#main .success .success-content p{
+	color: #feb3ad;
+	line-height: 40px;
+}
+#main .success .success-content p b{
+	font-size: 21px;
+	color: white;
+}
+#main .success .success-content p i{
+	padding: 0 13px;
+	display: inline-block;
+	font-size: 21px;
+}
+#main .success .success-content p strong{
+	color: white;
+}
+#main .position .bg{
+	width: 100%;
+	background: #f7f7f7;
+}
+/*#main .position .bg .hangye{
+	width: 1440px;
+	margin: 0 auto;
+	background: green;
+}*/
+#main .position .bg .hangye .hangye-content{
+	width: 1100px;
+	text-align: right;
+	margin: 0 auto;
+}
+#main .position .bg .hangye .hangye-content a{
+	height: 60px;
+	line-height: 60px;
+	margin-left: 30px;
+}

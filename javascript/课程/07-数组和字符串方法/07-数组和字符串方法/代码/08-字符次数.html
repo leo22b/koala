@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		
+		<script type="text/javascript">
+			var str = '每天一句：在你想要放弃的那一刻，想想为什么当初走到了这里 —— 科比；每天一句：在你想要放弃的那一刻，想想为什么当初走到了这里 —— 科比';
+			// 次数
+			var sum = 0;
+			// 检索内容
+			var searchValue = '一';
+			// 检索的起始位置
+			var fromIndex = 0;
+			
+			while( str.indexOf(searchValue, fromIndex) != -1 ){
+                // 计数
+				sum++;
+                // 输出位置
+                var temp = str.indexOf(searchValue, fromIndex);
+                document.writeln(temp);
+                // 查找往后移
+                fromIndex = temp + searchValue.length;
+			}
+		</script>
+	</body>
+</html>

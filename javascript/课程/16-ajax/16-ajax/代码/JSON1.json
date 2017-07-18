@@ -1,0 +1,19 @@
+{
+  "people" : [
+    {
+      "email" : "张三",
+      "firstName" : "Brett",
+      "lastName" : "McLaughlin"
+    },
+    {
+      "email" : "bbbb",
+      "firstName" : "Jason",
+      "lastName" : "Hunter"
+    },
+    {
+      "email" : "李四",
+      "firstName" : "Elliotte",
+      "lastName" : "Harold"
+    }
+  ]
+}

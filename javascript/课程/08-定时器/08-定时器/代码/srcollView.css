@@ -1,0 +1,36 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.box{
+	width: 600px;
+	height: 260px;
+	margin: 30px auto;
+	position: relative;
+}
+
+.box img {
+	width: 600px;
+	height: 260px;
+}
+
+.box p{
+	position: absolute;
+	bottom: 7px;
+	width: 100%;
+	height: 14px;
+	text-align: center;
+}
+
+.box p i {
+	width: 14px;
+	height: 14px;
+	background: black;
+	display: inline-block;
+	border-radius: 7px;
+	margin: 0 3px;
+}
+
+.box p .active {
+	background: white;
+}

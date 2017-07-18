@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<!-- 编码类型-->
+		<meta charset="utf-8">
+		<!-- 如果在IE浏览器下则使用最新的标准渲染当前文档-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 视口-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- 标题-->
+		<title>组件</title>
+
+		<!-- Bootstrap样式表 -->
+		<link href="../../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- 条件注释(兼容性) -->
+		<!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+		<style type="text/css">
+			body {
+				height: 2000px;
+				padding-top: 50px;
+			}
+			
+			.dropdown>.dropdown-menu li {
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- 导航条-->
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<!-- logo-->
+				<div class="navbar-header">
+					<!-- 下拉按钮(小屏幕)
+					data-toggle： 显示隐藏
+					data-target： 需要操作的元素
+				-->
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#cxy-navbar-collapse" aria-expanded="false">
+        				<span class="sr-only">Toggle navigation</span>
+       					<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>
+      				</button>
+				</div>
+
+				<!-- 主体-->
+				<div class="collapse navbar-collapse" id="cxy-navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="#">Link</a>
+						</li>
+						<li>
+							<a href="#">Link</a>
+						</li>
+						<li>
+							<a href="#">Link</a>
+						</li>
+						<li>
+							<a href="#">Link</a>
+						</li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="#">首页</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- 下拉菜单-->
+		<div class="dropdown pull-right">
+			<!-- 按钮-->
+			<button class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+				分享
+				<span class="caret"></span>
+			</button>
+
+			<!-- 列表 -->
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				<li class="dropdown-header"> 腾讯相关 </li>
+				<li>
+					<a href="#">微信</a>
+				</li>
+				<li role="separator" class="divider"></li>
+				<li>
+					<a href="#">qq</a>
+				</li>
+				<li role="separator" class="divider"></li>
+				<li>
+					<a href="#">微博</a>
+				</li>
+				<li role="separator" class="divider"></li>
+				<li>
+					<a href="#">微信</a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- 按钮组 -->
+		<div class="btn-group btn-group-lg">
+			<div class="btn btn-default">hello</div>
+			<div class="btn btn-default">hello</div>
+			<div class="btn btn-default">hello</div>
+		</div>
+
+		<br />
+		<br />
+		<div class="btn-toolbar">
+			<div class="btn-group">
+				<div class="btn btn-default">hello</div>
+				<div class="btn btn-default">hello</div>
+				<div class="btn btn-default">hello</div>
+			</div>
+			<div class="btn-group">
+				<div class="btn btn-default">hello</div>
+				<div class="btn btn-default">hello</div>
+				<div class="btn btn-default">hello</div>
+			</div>
+			<div class="btn-group">
+				<div class="btn btn-default">hello</div>
+				<div class="btn btn-default">hello</div>
+				<div class="btn btn-default">hello</div>
+			</div>
+		</div>
+
+		<br />
+		<br />
+		<!-- 输入框组-->
+		<div class="container">
+			<div class="row">
+
+				<div class="col-lg-6">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+						<!--<span class="input-group-addon" id="basic-addon1">账号</span>-->
+						<span class="input-group-btn" id="basic-addon1">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">类型选择 <span class="caret"></span></button>
+
+						<ul class="dropdown-menu">
+							<li>
+								<a href="#">账号</a>
+							</li>
+							<li>
+								<a href="#">密码</a>
+							</li>
+							<li>
+								<a href="#">Something else here</a>
+							</li>
+							<li role="separator" class="divider"></li>
+							<li>
+								<a href="#">Separated link</a>
+							</li>
+						</ul>
+						</span>
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+					<div class="input-group">
+						<span class="input-group-addon">
+							<input type="checkbox" aria-label="...">
+						</span>
+						<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- 警告框-->
+		<div class="alert alert-success">
+
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> 密码太过于简单，容易泄漏，你确定要使用吗
+
+			<a href="#" class="alert-link">立即修改密码</a>
+		</div>
+
+		<!-- 分页-->
+		<nav>
+			<ul class="pagination">
+				<li>
+					<a href="#" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+					</a>
+				</li>
+
+				<li class="active">
+					<a href="#">1</a>
+				</li>
+				<li class="disabled">
+					<a href="#">2</a>
+				</li>
+				<li>
+					<a href="#">3</a>
+				</li>
+				<li>
+					<a href="#">4</a>
+				</li>
+
+				<li>
+					<a href="#" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+		<!-- 列表组-->
+		<ul class="list-group">
+			<li class="list-group-item">
+				新闻
+				<span class="badge">99+</span>
+			</li>
+			<li class="list-group-item list-group-item-danger">体育</li>
+			<li class="list-group-item">财经</li>
+			<li class="list-group-item">娱乐</li>
+		</ul>
+
+		<div class="list-group" style="width: 500px;">
+			<a href="#" class="list-group-item active">
+				<h3 class="list-group-item-heading">高考分数线</h3>
+				<p class="list-group-item-text">广东高考重本文科630，本科430.广东高考重本文科630，本科430.广东高考重本文科630，本科430.</p>
+			</a>
+		</div>
+
+		<!-- 面板-->
+		<br />
+		<div class="panel panel-default clearfix">
+			<div class="panel panel-default pull-left panel-primary" style="width: 300px;">
+				<div class="panel-heading">javascript</div>
+
+				<div class="panel-body">
+					<p> hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!</p>
+				</div>
+
+				<div class="panel-footer">Panel footer</div>
+			</div>
+
+			<div class="panel panel-default pull-left" style="width: 300px;">
+				<div class="panel-heading">javascript</div>
+
+				<div class="panel-body">
+					<p> hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!</p>
+				</div>
+			</div>
+
+			<div class="panel panel-default pull-left" style="width: 300px;">
+				<div class="panel-heading">javascript</div>
+
+				<div class="panel-body">
+					<p> hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- 多媒体 -->
+		<br/>
+		<br/>
+		<br/>
+		<div class="panel panel-default">
+			<div class="media">
+				<div class="media-body">
+					<div class="media-heading">张三</div>
+					Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+				</div>
+
+				<div class="media-right media-middle">
+					<a href="#">
+						<img src="Snip20170627_9.png" />
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- 进度条-->
+		<div class="progress">
+			<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+				80%
+			</div>
+
+		</div>
+
+		<!-- 字体图标-->
+		<style>
+			.glyphicon-signal {
+				color: black;
+				font-size: 50px;
+			}
+			
+			.glyphicon-signal:hover {
+				color: purple;
+			}
+		</style>
+		<span class="glyphicon glyphicon-signal"></span>
+
+		<!-- 微缩图-->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-4">
+					<a href="#" class="thumbnail">
+						<img src="banner.jpg" />
+
+						<div class="caption">
+							<h3>变形金刚5</h3>
+							<p>6月27号12:00首映。。。。</p>
+
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-4">
+					<a href="#" class="thumbnail">
+						<img src="banner.jpg" />
+
+						<div class="caption">
+							<button class="btn btn-default">购票</button>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg-4">
+					<a href="#" class="thumbnail">
+						<img src="banner.jpg" />
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4">
+					<a href="#" class="thumbnail">
+						<img src="banner.jpg" />
+					</a>
+				</div>
+				<div class="col-lg-4">
+					<a href="#" class="thumbnail">
+						<img src="banner.jpg" />
+					</a>
+				</div>
+				<div class="col-lg-4">
+					<a href="#" class="thumbnail">
+						<img src="banner.jpg" />
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- 巨幕-->
+		<div class="jumbotron">
+			<div class="container">
+				<h2> Hello world! </h2>
+				<p>
+					This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+				</p>
+				<button class="btn btn-default">更多</button>
+			</div>
+		</div>
+
+		<!-- 嵌套内容-->
+		<!-- 16:9 aspect ratio -->
+		<div class="embed-responsive embed-responsive-16by9">
+			<iframe src="test.html" class="embed-responsive-item"></iframe>
+		</div>
+
+		<!-- 4:3 aspect ratio -->
+		<!--<div class="embed-responsive embed-responsive-4by3">
+			<iframe class="embed-responsive-item" src="test.html"></iframe>
+		</div>-->
+
+		<div class="panel panel-default">
+			hello world!
+		</div>
+		
+		<div class="well">
+			hello world!
+		</div>
+
+		<!-- Bootstrap依赖于jQuery的 -->
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<!-- bootstrap 脚本代码 -->
+		<script src="../../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	</body>
+
+</html>

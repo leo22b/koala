@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!-- 语义化标签IE的兼容，方式一 -->
+		<script type="text/javascript">
+			document.createElement('haha');
+			document.createElement('header');
+			document.createElement('section');
+			document.createElement('footer');
+		</script>
+		
+		<!--<script src="html5shiv.js"></script>-->
+		
+		<style type="text/css">
+			header{
+				height: 200px;
+				background: red;
+				display: block;
+			}
+			section{
+				height: 500px;
+				background: blue;
+				display: block;
+			}
+			footer{
+				height: 200px;
+				background: purple;
+				display: block;
+			}
+			
+			haha{
+				height: 100px;
+				background: gray;
+				display: block;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<!-- 自定义-->
+		<haha> 今天天气很好，心情很不错. </haha>
+		
+		<!-- 头部-->
+		<header>head</header>
+		
+		<!-- 主体-->
+		<section>section</section>
+		
+		<!-- 尾部-->
+		<footer>footer</footer>
+	</body>
+</html>

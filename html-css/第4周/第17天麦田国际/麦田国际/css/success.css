@@ -1,0 +1,15 @@
+#main{
+	margin: 0 auto;
+}
+#main .photo{
+	width: 1170px;
+	margin: 60px auto 100px;
+}
+#main .photo .content{
+	width: 1140px;
+	overflow: hidden;
+}
+#main .photo img{
+	float: left;
+	margin: 0 30px 30px 0;
+}

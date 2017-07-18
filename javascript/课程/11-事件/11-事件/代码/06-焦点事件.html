@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+				var oText = document.getElementById("text");
+				
+				// 获取焦点
+				oText.onfocus = function(){
+					this.value = '';
+				}
+				
+				// 失去焦点
+				oText.onblur = function(){
+					this.value = '请输入密码';
+				}
+				
+				oText.focus();
+			}
+		</script>
+	</head>
+	
+	<body>
+		<input type="text" id="text" value="请输入密码" />
+	</body>
+</html>

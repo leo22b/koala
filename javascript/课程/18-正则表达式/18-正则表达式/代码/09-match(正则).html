@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			document.onclick = function(){
+				
+				var str = '123!^sdf8 2$3j823#fa fkj23-fj22lfkma1/.31 ;';
+				
+				// 规则
+				// var rel = /f8/;
+				
+				// \d 数字
+				// g 全局
+				 // var rel = /\d/g;
+				 
+				 // \d 数字(一位数)
+				 // \d\d 两位数
+				 // var rel = /\d\d/g;
+				 
+				 // \d\d\d三位数
+				 // var rel = /\d\d\d/g;
+				 
+				 
+				 // + 表多个
+				 var rel = /\d+/g;
+				
+				// 匹配？ 和规则匹配的内容
+				 document.write(str.match(rel));
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

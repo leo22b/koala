@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		
+		<input type="button" value="按钮1" />
+		<input type="button" value="按钮2" />
+		<input type="button" value="按钮3" />
+		<input type="button" value="按钮4" />
+		<input type="button" value="按钮5" />
+		
+		<script>
+			// 获取一组元素
+			// getElementsByTagName通过元素名，获取到对应的一组元素
+			var aBt = document.getElementsByTagName('input');
+			
+			// 实现功能，点击按钮，改变对应按钮的背景为红色，字体颜色为白色
+			
+			
+			/*
+			 * > 预解析
+			 * 	var i;
+			 * 
+			 * > 逐行解析
+			 * 	aBt[0].onclick = functon(){alert(i)}
+			 * 	i++; // 1
+			 *  aBt[1].onclick = functon(){alert(i)}
+			 *  i++; // 2
+			 * 	aBt[2].onclick = functon(){alert(i)}
+			 *  i++; // 3
+			 *  aBt[3].onclick = functon(){alert(i)}
+			 * 	i++; // 4
+			 * 	aBt[4].onclick = functon(){alert(i)}
+			 * 	i++; // 5
+			 * 	不符合条件，退出循环
+			 * 
+			 * 
+			 * 先后顺序问题	:
+			 * 	 先for循环， 【i=5】
+			 * 	 后按钮点击(点击才去访问i的值);  【5】
+			 */
+			
+			// 遍历数组 (反正就是给按钮添加点击事件)
+			for(var i=0; i<aBt.length; i++){
+				// 拿到对应的按钮
+				aBt[i].onclick = function(){
+					// alert(1);
+					
+					// 会有问题，有错误的(作用域分析)，问题出在i上
+//					aBt[i].style.backgroundColor = 'red';
+//					aBt[i].style.color = 'white';
+
+					// 点击对应按钮，就是对应的下标 【问题: 每个点击都是为5】
+					alert(i);
+
+
+					// 解决方式
+//					this.style.backgroundColor = 'red';
+//					this.style.color = 'white';
+				}
+			}
+			
+			
+//			aBt[0].onclick = function(){
+//				// 先检查，是否能触发按钮
+//				// alert(1);
+//				
+//				aBt[0].style.backgroundColor = 'red';
+//				aBt[0].style.color = 'white';
+//			}
+//			
+//			
+//			aBt[1].onclick = function(){
+//				// 先检查，是否能触发按钮
+//				// alert(1);
+//				
+//				aBt[1].style.backgroundColor = 'red';
+//				aBt[1].style.color = 'white';
+//			}
+//			
+//			aBt[2].onclick = function(){
+//				// 先检查，是否能触发按钮
+//				// alert(1);
+//				
+//				aBt[2].style.backgroundColor = 'red';
+//				aBt[2].style.color = 'white';
+//			}
+//			
+//			aBt[3].onclick = function(){
+//				// 先检查，是否能触发按钮
+//				// alert(1);
+//				
+//				aBt[3].style.backgroundColor = 'red';
+//				aBt[3].style.color = 'white';
+//			}
+//			
+//			aBt[4].onclick = function(){
+//				// 先检查，是否能触发按钮
+//				// alert(1);
+//				
+//				aBt[4].style.backgroundColor = 'red';
+//				aBt[4].style.color = 'white';
+//			}
+			
+		</script>
+		
+	</body>
+</html>

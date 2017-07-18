@@ -1,0 +1,84 @@
+#main{
+	width: 100%;
+}
+#main .bigbox{
+	width: 977px;
+	margin: 72px auto 0;
+}
+#main .bigbox .box-l{
+	width: 236px;
+	height: 450px;
+	float: left;
+}
+#main .bigbox .box-l h3{
+	font-size: 20px;
+	line-height: 30px;
+	color: green;
+}
+#main .bigbox .box-l h4{
+	font-size: 25px;
+	height: 55px;
+	color: green;
+}
+#main .bigbox .box-l .p1{
+	width: 160px;
+	border-bottom:1px solid gray;
+	line-height: 28px;
+	color: black;
+}
+#main .bigbox .box-l p{
+	color: green;
+	line-height: 22px;
+	padding-left: 10px;
+}
+#main .bigbox .box-l .head{
+	background: gray;
+}
+#main .bigbox .box-l .p2{
+	font-size: 20px;
+	line-height: 25px;
+	padding: 0;
+}
+#main .bigbox .box-l .p3{
+	border-bottom: 1px dashed gray;
+	width: 192px;
+	font-size: 20px;
+	line-height: 25px;
+	padding: 0;
+}
+#main .bigbox .box-l .first{
+	margin-top: 30px;
+}
+#main .bigbox .box-l .last{
+	border: none;
+}
+
+#main .bigbox .box-r{
+	width: 740px;
+	height: 715px;
+	float: right;
+}
+#main .bigbox .box-r h3{
+	width: 698px;
+	height: 35px;
+	line-height: 35px;
+	background: #ccc;
+	padding-left: 42px;
+}
+#main .bigbox .box-r .photo{
+	width: 740px;
+	height: 650px;
+	overflow: hidden;
+}
+#main .bigbox .box-r .photo .case{
+	width: 922px;
+	margin-top: 10px;
+}
+#main .bigbox .box-r .photo .case dl{
+	margin-right: 33px;
+	float: left;
+}
+#main .bigbox .box-r .photo .case dd{
+	padding: 12px 0;
+	text-align: center;
+}

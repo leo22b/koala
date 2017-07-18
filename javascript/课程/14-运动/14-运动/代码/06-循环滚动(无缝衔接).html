@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 1000px;
+				height: 500px;
+				border: 1px solid gray;
+				margin: 30px auto;
+				overflow: hidden;
+				position: relative;
+			}
+			#box img{
+				width: 320px;
+				height: 480px;
+				margin: 10px;
+				float: left;
+			}
+			#box ul{
+				width: 2040px;
+				height: 480px;
+				position: absolute;
+				/*left: -700px;*/
+			}
+			li{
+				list-style: none;
+			}
+		</style>
+		<script type="text/javascript" src="startMove.js" ></script>
+		<script>
+			window.onload = function(){
+				var oBox = document.getElementById("box");
+				var oUl = document.getElementsByTagName('ul')[0];
+				var timer = null;
+				
+				// 为了实现无缝衔接，在原有基础上，添加一组图片
+				oUl.innerHTML += oUl.innerHTML;
+				oUl.style.width = oUl.offsetWidth * 2 + 'px';
+				
+				
+				// 开始时即滚动
+				startTimer();
+				
+				
+				oBox.onmouseover = function(){
+					// 停止
+					stopTimer();
+				}
+				oBox.onmouseout = function(){
+					// 开始
+					startTimer();
+				}
+		
+				function startTimer(){
+					if(timer == null){
+						timer = setInterval(srcoll, 20);
+					}
+				}
+				
+				function stopTimer(){
+					clearInterval(timer);
+					timer = null;
+				}
+				
+				// 滚动
+				function srcoll(){
+					oUl.style.left = oUl.offsetLeft - 3 + 'px';
+					
+					// 2040 * 2 = 4080
+					// -2050
+					// -2041 < -2040
+					if(oUl.offsetLeft <= -oUl.offsetWidth/2){
+						// 拉回到原点
+						oUl.style.left = 0;
+					}
+				}
+			}
+			
+		</script>
+	</head>
+	
+	<body>
+		<div id="box">
+			<ul>
+				<li><img src="images/3_1.jpg" /></li>
+				<li><img src="images/3_2.jpg" /></li>
+				<li><img src="images/3_3.jpg" /></li>
+				<li><img src="images/3_4.jpg" /></li>
+				<li><img src="images/3_5.jpg" /></li>
+				<li><img src="images/3_6.jpg" /></li>
+			</ul>
+		</div>
+	</body>
+</html>

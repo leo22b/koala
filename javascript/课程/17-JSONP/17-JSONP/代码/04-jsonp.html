@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!-- 1、先定义函数(获取到数据之后，需要进行的操作)-->
+		<script>
+			function showNews(data){
+				// alert(data);
+				var oUl = document.createElement('ul');
+				document.body.appendChild(oUl);
+				for(var i=0; i<data.length; i++){
+					var oLi = document.createElement('li');
+					oLi.innerHTML = data[i];
+					oUl.appendChild(oLi);
+				}
+			}
+		</script>
+		
+		<!-- 2、获取数据(在获取数据文件中，进行函数调用)-->
+		<!--<script src="data/01-data.php"></script>-->
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				document.onclick = function(){
+					
+					// 是通过scrip标签来获取数据的，什么时候需要获取数据，就添加一个对应script标签即可
+					var oScript = document.createElement('script');
+					oScript.src = 'data/01-data.php';
+					document.head.appendChild(oScript);
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

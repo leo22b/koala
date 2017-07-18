@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="zyz.js" ></script>
+		<script>
+			$(function(){
+				// 图片下标
+				var index = 1;
+				
+				// 一定的时间间隔，切换图片
+				setInterval( function(){
+					index++;
+					if(index > 5){
+						index = 1;
+					}
+					
+					// console.log(index);
+					
+					$('image').src = 'images/img_0' + index + '.png';
+				}, 3000);
+			});
+		</script>
+	</head>
+	
+	
+	<body>
+		<img src="images/img_01.png" id="image" />
+	</body>
+</html>

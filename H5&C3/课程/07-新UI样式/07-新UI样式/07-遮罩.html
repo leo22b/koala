@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img{
+				width: 600px;
+				height: 360px;
+				border: 1px solid gray;
+				/*border-radius: 50%;*/
+				/*-webkit-mask-image: url(mask.png);*/
+				/*-webkit-mask-repeat: no-repeat;*/
+				/*-webkit-mask-position: 100px 100px;*/
+				
+				-webkit-mask-image: url(test.png);
+				
+				
+				/* 过渡*/
+				transition: 3s;
+			}
+			img:hover{
+				-webkit-mask-position: 400px 200px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<img src="IMG.jpg" />
+	</body>
+</html>

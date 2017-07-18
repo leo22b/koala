@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+				// 元素节点
+				var oBox = document.getElementById("box");
+				
+				
+				// nodeName
+				// alert(oBox.nodeName);
+				
+				// nodeType
+				// alert( oBox.nodeType );
+				
+				// nodeValue
+				// alert( oBox.nodeValue );
+				
+				
+				// 属性节点 即是 id="box"
+				var att = oBox.attributes[0];
+				 alert( att.nodeName );
+//				 alert( att.nodeType );
+//				 alert( att.nodeValue );
+//				 alert(oBox.childNodes);
+			}
+		</script>
+	</head>
+	
+	
+	<body>
+		<div id="box" >
+			hello world!
+		</div>
+	</body>
+</html>

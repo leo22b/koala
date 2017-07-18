@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>双向数据绑定 </title>
+	<script src="lib/angular-1.3.0.js"></script>
+</head>
+<body>
+  
+     <div ng-app="myApp" ng-controller="myController" >
+          <input type="text" ng-model="name" placeholder="your name">
+          <h1>hello {{name}}</h1>
+     </div>
+     <script>
+     var myApp=angular.module("myApp",[]);
+     myApp.controller("myController",function($scope){
+
+          $scope.name="zhangsan";
+          $scope.$watch("name",function(nwlval,oldval){
+            
+            
+               console.log("数据发生变化了");
+
+          })
+
+
+     })
+
+     </script>
+<!-- 
+    实例讲解
+		    双向数据绑定就是  视图在修改数据时立刻更新数据模型$scope，在数据模型发生变化时立刻重新渲染视图
+
+		    双向数据绑定实现的机制 :{
+	                视图在修改数据时立刻更新数据模型是因为触发了angularjs内置的一个叫做事件循坏$digest()的机制
+
+                    在数据模型发生变化时立刻重新渲染视图是因为触发了内置的数据监听$watch()机制，也可以使用$watch()手动监听数据的变化
+
+
+
+		    }
+
+
+ 
+
+-->
+
+</body>
+</html>

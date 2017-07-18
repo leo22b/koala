@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+	</head>
+	
+	<body>
+		<!-- 
+			效果: 输入框输入内容，点击完成后，显示'hello xxxxx'
+		-->
+		<input type="text" id="text" /> 
+		<input type="button" value="完成" id="bt" />
+		
+		
+		
+		<script>
+			// 点击按钮想要输出一段话
+			
+			// 1、获取对应的元素
+			var oText = document.getElementById('text');
+			var oBt = document.getElementById('bt');
+			
+			// 2、按钮点击
+			oBt.onclick = function(){
+				alert( 'hello ' + oText.value );
+			}
+			
+		</script>
+	</body>
+</html>

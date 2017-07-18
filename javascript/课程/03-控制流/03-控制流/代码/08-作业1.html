@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="text" id="text" />
+		<input type="button" value="判断" id="bt1" />
+
+		<script>
+			// 给一个分数，判断等级，如果90分以上为A，80-90为B，70-80为C，60-70为D，60以下为留级；
+
+			var oText = document.getElementById('text');
+			var oBt = document.getElementById('bt1');
+
+			oBt.onclick = function() {
+				// oText.value != ''
+				if(oText.value) { // 输入有内容
+					// 获取到对应的分数
+					var temp = Number(oText.value);
+
+					// 内容必须是在0~100
+					if(temp > 0 && temp < 100) {
+						if(temp > 90) {
+							alert('A');
+						} else if(temp > 80) {
+							alert('B');
+						} else if(temp > 70) {
+							alert('C');
+						} else if(temp > 60) {
+							alert('D');
+						} else {
+							alert('恭喜你，留级了....');
+						}
+					} else {
+						alert('请输入0~100的数值');
+					}
+
+				} else {
+					alert('请输入内容');
+				}
+
+
+
+			}
+		</script>
+	</body>
+
+</html>

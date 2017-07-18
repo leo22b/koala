@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#view1{
+				width: 100px;
+				height: 100px;
+				background: red;
+				border-radius: 50%;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#view2{
+				width: 100px;
+				height: 100px;
+				background: blue;
+				border-radius: 50%;
+				position: absolute;
+				left: 0;
+				top: 110px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oView1 = document.querySelector("#view1");
+				oView1.onmousedown = function(ev){
+					ev = ev || window.event;
+					var dowX = ev.offsetX;
+					var dowY = ev.offsetY;
+					
+					document.onmousemove = function(ev){
+						ev = ev || window.event;
+						oView1.style.left = ev.clientX - dowX + 'px';
+						oView1.style.top = ev.clientY - dowY + 'px';
+					}
+					
+					document.onmouseup = function(){
+						document.onmousemove = document.onmouseup = null;
+					}
+				}
+				
+				var oView2 = document.querySelector("#view2");
+				oView2.onmousedown = function(ev){
+					ev = ev || window.event;
+					var dowX = ev.offsetX;
+					var dowY = ev.offsetY;
+					
+					document.onmousemove = function(ev){
+						ev = ev || window.event;
+						oView2.style.left = ev.clientX - dowX + 'px';
+						oView2.style.top = ev.clientY - dowY + 'px';
+					}
+					
+					document.onmouseup = function(){
+						document.onmousemove = document.onmouseup = null;
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="view1">
+			
+		</div>
+		
+		<div id="view2">
+			
+		</div>
+	</body>
+</html>

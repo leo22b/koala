@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background: black;
+			}
+			
+			#box {
+				background: white;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				// 获取canvas元素
+				var oBox = document.getElementById("box");
+				// 绘制环境(上下文)
+				var oGC = oBox.getContext('2d');
+				// 旋转角度
+				var rotateNum = 0;
+				// 缩放值
+				var scaleNum = 100;
+				// 缩放步进值
+				var scaleStep = 5;
+				// 时钟
+				var timer = null;
+
+				oGC.fillRect(100, 100, 100, 100);
+
+				oBox.onmouseover = function() {
+					timer = setInterval(function() {
+						// 擦除
+						oGC.clearRect(0, 0, oBox.width, oBox.height);
+
+						// 保存绘图属性
+						oGC.save();
+
+						// 偏移
+						oGC.translate(150, 150);
+//						oGC.translate(100, 100);
+
+						// 旋转
+						rotateNum += 4;
+						oGC.rotate(rotateNum * Math.PI / 180);
+						
+						// 缩放
+						if(scaleNum >= 250){
+							scaleStep = -5;
+						} else if(scaleNum <= 0){
+							scaleStep = 5;
+						}
+						scaleNum += scaleStep;
+						oGC.scale(scaleNum/150, scaleNum/150);
+
+						// 偏移(中心点位置旋转)
+						oGC.translate(-50, -50);
+
+						// 绘制
+						oGC.fillRect(0, 0, 100, 100);
+
+						// 恢复上一次保存的
+						oGC.restore();
+					}, 100)
+				}
+				
+				oBox.onmouseout = function(){
+					clearInterval(timer);
+				}
+			}
+		</script>
+
+	</head>
+
+	<body>
+
+		<canvas id="box" width="300" height="300">
+			<i>浏览器不支持canvas</i>
+		</canvas>
+
+	</body>
+
+</html>

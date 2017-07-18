@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<script>
+			/*
+			 * 全局变量、全局函数
+			 * 局部变量、局部函数
+			 */
+			
+			// 全局变量
+			var a = 10;
+		
+		
+			// 全局函数	
+			function fn1(){
+				alert('我在fn1中使用a --- ' + a);
+				
+				// 局部变量
+				var b = 3;
+				alert('我在fn1中使用b --- ' + b);
+			}
+			
+			// 属于fn1以外的(即不能调用fn1里面的内容)
+			// alert(b);
+		
+			// fn1();
+			
+			
+			function speak(){
+				
+				// 局部变量(只在所在函数内使用)
+				var c = 10;
+				
+				
+				// 局部函数
+				function sayHello(){
+					alert('hello');
+				}
+				
+				
+				// 调用局部函数
+				sayHello();
+			}
+			
+			speak();
+		</script>
+		
+		<script src="08-app.js"></script>
+		
+	</body>
+</html>

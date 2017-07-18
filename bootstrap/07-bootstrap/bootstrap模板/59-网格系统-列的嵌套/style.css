@@ -1,0 +1,9 @@
+[class *= col-]{
+  background-color: #eee;
+  border: 1px solid #ccc;
+}
+[class *= col-] [class *= col-] {
+  background-color: #f36;
+  border:1px dashed #fff;
+  color: #fff;
+}

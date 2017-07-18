@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{background-color: gray;}
+			.box{
+				width: 1000px;
+				height: 200px;
+			}
+			.box img{
+				width: 300px;
+				height: 180px;
+				transition: all 2s;
+			}
+			.box1 img{
+				transition: all 2s;
+			}
+			.box1:hover img{
+				animation: images 2s;
+				animation-fill-mode : forwards;
+				opacity: 0.5;
+			}
+			.box1{
+				width: 300px;
+				height: 180px;
+				position:relative;
+				overflow: hidden;
+				box-shadow: 10px 10px 15px black;
+			}
+			.box2{
+				border: 1px solid white;
+				border-left:120px ;
+				border-right: 120px;
+				width: 240px;
+				height: 120px;
+				position: absolute;
+				left: 30px;
+				top: 30px;
+				transition: all 2s;
+				width: 0px;
+			}
+			.box1:hover .box2{
+				width: 240px;
+			}
+			.box3{
+				border: 1px solid white;
+				border-top:120px ;
+				border-bottom: 120px;
+				width: 200px;
+				height: 160px;
+				position: absolute;
+				left:50px;
+				top: 10px;
+				transition: all 2s;
+				height: 0px;
+			}
+			.box1:hover .box3{
+				height: 160px;
+			}
+			.box4{
+				opacity: 0;
+				color: orangered;
+				border: 1px solid orangered;
+				position: absolute;
+				left: 0px;
+				bottom: 5px;
+				width: 290px;
+				height: 50px;
+				transition: all 2s;
+				text-align: center;
+				font-size: 15px;
+				line-height:5px ;				
+			}
+			.box1:hover .box4{
+				opacity: 1;
+				transform: translateX(110px) 
+				translateY(-40px) 
+				rotate(-50deg);
+			}
+			.p1{
+				transition: all 2s;
+			}
+			.box1:hover .p1{
+				transform: rotate(360deg);
+			}
+			.p2{
+				transition: all 2s;
+			}
+			.box:hover .p2{
+				transform: rotate(-360deg);
+			}
+			
+			@keyframes images{
+				0%{}
+				50%{transform: scale(1.2);}
+				100%{}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="box1">			
+				<img src="images/jiaoyue.jpg"/>
+				<div class="box2"></div>
+				<div class="box3"></div>
+				<div class="box4">
+					<p class="p1">黛安娜</p>
+					<p class="p2" style="font-size: 5px;">&nbsp;近战型刺客英雄。</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

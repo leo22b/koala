@@ -1,0 +1,289 @@
+/* 首页样式*/
+
+#jd_layout{
+	width: 100%;
+	min-width: 320px;
+	max-width: 640px;
+	margin: 0 auto;
+	/*background: red;
+	height: 500px;*/
+	position: relative;
+}
+
+
+/************ 搜索栏 ************/
+.jd_header{
+	/* content + padding + border*/
+	width: 100%;
+	background: #7d0010;
+	height: 40px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 10000;
+}
+.jd_header > .jd_logo{
+	/* 背景图片缩放1倍，所以背景大小也缩放*/
+	width: 56px;
+	height: 20px;
+	display: block;
+	background-position-y: -110px;
+	margin: 10px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.jd_header > form{
+	/* logo + input + login = 100%*/
+	
+	/* content + padding = 100%*/
+	width: 100%;
+	height: 40px;
+	/* 左边logo的位置*/
+	padding-left: 76px;
+	/* 右边登陆的位置*/
+	padding-right: 50px;
+	position: relative;
+}
+.jd_header > form > i{
+	/* 40*40*/
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-position: -60px -110px;
+	left: 82px;
+	top: 10px;
+}
+.jd_header > form > input{
+	width: 100%;
+	height: 30px;
+	border-radius: 15px;
+	border: none;
+	margin-top: 5px;
+	font-size: 14px;
+	padding-left: 34px;
+}
+.jd_header > .jd_login{
+	color: white;
+	height: 20px;
+	line-height: 20px;
+	margin: 10px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+
+
+/************ 轮播图 ************/
+.jd_banner{
+	width: 100%;
+	/* 高度不设置，因为图片宽度是跟随屏幕宽度改变，图片是会等比例缩放的，如果不等比例缩放图片就变形；即该高度由子元素撑开，也就是高度随图片高度*/
+	position: relative;
+	overflow: hidden;
+}
+.jd_banner > .jd_bgView{
+	/* 1张图*/
+	/*width: 100%;*/
+	
+	/* 装10张图*/
+	width: 1000%;
+	
+	transform: translateX(-10%);
+	/* 过渡效果*/
+	transition: 1s;
+}
+.jd_banner > .jd_bgView > li{
+	/*width: 100%;*/
+	width: 10%;
+	float: left;
+}
+.jd_banner > .jd_bgView > li > a{
+	display: block;
+	width: 100%;
+}
+.jd_banner > .jd_bgView > li > a > img{
+	/* 等比例缩放*/
+	width: 100%;
+	display: block;
+}
+
+/* 修改*/
+.jd_banner > .swiper-wrapper > .swiper-slide > a > img{
+	width: 100%;
+}
+.jd_banner > .swiper-pagination .swiper-pagination-bullet-active{
+	background: white;
+}
+
+
+.jd_banner > .jd_pageView{
+	width: 100%;
+	height: 20px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	text-align: center;
+}
+.jd_banner > .jd_pageView > i{
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	border: 1px solid white;
+}
+.jd_banner > .jd_pageView > .active{
+	background: white;
+}
+
+
+
+/************ 导航 ************/
+.jd_nav{
+	width: 100%;
+	background: white;
+	box-shadow: 0 0 2px gray;
+}
+.jd_nav > ul{
+	width: 100%;
+	padding-top: 10px;
+}
+.jd_nav > ul > li{
+	width: 25%;
+	float: left;
+	text-align: center;
+}
+.jd_nav > ul > li > a{
+	width: 100%;
+}
+.jd_nav > ul > li > a > img{
+	width: 40px;
+	height: 40px;
+}
+.jd_nav > ul > li > a > p{
+	line-height: 28px;
+}
+
+
+
+/************ 主体商品展示 (公共样式) ************/
+.jd_shops{
+	width: 100%;
+	padding: 8px 5px 0;
+}
+.jd_shops > .jd_product{
+	width: 100%;
+	background: white;
+	box-shadow: 0 0 2px gray;
+	margin-bottom: 8px;
+	overflow: hidden;
+	/*height: 300px;*/
+	padding: 10px 0;
+}
+.jd_shops > .jd_product > h3{
+	height: 16px;
+	line-height: 16px;
+	margin-bottom: 10px;
+}
+.jd_shops > .jd_product > h3 > i{
+	width: 3px;
+	height: 14px;
+	background: #7D0010;
+	float: left;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+/* 掌上秒杀*/
+.jd_shops > .jd_ms{}
+.jd_shops > .jd_ms > .jd_product_title{
+	width: 100%;
+	height: 30px;
+}
+.jd_shops > .jd_ms > .jd_product_title > .title_time{
+	
+}
+.jd_shops > .jd_ms > .jd_product_title > .title_time > i{
+	width: 20px;
+	height: 25px;
+	background: url(../img/seckill-icon.png);
+	background-size: 20px 25px;
+	float: left;
+	margin: 2px 4px;
+}
+.jd_shops > .jd_ms > .jd_product_title > .title_time > h3{
+	color: #7D0010;
+	font-size: 14px;
+	line-height: 30px;
+	float: left;
+	margin-right: 13px;
+}
+.jd_shops > .jd_ms > .jd_product_title > .title_time > span{
+	width: 15px;
+	height: 15px;
+	line-height: 15px;
+	margin-right: 2px;
+	float: left;
+	background: black;
+	color: white;
+	text-align: center;
+	margin-top: 7px;
+}
+.jd_shops > .jd_ms > .jd_product_title > .title_time > strong{
+	float: left;
+	margin-right: 2px;
+	margin-top: 7px;
+}
+.jd_shops > .jd_ms > .jd_product_title > .title_more{
+	margin-right: 4px;
+}
+.jd_shops > .jd_ms > .jd_product_title > .title_more > a{
+	line-height: 30px;
+}
+
+.jd_shops > .jd_ms > .jd_product_content{
+	width: 100%;
+}
+.jd_shops > .jd_ms > .jd_product_content > ul{
+	width: 100%;
+	margin-top: 10px;
+	padding-bottom: 10px;
+}
+.jd_shops > .jd_ms > .jd_product_content > ul > li{
+	width: 33.3%;
+	text-align: center;
+	float: left;
+	background: url(../img/header-bg.png) no-repeat right top; 
+}
+.jd_shops > .jd_ms > .jd_product_content > ul > li > a{
+	width: 70%;
+	display: block;
+	margin: 0 auto;
+}
+.jd_shops > .jd_ms > .jd_product_content > ul > li > a > img{
+	width: 100%;
+}
+.jd_shops > .jd_ms > .jd_product_content > ul > li > p:first-of-type{
+	color: #7D0010;
+	font-weight: 800;
+	line-height: 28px;
+}
+.jd_shops > .jd_ms > .jd_product_content > ul > li > p:last-of-type{
+	color: gray;	
+	text-decoration: line-through;
+	font-size: 11px;
+}
+
+
+
+
+
+
+/* 宽度百分之五十*/
+.w_50{
+	width: 50%;
+}
+.w_50 img{
+	width: 100%;
+	display: block;
+}

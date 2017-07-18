@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.active{
+				background: red;
+				color: white;
+				border: 0;
+			}
+		</style>
+	</head>
+	
+	
+	<body>
+		<input type="button" value="按钮1" />
+		<input type="button" value="按钮2" />
+		<input type="button" value="按钮3" />
+		
+		<script>
+			
+			// 通过id获取到对应元素
+			// document.getElementById();
+			
+			
+			// 通过元素名称获取到对应是元素
+			var aBt = document.getElementsByTagName('input');
+			// console.log(aBt);
+			
+			
+			// 给按钮添加点击事件
+//			aBt[0].onclick = function(){
+//				alert(1);
+//			}
+//			
+//			aBt[1].onclick = function(){
+//				alert(1);
+//			}
+//			
+//			aBt[2].onclick = function(){
+//				alert(1);
+//			}
+
+			// 给按钮添加点击事件
+			for(var i=0; i<aBt.length; i++){
+				aBt[i].onclick = function(){
+					
+					// 问题出现的原因即是i的值
+					// i: 0 1 2
+					// console.log(i);
+					// aBt[i].className = 'active';
+					
+					// 哪个按钮点击，即改变哪个按钮的背景以及字体颜色
+					console.log(this);
+					
+					
+					// 清空所有按钮的样式
+					for( var j=0; j<aBt.length; j++ ){
+						aBt[j].className = '';
+					}
+					// 设置对应按钮
+					this.className = 'active';
+				}
+			}
+			// 先执行完循环，i为3
+			// 点击按钮
+			
+		</script>
+	</body>
+</html>

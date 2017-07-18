@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr=[12,1,56,67,8];
+			var temp = 0;
+			for(var i=1; i<arr.length; i++){
+				temp = arr[i];
+			
+				for(var j=i-1; j>=0; j--){	
+					if (temp > arr[j]) {	
+						break;
+					} else {	
+						arr[j+1] = arr[j];
+					}
+				}
+
+				arr[j+1] = temp;
+				
+			}
+			document.write(arr);
+		</script>
+	</body>
+</html>

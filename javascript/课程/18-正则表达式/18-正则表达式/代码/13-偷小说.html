@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#text1, #text2{
+				width: 800px;
+				height: 300px;
+			}
+		</style>
+		<!--
+			<  div id="content">&nbsp;&nbsp;&nbsp;&nbsp;天罗大陆，上古天宫。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;灵力河流奔腾，浪花翻涌，释放出磅礴精纯的灵力，凝聚成雾气，飘散开来，令得整个天地都是变得清新空灵.毕竟上古年代的天宫，威名虽说显赫，但那基本全靠天帝一人独自撑下来，在其下面，各殿殿主虽然都是天骄人物，但却还不待他们成长起来，就遭遇了域外邪族的进攻...<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;在视线更远处，则是一座高耸的山丘，山丘上，一道身影，略显懒散的斜趟着，目光悠然的望着那灵力河流周围鼎沸的人群。<br /    >
+		-->
+		<script type="text/javascript">
+			window.onload = function(){
+				var oText1 = document.getElementById("text1");
+				var oText2 = document.getElementById("text2");
+				var oBt = document.getElementById("bt");
+				
+				// var rel = /<.+>/g;
+				var rel1 = /<[^<>]+>/g;
+				var rel2 = /&nbsp;/g;
+				
+				oBt.onclick = function(){
+					 oText2.value = oText1.value.replace(rel1,'').replace(rel2,'');
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<textarea id="text1"></textarea> <br /> <br /> <br /> <br />
+		<input type="button" value="转换" id="bt" /> <br /> <br /> <br /> <br />
+		<textarea id="text2"></textarea> 
+	</body>
+</html>

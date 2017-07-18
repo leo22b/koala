@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				document.onclick = function(){
+					var request = new XDomainRequest();
+					request.open('GET', 'http://www.b.com/HTML5/03-data.php', true);
+					request.send();
+					request.onload = function(){
+						alert(request.responseText);
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

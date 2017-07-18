@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+    /* for嵌套
+     案例7: 对应打印出下列图案1
+     *             第一行，1个*           
+     * *　          第二行，2个*
+     * * *          第三行，3个*
+     * * * *        第四行，4个*
+     * * * * *      第五行，5个*
+     * * * * * *    第六行，6个*
+    */
+
+    // 不管每行输出多少，输出多少行
+    for(var i=1; i<=20; i++){   // i即表示行
+        //  一行输出1个*
+        // document.write(i + '、');
+        // document.write('*');
+
+
+        // 需求第i行，输出i个*  ---> 循环i次
+        // 需求第5行，输出5个*  ---> 循环5次
+        for(var j=1; j<=i; j++){
+            document.write('*');
+        }
+
+
+        document.write('<br/>');
+    }
+
+</script>
+</body>
+</html>

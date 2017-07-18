@@ -1,0 +1,133 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: black;
+}
+.clearfix:after{
+	content: '';
+	display: block;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden;
+	height: 0;
+}
+.box {
+	width: 630px;
+	margin: 60px auto;
+}
+
+.set {
+	width: 160px;
+	float: left;
+	margin: 0 25px;
+	position: relative;
+}
+
+.set img {
+	width: 160px;
+	height: 150px;
+}
+
+.set p {
+	border-style: solid;
+	border-width: 2px;
+	border-color: white;
+	font-weight: bold;
+	margin: 56px 0;
+	color: #060;
+	line-height: 30px;
+	background-image: url(../images/allow.png);
+	background-repeat: no-repeat;
+	background-position: 100px center;
+	transition: all 0.3s;
+}
+
+p:hover {
+	background-position: 130px center;
+}
+
+.set p span {
+	position: absolute;
+	left: 15px;
+	font-size: 15px;
+	position: relative;
+}
+
+.set img:hover {
+	transform: rotate(360deg);
+	transition: all 1s;
+}
+
+.top-line {
+	width: 160px;
+	height: 2px;
+	position: absolute;
+	left: -130px;
+	top: 210px;
+	background-color: white;
+	transition: all 0.3s;
+	width: 0px;
+}
+
+.right-line {
+	width: 2px;
+	height: 30px;
+	position: absolute;
+	right: 0px;
+	top: 120px;
+	background-color: white;
+	transition: all 0.3s;
+	height: 0px;
+}
+
+.bottom-line {
+	width: 160px;
+	height: 2px;
+	position: absolute;
+	right: -130px;
+	top: 242px;
+	background-color: white;
+	transition: all 0.3s;
+	width: 0px;
+}
+
+.left-line {
+	width: 2px;
+	height: 30px;
+	position: absolute;
+	left: 0px;
+	bottom: -100px;
+	background-color: white;
+	transition: all 0.3s;
+	height: 0px;
+}
+
+p:hover .top-line {
+	position: absolute;
+	left: 0px;
+	top: 210px;
+	width: 160px;
+}
+
+p:hover .right-line {
+	position: absolute;
+	right: 0px;
+	top: 210px;
+	height: 34px;
+}
+
+p:hover .bottom-line {
+	position: absolute;
+	right: 0px;
+	top: 242px;
+	width: 160px;
+}
+
+p:hover .left-line {
+	position: absolute;
+	left: 0px;
+	bottom: 57px;
+	height: 32px;
+}

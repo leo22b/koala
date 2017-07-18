@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="03-ajax.js"></script>
+		<script>
+			window.onload = function() {
+				document.onclick = function() {
+					ajax('http://127.0.0.1/ajax/dataSource/box.json', function(response) {
+						var dataSource = JSON.parse(response);
+
+						var oUl = document.createElement('ul');
+						document.body.appendChild(oUl);
+						for(var i = 0; i < dataSource.length; i++) {
+							console.log(dataSource[i].name);
+
+							var oLi = document.createElement('li');
+							oLi.innerHTML = dataSource[i].name;
+							oUl.appendChild(oLi);
+						}
+					});
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

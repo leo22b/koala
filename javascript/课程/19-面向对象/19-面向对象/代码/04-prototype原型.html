@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			// 每个人需要喝水，都要自带饮水机        (资源浪费)
+			// 每个数组有求和功能，都要添加求和方法  (资源浪费)
+			
+			// 每个对象，都会有自己独有的一套方法
+			var arr1 = [10, 20, 31, 21, 39, 16, 34];
+			// 添加一个求和方法
+			arr1.sum = function(){
+				var result = 0;
+				
+				for(var i=0; i<this.length; i++){
+					result += this[i];
+				}
+				
+				return result;
+			}
+			// alert( arr1.sum() );
+			
+			
+			var arr2 = [1,2,3,4,5,6,7];
+			arr2.sum = function(){
+				var result = 0;
+				
+				for(var i=0; i<this.length; i++){
+					result += this[i];
+				}
+				
+				return result;
+			}
+			// alert( arr2.sum() );
+			
+			
+			
+			
+			// prototype原型: 动态的添加类的属性和方法
+			// 直接给数组这个类，添加一个求和方法 (一个教室一个饮水机即可)
+			Array.prototype.sum = function(){
+				var result = 0;
+				
+				for(var i=0; i<this.length; i++){
+					result += this[i];
+				}
+				
+				return result;
+			}
+			
+			var arr3 = [1,2,3,4,5,6,7,9,10];
+			var arr4 = [32,12,43,54,6];
+			// alert( arr3.sum() );
+			alert(arr4.sum());
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

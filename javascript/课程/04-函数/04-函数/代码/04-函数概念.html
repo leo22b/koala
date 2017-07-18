@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	
+	<body>
+	
+		
+		
+		<script>
+			// 4行3列
+			creatTable(4,3);
+			
+			// 3行6列
+			creatTable(3,6);
+			
+			// 8行8列
+			creatTable(8,8);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+			// 函数(复用性)
+			function creatTable(rows, cols){
+				// 对应的表格字符串  --- 开头
+				var table = '<table border="1" width="500" height="300" cellspacing="0">';
+				
+				// 中间
+				for(var i=0; i<rows; i++){	// 行
+					table += '<tr>';
+					
+					// 行内 --- 对应单元格
+					for(var j=0; j<cols; j++){
+						table += '<td></td>';
+					}
+					
+					table += '</tr>';
+				}
+				
+				
+				// 结尾
+				table += '</table>';
+				
+				// document.write(table);
+				
+				// document.body.innerHTML = table;
+				
+				// 在原有基础上，拼接上表格
+				document.body.innerHTML += table;
+			}
+		</script>
+	</body>
+</html>

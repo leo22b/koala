@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script type="text/javascript">
+        // 案例2: 一个新入职，月工资为2000元的员工，每年涨工资2%，到退休时工作50年的月工资是多少;
+        // 第二年: 2000 * 0.02 + 2000 * 1  ==>  2000 * (1 + 0.02)
+        // 第三年: 2000 * 1.02 * 1.02
+        var num = 2000;
+        for(var i=0; i<50; i++){
+            // num = num * 1.02;
+            num *= 1.02;
+        }
+        document.write(num);
+    </script>
+</body>
+</html>

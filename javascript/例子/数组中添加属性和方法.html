@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<script type="text/javascript">
+			Array.prototype.minValue = -1;//添加自定义属性值
+			Array.prototype.maxValue = 255; //添加自定义属性
+			Array.prototype.myToString = function(arr){ //arr形式参数
+				var str = "";
+				for(var i=0;i<arr.length;i++){
+					str += arr[i];
+					str += "_";
+				}
+				return str; //返回数据给调用者
+			}
+			
+			var array = [1, 2, 3];
+
+//			array.prototype.minValue = -1; //错误的
+			console.log(array.maxValue);
+			console.log(array.minValue);
+			
+			var arr1 = new Array();
+
+			console.log(arr1.maxValue);
+			console.log(arr1.minValue);
+			
+			var st =  arr1.myToString(array);
+			console.log(st);
+			
+		</script>
+
+	</body>
+
+</html>

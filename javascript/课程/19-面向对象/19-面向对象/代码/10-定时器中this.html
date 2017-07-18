@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			// 构造函数
+			function Cat(name){
+				this.name = name;
+				this.index = 0;
+			}
+			Cat.prototype.running = function(){
+				// this ==> ad
+				var _this = this;
+				setInterval(function(){
+					// this ==> window
+					// console.log(this);
+					// this.changeView();
+					
+					_this.index++;
+					_this.changeView();
+				}, 1000);
+			}
+			Cat.prototype.changeView = function(){
+				// this ==> ad
+				console.log(this.name + '的速度: ' + this.index);
+			}
+			
+			
+			var ad = new Cat('奥迪');
+			ad.running();
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ghost button幽灵按钮</title>
+<style>
+	*{margin:0;padding:0;}
+	body{background:black;}
+	.box{
+		width:630px;
+		height:220px;
+		//background:red;
+		margin:60px auto;
+		}
+		.set{
+			width:160px;
+			height:220px;
+			float:left;
+			margin:0 25px;
+			//background:blue;
+			position:relative;
+			}
+		.set img{
+			width:160px;
+			height:150px;
+			}
+		.set p{
+			border-style:solid;
+			border-width:2px;
+			border-height:30px;
+			border-color:white;
+			margin:60px 0;
+
+			color:#060;
+			line-height:30px;
+			
+			background-image:url(../images/allow.png);
+			background-repeat:no-repeat;
+			background-position:100px center;
+			transition:all 0.3s;
+			<!--添加参照-->
+			position:relative;
+			}
+		p:hover{
+			background-position:130px center;
+			}
+		.set p span{
+			position:absolute;
+			left:15px;
+			font-size:15px;
+			position:relative;
+			}
+		.set img:hover{
+			transform:rotate(360deg);
+			transition:all 1s;
+			}
+		.top-line{
+			width:160px;
+			height:2px;
+			position:absolute;
+			left:-130px;
+			top:210px;
+			background-color:white;
+			transition:all 0.3s;
+			width:0px;
+			}
+		.right-line{
+			width:2px;
+			height:30px;
+			position:absolute;
+			right:0px;
+			top:120px;
+			background-color:white;
+			transition:all 0.3s;
+			height:0px;
+			}
+		.bottom-line{
+			width:160px;
+			height:2px;
+			position:absolute;
+			right:-130px;
+			top:242px;
+			background-color:white;
+			transition:all 0.3s;
+			width:0px;
+			}
+		.left-line{
+			width:2px;
+			height:30px;
+			position:absolute;
+			left:0px;
+			bottom:-100px;
+			background-color:white;
+			transition:all 0.3s;
+			height:0px;
+			}
+		p:hover .top-line{
+			position:absolute;
+			left:0px;
+			top:210px;
+			width:160px;
+			}
+		p:hover .right-line{
+			position:absolute;
+			right:0px;
+			top:210px;
+			height:34px;
+			}
+		p:hover .bottom-line{
+			position:absolute;
+			right:0px;
+			top:242px;
+			width:160px;
+			}
+		p:hover .left-line{
+			position:absolute;
+			left:0px;
+			bottom:-23px;
+			height:32px;
+			}
+</style>
+</head>
+
+<body>
+	<div class="box">
+    	<div class="set">
+        	<img src="../images/mission.png"/>
+        	<p>
+            	<span>MISSION</span>
+                <i class="top-line"></i>
+                <i class="right-line"></i>
+                <i class="bottom-line"></i>
+                <i class="left-line"></i>
+            </p>
+            
+        </div>
+        <div class="set">
+        	<img src="../images/play.png"/>
+        	<p>
+            	<span>PLAY</span>
+                <i class="top-line"></i>
+                <i class="right-line"></i>
+                <i class="bottom-line"></i>
+                <i class="left-line"></i>
+            </p>
+        </div>
+        <div class="set">
+        	<img src="../images/touch.png"/>
+        	<p>
+            	<span>TOUCH</span>
+                <i class="top-line"></i>
+                <i class="right-line"></i>
+                <i class="bottom-line"></i>
+                <i class="left-line"></i>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background: black;
+			}
+			
+			#box {
+				background: white;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				// 获取canvas元素
+				var oBox = document.getElementById("box");
+				// 绘制环境(上下文)
+				var oGC = oBox.getContext('2d');
+				
+				var oImg = new Image();
+				oImg.src = 'qq.png';
+				document.onclick = function(){
+					// oImg, repeat
+					var oBg = oGC.createPattern(oImg, 'repeat-y');
+					
+					// oGC.fillStyle = 'red';
+					oGC.fillStyle = oBg;
+					
+					// 偏移
+					oGC.translate(100, 100);
+					
+					oGC.fillRect(0, 0, 100, 100);
+					oGC.strokeRect(0, 0, 100, 100);
+				}
+				
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<canvas id="box" width="300" height="300">
+			<i>浏览器不支持canvas</i>
+		</canvas>
+
+	</body>
+
+</html>

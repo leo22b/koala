@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		
+		<script>
+			// 一维数组
+			var zhangsan = ['张三', 20, '男', '13800'];
+			var lisi = ['李四', 18, '男', '110'];
+			var wangwu = ['王五', 30, '男', '119'];
+			
+			
+			// 数组元素，可以是任意类型
+			var students = [zhangsan, lisi, wangwu];
+			
+			// students[2] ==> wangwu  ===> wangwu[3]
+			// alert( students[2] );
+			alert( students[2][3] );		// wangwu[3]
+			
+			
+			
+			
+			
+			
+			
+			
+			var temp = [['张三',20, '男', '13800'],
+						['李四', 18, '男', '110'],
+						 ['王五', 30, '男', '119']
+						];
+			
+			
+			for(var i=0; i<temp.length; i++){
+				// temp[i]  ==>  数组
+				// 遍历数组
+				for(var j=0; j<temp[i].length; j++){
+					// temp[i]    [j]
+					document.writeln(temp[i][j]);
+				}
+				
+				document.write('<br/>');
+			}
+		</script>
+	</body>
+</html>

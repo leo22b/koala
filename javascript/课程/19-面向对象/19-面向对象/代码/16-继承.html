@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			// 人是一个大类，将人的共有特征抽取出来
+			// 人还可以进行种类细分: 小孩类、工人类、老人类
+			
+			// 小孩类、工人类、老人类都是属于人这个大类中的，都可以继承   人的属性
+			
+			
+			
+			// 人类 -- 构造函数
+			function Person(name, sex, age){
+				this.name = name;
+				this.sex = sex;
+				this.age = age;
+			}
+			// 人类 -- 方法
+			Person.prototype.speaking = function(){
+				alert('自我介绍: 我叫' + this.name + '，性别' + this.sex + '，今年' + this.age + '岁');
+			}
+			Person.prototype.running = function(){
+				alert(this.name + '跑...');
+			}
+			var liming = new Person('李明', '男', 20);
+			
+			
+			Person.call(this, '王五', '男', 25);	// this ==> Worker对象
+			
+			
+			// 工人类
+//			function Worker(name, sex, age, workName){
+//				this.name = name;
+//				this.sex = sex;
+//				this.age = age;
+//				this.workName = workName;
+//			}
+//			speaking、running、working方法
+
+
+			// 工人类   继承    人类
+			// 人类中有的属性和方法，都直接拿过来使用
+			function Worker(name, sex, age, workName){
+				// 构造函数伪装, 属性的继承(原理: 欺骗构造函数)
+				// new Person('李明', '男', 20) ==> Person的具体对象
+				// Person.call(this, name, sex, age);	// this ==> Worker对象
+				
+				// 使用apply
+				Person.apply(this, [name, sex, age]);
+				
+				// 独有的属性，单独设置
+				this.workName = workName;
+				
+				
+				// 原型链, 方法继承(原理: 复制方法，注意不能引用);
+				// Worker.prototype = Person.prototype;	// 不是值类型
+				for(index in Person.prototype){
+					Worker.prototype[index] = Person.prototype[index];
+				}
+			}
+			// 独有的方法，单独添加
+			Worker.prototype.working = function(){
+				alert(this.name + '，正在努力赚钱....');
+			}
+			
+			var xiaoli = new Worker('小李', '女', 18, '程序员...');
+			xiaoli.speaking();
+			xiaoli.running();
+			xiaoli.working();
+			
+			
+			
+			// js中对象，都是引用类型
+//			var arr1 = [1,2,3];
+//			var arr2 = arr1;
+//			arr2.push(4);
+//			alert(arr1);
+
+			
+			// 复制
+//			var arr1 = [1,2,3];
+//			var arr2 = [];
+//			for(var i=0; i<arr1.length; i++){
+//				arr2.push(arr1[i]);
+//			}
+//			arr2.push(4);
+//			alert(arr1);
+		</script>
+	</head>
+	
+	<body>
+	
+		
+	
+	</body>
+</html>

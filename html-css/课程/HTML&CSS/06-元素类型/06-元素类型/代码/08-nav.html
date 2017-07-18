@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				width: 1000px;
+				height: 42px;
+				margin: 30px auto;
+				background: #fdaf17;
+			}
+			ul li{
+				/* 没有设置宽度和高度，但可以通过子元素撑开*/
+				float: left;
+				list-style: none;
+				/* 背景样式的设置*/
+				background: url(nav/nav8.png);
+			}
+			ul li a{
+				text-decoration: none;
+				color: black;
+				display: block;
+				height: 36px;
+				padding: 0 50px;
+				line-height: 36px;
+				/* 边线设置，通过背景方式*/
+				background: url(nav/nav8-2.png) no-repeat;
+			}
+			/* 不需要显示边线，作为特殊处理*/
+			.first a{
+				background: none;
+			}
+			
+			/* 鼠标移入*/
+			ul li:hover{
+				background: none;
+			}
+		</style>
+	</head>
+	
+	<body>
+		
+		<ul>
+			<li class="first"> <a href="#">Home</a> </li>
+			<li> <a href="#">About us</a> </li>
+			<li> <a href="#">Services</a> </li>
+			<li> <a href="#">Clients</a> </li>
+			<li> <a href="#">Potfolio</a> </li>
+			<li> <a href="#">Contact us</a> </li>
+		</ul>
+		
+	</body>
+</html>

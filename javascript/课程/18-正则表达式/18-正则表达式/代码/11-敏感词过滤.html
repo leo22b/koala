@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oText = document.getElementById("content");
+				var oBt = document.getElementById("bt");
+				
+				oBt.onclick = function(){
+					var oP = document.createElement('p');
+					
+					// | 或
+					var rel = /哈哈|呵呵|嘻嘻|哦|傻逼/g;
+					
+					oP.innerHTML = oText.value.replace(rel, '^-^');
+					document.body.appendChild(oP);
+					
+					oText.value = '';
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<input type="text" id="content" />
+		<input type="button" value="发送" id="bt" />
+	</body>
+</html>

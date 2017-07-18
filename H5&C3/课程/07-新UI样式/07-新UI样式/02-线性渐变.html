@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#view1{
+				width: 200px;
+				height: 200px;
+				border: 1px solid gray;
+				
+				/* 标准写法*/
+				/*background: linear-gradient(red, black);*/
+				/*background: -webkit-linear-gradient(red, black);*/
+				/*background: -moz-linear-gradient(red, black);*/
+				/*background: -ms-linear-gradient(red, blue);*/ 
+				/*background: -o-liner;*/
+				
+				/* 起点位置*/
+				/*background: -webkit-linear-gradient(left, red, black);*/
+				/*background: linear-gradient(to left top, red, black);*/
+				/*background: linear-gradient(to right, red, black);*/
+				/*background: linear-gradient(120deg, red, black);*/
+				
+				
+				background: linear-gradient(to right, red 100px, black 170px);
+			}
+			
+			h2{
+				width: 300px;
+				color: white;
+				/*background: yellow;*/
+				background: linear-gradient(to right, red, white);
+			}
+			
+			
+			#view2{
+				width: 200px;
+				height: 200px;
+				/*background: linear-gradient(30deg, red 0, black 40px);*/
+				background: repeating-linear-gradient(30deg, red 0, black 40px);
+			}
+		</style>
+	</head>
+	
+	<body>
+		<!-- 线性渐变-->
+		<div id="view1"></div>
+		
+		<h2>二、新UI样式学习</h2>
+		
+		<!-- 重复性线性渐变-->
+		<div id="view2"></div>
+	</body>
+</html>

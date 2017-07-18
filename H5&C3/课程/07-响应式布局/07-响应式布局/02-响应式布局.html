@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<!-- 控制viewport-->
+		
+		<style type="text/css">
+			/* 当屏幕小于620px时，h2不显示; 大于620px就显示*/
+			h2{
+				text-align: center;
+				line-height: 50px;
+			}
+			#view1{
+				/* 没有设置宽度，宽度即是100%*/
+				height: 80px;
+				background: red;
+				color: white;
+			}
+			
+			/* 媒体查询*/
+			/* only: 特定媒体类型
+			   screen: 用于电脑屏幕，平板，智能手机等
+			   max-width: 屏幕最大宽度
+			   min-width: 屏幕最小宽度
+			  */
+			@media only screen and (max-width: 620px) {
+				h2{
+					display: none;
+				}
+			}
+			
+			/* 水平滚动条产生的原因？
+			 页面元素宽度 > 可视化窗口宽度
+			 */
+		</style>
+	</head>
+	
+	
+	<body>
+		<h2>响应式布局</h2>
+		<div id="view1">view1</div>
+	</body>
+</html>

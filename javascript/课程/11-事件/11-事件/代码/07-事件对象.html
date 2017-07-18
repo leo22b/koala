@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+				
+				// 简写
+				// alert(event);
+				// alert(window.event);
+				
+				// IE/谷歌: event是一个内置全局对象；
+				// 火狐: 事件对象是通过   事件函数的第一个参数传入；
+				document.onclick = function(ev){
+					// 兼容性写法
+					ev = window.event || ev;
+					
+					// console.log(ev);
+					
+					// 遍历事件对象
+					// name是字符串
+					for(name in ev){
+						document.write(name + ':' + ev[name]);
+						document.write('<br/>');
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	
+	<body>
+		
+	</body>
+</html>

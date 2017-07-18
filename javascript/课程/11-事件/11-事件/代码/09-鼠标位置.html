@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#view {
+				width: 200px;
+				height: 200px;
+				background: red;
+				margin: 30px;
+			}
+			
+			#test {
+				width: 100px;
+				height: 100px;
+				background: blue;
+			}
+		</style>
+
+		<script type="text/javascript">
+			window.onload = function() {
+				var oView = document.getElementById("view");
+				var oTest = document.getElementById('test');
+				
+				oTest.onclick = function(ev){
+					// 事件对象
+					ev = event || ev;
+					// 事件源
+					var self = ev.target || ev.srcElement;
+					
+					
+					// oView.clientWidth
+					// oView.offsetWidth
+					
+					// oView.clientLeft
+					// oView.offsetLeft
+					
+					// ev.clientX
+					// ev.offsetX
+					
+					
+					// 鼠标相对于浏览器页面的位置
+					// alert(ev.clientX);
+					
+					// 鼠标相对于事件源的位置
+					// alert( ev.offsetX );
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="view">
+			<div id="test"></div>
+		</div>
+	</body>
+
+</html>

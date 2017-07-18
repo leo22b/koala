@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<!-- 编码类型-->
+		<meta charset="utf-8">
+		<!-- 如果在IE浏览器下则使用最新的标准渲染当前文档-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 视口-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- 标题-->
+		<title>javascript插件</title>
+
+		<!-- Bootstrap样式表 -->
+		<link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- 条件注释(兼容性) -->
+		<!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	</head>
+
+	<body>
+
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" data-name='zhangsan'>
+  			张三
+		</button>
+
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" data-name='lisi'>
+  			李四
+		</button>
+
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" data-name='wangwu'>
+  			王五
+		</button>
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog modal-sm" role="document">
+				<div class="modal-content">
+					<!-- 头部-->
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">修改密码</h4>
+					</div>
+
+					<!-- 主体-->
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-lg-3 text-center">
+								账号：
+							</div>
+							<div class="col-lg-9">
+								<input type="text" placeholder="密码。。。。" />
+							</div>
+						</div>
+					</div>
+
+					<!-- 尾部-->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="button" class="btn btn-primary">保存</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bootstrap依赖于jQuery的 -->
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<!-- bootstrap 脚本代码 -->
+		<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<!-- 自己的脚本-->
+		<script>
+			// 当模态框将要显示时
+			$('#myModal').on('show.bs.modal', function(event) {
+				// 谁触发了该模态框
+				var button = $(event.relatedTarget) 
+				// 获取按钮中自定义属性
+				var recipient = button.data('name') 
+				
+				// 模态框
+				var modal = $(this);
+				
+				// 获取对应元素，修改文本
+				modal.find('.modal-title').text(recipient + '需要修改密码')
+				modal.find('.modal-body input').val(recipient)
+			})
+		</script>
+
+	</body>
+
+</html>

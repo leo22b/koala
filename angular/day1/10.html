@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>$rootscope 根作用域</title>
+	<script src="lib/angular-1.3.0.js"></script>
+</head>
+<body ng-app="myApp" >
+    <!-- 第一个控制器 -->
+     <div ng-controller="contro1" >
+              <input type="text" ng-model="n1" placeholder="your name">
+              <h1> {{n1}}</h1>
+              <h1>{{rootname}}</h1>
+               <!-- 第二个控制器 -->
+             <div ng-controller="contro2" >
+                  <input type="text" ng-model="n2" placeholder="your name">
+                  <h1>{{n2}}</h1>
+                   
+             </div>
+
+     </div>
+
+  
+     
+     <script>
+    var myApp=angular.module("myApp",[]);
+     myApp.controller("contro1",function($scope){
+          $scope.n1="第一个控制器";     
+     })
+
+    myApp.controller("contro2",function($scope,$rootScope){
+          $scope.n2="第二个控制器";  
+          $rootScope.rootname="根作用域";   
+     })
+     </script>
+<!-- 
+    实例讲解
+		   
+          1:一个模块中所有的作用域会有一个顶层的作用域$rootscope对象
+
+
+-->
+
+</body>
+</html>

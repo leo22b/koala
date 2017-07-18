@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			// 1、实例化对象 (创建对象)
+			var obj = new Object();
+
+			// 2、属性
+			obj.name = '李明';
+			
+			// 3、方法
+			obj.run = function(){
+				// alert('跑起来..');
+				
+				// 属性方法，this即是对象本身
+				alert(this.name + '跑起来..');
+			}
+			
+			// 4、调用方法
+			obj.run();
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

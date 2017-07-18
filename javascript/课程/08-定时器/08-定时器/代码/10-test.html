@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<link href="srcollView.css" rel="stylesheet" />
+		<script src="srcollView.js"></script>
+		
+		<style>
+			.view1{
+				width: 320px;
+				height: 150px;
+			}
+			.view1 img{
+				width: 320px;
+				height: 150px;
+			}
+			
+			.view2{
+				width: 320px;
+				height: 480px;
+			}
+			.view2 img{
+				width: 320px;
+				height: 480px;
+			}
+		</style>
+		
+		<script>
+			window.onload = function(){
+				
+				var imageNames1 = ['images/img_01.png', 'images/img_02.png', 'images/img_03.png', 'images/img_04.png', 'images/img_05.png'];
+				var view1 = document.getElementsByClassName('view1')[0];
+				var imageView1 = view1.getElementsByTagName('img')[0];
+				var pageView1 = view1.getElementsByTagName('p')[0];
+				scrollView(imageView1, pageView1, imageNames1, 2000);
+				
+				
+				
+				var imageNames2 = ['images/angry_03.jpg','images/angry_04.jpg','images/angry_05.jpg', 'images/angry_06.jpg', 'images/angry_07.jpg', 'images/angry_08.jpg'];
+				var view2 = document.getElementsByClassName('view2')[0];
+				var imageView2 = view2.getElementsByTagName('img')[0];
+				var pageView2 = view2.getElementsByTagName('p')[0];
+				scrollView(imageView2, pageView2, imageNames2, 3000);
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<div class="box view1">
+			<!-- 图片-->
+			<img class="bigImg" />
+
+			<!-- 下标-->
+			<p class="page"> </p>
+		</div>
+		
+		
+		<div class="box view2">
+			<!-- 图片-->
+			<img class="bigImg" />
+
+			<!-- 下标-->
+			<p class="page"> </p>
+		</div>
+
+	</body>
+
+</html>

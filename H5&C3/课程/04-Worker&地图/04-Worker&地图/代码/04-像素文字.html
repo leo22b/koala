@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background: black;
+			}
+			
+			#box {
+				background: white;
+			}
+			
+			ul {
+				list-style: none;
+				color: white;
+				padding: 0;
+			}
+			
+			li {
+				float: left;
+				width: 30px;
+				height: 30px;
+				border: 1px solid white;
+				margin: 3px;
+				text-align: center;
+				line-height: 30px;
+			}
+		</style>
+
+		<script type="text/javascript">
+			window.onload = function() {
+				// 获取canvas元素
+				var oBox = document.getElementById("box");
+				// 绘制环境(上下文)
+				var oGC = oBox.getContext('2d');
+				var aLi = document.querySelectorAll("li");
+
+				var fontH = 120;
+
+				oGC.fillStyle = 'red';
+				oGC.textAlign = 'left';
+				oGC.textBaseline = 'top';
+				oGC.font = fontH + 'px 好';
+
+				// 点击操作
+				for(var i = 0; i < aLi.length; i++) {
+					aLi[i].onclick = function() {
+						var str = this.innerHTML;
+
+						// 擦除
+						oGC.clearRect(0, 0, oBox.width, oBox.height);
+
+						// 文字宽度?
+						var fontW = oGC.measureText(str).width;
+
+						// 绘制文本
+						oGC.fillText(str, (oBox.width - fontW) / 2, (oBox.height - fontH) / 2);
+
+						// 获取对应文本的像素点 -- 问题
+						var oImg = oGC.getImageData((oBox.width - fontW) / 2, (oBox.height - fontH) / 2, fontW, fontH);
+
+						// 擦除
+						oGC.clearRect(0, 0, oBox.width, oBox.height);
+
+						// 产生一组随机数(需要显示像素点的随机数)
+						console.time('randomArr');
+						//						var dataArr= randomArr(oImg.width*oImg.height, oImg.width*oImg.height*0.2);
+
+						// 叫一个人帮我们生成随机数
+						var zhangsan = new Worker('04-test.js');
+						zhangsan.postMessage({ 'iAll': oImg.width * oImg.height, 'iNow': oImg.width * oImg.height * 0.5 });
+
+						console.timeEnd('randomArr');
+
+						// 接收到消息
+						zhangsan.onmessage = function(ev) {
+							var dataArr = ev.data;
+							
+							// 创建新的像素
+							var newImg = oGC.createImageData(fontW, fontH);
+
+							// 操作像素点
+							for(var j = 0; j < dataArr.length; j++) {
+								// 要显示的像素点
+								var temp = dataArr[j];
+
+								newImg.data[4 * temp] = oImg.data[4 * temp];
+								newImg.data[4 * temp + 1] = oImg.data[4 * temp + 1];
+								newImg.data[4 * temp + 2] = oImg.data[4 * temp + 2];
+								newImg.data[4 * temp + 3] = oImg.data[4 * temp + 3];
+								//							console.log( temp +  ':' + oImg.data[4*temp]);
+							}
+
+							// 再绘制到画布中
+							oGC.putImageData(newImg, (oBox.width - fontW) / 2, (oBox.height - fontH) / 2);
+						}
+					}
+				}
+
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<ul>
+			<li>今</li>
+			<li>天</li>
+			<li>是</li>
+			<li>星</li>
+			<li>期</li>
+			<li>五</li>
+			<li>。</li>
+		</ul>
+		<br />
+		<br />
+		<br />
+		<canvas id="box" width="300" height="300">
+			<i>浏览器不支持canvas</i>
+		</canvas>
+
+	</body>
+
+</html>

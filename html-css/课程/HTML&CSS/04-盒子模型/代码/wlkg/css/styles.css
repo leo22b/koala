@@ -1,0 +1,112 @@
+/* 重置样式*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+/*********************** 1、头部 ***********************/
+#header{
+	width: 999px;
+	/*height: 100px;*/
+	height: 60px;
+	/*background: red;*/
+	margin: 0 auto;
+	
+	padding-top: 40px;
+	
+	/*padding-left: 20px;*/
+}
+#header .logo{
+	margin-left: 20px;
+}
+#header  .search{
+	float: right;
+	width: 228px;
+	height: 28px;
+	background: #f1f1f1;
+	margin-right: 20px;
+}
+#header .text{
+	float: left;
+	height: 26px;
+	margin-left: 12px;
+	background: #f1f1f1;
+	border: none;
+}
+#header .bt{
+	/* 显示图片: img、background*/
+	width: 28px;
+	height: 28px;
+	background: url(../img/search.png) no-repeat;
+	float: right;
+	border: none;
+}
+
+
+/*********************** 2、导航 ***********************/
+#nav{
+	width: 999px;
+	height: 60px;
+	background: #2a2a2a;
+	margin: 0 auto;
+}
+#nav ul{
+	margin-left: 25px;
+	font-size: 13px;
+}
+#nav ul li{
+	float: left;
+	list-style: none;
+	width: 118px;
+	text-align: center;
+	line-height: 60px;
+	border-right: 1px solid lightgray;
+}
+#nav ul li a{
+	color: white;
+	text-decoration: none;
+}
+#nav ul .last{
+	/* 最后一个不显示边框*/
+	border-right: none;
+}
+
+
+/*********************** 3、横幅 ***********************/
+#banner{
+	width: 999px;
+	height: 464px;
+	/*background: purple;*/
+	margin: 0 auto;
+}
+
+
+/*********************** 4、新闻 ***********************/
+#news{
+	width: 999px;
+	height: 245px;
+	background: blueviolet;
+}
+
+/*********************** 5、市场 ***********************/
+#market{
+	width: 999px;
+	height: 305px;
+	background: cadetblue;
+}
+
+
+/*********************** 6、产品 ***********************/
+#product{
+	width: 999px;
+	height: 250px;
+	background: cornflowerblue;
+}
+
+/*********************** 7、尾部 ***********************/
+#footer{
+	width: 999px;
+	height: 82px;
+	background: darkblue;
+}

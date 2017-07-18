@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+			var str1 = 'hello';
+			
+			// 没有参数，即将整个字符串当做一个元素
+			// var arr = str1.split();
+			
+			// 有参数，以空字符串进行切分，将字符串一个个字符切分
+			// var arr = str1.split('');
+			
+			var str2 = '你好,您好,hello,哈哈';
+			// var arr = str2.split(',');
+			
+			
+			var str3 = '2017-5-4';
+			var arr = str3.split('-');
+			
+			// length: 指定返回的数组最大长度;
+			// var arr = str3.split('-', 2);
+			
+			
+			document.write( arr[0] + '年' + arr[1] + '月' + arr[2] + '日' );
+		</script>
+	</body>
+</html>

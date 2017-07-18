@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background: black;
+			}
+			#box{
+				width: 300px;
+				height: 150px;
+				border: 1px solid white;
+				position: absolute;
+				left: 30px;
+				top: 30px;
+				color: white;
+			}
+			#box h3{
+				height: 30px;
+				border-bottom: 1px solid white;
+				line-height: 30px;
+				text-align: right;
+				cursor: move;
+			}
+			#box h3 a{
+				font-size: 14px;
+				color: white;
+				text-decoration: none;
+			}
+			#box p{
+				line-height: 30px;
+			}
+			#box p i{
+				color: yellow;
+			}
+		</style>
+		
+		<script>
+			window.onload = function(){
+				var oBox = document.getElementById("box");
+				var oMoveBar = oBox.getElementsByTagName('h3')[0];
+				var oBack = oMoveBar.getElementsByTagName('a')[0];
+				var aContent = oBox.getElementsByTagName('i');
+				// 保存元素坐标位置
+				var arr = [];
+				
+				oMoveBar.onmousedown = function(ev){
+					// 鼠标相对于obox的位置
+					ev = event || ev;
+					var dowX = ev.offsetX;
+					var dowY = ev.offsetY;
+					
+					document.onmousemove = function(ev){
+						ev = event || ev;
+						var _left = ev.clientX - dowX;
+						var _top = ev.clientY - dowY;
+						
+						// 改变元素位置
+						oBox.style.left = _left + 'px';
+						oBox.style.top = _top + 'px';
+						
+						// 改变显示
+						aContent[0].innerHTML = 'true';
+						aContent[1].innerHTML = _left;
+						aContent[2].innerHTML = _top;
+						
+						// 将坐标位置保存起来(一个坐标点: _left和_top)
+						// { 属性名: 属性值, 属性名: 属性值 ...... }
+						arr.push({left: _left, top: _top});
+					}
+					
+					document.onmouseup = function(){
+						aContent[0].innerHTML = 'false';
+						document.onmousemove = document.onmouseup = null;
+					}
+				}
+				
+				oBack.onclick = function(){
+					// console.log(arr);
+					// 将数组中的坐标点取出来，赋值(从后往前)
+					
+					// 数组下标
+					var index = arr.length - 1;
+					
+					var timer = setInterval(function(){
+						oBox.style.left = arr[index].left + 'px';
+						oBox.style.top = arr[index].top + 'px';
+						
+						aContent[1].innerHTML = arr[index].left;
+						aContent[2].innerHTML = arr[index].top;
+						
+						index--;
+						if(index < 0){	// 停止
+							clearInterval(timer);
+						}
+					}, 30);
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="box">
+			<h3> <a href="#">回放拖动轨迹</a> </h3>
+			<p> Drag: <i>false</i> </p>
+			<p> offsetLeft: <i>30</i> </p>
+			<p> offsetTop: <i>30</i> </p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="zyz.js" ></script>
+		<script>
+			$(function(){
+				
+				// 每隔一秒，输出 'hello world!'
+				
+				var timer = null;
+				
+				$('bt1').onclick = function(){
+					// 如何开启定时器?
+					/*
+					 * 参数
+					 * 	arg1: 触发时钟后需要操作的事情(函数)
+					 * 	arg2: 时间间隔(单位毫秒)
+					 * 返回值
+					 * 	时钟对象
+					 */
+					//返回speak函数的值，赋值给timer
+					timer = setInterval(speak, 1000);
+				}
+				
+				$('bt2').onclick = function(){
+					// 停止时钟
+					clearInterval(timer);
+				}
+				
+				var index = 0;
+				function speak(){
+					index++;
+					console.log(index + '-hello world!');
+				}
+			});
+		</script>
+	</head>
+	
+	<body>
+		<input type="button" value="开始" id="bt1" />
+		<input type="button" value="停止" id="bt2" />
+	</body>
+</html>

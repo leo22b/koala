@@ -1,0 +1,197 @@
+/* 重置样式*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+/*********************** 1、头部 ***********************/
+#header{
+	width: 999px;
+	/*height: 100px;*/
+	height: 60px;
+	/*background: red;*/
+	margin: 0 auto;
+	
+	padding-top: 40px;
+	
+	/*padding-left: 20px;*/
+}
+#header .logo{
+	margin-left: 20px;
+}
+#header  .search{
+	float: right;
+	width: 228px;
+	height: 28px;
+	background: #f1f1f1;
+	margin-right: 20px;
+}
+#header .text{
+	float: left;
+	height: 26px;
+	margin-left: 12px;
+	background: #f1f1f1;
+	border: none;
+}
+#header .bt{
+	/* 显示图片: img、background*/
+	width: 28px;
+	height: 28px;
+	background: url(../img/search.png) no-repeat;
+	float: right;
+	border: none;
+}
+
+
+/*********************** 2、导航 ***********************/
+#nav{
+	width: 999px;
+	height: 60px;
+	background: #2a2a2a;
+	margin: 0 auto;
+}
+#nav ul{
+	margin-left: 25px;
+	font-size: 13px;
+}
+#nav ul li{
+	float: left;
+	list-style: none;
+	width: 118px;
+	text-align: center;
+	line-height: 60px;
+	border-right: 1px solid lightgray;
+}
+#nav ul li:hover a{
+	color: red;
+}
+#nav ul li a{
+	color: white;
+	text-decoration: none;
+}
+#nav ul .last{
+	/* 最后一个不显示边框*/
+	border-right: none;
+}
+
+
+/*********************** 3、横幅 ***********************/
+#banner{
+	width: 999px;
+	height: 464px;
+	/*background: purple;*/
+	margin: 0 auto;
+}
+
+
+/*********************** 4、新闻 ***********************/
+#news{
+	width: 999px;
+	height: 245px;
+	/*background: blueviolet;*/
+	margin: 0 auto;
+}
+/* 抽取共同样式*/
+#news .section{
+	height: 245px;
+	float: left;
+}
+#news h2{
+	margin-top: 36px;
+	font-size: 20px;
+}
+
+#news .section1{
+	/*width: 500px;*/
+	width: 480px;
+	/*background: red;*/
+	padding-left: 20px;
+}
+#news .section1 ul{
+	margin-top: 26px;
+}
+#news .section1 ul li{
+	/*background: gray;*/
+	list-style-position: inside;
+	line-height: 24px;
+	font-size: 13px;
+	color: #757575;
+	width: 450px;
+}
+#news .section1 li a{
+	color: #757575;
+	text-decoration: none;
+	/*float: left;*/
+}
+#news .section1 li span{
+	float: right;
+}
+
+
+#news .section2{
+	/*width: 241px;*/
+	width: 217px;
+	background: #f1f1f1;
+	padding-left: 24px;
+}
+/*#news .section2 h2{
+	margin-top: 36px;
+}*/
+#news .section2 .info1{
+	margin-top: 36px;
+	font-size: 14px;
+	width: 130px;
+	line-height: 25px;
+}
+#news .section2 .info1 span{
+	font-size: 12px;
+}
+#news .section2 .info2{
+	margin-top: 24px;
+	font-size: 12px;
+	line-height: 24px;
+	width: 192px;
+	color: #8b8b8b;
+}
+
+
+#news .section3{
+	width: 234px;
+	padding-left: 24px;
+	/*background: red;*/
+	/* 背景background: 背景颜色、背景图片、背景平铺方式、背景位置*/
+	background: url(../img/section3.png) no-repeat 164px 140px;
+	background-color: #fbfbfb;
+}
+#news .section3 p{
+	margin-top: 25px;
+	width: 180px;
+	font-size: 12px;
+	line-height: 24px;
+}
+#news .section3 a img{
+	margin-top: 54px;
+}
+
+/*********************** 5、市场 ***********************/
+#market{
+	width: 999px;
+	height: 305px;
+	background: cadetblue;
+}
+
+
+/*********************** 6、产品 ***********************/
+#product{
+	width: 999px;
+	height: 250px;
+	background: cornflowerblue;
+}
+
+/*********************** 7、尾部 ***********************/
+#footer{
+	width: 999px;
+	height: 82px;
+	background: darkblue;
+}

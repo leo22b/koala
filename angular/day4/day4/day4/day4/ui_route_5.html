@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/angular-1.3.0.js"></script>
+    <script src="lib/angular-ui-router.js"></script>
+
+</head>
+<div ng-app="myApp" >
+    <a ui-sref="home">home</a>
+    <a ui-sref="index({id:30})">show index</a>
+    <a ui-sref="test({username:'rose'})">show test</a>
+    <div ui-view></div>
+</div>
+</body>
+
+<script type="text/javascript">
+    var app = angular.module('myApp', ['ui.router']);
+    app.config(["$stateProvider",  function ($stateProvider) {
+        $stateProvider
+            .state("home", {
+                url: '/',
+                template:"<div>homePage</div>"
+
+            })
+            .state("index", {
+                url: '/xxx/:id',
+                template:"<div>indexcontent:{{id}}</div>",
+                controller:function($scope,$stateParams){  //自动注入
+                     $scope.id=$stateParams.id
+                     console.log($stateParams)
+                }
+            })
+            .state("test", {
+                url: '/xxx/:username',
+                template:"<div>testContent:{{name}}</div>",
+                controller:function($scope,$stateParams){
+                    $scope.name=$stateParams.username
+                    console.log($stateParams)
+                }
+            })
+
+    }]);
+
+</script>
+</html>

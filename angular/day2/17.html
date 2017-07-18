@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <script src="lib/angular-1.3.0.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+     <button ng-click="click($event,'122')" value="dianji">单击事件</button>
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope) {
+       $scope.click=function(event,a){
+
+
+       	     alert("我点击了")
+       	    console.log(event.target) ; // event对象就是js的事件对象 event.target 事件源 表单text
+            var jq=angular.element(event.target);//把原生的dom对象转换jq lite对象
+            var value=jq.val();
+            console.log(value)
+            console.log(a)
+       }
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.view1{
+				width: 100px;
+				height: 100px;
+				/* 200*120*/
+				background: url(05-image/05-img.gif);
+				border: 1px solid gray;
+			}
+			
+			.view2{
+				width: 300px;
+				height: 300px;
+				background: #63ceff;
+				/*border: 1px solid gray;*/
+				position: relative;
+			}
+			.view2 i{
+				width: 6px;
+				height: 6px;
+				display: block;
+				position: absolute;
+			}
+			.view2 .left-t{
+				background: url(05-image/left-t.png);
+				left: 0;
+				top: 0;
+			}
+			.view2 .right-t{
+				background: url(05-image/right-t.png);
+				right: 0;
+				top: 0;
+			}
+			.view2 .right-b{
+				background: url(05-image/right-b.png);
+				right: 0;
+				bottom: 0;
+			}
+			.view2 .left-b{
+				background: url(05-image/left-b.png);
+				left: 0;
+				bottom: 0;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="view1"></div>
+		
+		<br />
+		<div class="view2">
+			<i class="left-t"></i>
+			<i class="right-t"></i>
+			<i class="right-b"></i>
+			<i class="left-b"></i>
+		</div>
+		
+	</body>
+</html>
