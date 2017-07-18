@@ -18,6 +18,18 @@ $.fn.extend = function() {
 		imgbox.css("width", slidewidth);
 		//下标移入渐变功能设置
 		$('#batch').find(".index").on("mouseover", Toevevt);
+		//移入移出上一张下一张显示问题
+		$('.imgindex').on('mouseover',aaa);
+		$('.bannerbox').on('mouseout',bbb);
+		$('.bannerbox').on('mouseover',aaa);
+		function aaa(){
+			$('#back').css('display','block');
+			$('#next').css('display','block');
+		}
+		function bbb(){
+			$('#back').css('display','none');
+			$('#next').css('display','none');
+		}
 		//给下标添加、移出样式
 		function Toevevt() {
 			var oIndex = $(this).index();
@@ -69,11 +81,11 @@ $.fn.extend = function() {
 		})
 		//鼠标移入清除时钟
 		$('#batch').find(".batch_cont").on("mouseover", function() {
-			clearInterval(timer)
+			clearInterval(timer);
 		});
 		//鼠标移出开启时钟
 		$('#batch').find(".batch_cont").on("mouseout", function() {
-			timer = setInterval(plays, 4000)
+			timer = setInterval(plays, 4000);
 		});
 	});
 	return this;

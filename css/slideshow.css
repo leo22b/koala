@@ -37,6 +37,7 @@ li {
 	background: rgba(0,0,0,0.3);
 	background-image: url(../img/back.png);
 	background-size: 100%;
+	display: none;
 }
 #next{
 	position: absolute;
@@ -48,7 +49,9 @@ li {
 	background: rgba(0,0,0,0.3);
 	background-image: url(../img/next.png);
 	background-size: 100%;
+	display: none;
 }
+
 .batch_cont>.bannerbox>.imgbox {
 	float: left;
 	width: 100%;
