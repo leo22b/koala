@@ -1,0 +1,173 @@
+
+a {
+	text-decoration: none;
+	font-size: 12px;
+}
+a:hover {
+	text-decoration: none;
+}
+
+.wrap {
+	width: 1072px; 
+	height: 360px;
+	margin: 0px auto;
+	position: relative;
+	position: absolute;
+	left: 98px;
+	top: 50px;
+}
+
+
+.item {
+	width: 148px;
+	height: 36px;
+}
+
+.item .oli {
+	float: left;
+	background-color: #0e111a;
+	position: relative;
+	width: 148px;
+	height: 36px;
+	z-index: 100;
+}
+
+.item .oli a {
+	color: white;
+	display: block;
+	width: 93px;
+	height: 20px;
+	line-height: 20px;
+	padding: 8px 26px 8px 29px;
+	position: absolute;
+	top: 0;
+	background: url(../img/navright.png) no-repeat 125px center;
+	background-size: 5px 10px;
+}
+.item .oli a:hover{
+	background-color: #555;
+}
+.item .oli a:hover>.oi{
+	display: block;
+}
+.item .oli a img {
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+.item .oli a em {
+	position: absolute;
+	left: 12px;
+	top: 35px;
+	width: 130px;
+	border-bottom: 1px solid #1a1d26;
+}
+.item .oli a .oi{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 3px;
+	height: 100%;
+	background: #E31436;
+	display: none;
+}
+.item .oli a .thelast{
+	display: none!important;
+}
+/*列表内容*/
+.item-list {
+	display: none;
+	position: absolute;
+	left: 148px;
+	top: 1px;
+	width: 710px;
+	height: 358px;
+	z-index: 100;
+	background: white;
+	border-bottom: 1px solid gray;
+}
+/**/
+
+.child {
+	float: left;
+	width: 690px;
+	height: 344px;
+	padding: 15px 0 0 20px;
+}
+
+.child li {
+	width: 325px;
+	margin: 0 20px 10px 0;
+	float: left;
+}
+
+.child li p {
+	border-bottom: 1px solid #f2f2f2;
+	padding-bottom: 5px;
+	font-weight: bold;
+}
+.child li:nth-child(1) p:nth-child(1) a{
+	padding: 0;
+}
+.child li a {
+	font-size: 11px;
+	color: black;
+	padding-right: 10px;
+	padding-left: 7px;
+}
+.child li .odiv {
+	padding: 4px 10px 0 2px;
+	float: left;
+}
+.child li .odiv a {
+	float: left;
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	font-size: 10px;
+	background: url(../img/fgfu1.jpg) no-repeat right center;
+	background-size: 1px 12px;
+}
+
+.child li a:hover {
+	text-decoration: underline;
+}
+
+.child li .odiv a:nth-last-child(1) {
+	background: none;
+}
+
+.mark {
+	background: #f1f1f1;
+	float: left;
+	width: 214px;
+	height: 100%;
+	position: absolute;
+	top: -1px;
+	right: -214px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid gray;
+}
+
+.mark #sb {
+	margin: 15px 15px;
+	height: 182px;
+	border: 1px solid gray;
+	border-right: 0;
+}
+
+.mark #sb a img {
+	width: 60px;
+	height: 60px;
+	border-right: 1px solid gray;
+	border-bottom: 1px solid gray;
+	float: left;
+}
+
+.mark .tu img {
+	width: 210px;
+	position: absolute;
+	bottom: 0;
+}

@@ -1,0 +1,577 @@
+/*主体*/
+
+#main {
+	width: 100%;
+	background: #f6f6f6;
+}
+
+#main .down {
+	width: 100%;
+	background: white;
+}
+#main .down .down_cont{
+	width: 1100px;
+	margin: 0 auto;
+	border-bottom: 1px solid #F2F2F2;
+}
+
+#main .down a {
+	display: block;
+	float: left;
+	height: 38px;
+	line-height: 40px;
+	margin-right: 30px;
+	padding-left: 22px;
+	font-size: 11px;
+}
+
+#main .down a:hover {
+	color: #d22147;
+}
+
+#main .down a:nth-of-type(1) {
+	background: url(../img/zheng.jpg) no-repeat left center;
+	background-size: 20px 20px;
+}
+
+#main .down a:nth-of-type(1):hover {
+	background: url(../img/zheng1.jpg) no-repeat left center;
+	background-size: 20px 20px;
+}
+
+#main .down a:nth-of-type(2) {
+	background: url(../img/tui.jpg) no-repeat left center;
+	background-size: 20px 20px;
+}
+
+#main .down a:nth-of-type(2):hover {
+	background: url(../img/tui1.jpg) no-repeat left center;
+	background-size: 20px 20px;
+}
+
+#main .down a:nth-of-type(3) {
+	background: url(../img/you.jpg) no-repeat left center;
+	background-size: 20px 20px;
+}
+
+#main .down a:nth-of-type(3):hover {
+	background: url(../img/you1.jpg) no-repeat left center;
+	background-size: 20px 20px;
+}
+
+#main .down a:nth-of-type(4) {
+	background: url(../img/phone1.jpg) no-repeat 8px center;
+	background-size: 10px 14px;
+	float: right;
+	color: #d22147;
+	margin: 0;
+}
+
+#main .down a:nth-of-type(4):hover {
+	text-decoration: underline;
+}
+
+#main .img-4 {
+	width: 1100px;
+	margin: 20px auto;
+}
+
+#main .img-4 a img {
+	width: 267px;
+	height: 210px;
+	float: left;
+	margin-right: 10px;
+}
+
+#main .img-4 a:nth-last-child(1) img {
+	margin: 0;
+}
+
+
+/*倒计时*/
+
+#main .zero {
+	width: 1100px;
+	margin: 0 auto 10px;
+}
+
+#main .zero em {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#main .zero i {
+	color: #999;
+}
+
+#main .zero span {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	line-height: 18px;
+	background: #333;
+	border-radius: 50%;
+	color: white;
+	text-align: center;
+}
+
+#main .zero a {
+	float: right;
+	line-height: 40px;
+}
+
+#main .zero a:hover {
+	text-decoration: underline;
+}
+
+
+/*今日限时购*/
+
+#main .today {
+	width: 1100px;
+	height: 322px;
+	margin: 0 auto;
+/*	background: #ede1d9;*/
+	border-top: 2px solid black;
+	border-left: 1px solid #f2f2f2;
+}
+
+#main .today .to-right {
+	float: right;
+	width: 180px;
+	height: 322px;
+}
+
+#main .today .to-right img {
+	width: 100%;
+	height: 322px;
+}
+
+#main .today .to-left {
+	float: left;
+	width: 920px;
+	height: 322px;
+	background: white;
+}
+
+#main .today .to-left li {
+	width: 459px;
+	height: 160px;
+	border-bottom: 1px solid #f2f2f2;
+	border-right: 1px solid #f2f2f2;
+}
+
+#main .today .to-left li a img {
+	display: block;
+	float: left;
+	width: 120px;
+	height: 140px;
+	padding: 10px 0 10px 10px;
+}
+
+#main .today .to-left li .to-cont {
+	padding: 8px 16px 10px 0;
+	margin-left: 127px;
+	width: 200px;
+	height: 124px;
+	position: relative;
+}
+
+#main .today .to-left li .to-cont a:hover {
+	text-decoration: underline;
+}
+
+#main .today .to-left li .to-cont h3 {
+	font-size: 12px;
+	height: 28px;
+	line-height: 28px;
+}
+
+#main .today .to-left li .to-cont p a {
+	color: #666;
+	font-size: 10px;
+	height: 19px;
+	line-height: 19px;
+}
+
+#main .today .to-left li .to-cont p b {
+	color: #E11935;
+	font-size: 16px;
+}
+
+#main .today .to-left li .to-cont p i {
+	color: #E11935;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#main .today .to-left li .to-cont p span,
+#main .today .to-left li .to-cont p del {
+	color: #999;
+}
+
+#main .today .to-left li .to-cont p:nth-of-type(2) {
+	margin-top: 9px;
+}
+
+#main .today .to-left li .to-cont p:nth-last-of-type(1) {
+	color: #DE2634;
+	background: #ffd2c5;
+	border: 1px solid #facbcb;
+	border-radius: 8px;
+	width: 90px;
+	line-height: 15px;
+	font-size: 10px;
+	text-align: center;
+	margin-top: 10px;
+	margin-left: 4px;
+}
+
+#main .today .to-left li .to-cont .to-last {
+	background: #E11935;
+	padding: 4px 10px;
+	display: block;
+	width: 48px;
+	height: 16px;
+	line-height: 16px;
+	position: absolute;
+	right: 18px;
+	bottom: 5px;
+	color: white;
+}
+
+#main .today .to-left li .to-cont .to-last:hover {
+	text-decoration: none;
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+}
+
+
+/*每日上新标题*/
+
+#main #everyday {
+	margin: 30px auto 15px;
+	width: 1100px;
+}
+
+#main #everyday em {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#main #everyday i {
+	color: #999;
+}
+
+#main #everyday a {
+	float: right;
+	line-height: 40px;
+}
+
+#main #everyday a:hover {
+	text-decoration: underline;
+}
+
+
+/*每日上新内容*/
+
+#main .everyday {
+	width: 1100px;
+	margin: 0 auto;
+	background: white;
+}
+
+#main .everyday ul {
+	/*border: 1px solid #f2f2f2;
+	border-right: 0;*/
+	width: 100%;
+	background: white;
+}
+
+#main .everyday ul li {
+	width: 182.3px;
+	height: 200px;
+	border-right: 1px solid #f2f2f2;
+	border-bottom: 1px solid #f2f2f2;
+	text-align: center;
+}
+#main .everyday ul li:hover {
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+
+#main .everyday ul li p {
+	color: #e31436;
+}
+
+#main .everyday ul li b {
+	color: #e31436;
+}
+
+#main .everyday ul li i {
+	color: #fb072f;
+	font-size: 15px;
+}
+
+#main .everyday ul li span {
+	color: #999;
+	height: 20px;
+	line-height: 25px;
+}
+
+#main .everyday ul li del {
+	color: #999;
+}
+
+#main .everyday ul li p a {
+	font-size: 10px;
+}
+
+#main .everyday ul li img {
+	width: 119px;
+	height: 124px;
+	margin: 12px;
+}
+
+#main .everyday ul li:nth-of-type(1) a:nth-of-type(1) img {
+	margin: 25px 10px 10px;
+	width: 90px;
+	height: 90px;
+}
+
+#main .everyday ul li:nth-of-type(1) p:nth-last-child(1) {
+	line-height: 30px;
+}
+
+#main .everyday ul li:nth-of-type(2) a img {
+	width: 124px;
+	margin: 30px auto;
+	transition: all 0.6s;
+}
+
+#main .everyday ul li:nth-of-type(2):hover img {
+	transform: translateX(-10px);
+}
+
+
+/*商品列表瀑布*/
+
+#main #shoplist {
+	margin: 30px auto 8px;
+	width: 1120px;
+}
+#shoplist ul {
+	width: 100%;
+	margin: 0 auto;
+	padding-left: 10px;
+/*	background: green;*/
+}
+
+#shoplist li {
+	margin: 0 10px 10px 0;
+	text-align: left;
+	background: white;
+	font-size: 10px;
+	position: relative;
+	border: 1px solid #F2F2F2;
+}
+
+#shoplist li>a:nth-child(1)>img {
+	position: absolute;
+	left: 8px;
+	top: 8px;
+	width: 20px;
+	height: 20px;
+	z-index: 100;
+}
+
+#shoplist li>a:nth-child(2)>img {
+	width: 210px;
+	height: 230px;
+}
+
+#shoplist li>a>img:hover {
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+
+#shoplist li .matter {
+	position: relative;
+	padding: 10px;
+}
+
+#shoplist li .matter a {
+	color: black;
+}
+
+#shoplist li .matter b {
+	font-size: 12px;
+	color: #E31436;
+	margin: 0 3px;
+}
+
+#shoplist li .matter i {
+	color: #E31436;
+	font-weight: bold;
+	font-size: 16px;
+	margin-right: 3px;
+}
+
+#shoplist li .matter span {
+	color: #999;
+	font-size: 10px;
+}
+
+#shoplist li .matter del {
+	color: #999;
+	font-size: 10px;
+	margin-left: 3px;
+}
+
+#shoplist li .matter p:nth-of-type(2) {
+	margin: 30px 0 10px;
+}
+
+#shoplist li .matter>a {
+	background: #d22147;
+	padding: 4px 8px;
+	display: block;
+	height: 16px;
+	line-height: 16px;
+	position: absolute;
+	right: 18px;
+	bottom: 18px;
+	color: white;
+	text-align: center;
+}
+
+#shoplist li .matter>a:hover {
+	text-decoration: none;
+}
+
+#shoplist li a:hover {
+	text-decoration: underline;
+}
+
+
+/*版尾*/
+
+#main #vs {
+	background: white;
+	/*padding: 0 70px;*/
+	width: 100%;
+}
+
+#main #vs .vs {
+	border-bottom: 1px solid #f2f2f2;
+	padding: 30px 0;
+	width: 1100px;
+	margin: 0 auto;
+}
+
+#main #vs .vs .vs1 {
+	float: left;
+	margin: 0 60px 0 60px;
+	padding-left: 40px;
+}
+
+#main #vs .vs .vs1 span {
+	float: left;
+	font-size: 11px;
+	line-height: 18px;
+}
+
+#main #vs .vs .vs1 p {
+	font-weight: bold;
+	font-size: 15px;
+}
+
+#main #vs .vs .vs1:nth-of-type(1) {
+	background: url(../img/vs1.jpg) no-repeat left center;
+	background-size: 35px 35px;
+}
+
+#main #vs .vs .vs1:nth-of-type(2) {
+	background: url(../img/vs2.jpg) no-repeat left center;
+	background-size: 35px 35px;
+}
+
+#main #vs .vs .vs1:nth-of-type(3) {
+	background: url(../img/vs3.jpg) no-repeat left center;
+	background-size: 35px 35px;
+}
+
+#main #vs .vs .vs1:nth-of-type(4) {
+	background: url(../img/vs4.jpg) no-repeat left center;
+	background-size: 35px 35px;
+}
+
+#main #vs .koala {
+	padding: 30px 0px 50px;
+	width: 1100px;
+	margin: 0 auto;
+}
+
+#main #vs .koala .kala {
+	width: 150px;
+	font-size: 10px;
+	float: left;
+	margin-right: 25px;
+}
+
+#main #vs .koala .kala a:nth-child(1) img {
+	width: 150px;
+	height: 32px;
+}
+#main #vs .koala .kala p{
+	margin-top: 20px;
+}
+#main #vs .koala .kala p i{
+	display: inline-block;
+	height: 22px;
+	line-height: 22px;
+	float: left;
+	margin-right: 7px;
+}
+#main #vs .koala .kala p a img {
+	width: 22px;
+	height: 22px;
+	margin-right: 7px;
+}
+#main #vs .koala .kala p a:hover img{
+	opacity: 0.8;
+}
+
+#main #vs .koala ul{
+	float: left;
+}
+#main #vs .koala ul li{
+	width: 80px;
+	height: 120px;
+	border-left: 1px solid #f2f2f2;
+	padding: 0 20px;
+}
+#main #vs .koala ul li h3{
+	font-size: 14px;
+	height: 30px;
+}
+#main #vs .koala ul li p{
+	font-size: 10px;
+	height: 18px;
+	line-height: 18px;
+}
+#main #vs .koala .code{
+	float: right;
+	text-align: center;
+}
+#main #vs .koala .code img{
+	border: 1px solid #f2f2f2;
+	padding: 5px;
+	width: 80px;
+	height: 80px;
+	display: block;
+}
+#main #vs .koala .code span{
+	font-size: 10px;
+	line-height: 30px;
+}

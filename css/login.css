@@ -1,0 +1,288 @@
+/*头部*/
+#header{
+	width: 100%;
+}
+#header img{
+	width: 100%;
+	height: 60px;
+	display: block;
+}
+/*导航*/
+#nav{
+	height: 85px;
+	padding: 0 100px 0 90px;
+}
+#nav img{
+	float: left;
+	width: 200px;
+	height: 40px;
+	margin: 23px 0 22px;
+}
+#nav .vs {
+	/*width: 100%;*/
+	padding: 24px 0 23px;
+	float: right;
+}
+
+#nav .vs .vs1 {
+	float: left;
+	margin-right: 20px;
+	padding-left: 42px;
+}
+
+#nav .vs .vs1 span {
+	float: left;
+	font-size: 10px;
+	line-height: 18px;
+	color: #666;
+}
+
+#nav .vs .vs1 p {
+	font-weight: bold;
+	font-size: 13px;
+	color: #7a7a7a;
+}
+
+#nav .vs .vs1:nth-of-type(1) {
+	background: url(../html/login_img/vs1.jpg) no-repeat left center;
+	background-size: 35px 35px;
+}
+
+#nav .vs .vs1:nth-of-type(2) {
+	background: url(../html/login_img/vs2.jpg) no-repeat left center;
+	background-size: 35px 35px;
+}
+
+#nav .vs .vs1:nth-of-type(3) {
+	background: url(../html/login_img/vs3.jpg) no-repeat left center;
+	background-size: 35px 35px;
+}
+
+
+#main{
+	width: 100%;
+	height: 400px;
+	background: url(../html/login_img/banner1.jpg) no-repeat;
+	background-size: 100% 400px;
+}
+#main #login{
+	width: 400px;
+	height: 300px;
+	background: white;
+	float: right;
+	margin: 50px 130px 50px 0px;
+	border: 1px solid #f2f2f2;
+}
+#main #login .log{
+	width: 279px;
+	height: 100%;
+	border-right: 1px solid #f2f2f2;
+	float: left;
+}
+#main #login .log .cont{
+	padding: 25px 30px 20px;
+	width: 219px;
+	font-size: 10px;
+	border-bottom: 1px solid #f2f2f2;
+}
+#main #login .log .cont h3{
+	font-size: 16px;
+	margin-bottom: 18px;
+}
+#main #login .log .cont i{
+	float: left;
+	margin: 3px 0 1px 25px;
+	display: block;
+	width: 2px;
+	height: 18px;
+	border-left: 1px solid #eee;
+}
+#main #login .log .cont .user{
+	border: 1px solid #eee;
+	margin-bottom: 12px;
+	height: 26px;
+	background: white url(../html/login_img/head.jpg) no-repeat 5px 4px;
+	background-size: 15px 16px;
+}
+input::-webkit-input-placeholder{
+    color: lightgray;
+}
+#main #login .log .cont .user input{
+	width: 187px;
+	height: 24px;
+	float: right;
+	margin-top: 1px;
+}
+#main #login .log .cont .password{
+	border: 1px solid #eee;
+	margin-bottom: 12px;
+	height: 26px;
+	background: white url(../html/login_img/key.jpg) no-repeat 5px 4px;
+	background-size: 15px 16px;
+}
+#main #login .log .cont .password input{
+	width: 187px;
+	height: 24px;
+	float: right;
+	margin-top: 1px;
+}
+#main #login .log .cont input:nth-last-child(5){
+	width: 15px;
+	height: 15px;
+	border: 1px solid gray;
+	float: left;
+}
+#main #login .log .cont p:nth-last-child(1) a{
+	text-align: center;
+	color: deepskyblue;
+}
+#main #login .log .cont a:nth-last-child(2){
+	display: block;
+	width: 219px;
+	height: 40px;
+	line-height: 40px;
+	background: #E31436;
+	text-align: center;
+	color: white;
+	font-size: 16px;
+}
+#main #login .log .cont a:nth-last-child(3){
+	float: right;
+	color: darkgray;
+}
+#main #login .log .cont span{
+	height: 15px;
+	display: inline-block;
+	height: 25px;
+	color: darkgray;
+}
+#main #login .log .cont p{
+	text-align: center;
+	margin-top: 15px;
+	color: gray;
+}
+
+#main #login .log .third{
+	padding: 10px 23px;
+}
+#main #login .log .third i{
+	border-left: 1px solid #f2f2f2;
+	float: left;
+	display: block;
+	width: 1px;
+	height: 20px;
+}
+#main #login .log .third span{
+	font-size: 10px;
+	display: inline-block;
+	height: 19px;
+	line-height: 19px;
+	float: left;
+}
+#main #login .log .third a{
+	display: block;
+	width: 18px;
+	height: 18px;
+	float: left;
+	margin: 0 8px;
+	
+}
+#main #login .log .third a:nth-child(2){
+	background: url(../html/login_img/qq.jpg) no-repeat left center;
+	background-size: 18px 18px;
+}
+#main #login .log .third a:nth-child(4){
+	background: url(../html/login_img/zfb.jpg) no-repeat left center;
+	background-size: 18px 18px;
+}
+#main #login .log .third a:nth-child(6){
+	background: url(../html/login_img/weixin.jpg) no-repeat left center;
+	background-size: 18px 18px;
+}
+#main #login .log .third a:nth-child(8){
+	background: url(../html/login_img/weibo.jpg) no-repeat left center;
+	background-size: 18px 18px;
+	margin-right: 0;
+}
+
+
+
+#main #login .code{
+	float: right;
+	width: 120px;
+	height: 100%;
+}
+#main #login .code a{
+	display: block;
+	width: 120px;
+	height: 100%;
+	background: url(../html/login_img/2dcode.jpg) no-repeat center 90px;
+	background-size: 90px;
+	position: relative;
+}
+#main #login .code span{
+	color: #df355b;
+	font-size: 11px;
+	position: absolute;
+	left: 8px;
+	bottom: 95px;
+}
+#main #login .code p{
+	color: #979797;
+	font-size: 11px;
+	position: absolute;
+	left: 10px;
+	bottom: 80px;
+}
+/*尾部*/
+
+#footer {
+	width: 100%;
+	height: 180px;
+	background: white;
+	color: darkgray;
+	text-align: center;
+	padding-top: 20px;
+	font-size: 11px;
+}
+#footer p a{
+	color: dimgray;
+	font-size: 12px;
+}
+#footer p a:hover{
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+#footer p i{
+	border-left: 1px solid darkgray;
+	display: inline-block;
+	width: 1px;
+	height: 12px;
+	margin: 0px 14px 0 15px;
+	color: gray;
+}
+#footer p span {
+	padding-left: 20px;
+	height: 25px;
+	line-height: 25px;
+}
+
+#footer p span img {
+	width: 16px;
+	height: 16px;
+	margin-bottom: -4px;
+	margin-right: 4px;
+}
+
+#footer i img:nth-child(1) {
+	width: 65px;
+	height: 25px;
+	margin-right: 10px;
+	border-radius: 5px;
+}
+
+#footer i img:nth-child(2) {
+	width: 23px;
+	height: 26px;
+	margin-bottom: -1px;
+}

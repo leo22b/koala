@@ -1,0 +1,30 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+input{ 
+	outline: none;
+	border: 0;
+}
+.fix:after {
+	content: '';
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	height: 0;
+}
+
+li {
+	list-style: none;
+	float: left;
+}
+
+a {
+	text-decoration: none;
+}
+
+i,em{
+	font-style: normal;
+}

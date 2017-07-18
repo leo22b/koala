@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用户登录</title>
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../css/login.css" />
+		<script src="../js/jquery-3.2.1.min.js"></script>
+	</head>
+
+	<body>
+		<div id="header">
+			<img src="../img/top-banner.jpg" />
+		</div>
+		<div id="nav">
+			<a href="#"><img src="../img/koala.jpg" /></a>
+			<div class="vs">
+				<div class="vs1">
+					<p>100%正品保障</p>
+					<span>正品保障&nbsp;假一赔十</span>
+				</div>
+				<div class="vs1">
+					<p>100%全球精选</p>
+					<span>全球尖货&nbsp;产地直采</span>
+				</div>
+				<div class="vs1">
+					<p>30天无忧退货</p>
+					<span>国内退货&nbsp;售后无忧</span>
+				</div>
+			</div>
+		</div>
+		<div id="main">
+			<div id="login">
+				<div class="log">
+					<div class="cont">
+						<h3>登录网易邮箱账号</h3>
+						<div class="user fix">
+							<i></i>
+							<input onfocus="" type="text" placeholder="网易邮箱账号" />
+						</div>
+						<div class="password fix">
+							<i></i>
+							<input type="password" placeholder="密码" />
+						</div>
+						<script type="text/javascript">
+							$(document).ready(function() {
+								var ocont = document.getElementsByClassName('cont')[0];
+								var odiv1 = ocont.getElementsByTagName('div')[0];
+								var odiv2 = ocont.getElementsByTagName('div')[1];
+								var oinput1 = ocont.getElementsByTagName('input')[0];
+								var oinput2 = ocont.getElementsByTagName('input')[1];
+								oinput1.onfocus = function() {
+									odiv2.style.border = '';
+									odiv1.style.border = '1px solid deepskyblue';
+								}
+								oinput2.onfocus = function() {
+									odiv1.style.border = '';
+									odiv2.style.border = '1px solid deepskyblue';
+								}
+							});
+						</script>
+						<input id="ospan" type="checkbox" />
+						<span>十天免登陆</span>
+						<a href="#">忘记密码？</a>
+						<a href="#">登录</a>
+						<p>没有网易邮箱？
+							<a href="#">立即免费注册>></a>
+						</p>
+					</div>
+					<script type="text/javascript">
+						$(document).ready(function(){
+							var ocont=document.getElementsByClassName('cont')[0];
+							var ospan=ocont.getElementsByTagName('span');
+							var temp=false;
+							ospan[0].onclick=function(){
+								temp=!temp;
+								if (temp) {
+									$("#ospan").attr('checked',true);
+								} else{
+									$("#ospan").attr('checked',false);
+								}
+							}
+						});
+					</script>
+					<div class="third">
+						<span>使用第三方账号登录:</span>
+						<a href="#"></a><i></i>
+						<a href="#"></a><i></i>
+						<a href="#"></a><i></i>
+						<a href="#"></a>
+					</div>
+				</div>
+				<div class="code">
+					<a href="#">
+						<span>领取1000元新人礼包</span>
+						<p> APP下载更有优惠价</p>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!--尾部-->
+		<div id="footer">
+			<p>
+				<a href="#">About&nbsp;NetEase</a><i></i>
+				<a href="#">公司简介</a><i></i>
+				<a href="#">联系方法</a><i></i>
+				<a href="#">友情链接</a><i></i>
+				<a href="#">招聘信息</a><i></i>
+				<a href="#">客户服务</a><i></i>
+				<a href="#">隐私政策</a><i></i>
+				<a href="#">网络营销</a><i></i>
+				<a href="#">网站地图</a><i></i>
+				<a href="#">网易考拉海购</a>
+			</p>
+			<p>
+				<span>网络文化经营许可证:浙网文[2016]0155-055</span>
+				<span>增值电信业务经营许可证:浙B2-20090185-3</span>
+				<span>出版物经营许可证:新出发浙杭经零字第00136号</span>
+				<span>自营经营者信息</span>
+			</p>
+			<p>
+				<span><img src="../img/gongan.png"/>浙公网安备 33010002000066</span>
+				<span>网易公司版权所有@1997-2017</span>
+			</p>
+			<i><img src="../img/web.png"/><img src="../img/wlgs.gif"/></i>
+		</div>
+	</body>
+
+</html>
