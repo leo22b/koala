@@ -129,53 +129,54 @@
 
 #main .today {
 	width: 1100px;
-	height: 322px;
+	/*height: 322px;*/
 	margin: 0 auto;
-/*	background: #ede1d9;*/
+	background: green;
 	border-top: 2px solid black;
 	border-left: 1px solid #f2f2f2;
+	position: relative;
 }
 #main a{
 	color: black;
 }
 #main .today .to-right {
 	float: right;
-	width: 180px;
-	height: 322px;
+	width: 204px;
+	height: 366px;
+	position: absolute;
+	right: 0;
 }
 
 #main .today .to-right img {
 	width: 100%;
-	height: 322px;
+	height: 100%;
 }
 
 #main .today .to-left {
 	float: left;
-	width: 920px;
-	height: 322px;
+	width: 896px;
+	height: 366px;
 	background: white;
 }
 
 #main .today .to-left li {
-	width: 459px;
-	height: 160px;
+	width: 447px;
+	height: 183px;
 	border-bottom: 1px solid #f2f2f2;
 	border-right: 1px solid #f2f2f2;
 }
 
 #main .today .to-left li a img {
-	display: block;
 	float: left;
-	width: 120px;
-	height: 140px;
-	padding: 10px 0 10px 10px;
+	width: 188px;
+	height: 183px;
+	padding: 0 10px;
 }
 
 #main .today .to-left li .to-cont {
-	padding: 8px 16px 10px 0;
-	margin-left: 127px;
+	padding: 8px 16px 10px 10px;
+	float: left;
 	width: 200px;
-	height: 124px;
 	position: relative;
 }
 
@@ -184,7 +185,7 @@
 }
 
 #main .today .to-left li .to-cont h3 {
-	font-size: 12px;
+	font-size: 13px;
 	height: 28px;
 	line-height: 28px;
 }
@@ -210,13 +211,14 @@
 #main .today .to-left li .to-cont p span,
 #main .today .to-left li .to-cont p del {
 	color: #999;
+	font-size: 12px;
 }
 
 #main .today .to-left li .to-cont p:nth-of-type(2) {
-	margin-top: 9px;
+	margin-top: 25px;
 }
 
-#main .today .to-left li .to-cont p:nth-last-of-type(1) {
+#main .today .to-left li .to-cont>p:nth-last-of-type(1) {
 	color: #DE2634;
 	background: #ffd2c5;
 	border: 1px solid #facbcb;
@@ -226,20 +228,21 @@
 	font-size: 10px;
 	text-align: center;
 	margin-top: 10px;
-	margin-left: 4px;
+	/*position: relative;*/
 }
 
 #main .today .to-left li .to-cont .to-last {
 	background: #E11935;
 	padding: 4px 10px;
 	display: block;
+	color: white;
 	width: 48px;
 	height: 16px;
 	line-height: 16px;
+	font-size: 12px;
 	position: absolute;
-	right: 18px;
-	bottom: 5px;
-	color: white;
+	right: 16px;
+	bottom: 10px;
 }
 
 #main .today .to-left li .to-cont .to-last:hover {
